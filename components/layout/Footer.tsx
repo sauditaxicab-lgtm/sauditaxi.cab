@@ -74,7 +74,7 @@ export function Footer() {
                         </h3>
                         <ul className="space-y-4 text-sm text-white/70 font-light">
                             {[
-                                { name: "Jeddah Airport Transfer", href: "/services/airport-transfers" },
+                                { name: "Airport Transfer", href: "/services/airport-transfers" },
                                 { name: "Umrah Transfers", href: "/services/umrah-transfers" },
                                 { name: "Family Travel", href: "/services/family-travel" },
                                 { name: "Ziyarat Tours", href: "/services/ziyarat-tours" },

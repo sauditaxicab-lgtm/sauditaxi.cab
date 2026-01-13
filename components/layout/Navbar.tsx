@@ -21,7 +21,7 @@ const navLinks = [
 ];
 
 const servicesList = [
-    { name: "Jeddah Airport Transfer", href: "/services/airport-transfers" },
+    { name: "Airport Transfer", href: "/services/airport-transfers" },
     { name: "Umrah Transfers", href: "/services/umrah-transfers" },
     { name: "Family Travel", href: "/services/family-travel" },
     { name: "Ziyarat Tours", href: "/services/ziyarat-tours" },
