@@ -71,7 +71,7 @@ export function FAQSection({ items, title = "Saudi Taxi FAQ", className = "bg-lu
         <section className={`py-24 ${className}`}>
             <div className="container mx-auto px-4 max-w-4xl">
                 <div className="text-center mb-16">
-                    <span className="text-luxury-gold uppercase tracking-widest text-xs font-bold block mb-4">
+                    <span className={`uppercase tracking-widest text-xs font-bold block mb-4 ${darkContent ? 'text-luxury-gold-dark' : 'text-luxury-gold'}`}>
                         Common Questions
                     </span>
                     <h2 className={`text-3xl md:text-5xl font-serif ${darkContent ? "text-black" : "text-white"}`}>

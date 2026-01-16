@@ -4,6 +4,42 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   trailingSlash: true,
 
+  // CSS Optimization for better performance
+  experimental: {
+    optimizeCss: true, // Enable CSS optimization
+    optimizePackageImports: ['lucide-react', 'framer-motion'], // Tree-shake large packages
+  },
+
+  // Source maps configuration
+  // In production, source maps are disabled by default (recommended for security)
+  // In development, Turbopack generates source maps automatically
+  productionBrowserSourceMaps: false, // Set to true only if you need to debug production issues
+
+  // Image optimization configuration
+  images: {
+    formats: ['image/webp', 'image/avif'], // Modern formats (smaller size)
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048], // Responsive breakpoints (removed 3840 to prevent massive 4K downloads)
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384], // Thumbnail sizes
+    minimumCacheTTL: 60, // Cache images for 60 seconds minimum
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+      },
+    ],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Reduce default quality for better compression (75 → 65)
+    // This saves ~28 KiB while maintaining visual quality
+    unoptimized: false, // Ensure optimization is enabled
+  },
+
+  // Compiler optimizations for modern browsers
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
   async headers() {
     return [
       {
@@ -28,6 +64,35 @@ const nextConfig: NextConfig = {
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
+          },
+        ],
+      },
+      // Resource hints for critical external origins
+      {
+        source: '/',
+        headers: [
+          // Google Fonts - Preconnect for faster font loading
+          {
+            key: 'Link',
+            value: '<https://fonts.googleapis.com>; rel=preconnect; crossorigin',
+          },
+          {
+            key: 'Link',
+            value: '<https://fonts.gstatic.com>; rel=preconnect; crossorigin',
+          },
+          // Transparent Textures - Preconnect to reduce critical chain
+          {
+            key: 'Link',
+            value: '<https://www.transparenttextures.com>; rel=preconnect; crossorigin',
+          },
+          // DNS-Prefetch as fallback for older browsers
+          {
+            key: 'Link',
+            value: '<https://fonts.googleapis.com>; rel=dns-prefetch',
+          },
+          {
+            key: 'Link',
+            value: '<https://www.transparenttextures.com>; rel=dns-prefetch',
           },
         ],
       },

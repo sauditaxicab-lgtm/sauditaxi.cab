@@ -36,7 +36,7 @@ export default function VIPTransportPage() {
     return (
         <main className="bg-luxury-black min-h-screen text-white">
             <ServiceHero
-                title="VIP & Business Transport"
+                title="VIP and Business Transport"
                 subtitle="Executive Standards"
                 description="Premium transport solutions for executives, VIPs, and those who demand the best in Saudi Arabia."
                 backgroundImage="/services/vip_transport.png"

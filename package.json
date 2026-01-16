@@ -8,6 +8,12 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "browserslist": [
+    "> 0.2%",
+    "last 2 versions",
+    "not dead",
+    "not op_mini all"
+  ],
   "dependencies": {
     "@googlemaps/js-api-loader": "^2.0.2",
     "@radix-ui/react-avatar": "^1.1.11",

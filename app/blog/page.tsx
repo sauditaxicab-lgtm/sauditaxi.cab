@@ -30,6 +30,12 @@ export default async function BlogIndexPage() {
             {/* Posts Grid */}
             <section className="py-20 px-6 md:px-12">
                 <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-4">
+                            Recent Articles
+                        </h2>
+                        <div className="h-1 w-24 bg-luxury-gold mx-auto" />
+                    </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {posts?.map((post) => (
                             <Link href={`/blog/${post.slug}`} key={post.id} className="group">
@@ -86,6 +92,30 @@ export default async function BlogIndexPage() {
                             <p className="text-xl">No articles published yet.</p>
                         </div>
                     )}
+                </div>
+            </section>
+
+            {/* Static Content / SEO Text */}
+            <section className="py-20 bg-zinc-900 border-t border-white/10">
+                <div className="max-w-4xl mx-auto px-6 text-center">
+                    <h2 className="text-3xl font-serif text-white mb-6">Your Guide to <span className="text-luxury-gold">Hajj & Umrah Travel</span></h2>
+                    <p className="text-white/70 leading-relaxed mb-8">
+                        Welcome to the Saudi Taxi blog, your definitive resource for travel information in the Kingdom. Here, we share essential guides for pilgrims performing Umrah and Hajj, including tips on navigating Jeddah Airport, choosing the right transport between Makkah and Madinah, and understanding the Ziyarat sites.
+                    </p>
+                    <div className="grid md:grid-cols-3 gap-6 text-left">
+                        <div className="bg-black/40 p-6 rounded-lg border border-white/5">
+                            <h3 className="text-luxury-gold font-bold mb-2">Travel Tips</h3>
+                            <p className="text-white/60 text-sm">Expert advice on packing, best times to travel, and how to prepare for your spiritual journey.</p>
+                        </div>
+                        <div className="bg-black/40 p-6 rounded-lg border border-white/5">
+                            <h3 className="text-luxury-gold font-bold mb-2">Vehicle Guides</h3>
+                            <p className="text-white/60 text-sm">Detailed reviews of our fleet, helping you choose between a Camry, Staria, or GMC for your family.</p>
+                        </div>
+                        <div className="bg-black/40 p-6 rounded-lg border border-white/5">
+                            <h3 className="text-luxury-gold font-bold mb-2">Local Insights</h3>
+                            <p className="text-white/60 text-sm">Discover hidden gems, best places to eat, and historical context for the holy sites in Makkah and Madinah.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

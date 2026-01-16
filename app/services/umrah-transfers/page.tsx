@@ -39,7 +39,7 @@ export default function UmrahTransfersPage() {
                 title="Madinah to Makkah Taxi"
                 subtitle="High-Speed Intercity Transfers"
                 description="The most reliable Madinah to Makkah taxi service. Premium private transport and rentals with drivers for a seamless pilgrimage journey."
-                backgroundImage="/services/umrah_transfer.png"
+                backgroundImage="/services/umrah_makkah.png"
             />
 
             {/* Introduction */}

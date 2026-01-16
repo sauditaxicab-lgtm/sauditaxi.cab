@@ -98,7 +98,7 @@ export function ServicesGrid() {
         <section className="py-24 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 mb-16">
                 <div className="text-center max-w-4xl mx-auto">
-                    <span className="text-luxury-gold uppercase tracking-widest text-xs font-bold block mb-4">
+                    <span className="text-luxury-gold-dark uppercase tracking-widest text-xs font-bold block mb-4">
                         Elite Transport Services
                     </span>
                     <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-6 leading-tight">

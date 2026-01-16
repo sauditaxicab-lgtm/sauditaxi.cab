@@ -182,6 +182,7 @@ export function ToyotaCamryContent() {
             {/* Decision Logic: Trust Cards */}
             <section className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Premium Features</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                         {[
                             { icon: Zap, title: "Zero Wait Promise", desc: "Drivers tracked in real-time. We are at the arrivals gate before you exit.", highlight: false },

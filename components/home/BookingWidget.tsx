@@ -39,9 +39,9 @@ export function BookingWidget() {
             {/* Top accent line */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-luxury-gold/50 to-transparent"></div>
 
-            <h3 className="font-serif text-lg text-white mb-5 border-b border-white/5 pb-3 text-center tracking-wide font-medium">
+            <p className="font-serif text-lg text-white mb-5 border-b border-white/5 pb-3 text-center tracking-wide font-medium">
                 Book Your Private Taxi
-            </h3>
+            </p>
 
             <div className="space-y-4">
                 {/* Date */}

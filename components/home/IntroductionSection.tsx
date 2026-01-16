@@ -18,7 +18,7 @@ export function IntroductionSection() {
 
                     {/* Content Column - Left on Large Screens for better F-pattern flow */}
                     <div className="w-full lg:w-3/5 space-y-12 flex flex-col justify-center order-1 lg:order-1">
-                        <div className="space-y-6">
+                        <div className="space-y-6 flex flex-col items-center text-center lg:items-start lg:text-left">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ export function IntroductionSection() {
                                 whileInView={{ opacity: 1, scaleX: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.3, duration: 0.8 }}
-                                className="w-24 h-1 bg-luxury-gold rounded-full origin-left"
+                                className="w-24 h-1 bg-luxury-gold rounded-full origin-center lg:origin-left"
                             ></motion.div>
 
                             <motion.div
@@ -53,7 +53,7 @@ export function IntroductionSection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4 }}
-                                className="flex flex-wrap gap-4 pt-4"
+                                className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start"
                             >
                                 <Link href="/booking">
                                     <Button className="bg-luxury-gold text-black hover:bg-black hover:text-white transition-all duration-300 h-14 px-8 rounded-xl font-bold uppercase text-[10px] tracking-widest shadow-lg shadow-gold/20">
@@ -107,7 +107,7 @@ export function IntroductionSection() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="grid grid-cols-2 gap-4"
+                            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
                         >
                             <div className="flex items-center gap-4 p-5 bg-white border border-black/5 rounded-2xl shadow-sm hover:shadow-md transition-shadow group">
                                 <div className="p-2.5 bg-luxury-gold/5 rounded-xl group-hover:bg-luxury-gold/10 transition-colors">
@@ -151,7 +151,7 @@ export function IntroductionSection() {
                                 </div>
 
                                 {/* Floating Status Overlay */}
-                                <div className="absolute bottom-10 left-10 right-10 p-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl">
+                                <div className="absolute bottom-4 left-4 right-4 md:bottom-10 md:left-10 md:right-10 p-4 md:p-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl">
                                     <div className="flex items-center gap-4">
                                         <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-luxury-gold shadow-lg">
                                             <Image src="/about/professional_chauffeur_portrait.png" fill className="object-cover" alt="Driver" />

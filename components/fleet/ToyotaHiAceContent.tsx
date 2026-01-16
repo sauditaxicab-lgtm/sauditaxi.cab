@@ -123,6 +123,7 @@ export function ToyotaHiaceContent() {
             {/* Decision Logic: Trust Cards */}
             <section className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Premium Features</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                         {[
                             { icon: Users, title: "Group Comfort", desc: "Individual seating for 11 passengers ensures personal space for everyone during the journey.", highlight: false },

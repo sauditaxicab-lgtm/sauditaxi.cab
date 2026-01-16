@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Privacy Policy | Saudi Taxi',
+    title: 'Privacy Policy | Secure & Private Transfers | Saudi Taxi',
     description: 'Privacy Policy for Saudi Taxi. Learn how we collect, use & protect your personal information per Saudi Data Protection Laws.',
 };
 

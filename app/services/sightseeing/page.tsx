@@ -1,4 +1,4 @@
-"use client";
+
 
 import { ServiceHero } from "@/components/services/ServiceHero";
 import { ContentBlock } from "@/components/services/ContentBlock";
@@ -32,11 +32,19 @@ const tourFAQs = [
     }
 ];
 
+export const metadata = {
+    title: "Sightseeing Tours | Makkah, Madinah and Jeddah City Tours",
+    description: "Book private sightseeing tours in Saudi Arabia. Explore historical sites in Makkah, Madinah, and Jeddah with our premium taxi service and knowledgeable drivers.",
+    alternates: {
+        canonical: '/services/sightseeing',
+    },
+};
+
 export default function SightseeingPage() {
     return (
         <main className="bg-luxury-black min-h-screen text-white">
             <ServiceHero
-                title="Saudi Sightseeing & City Tours"
+                title="Saudi Sightseeing and City Tours"
                 subtitle="Explore Beyond the Pilgrimage"
                 description="Discover the rich culture, modern marvels, and historical heritage of Makkah, Madinah, and Jeddah with our premium city tours."
                 backgroundImage="/city_night_luxury_bg.png"
@@ -72,7 +80,7 @@ export default function SightseeingPage() {
 
             {/* Jeddah Highlights */}
             <ContentBlock
-                title="Jeddah: Bridging Heritage & Modernity"
+                title="Jeddah: Bridging Heritage and Modernity"
                 content={`Explore the Bride of the Red Sea. Our Jeddah City Tour covers the essential landmarks:\n\n**Al-Balad (Historical District):** Walk through the UNESCO World Heritage site featuring ancient coral stone buildings with intricate wooden Roshan balconies.\n\n**Jeddah Corniche:** Enjoy a relaxing drive along the beautiful Red Sea waterfront, dotted with sculptures and parks.\n\n**King Fahd's Fountain:** Witness the tallest fountain in the world, a spectacular 312-meter water jet visible from across the city.\n\n**Red Sea Mall:** Experience world-class shopping and dining in one of the region's premier destinations.`}
                 imageSrc="/hero_bg.png"
                 imageAlt="Jeddah Sightseeing"

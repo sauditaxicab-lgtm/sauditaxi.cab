@@ -27,13 +27,19 @@ export function Footer() {
                             Setting the benchmark in Umrah and intercity transport. Saudi Taxi offers premium services across the Kingdom, ensuring every journey is spiritual, private, and comfortable.
                         </p>
                         <div className="flex gap-4 justify-center md:justify-start">
-                            {[Facebook, Instagram, Linkedin, Twitter].map((Icon, i) => (
+                            {[
+                                { Icon: Facebook, label: 'Visit our Facebook page' },
+                                { Icon: Instagram, label: 'Follow us on Instagram' },
+                                { Icon: Linkedin, label: 'Connect with us on LinkedIn' },
+                                { Icon: Twitter, label: 'Follow us on Twitter' }
+                            ].map((social, i) => (
                                 <a
                                     key={i}
                                     href="#"
+                                    aria-label={social.label}
                                     className="w-10 h-10 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:bg-luxury-gold hover:text-black hover:scale-105 transition-all duration-300"
                                 >
-                                    <Icon size={18} />
+                                    <social.Icon size={18} />
                                 </a>
                             ))}
                         </div>

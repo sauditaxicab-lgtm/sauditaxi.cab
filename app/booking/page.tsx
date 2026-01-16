@@ -67,6 +67,33 @@ export default function BookingPage() {
                     </div>
                 </div>
 
+                {/* Booking Information Block */}
+                <div className="w-full max-w-4xl bg-white/5 border border-white/10 rounded-sm p-8 md:p-12 backdrop-blur-sm">
+                    <h2 className="text-2xl font-serif text-white mb-6">Why Book with Saudi Taxi?</h2>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 className="text-luxury-gold font-bold mb-2">Transparent Pricing</h3>
+                            <p className="text-white/70 text-sm leading-relaxed mb-4">
+                                Our rates are fixed and all-inclusive. When you book a Jeddah Airport to Makkah taxi or a Madinah transfer, the price you see or quote you receive is final. There are no hidden fees for luggage, parking, or waiting time (up to 60 mins at airport).
+                            </p>
+                            <h3 className="text-luxury-gold font-bold mb-2">Instant Confirmation</h3>
+                            <p className="text-white/70 text-sm leading-relaxed">
+                                We prioritize your peace of mind. Once you submit your booking request, our team verifies availability immediately. You will receive a formal confirmation via WhatsApp or Email, ensuring your ride is guaranteed before you even land.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className="text-luxury-gold font-bold mb-2">Flexible Payments</h3>
+                            <p className="text-white/70 text-sm leading-relaxed mb-4">
+                                You don't need to pay everything upfront. To secure your booking, we offer flexible payment options including partial deposits or payment upon arrival, giving you financial security and trust.
+                            </p>
+                            <h3 className="text-luxury-gold font-bold mb-2">Special Requests</h3>
+                            <p className="text-white/70 text-sm leading-relaxed">
+                                Travelling with elderly parents, infants, or wheelchair requirements? Use the booking form to let us know. We can arrange child seats or specific vehicle types (like our GMC Yukon) to accommodate your specific needs comfortably.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             {/* 3. CTA Section */}

@@ -1,0 +1,44 @@
+/* Critical CSS - Above the fold styles */
+@import "tailwindcss";
+
+@theme {
+  --color-luxury-black: #0A0A0F;
+  --color-luxury-navy: #0A0A0F;
+  --color-luxury-gold: #C4A975;
+  --color-luxury-gold-light: #E0C691;
+  --color-luxury-gold-dark: #8E7040;
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+@layer base {
+  /* Critical base styles */
+  body {
+    background-color: var(--color-luxury-black);
+    color: #FFFFFF;
+  }
+
+  /* Only h1 for above-the-fold critical rendering */
+  h1 {
+    @apply text-4xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight leading-[1.1] mb-6;
+  }
+
+  /* Default Paragraph Style for consistency */
+  p {
+    @apply leading-relaxed opacity-90;
+  }
+}
+
+/* Critical utility classes used above the fold */
+.glass-panel {
+  @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-2xl;
+}
+
+.text-gold-gradient {
+  @apply bg-gradient-to-r from-luxury-gold via-luxury-gold-dark to-luxury-gold bg-clip-text text-transparent;
+}
+
+.bg-gold-gradient {
+  @apply bg-gradient-to-b from-luxury-gold to-luxury-gold-dark hover:brightness-110 transition-all;
+}

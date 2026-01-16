@@ -81,8 +81,8 @@ export function ReviewsSection() {
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
-                    <div className="max-w-2xl">
+                <div className="flex flex-col md:flex-row items-center md:items-end justify-between mb-20 gap-8">
+                    <div className="max-w-2xl text-center md:text-left">
                         <motion.span
                             initial={{ opacity: 0, x: -10 }}
                             whileInView={{ opacity: 1, x: 0 }}

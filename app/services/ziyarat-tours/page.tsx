@@ -1,4 +1,13 @@
-"use client";
+
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Ziyarat Tours Makkah and Madinah | Saudi Taxi',
+    description: 'Book private Ziyarat tours in Makkah and Madinah. Visit historical Islamic sites like Cave Hira, Mount Uhud, and Masjid Quba with our knowledgeable drivers.',
+    alternates: {
+        canonical: '/services/ziyarat-tours',
+    },
+};
 
 import { ServiceHero } from "@/components/services/ServiceHero";
 import { ContentBlock } from "@/components/services/ContentBlock";
@@ -36,7 +45,7 @@ export default function ZiyaratToursPage() {
     return (
         <main className="bg-luxury-black min-h-screen text-white">
             <ServiceHero
-                title="Makkah & Madinah Ziyarat Tours"
+                title="Makkah and Madinah Ziyarat Tours"
                 subtitle="Spiritual Sightseeing"
                 description="Experience the history of Islam with our private Ziyarat tours. Visit holy sites in comfort with knowledgeable drivers."
                 backgroundImage="/services/luxury_tour.png"

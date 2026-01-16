@@ -127,6 +127,7 @@ export function ToyotaCoasterContent() {
             {/* Decision Logic: Trust Cards */}
             <section className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Premium Features</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                         {[
                             { icon: Users, title: "Keep Group United", desc: "No need to split into multiple taxis. Move 17 people together and stay connected.", highlight: true },

@@ -1,0 +1,15 @@
+# Browsers that we support
+# This tells our build tools (Next.js/SWC) which browsers to target
+# Focusing on modern browsers to avoid unnecessary polyfills
+
+# Production browsers (>0.2% global usage, not dead, supports ES6+)
+> 0.2% and last 2 versions
+not dead
+not op_mini all
+
+# Modern browsers only - these support all ES2022 features natively
+Chrome >= 94
+Firefox >= 93
+Safari >= 15
+Edge >= 94
+iOS >= 15

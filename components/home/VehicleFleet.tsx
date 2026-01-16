@@ -113,7 +113,7 @@ export function VehicleFleet() {
                                         alt={vehicles[activeTab].title}
                                         fill
                                         className="object-contain drop-shadow-[0_20px_50px_rgba(197,160,89,0.15)] rounded-lg"
-                                        sizes="(max-width: 768px) 100vw, 60vw"
+                                        sizes="(max-width: 768px) 100vw, 640px"
                                         priority
                                     />
                                 </motion.div>

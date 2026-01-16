@@ -184,7 +184,7 @@ export function FourPillars() {
                 </div>
 
                 {/* Grid Layout - Mobile horizontal scroll / Desktop 4 columns */}
-                <div className="flex overflow-x-auto pb-8 lg:pb-0 lg:overflow-x-visible lg:grid lg:grid-cols-4 gap-6 no-scrollbar snap-x snap-mandatory">
+                <div className="flex overflow-x-auto pt-8 pb-8 lg:pt-0 lg:pb-0 lg:overflow-x-visible lg:grid lg:grid-cols-4 gap-6 no-scrollbar snap-x snap-mandatory">
                     {pillars.map((pillar, index) => {
                         const IconComponent = Icons[pillar.id as keyof typeof Icons];
                         const isFeatured = index === 0;

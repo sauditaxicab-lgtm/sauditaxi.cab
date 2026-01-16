@@ -57,6 +57,15 @@ export default function ServicesPage() {
 
             {/* Service Grid */}
             <section className="px-16 py-24 container mx-auto">
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4">
+                        Choose Your Service
+                    </h2>
+                    <div className="h-1 w-24 bg-luxury-gold mx-auto mb-8" />
+                    <p className="text-zinc-500 max-w-3xl mx-auto text-lg leading-relaxed">
+                        From luxury private transfers for Umrah pilgrims to efficient airport pickups and intercity travel, our comprehensive range of services ensures your journey in Saudi Arabia is comfortable, safe, and stress-free. Browse our specialized transport options below.
+                    </p>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {services.map((service, index) => (
                         <motion.div

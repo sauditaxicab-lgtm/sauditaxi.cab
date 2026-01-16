@@ -8,11 +8,15 @@ import { Toaster } from "sonner";
 const playfair = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
+  display: 'swap', // Prevents render-blocking
+  preload: true, // Preload for faster loading
 });
 
 const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
+  display: 'swap', // Prevents render-blocking
+  preload: true, // Preload for faster loading
 });
 
 export const metadata: Metadata = {
@@ -47,6 +51,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Resource Hints - Establish connections early to reduce critical chain */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.transparenttextures.com" crossOrigin="anonymous" />
+
+        {/* DNS Prefetch as fallback for older browsers */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://www.transparenttextures.com" />
+      </head>
       <body
         className={`${playfair.variable} ${inter.variable} antialiased bg-luxury-black text-white font-sans`}
         suppressHydrationWarning

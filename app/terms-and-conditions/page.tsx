@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { BUSINESS_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
-    title: 'Terms and Conditions | Saudi Taxi',
+    title: 'Terms and Conditions | Service Agreement & Policies | Saudi Taxi',
     description: 'Terms & Conditions for Saudi Taxi. Review our service agreement, booking policies, payment terms & service standards in Saudi Arabia.',
 };
 

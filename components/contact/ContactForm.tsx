@@ -85,6 +85,7 @@ const ContactForm = () => {
 
             {/* Top Section: Information Cards */}
             <div className="container mx-auto px-6 py-16 md:py-32">
+                <h2 className="text-3xl font-serif text-black mb-12 text-center md:text-left sr-only">Get in Touch</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {contactData.map((item, index) => (
                         <div
@@ -102,7 +103,7 @@ const ContactForm = () => {
                                 </div>
                             </div>
 
-                            <h4 className="font-serif text-sm text-luxury-gold uppercase tracking-widest mb-3 font-bold">{item.title}</h4>
+                            <div className="font-serif text-sm text-luxury-gold uppercase tracking-widest mb-3 font-bold">{item.title}</div>
 
                             {item.link ? (
                                 <a href={item.link} className="text-white hover:text-luxury-gold font-medium text-lg transition-colors">
