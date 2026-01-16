@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export function InformationSection() {
     return (
-        <section className="py-28 px-4 md:px-16 relative overflow-hidden bg-luxury-black">
+        <section className="py-16 md:py-28 px-4 md:px-16 relative overflow-hidden bg-luxury-black">
             {/* Cinematic Background Layer */}
             <div className="absolute inset-0 z-0">
                 <div
@@ -32,7 +32,7 @@ export function InformationSection() {
                                 Travel Across the Kingdom
                             </span>
 
-                            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-white mb-10 leading-[1.1]">
+                            <h2 className="text-3xl md:text-5xl lg:text-7xl font-serif text-white mb-6 md:mb-10 leading-[1.1]">
                                 Experience <span className="text-luxury-gold italic">Luxury</span> <br />
                                 Chauffeur Service
                             </h2>

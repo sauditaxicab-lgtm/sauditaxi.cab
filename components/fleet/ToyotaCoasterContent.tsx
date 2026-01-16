@@ -45,12 +45,12 @@ export function ToyotaCoasterContent() {
                     <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
                         <div className="lg:w-1/2 z-10 text-center lg:text-left order-2 lg:order-1">
                             <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-[10px] mb-4 block">Large Group Transport</span>
-                            <h1 className="mb-6 leading-tight">
+                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">
                                 Toyota Coaster <br />
-                                <span className="text-luxury-gold italic">30-Seater Taxi</span>
+                                <span className="text-luxury-gold italic">17-Seater Taxi</span>
                             </h1>
                             <p className="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                                The choice for large pilgrim groups and touring families. Spacious seating, dedicated luggage space, and air-conditioned comfort for up to 30 passengers.
+                                The choice for large pilgrim groups and touring families. Spacious seating, dedicated luggage space, and air-conditioned comfort for up to 17 passengers.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                                 <Link href="/booking?vehicle=Toyota-Coaster" className="w-full sm:w-auto">
@@ -77,6 +77,7 @@ export function ToyotaCoasterContent() {
                         <div className="lg:w-1/2 relative flex flex-col items-center order-1 lg:order-2">
                             <div className="absolute inset-0 bg-luxury-gold/10 blur-[100px] rounded-full opacity-30"></div>
 
+                            {/* Main Image Display */}
                             <div className="relative w-full aspect-[16/10] max-w-[600px] rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 group shadow-2xl mb-6">
                                 <AnimatePresence mode="wait">
                                     <motion.div
@@ -128,9 +129,9 @@ export function ToyotaCoasterContent() {
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                         {[
-                            { icon: Users, title: "Keep Group United", desc: "No need to split into multiple taxis. Move 30 people together and stay connected.", highlight: true },
+                            { icon: Users, title: "Keep Group United", desc: "No need to split into multiple taxis. Move 17 people together and stay connected.", highlight: true },
                             { icon: Briefcase, title: "Dedicated Cargo", desc: "Ample luggage space for pilgrims. Optional trailer available for heavy shopping days.", highlight: false },
-                            { icon: Snowflake, title: "Bus-Grade A/C", desc: "Industrial strength air conditioning designed to keep 30 passengers cool in peak summer.", highlight: false }
+                            { icon: Snowflake, title: "Bus-Grade A/C", desc: "Industrial strength air conditioning designed to keep 17 passengers cool in peak summer.", highlight: false }
                         ].map((item, i) => (
                             <motion.div
                                 key={i}
@@ -224,7 +225,7 @@ export function ToyotaCoasterContent() {
                         items={[
                             {
                                 question: "How many passengers can the Coaster hold?",
-                                answer: "The Toyota Coaster comfortably seats up to 30 passengers, including fold-down aisle seats. For long trips with luggage, we recommend 20-22 passengers."
+                                answer: "The Toyota Coaster comfortably seats up to 17 passengers. For long trips with luggage, we recommend 14-15 passengers."
                             },
                             {
                                 question: "Is there space for all our luggage?",

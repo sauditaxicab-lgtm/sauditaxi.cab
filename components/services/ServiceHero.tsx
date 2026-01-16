@@ -16,7 +16,7 @@ interface ServiceHeroProps {
 
 export function ServiceHero({ title, subtitle, description, backgroundImage, onBookNow, overlay = true, backgroundClassName = "" }: ServiceHeroProps) {
     return (
-        <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
+        <section className="relative min-h-[85vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12">
             {/* Background Image */}
             <div
                 className={`absolute inset-0 bg-cover bg-center transition-transform duration-700 ${backgroundClassName}`}

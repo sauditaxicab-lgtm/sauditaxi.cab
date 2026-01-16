@@ -13,7 +13,7 @@ export function IntroductionSection() {
             <div className="absolute top-0 right-0 w-1/3 h-full bg-luxury-gold/5 blur-3xl rounded-full -mr-20 -mt-20 z-0"></div>
             <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-white/50 rounded-tr-[10rem] z-0"></div>
 
-            <div className="container max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div className="container max-w-7xl mx-auto px-6 md:px-12 relative z-10 space-y-8 md:space-y-0">
                 <div className="flex flex-col lg:flex-row gap-12 xl:gap-20 items-stretch">
 
                     {/* Content Column - Left on Large Screens for better F-pattern flow */}
@@ -34,10 +34,10 @@ export function IntroductionSection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
-                                className="font-serif font-bold text-black leading-[1.05] tracking-tight"
+                                className="font-serif font-bold text-black leading-[1.05] tracking-tight text-3xl md:text-5xl lg:text-6xl"
                             >
                                 Your Sacred Journey, <br />
-                                <span className="text-luxury-gold italic">Pure & Professional.</span>
+                                <span className="text-luxury-gold italic">Pure and Professional.</span>
                             </motion.h2>
 
                             <motion.div

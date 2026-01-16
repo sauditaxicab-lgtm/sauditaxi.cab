@@ -66,8 +66,8 @@ const defaultFleet: FleetItem[] = [
     {
         name: "Toyota Coaster",
         slug: "toyota-coaster-30-seater-taxi",
-        description: "Large capacity 30-seater coach for big groups and pilgrim transfers.",
-        passengers: "30",
+        description: "Large capacity 17-seater coach for big groups and pilgrim transfers.",
+        passengers: "17",
         luggage: 15,
         bags: 10,
         image: "/coaster/coaster-main.jpg"

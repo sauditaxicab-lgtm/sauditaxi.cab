@@ -89,16 +89,18 @@ export function FAQSection({ items, title = "Saudi Taxi FAQ", className = "bg-lu
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                 className="flex items-center justify-between w-full p-6 text-left"
                             >
-                                <span className={`text-lg transition-colors ${openIndex === index
+                                <span className={`text-base md:text-lg transition-colors pr-4 leading-snug ${openIndex === index
                                     ? "text-luxury-gold"
                                     : (darkContent ? "text-black" : "text-white")
                                     }`}>
                                     {faq.question}
                                 </span>
-                                {openIndex === index
-                                    ? <Minus className="text-luxury-gold" />
-                                    : <Plus className={darkContent ? "text-black/50" : "text-white/50"} />
-                                }
+                                <div className="shrink-0">
+                                    {openIndex === index
+                                        ? <Minus className="text-luxury-gold shrink-0 w-5 h-5" />
+                                        : <Plus className={`${darkContent ? "text-black/50" : "text-white/50"} shrink-0 w-5 h-5`} />
+                                    }
+                                </div>
                             </button>
                             <AnimatePresence>
                                 {openIndex === index && (

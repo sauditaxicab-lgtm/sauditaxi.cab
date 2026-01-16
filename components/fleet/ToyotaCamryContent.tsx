@@ -58,7 +58,7 @@ export function ToyotaCamryContent() {
                                     <span className="text-[11px] font-black uppercase tracking-[0.2em] text-luxury-gold/90">Premium Verified Fleet</span>
                                 </div>
 
-                                <h1 className="mb-6 md:mb-8 leading-[0.95] text-black">
+                                <h1 className="mb-6 md:mb-8 leading-[0.95] text-black text-4xl md:text-6xl lg:text-7xl font-serif font-bold">
                                     Toyota <span className="text-luxury-gold italic">Camry</span>
                                 </h1>
 
@@ -157,7 +157,7 @@ export function ToyotaCamryContent() {
                                 </div>
 
                                 {/* Tactile Interactive Thumbnails */}
-                                <div className="absolute -bottom-12 left-0 right-0 z-20 flex justify-center gap-4 px-6 md:px-0">
+                                <div className="mt-8 lg:absolute lg:-bottom-12 lg:mt-0 left-0 right-0 z-20 flex justify-center gap-4 px-6 md:px-0">
                                     {camryGallery.map((img, i) => (
                                         <button
                                             key={i}

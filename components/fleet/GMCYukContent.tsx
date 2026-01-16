@@ -44,7 +44,7 @@ export function GMCYukonContent() {
                     <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
                         <div className="lg:w-1/2 z-10 text-center lg:text-left order-2 lg:order-1">
                             <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-[10px] mb-4 block">VIP Premium SUV</span>
-                            <h1 className="mb-6 leading-tight">
+                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">
                                 GMC Yukon XL <br />
                                 <span className="text-luxury-gold italic">7-Seater VIP Taxi</span>
                             </h1>

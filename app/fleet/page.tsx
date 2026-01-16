@@ -12,8 +12,8 @@ export default function FleetPage() {
     return (
         <main className="bg-luxury-black min-h-screen text-white">
             <ServiceHero
-                title="Saudi Arabia Taxi Fares & Fleet"
-                subtitle="Premium Saudi Private Taxi & Umrah Transfers"
+                title="Saudi Arabia Taxi Fares and Fleet"
+                subtitle="Premium Saudi Private Taxi and Umrah Transfers"
                 description="The most transparent Saudi Arabia taxi fares for your pilgrimage. Book a premium Saudi private taxi near you in Jeddah, Makkah, or Madinah with 24/7 online booking."
                 backgroundImage="/fleet/fleet_hero_premium.png"
             />
@@ -90,7 +90,7 @@ export default function FleetPage() {
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
                         <span className="text-luxury-gold uppercase tracking-widest font-bold text-xs block mb-4">Capacity Guide</span>
-                        <h2 className="text-3xl md:text-5xl font-serif text-black mb-6">Vehicle Capacity & <span className="text-luxury-gold">Luggage Guide</span></h2>
+                        <h2 className="text-3xl md:text-5xl font-serif text-black mb-6">Vehicle Capacity and <span className="text-luxury-gold">Luggage Guide</span></h2>
                         <p className="text-zinc-600 max-w-2xl mx-auto">
                             Choosing the right vehicle ensures a comfortable journey. Use our guide below to find the perfect match for your group and luggage requirements.
                         </p>
@@ -138,7 +138,7 @@ export default function FleetPage() {
                                 </tr>
                                 <tr>
                                     <td className="py-6 px-6 font-bold">Toyota Coaster</td>
-                                    <td className="py-6 px-6 text-center">23 Pax</td>
+                                    <td className="py-6 px-6 text-center">17 Pax</td>
                                     <td className="py-6 px-6 text-center">15</td>
                                     <td className="py-6 px-6 text-center">10</td>
                                     <td className="py-6 px-6 text-right text-zinc-500">Large Pilgrim Groups</td>
@@ -150,11 +150,11 @@ export default function FleetPage() {
             </section>
 
             {/* Safety & Excellence Section */}
-            <section className="py-24 bg-zinc-900 border-t border-white/5">
+            <section className="py-12 md:py-24 bg-zinc-900 border-t border-white/5">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row items-center gap-16">
                         <div className="lg:w-1/2">
-                            <h2 className="text-3xl md:text-5xl font-serif text-white mb-8">Our Commitment to <br /><span className="text-luxury-gold">Safety & Excellence</span></h2>
+                            <h2 className="text-3xl md:text-5xl font-serif text-white mb-8">Our Commitment to <br /><span className="text-luxury-gold">Safety and Excellence</span></h2>
                             <p className="text-white/70 text-lg leading-relaxed mb-8">
                                 At Saudi Taxi, we believe that the quality of our vehicles is a direct reflection of our commitment to your spiritual journey. Every car in our fleet undergoes rigorous safety checks and regular maintenance to ensure absolute reliability.
                             </p>
@@ -188,7 +188,7 @@ export default function FleetPage() {
             {/* Fleet FAQ Section */}
             <FAQSection
                 title="Saudi Taxi Fleet FAQ"
-                className="bg-zinc-50"
+                className="bg-white"
                 darkContent={true}
                 items={[
                     { question: "How can I book a Saudi Taxi near me?", answer: "You can book a premium Saudi Taxi near you instantly through our website or WhatsApp. We provide 24/7 coverage across Jeddah, Makkah, and Madinah." },

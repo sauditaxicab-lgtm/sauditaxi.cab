@@ -13,13 +13,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Logo } from "@/components/ui/Logo";
 import { BUSINESS_CONFIG, contactHelpers } from "@/lib/constants";
 
-const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Fleet", href: "/fleet" },
-    { name: "Services", href: "/services", hasDropdown: true },
-    { name: "Blog", href: "/blog" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+const fleetList = [
+    { name: "Toyota Camry", href: "/fleet/toyota-camry-4-seater-taxi" },
+    { name: "Hyundai Staria", href: "/fleet/hyundai-staria-7-seater-taxi" },
+    { name: "Hyundai H1 Starex", href: "/fleet/hyundai-h1-starex-7-seater-taxi" },
+    { name: "GMC Yukon XL", href: "/fleet/gmc-yukon-xl-7-seater-taxi" },
+    { name: "Toyota HiAce", href: "/fleet/toyota-hiace-11-seater-taxi" },
+    { name: "Toyota Coaster", href: "/fleet/toyota-coaster-30-seater-taxi" }
 ];
 
 const servicesList = [
@@ -32,6 +32,15 @@ const servicesList = [
     { name: "VIP Transport", href: "/services/vip-transport" },
 ];
 
+const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Fleet", href: "/fleet", dropdownItems: fleetList },
+    { name: "Services", href: "/services", dropdownItems: servicesList },
+    { name: "Blog", href: "/blog" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
+];
+
 export function Navbar() {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
@@ -39,8 +48,8 @@ export function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
 
-    // Mobile Dropdown State
-    const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+    // Mobile Dropdown State - now tracks name of open menu
+    const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
 
     useEffect(() => {
         setMounted(true);
@@ -93,7 +102,7 @@ export function Navbar() {
                 <div className="hidden md:flex items-center space-x-1">
                     <nav className="flex items-center space-x-1">
                         {navLinks.map((link) => (
-                            link.hasDropdown ? (
+                            link.dropdownItems ? (
                                 <div key={link.name} className="relative group px-1">
                                     <Link
                                         href={link.href}
@@ -110,16 +119,16 @@ export function Navbar() {
                                     <div className="absolute top-[calc(100%+0.5rem)] left-1/2 -translate-x-1/2 w-64 bg-luxury-black/98 backdrop-blur-2xl border border-white/10 rounded-sm shadow-[0_20px_50px_rgba(0,0,0,0.5)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 py-2">
                                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1 w-2 h-2 bg-luxury-black border-t border-l border-white/10 rotate-45"></div>
                                         <div className="flex flex-col">
-                                            {servicesList.map((service) => (
+                                            {link.dropdownItems.map((item: { name: string; href: string }) => (
                                                 <Link
-                                                    key={service.name}
-                                                    href={service.href}
+                                                    key={item.name}
+                                                    href={item.href}
                                                     className={cn(
                                                         "px-6 py-3 text-sm font-light transition-all border-b border-white/5 last:border-0 hover:bg-luxury-gold/10 hover:pl-8",
-                                                        pathname === service.href ? "text-luxury-gold" : "text-white/70 hover:text-luxury-gold"
+                                                        pathname === item.href ? "text-luxury-gold" : "text-white/70 hover:text-luxury-gold"
                                                     )}
                                                 >
-                                                    {service.name}
+                                                    {item.name}
                                                 </Link>
                                             ))}
                                         </div>
@@ -196,40 +205,40 @@ export function Navbar() {
                                     <div className="flex-1 overflow-y-auto py-6 px-6">
                                         <nav className="flex flex-col space-y-1">
                                             {navLinks.map((link) => (
-                                                link.hasDropdown ? (
+                                                link.dropdownItems ? (
                                                     <div key={link.name} className="flex flex-col py-2 border-b border-white/5">
                                                         <button
-                                                            onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                                                            onClick={() => setOpenMobileDropdown(openMobileDropdown === link.name ? null : link.name)}
                                                             className="flex items-center justify-between text-lg font-serif text-white py-3 group"
                                                         >
                                                             <span className={pathname.startsWith(link.href) ? "text-luxury-gold" : ""}>{link.name}</span>
                                                             <ChevronDown
                                                                 className={cn(
                                                                     "w-4 h-4 transition-transform duration-300",
-                                                                    mobileServicesOpen ? "rotate-180 text-luxury-gold" : "text-white/30"
+                                                                    openMobileDropdown === link.name ? "rotate-180 text-luxury-gold" : "text-white/30"
                                                                 )}
                                                             />
                                                         </button>
 
                                                         <AnimatePresence>
-                                                            {mobileServicesOpen && (
+                                                            {openMobileDropdown === link.name && (
                                                                 <motion.div
                                                                     initial={{ opacity: 0, height: 0 }}
                                                                     animate={{ opacity: 1, height: "auto" }}
                                                                     exit={{ opacity: 0, height: 0 }}
                                                                     className="overflow-hidden flex flex-col ml-4 border-l border-luxury-gold/20 mt-1 mb-2"
                                                                 >
-                                                                    {servicesList.map(service => (
+                                                                    {link.dropdownItems.map((item: { name: string; href: string }) => (
                                                                         <Link
-                                                                            key={service.name}
-                                                                            href={service.href}
+                                                                            key={item.name}
+                                                                            href={item.href}
                                                                             onClick={() => setMobileMenuOpen(false)}
                                                                             className={cn(
                                                                                 "py-3 pl-4 text-sm text-white/60 hover:text-luxury-gold transition-colors",
-                                                                                pathname === service.href ? "text-luxury-gold font-medium" : ""
+                                                                                pathname === item.href ? "text-luxury-gold font-medium" : ""
                                                                             )}
                                                                         >
-                                                                            {service.name}
+                                                                            {item.name}
                                                                         </Link>
                                                                     ))}
                                                                 </motion.div>

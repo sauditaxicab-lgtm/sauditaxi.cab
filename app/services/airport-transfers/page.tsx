@@ -54,32 +54,7 @@ export default function AirportTransfersPage() {
                         Experience the ultimate standard in pilgrimage travel. Our <strong>Jeddah to Makkah taxi</strong> service is designed for those who seek luxury, punctuality, and the best <strong>Jeddah to Mecca taxi fare</strong>. Whether you're arriving at JED Airport for Umrah or business, we provide a <strong>private taxi from Jeddah to Makkah</strong> that guarantees spiritual peace and physical comfort.
                     </p>
 
-                    {/* Commercial Intent Pricing Table */}
-                    <div className="max-w-4xl mx-auto my-12 bg-luxury-black rounded-sm shadow-2xl overflow-hidden border border-luxury-gold/30">
-                        <div className="p-6 bg-gold-gradient text-black font-bold text-center uppercase tracking-widest text-sm">
-                            2025 Commercial Rates: Jeddah Airport to Makkah
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
-                            <div className="p-8 flex flex-col items-center">
-                                <span className="text-luxury-gold text-xs font-bold uppercase mb-2">Standard Sedan</span>
-                                <span className="text-white text-3xl font-serif mb-2">SAR 200</span>
-                                <span className="text-white/50 text-[10px] uppercase">Best for 3 Pax</span>
-                            </div>
-                            <div className="p-8 flex flex-col items-center bg-white/5">
-                                <span className="text-luxury-gold text-xs font-bold uppercase mb-2">Luxury SUV (GMC)</span>
-                                <span className="text-white text-3xl font-serif mb-2">SAR 450</span>
-                                <span className="text-white/50 text-[10px] uppercase">Best for Families</span>
-                            </div>
-                            <div className="p-8 flex flex-col items-center">
-                                <span className="text-luxury-gold text-xs font-bold uppercase mb-2">Premium Van (Staria)</span>
-                                <span className="text-white text-3xl font-serif mb-2">SAR 400</span>
-                                <span className="text-white/50 text-[10px] uppercase">Group of 7 Pax</span>
-                            </div>
-                        </div>
-                        <div className="p-4 bg-zinc-900/50 text-[10px] text-white/40 italic text-center border-t border-white/5">
-                            *Prices are fixed for 2025. Inclusive of all taxes, tolls, and 60 mins waiting time.
-                        </div>
-                    </div>
+
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
