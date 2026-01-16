@@ -3,15 +3,20 @@
 import { BookingWidget } from "./BookingWidget";
 import { motion } from "framer-motion";
 import { ShieldCheck, Clock, UserCheck, Plane } from "lucide-react";
+import Image from "next/image";
 
 export function HeroSection() {
     return (
         <section className="relative min-h-[90dvh] lg:min-h-[85vh] flex flex-col justify-center bg-luxury-black overflow-hidden">
             {/* Background Image Layer */}
-            <div
-                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat scale-105 blur-[2px]"
-                style={{ backgroundImage: "url('/hero_premium_bg.png')" }}
-            >
+            <div className="absolute inset-0 z-0 scale-105 blur-[2px]">
+                <Image
+                    src="/hero_premium_bg.png"
+                    alt="Luxury Taxi Background"
+                    fill
+                    className="object-cover object-center"
+                    priority
+                />
                 {/* Darker Primary Overlay for Text Contrast */}
                 <div className="absolute inset-0 bg-black/65"></div>
 

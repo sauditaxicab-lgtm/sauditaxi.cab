@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const vehicles = {
     camry: {
@@ -100,15 +101,22 @@ export function VehicleFleet() {
                             transition={{ duration: 0.5 }}
                             className="flex flex-col md:flex-row items-center gap-12"
                         >
-                            <div className="md:w-3/5">
-                                <motion.img
-                                    src={vehicles[activeTab].image}
-                                    alt={vehicles[activeTab].title}
-                                    className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(197,160,89,0.15)] rounded-lg"
+                            <div className="md:w-3/5 relative min-h-[300px] md:min-h-[400px]">
+                                <motion.div
                                     initial={{ scale: 0.9 }}
                                     animate={{ scale: 1 }}
                                     transition={{ duration: 0.8 }}
-                                />
+                                    className="relative w-full h-full"
+                                >
+                                    <Image
+                                        src={vehicles[activeTab].image}
+                                        alt={vehicles[activeTab].title}
+                                        fill
+                                        className="object-contain drop-shadow-[0_20px_50px_rgba(197,160,89,0.15)] rounded-lg"
+                                        sizes="(max-width: 768px) 100vw, 60vw"
+                                        priority
+                                    />
+                                </motion.div>
                             </div>
 
                             <div className="md:w-2/5 text-center md:text-left">

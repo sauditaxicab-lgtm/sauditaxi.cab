@@ -3,16 +3,22 @@
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function InformationSection() {
     return (
         <section className="py-16 md:py-28 px-4 md:px-16 relative overflow-hidden bg-luxury-black">
             {/* Cinematic Background Layer */}
             <div className="absolute inset-0 z-0">
-                <div
-                    className="absolute inset-0 bg-cover bg-center bg-fixed opacity-10 grayscale-[0.3]"
-                    style={{ backgroundImage: "url('/city_night_luxury_bg.png')" }}
-                ></div>
+                <div className="absolute inset-0 grayscale-[0.3]">
+                    <Image
+                        src="/city_night_luxury_bg.png"
+                        alt="City Night Background"
+                        fill
+                        className="object-cover opacity-10"
+                        priority={false}
+                    />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-r from-luxury-black via-luxury-black/95 to-transparent"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-luxury-black via-transparent to-luxury-black/60"></div>
             </div>
@@ -76,10 +82,12 @@ export function InformationSection() {
                             <div className="absolute -inset-4 border border-luxury-gold/20 rounded-[3rem] -rotate-3 transition-transform duration-1000 group-hover:rotate-0"></div>
 
                             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] border border-white/5 aspect-[4/5]">
-                                <img
+                                <Image
                                     src="/about/makkah_skyline_premium.png"
                                     alt="Makkah Premium Skyline"
-                                    className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[4s]"
+                                    fill
+                                    className="object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[4s]"
+                                    sizes="(max-width: 768px) 100vw, 40vw"
                                 />
                                 {/* Bottom Content Overlay */}
                                 <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/40 to-transparent">

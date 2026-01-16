@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ServiceHeroProps {
     title: string;
@@ -18,10 +19,14 @@ export function ServiceHero({ title, subtitle, description, backgroundImage, onB
     return (
         <section className="relative min-h-[85vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12">
             {/* Background Image */}
-            <div
-                className={`absolute inset-0 bg-cover bg-center transition-transform duration-700 ${backgroundClassName}`}
-                style={{ backgroundImage: `url('${backgroundImage}')` }}
-            >
+            <div className={`absolute inset-0 transition-transform duration-700 ${backgroundClassName}`}>
+                <Image
+                    src={backgroundImage}
+                    alt={title}
+                    fill
+                    className="object-cover object-center"
+                    priority
+                />
                 {overlay && (
                     <>
                         <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
