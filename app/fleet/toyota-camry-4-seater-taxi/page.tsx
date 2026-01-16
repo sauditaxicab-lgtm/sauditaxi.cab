@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Toyota Camry Taxi | Premium 4-Seater Umrah Transport",
         description: "Reliable & comfortable Toyota Camry taxi for your Umrah journey. Perfect for small families and couples. Book your Jeddah to Makkah transfer now.",
-        images: ["/Camry/Camry main image.jpeg"]
+        images: ["/camry/Camry main image.jpeg"]
     }
 };
 

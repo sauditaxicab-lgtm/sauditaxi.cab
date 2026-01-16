@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Toyota HiAce 11-Seater Group Taxi | Saudi Taxi",
         description: "The best choice for group travel. Toyota HiAce 11-seater with high roof and ample luggage space. Book your group transfer today.",
-        images: ["/Hiace/Main.jpeg"]
+        images: ["/hiace/Main.jpeg"]
     }
 };
 

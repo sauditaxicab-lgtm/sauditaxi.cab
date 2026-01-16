@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Toyota Coaster 30-Seater Bus | Saudi Taxi Service",
         description: "The ideal choice for large group transport. Toyota Coaster 30-seater bus with premium comfort. Book your group transfer today.",
-        images: ["/Coaster/Coaster main.jpg"]
+        images: ["/coaster/Coaster main.jpg"]
     }
 };
 
