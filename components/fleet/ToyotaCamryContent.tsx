@@ -20,10 +20,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 
 const camryGallery = [
-    { src: "/camry/Camry main image.jpeg", alt: "Toyota Camry Black Edition Premium Side View" },
+    { src: "/camry/camry-main.jpeg", alt: "Toyota Camry Black Edition Premium Side View" },
     { src: "/camry/camry-front.jpg", alt: "Toyota Camry Modern Front Facade" },
-    { src: "/camry/WhatsApp Image 2026-01-08 at 1.50.58 PM (1).jpeg", alt: "Toyota Camry Luxury Interior" },
-    { src: "/camry/WhatsApp Image 2026-01-08 at 1.50.58 PM (2).jpeg", alt: "Toyota Camry Spacious Rear Seating" }
+    { src: "/camry/camry-interior-1.jpeg", alt: "Toyota Camry Luxury Interior" },
+    { src: "/camry/camry-interior-2.jpeg", alt: "Toyota Camry Spacious Rear Seating" }
 ];
 
 export function ToyotaCamryContent() {

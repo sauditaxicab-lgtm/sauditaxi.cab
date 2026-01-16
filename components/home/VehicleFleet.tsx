@@ -10,37 +10,37 @@ const vehicles = {
         title: "Affordable Taxi Services",
         models: "Toyota Camry",
         description: "The preferred choice for reliable Saudi Taxi transfers. Perfect for solo travelers or small families performing Umrah between Jeddah, Makkah, and Madinah.",
-        image: "/camry/Camry main image.jpeg"
+        image: "/camry/camry-main.jpeg"
     },
     staria: {
         title: "Staria Taxi – Luxury Ride",
         models: "Hyundai Staria",
         description: "The ultimate luxury MPV for families. Experience premium comfort in our Saudi Taxi Staria during your spiritual journey in Makkah and Madinah.",
-        image: "/staria/staria main.jpeg"
+        image: "/staria/staria-main.jpeg"
     },
     starex: {
         title: "Makkah Madinah 7-Seater Taxi",
         models: "Hyundai H1 Starex",
         description: "Spacious Saudi Taxi van ideal for larger families. Plenty of room for Umrah luggage and a comfortable ride to your Makkah hotel.",
-        image: "/starax/Strax main.jpg"
+        image: "/starax/starex-main.jpg"
     },
     gmc: {
         title: "VIP Transport – Special Offers",
         models: "GMC Yukon XL | Chevrolet Suburban",
         description: "Top-tier Saudi Taxi luxury for VIP guests. The most comfortable way to travel from Jeddah Airport to the Holy Cities with extra luggage capacity.",
-        image: "/gmc/Gmc main.jpg"
+        image: "/gmc/gmc-main.jpg"
     },
     hiace: {
         title: "Family Taxi – 10 Seater",
         models: "Toyota HiAce",
         description: "Reliable Saudi Taxi transport for medium groups. Perfect for Ziyarat tours in Madinah and airport transfers for large families.",
-        image: "/hiace/Main.jpeg"
+        image: "/hiace/hiace-main.jpeg"
     },
     coaster: {
         title: "Hiace Taxi Group Rides",
         models: "Toyota Coaster",
         description: "Specialized Saudi Taxi minibus for large pilgrim groups. Safe and comfortable group transfers across Makkah, Madinah, and Jeddah.",
-        image: "/coaster/Coaster main.jpg"
+        image: "/coaster/coaster-main.jpg"
     }
 };
 

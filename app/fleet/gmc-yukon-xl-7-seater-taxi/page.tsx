@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "GMC Yukon XL 7-Seater VIP Taxi | Saudi Taxi Service",
         description: "The ultimate VIP transport for Umrah. GMC Yukon XL 7-seater with massive luggage capacity. Book your premium Jeddah to Makkah transfer.",
-        images: ["/gmc/Gmc main.jpg"]
+        images: ["/gmc/gmc-main.jpg"]
     }
 };
 

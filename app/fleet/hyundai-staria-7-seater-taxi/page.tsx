@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Hyundai Staria 7-Seater | Luxury Family Taxi Saudi Arabia",
         description: "The ultimate family transport for Umrah. Hyundai Staria 7-seater with ample luggage space. Book your private Jeddah to Makkah transfer.",
-        images: ["/staria/staria main.jpeg"]
+        images: ["/staria/staria-main.jpeg"]
     }
 };
 

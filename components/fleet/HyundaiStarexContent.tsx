@@ -17,7 +17,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 const starexGallery = [
-    { src: "/starax/Strax main.jpg", alt: "Hyundai H1 Starex Family Van Exterior" }
+    { src: "/starax/starex-main.jpg", alt: "Hyundai H1 Starex Family Van Exterior" }
 ];
 
 export function HyundaiStarexContent() {

@@ -17,12 +17,12 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 const yukonGallery = [
-    { src: "/gmc/Gmc main.jpg", alt: "GMC Yukon XL VIP Exterior" },
-    { src: "/gmc/WhatsApp Image 2026-01-08 at 1.50.49 PM.jpeg", alt: "GMC Yukon Luxurious Interior Front" },
-    { src: "/gmc/WhatsApp Image 2026-01-08 at 1.50.50 PM (1).jpeg", alt: "GMC Yukon Spacious Rear Seating" },
-    { src: "/gmc/WhatsApp Image 2026-01-08 at 1.50.50 PM.jpeg", alt: "GMC Yukon Premium Leather Seats" },
-    { src: "/gmc/WhatsApp Image 2026-01-08 at 1.50.51 PM (1).jpeg", alt: "GMC Yukon Executive Cabin" },
-    { src: "/gmc/WhatsApp Image 2026-01-08 at 1.50.51 PM.jpeg", alt: "GMC Yukon XL Side Profile" }
+    { src: "/gmc/gmc-main.jpg", alt: "GMC Yukon XL VIP Exterior" },
+    { src: "/gmc/gmc-interior-1.jpeg", alt: "GMC Yukon Luxurious Interior Front" },
+    { src: "/gmc/gmc-interior-2.jpeg", alt: "GMC Yukon Spacious Rear Seating" },
+    { src: "/gmc/gmc-interior-3.jpeg", alt: "GMC Yukon Premium Leather Seats" },
+    { src: "/gmc/gmc-interior-4.jpeg", alt: "GMC Yukon Executive Cabin" },
+    { src: "/gmc/gmc-interior-5.jpeg", alt: "GMC Yukon XL Side Profile" }
 ];
 
 export function GMCYukonContent() {

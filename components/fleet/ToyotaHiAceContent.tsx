@@ -20,8 +20,8 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 const hiaceGallery = [
-    { src: "/hiace/Main.jpeg", alt: "Toyota HiAce 11-Seater Exterior View" },
-    { src: "/hiace/Interior.jpeg", alt: "Toyota HiAce Interior Cabin View" }
+    { src: "/hiace/hiace-main.jpeg", alt: "Toyota HiAce 11-Seater Exterior View" },
+    { src: "/hiace/hiace-interior.jpeg", alt: "Toyota HiAce Interior Cabin View" }
 ];
 
 export function ToyotaHiaceContent() {
@@ -182,7 +182,7 @@ export function ToyotaHiaceContent() {
                                 <video
                                     controls
                                     className="w-full h-full object-cover"
-                                    poster="/hiace/Main.jpeg"
+                                    poster="/hiace/hiace-main.jpeg"
                                 >
                                     <source src="/hiace/WhatsApp Video 2026-01-12 at 6.03.34 PM.mp4" type="video/mp4" />
                                     Your browser does not support the video tag.

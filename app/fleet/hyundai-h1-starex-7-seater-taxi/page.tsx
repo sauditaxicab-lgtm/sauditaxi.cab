@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Hyundai H1 Starex 7-Seater Family Taxi | Saudi Taxi",
         description: "The reliable choice for families. Hyundai H1 Starex 7-seater with ample luggage space. Book your family transfer today.",
-        images: ["/starax/Strax main.jpg"]
+        images: ["/starax/starex-main.jpg"]
     }
 };
 

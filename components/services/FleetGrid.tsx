@@ -25,7 +25,7 @@ const defaultFleet: FleetItem[] = [
         passengers: "4",
         luggage: 2,
         bags: 1,
-        image: "/camry/Camry main image.jpeg"
+        image: "/camry/camry-main.jpeg"
     },
     {
         name: "Hyundai Staria",
@@ -34,7 +34,7 @@ const defaultFleet: FleetItem[] = [
         passengers: "7",
         luggage: 5,
         bags: 3,
-        image: "/staria/staria main.jpeg"
+        image: "/staria/staria-main.jpeg"
     },
     {
         name: "Hyundai H1 Starex",
@@ -43,7 +43,7 @@ const defaultFleet: FleetItem[] = [
         passengers: "7",
         luggage: 4,
         bags: 2,
-        image: "/starax/Strax main.jpg"
+        image: "/starax/starex-main.jpg"
     },
     {
         name: "GMC Yukon XL",
@@ -52,7 +52,7 @@ const defaultFleet: FleetItem[] = [
         passengers: "7",
         luggage: 6,
         bags: 4,
-        image: "/gmc/Gmc main.jpg"
+        image: "/gmc/gmc-main.jpg"
     },
     {
         name: "Toyota HiAce",
@@ -61,7 +61,7 @@ const defaultFleet: FleetItem[] = [
         passengers: "11",
         luggage: 8,
         bags: 5,
-        image: "/hiace/Main.jpeg"
+        image: "/hiace/hiace-main.jpeg"
     },
     {
         name: "Toyota Coaster",
@@ -70,7 +70,7 @@ const defaultFleet: FleetItem[] = [
         passengers: "30",
         luggage: 15,
         bags: 10,
-        image: "/coaster/Coaster main.jpg"
+        image: "/coaster/coaster-main.jpg"
     }
 ];
 

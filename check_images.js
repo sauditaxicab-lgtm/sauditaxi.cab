@@ -2,9 +2,9 @@ const fs = require('fs');
 const sizeOf = require('image-size');
 
 const files = [
-  'public/gmc/Gmc main.jpg',
-  'public/camry/Camry main image.jpeg',
-  'public/staria/staria main.jpeg'
+  'public/gmc/gmc-main.jpg',
+  'public/camry/camry-main.jpeg',
+  'public/staria/staria-main.jpeg'
 ];
 
 files.forEach(file => {

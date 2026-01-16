@@ -16,19 +16,19 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 const stariaGallery = [
-    { src: "/staria/staria main.jpeg", alt: "Hyundai Staria Black Edition Premium Side View" },
-    { src: "/staria/staria back.jpeg", alt: "Hyundai Staria Black Edition Rear Profile" },
-    { src: "/staria/staraia front.jpeg", alt: "Hyundai Staria Black Edition Front View" },
-    { src: "/staria/stria front.jpeg", alt: "Hyundai Staria Luxury Front Angle" },
+    { src: "/staria/staria-main.jpeg", alt: "Hyundai Staria Black Edition Premium Side View" },
+    { src: "/staria/staria-back.jpeg", alt: "Hyundai Staria Black Edition Rear Profile" },
+    { src: "/staria/staria-front-1.jpeg", alt: "Hyundai Staria Black Edition Front View" },
+    { src: "/staria/staria-front-2.jpeg", alt: "Hyundai Staria Luxury Front Angle" },
     { src: "/staria/staria-front.jpg", alt: "Hyundai Staria Modern Front Facade" },
-    { src: "/staria/interior 1.jpeg", alt: "Hyundai Staria Premium Leather Captain Seats" },
-    { src: "/staria/interrior 2.jpeg", alt: "Hyundai Staria Spacious Interior Cabin" },
-    { src: "/staria/interior 3.jpeg", alt: "Hyundai Staria Luxury Passenger Seating" },
-    { src: "/staria/white staria.jpeg", alt: "Hyundai Staria White Edition Side View" },
-    { src: "/staria/white starai 2.jpeg", alt: "Hyundai Staria White Edition Exterior" },
-    { src: "/staria/white straia front 1.jpeg", alt: "Hyundai Staria White Edition Front View" },
-    { src: "/staria/white starai interiro.jpeg", alt: "Hyundai Staria White Edition Interior View" },
-    { src: "/staria/white stria interrior.jpeg", alt: "Hyundai Staria White Edition Cabin Space" }
+    { src: "/staria/staria-interior-1.jpeg", alt: "Hyundai Staria Premium Leather Captain Seats" },
+    { src: "/staria/staria-interior-2.jpeg", alt: "Hyundai Staria Spacious Interior Cabin" },
+    { src: "/staria/staria-interior-3.jpeg", alt: "Hyundai Staria Luxury Passenger Seating" },
+    { src: "/staria/staria-white-side.jpeg", alt: "Hyundai Staria White Edition Side View" },
+    { src: "/staria/staria-white-ext.jpeg", alt: "Hyundai Staria White Edition Exterior" },
+    { src: "/staria/staria-white-front.jpeg", alt: "Hyundai Staria White Edition Front View" },
+    { src: "/staria/staria-white-int-1.jpeg", alt: "Hyundai Staria White Edition Interior View" },
+    { src: "/staria/staria-white-int-2.jpeg", alt: "Hyundai Staria White Edition Cabin Space" }
 ];
 
 const ArrowLeftIcon = ({ size, className }: { size: number, className: string }) => (

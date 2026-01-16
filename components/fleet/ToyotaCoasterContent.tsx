@@ -20,10 +20,10 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 const coasterGallery = [
-    { src: "/coaster/Coaster main.jpg", alt: "Toyota Coaster 30-Seater Bus Exterior" },
-    { src: "/coaster/WhatsApp Image 2026-01-08 at 1.51.00 PM (1).jpeg", alt: "Toyota Coaster Spacious Aisle" },
-    { src: "/coaster/WhatsApp Image 2026-01-08 at 1.51.00 PM (2).jpeg", alt: "Toyota Coaster Passenger Seating" },
-    { src: "/coaster/WhatsApp Image 2026-01-08 at 1.51.00 PM.jpeg", alt: "Toyota Coaster Premium Interior" }
+    { src: "/coaster/coaster-main.jpg", alt: "Toyota Coaster 30-Seater Bus Exterior" },
+    { src: "/coaster/coaster-interior-1.jpeg", alt: "Toyota Coaster Spacious Aisle" },
+    { src: "/coaster/coaster-interior-2.jpeg", alt: "Toyota Coaster Passenger Seating" },
+    { src: "/coaster/coaster-interior-3.jpeg", alt: "Toyota Coaster Premium Interior" }
 ];
 
 export function ToyotaCoasterContent() {
