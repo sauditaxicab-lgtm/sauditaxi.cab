@@ -150,18 +150,7 @@ export function IntroductionSection() {
                                     <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
                                 </div>
 
-                                {/* Floating Status Overlay */}
-                                <div className="absolute bottom-4 left-4 right-4 md:bottom-10 md:left-10 md:right-10 p-4 md:p-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl">
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-luxury-gold shadow-lg">
-                                            <Image src="/about/professional_chauffeur_portrait.png" fill className="object-cover" alt="Driver" />
-                                        </div>
-                                        <div>
-                                            <p className="text-[10px] text-white/70 uppercase tracking-widest font-bold">Licensed Captain</p>
-                                            <p className="text-white font-serif font-bold text-lg">On-Call Service</p>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </motion.div>
 
                             {/* Decorative Accent Pattern */}

@@ -8,39 +8,39 @@ import Image from "next/image";
 
 const vehicles = {
     camry: {
-        title: "Affordable Taxi Services",
+        title: "Jeddah Makkah 4 Seater Taxi",
         models: "Toyota Camry",
-        description: "The preferred choice for reliable Saudi Taxi transfers. Perfect for solo travelers or small families performing Umrah between Jeddah, Makkah, and Madinah.",
+        description: "Affordable 4-seater taxi for Umrah transfers between Jeddah, Makkah, and Madinah. Ideal for solo travelers and couples.",
         image: "/camry/camry-main.jpeg"
     },
     staria: {
-        title: "Staria Taxi – Luxury Ride",
+        title: "Saudi Luxury 7 Seater Taxi",
         models: "Hyundai Staria",
-        description: "The ultimate luxury MPV for families. Experience premium comfort in our Saudi Taxi Staria during your spiritual journey in Makkah and Madinah.",
+        description: "Premium 7-seater luxury ride. Experience top-tier comfort for family Umrah trips across Saudi Arabia.",
         image: "/staria/staria-main.jpeg"
     },
     starex: {
-        title: "Makkah Madinah 7-Seater Taxi",
+        title: "Makkah Madinah 7 Seater Taxi",
         models: "Hyundai H1 Starex",
-        description: "Spacious Saudi Taxi van ideal for larger families. Plenty of room for Umrah luggage and a comfortable ride to your Makkah hotel.",
+        description: "Spacious 7-seater van, perfect for family transfers between Makkah and Madinah hotels with ample luggage space.",
         image: "/starax/starex-main.jpg"
     },
     gmc: {
-        title: "VIP Transport – Special Offers",
-        models: "GMC Yukon XL | Chevrolet Suburban",
-        description: "Top-tier Saudi Taxi luxury for VIP guests. The most comfortable way to travel from Jeddah Airport to the Holy Cities with extra luggage capacity.",
+        title: "VIP 7 Seater GMC Taxi",
+        models: "GMC Yukon XL",
+        description: "Executive 7-seater SUV for VIP guests. The most comfortable way to travel from Jeddah Airport to the Holy Cities.",
         image: "/gmc/gmc-main.jpg"
     },
     hiace: {
-        title: "Family Taxi – 10 Seater",
+        title: "Family Taxi 11 Seater",
         models: "Toyota HiAce",
-        description: "Reliable Saudi Taxi transport for medium groups. Perfect for Ziyarat tours in Madinah and airport transfers for large families.",
+        description: "Reliable 11-seater transport for medium groups. Perfect for Ziyarat tours in Madinah and airport transfers.",
         image: "/hiace/hiace-main.jpeg"
     },
     coaster: {
-        title: "Hiace Taxi Group Rides",
+        title: "Coaster 17 Seater Bus",
         models: "Toyota Coaster",
-        description: "Specialized Saudi Taxi minibus for large pilgrim groups. Safe and comfortable group transfers across Makkah, Madinah, and Jeddah.",
+        description: "Specialized 17-seater minibus for pilgrim groups. Safe and comfortable group transfers across Makkah and Madinah.",
         image: "/coaster/coaster-main.jpg"
     }
 };
@@ -101,7 +101,7 @@ export function VehicleFleet() {
                             transition={{ duration: 0.5 }}
                             className="flex flex-col md:flex-row items-center gap-12"
                         >
-                            <div className="md:w-3/5 relative min-h-[300px] md:min-h-[400px]">
+                            <div className="w-full md:w-3/5 relative h-[300px] md:h-[400px]">
                                 <motion.div
                                     initial={{ scale: 0.9 }}
                                     animate={{ scale: 1 }}
@@ -126,19 +126,30 @@ export function VehicleFleet() {
                                     {vehicles[activeTab].description}
                                 </p>
 
-                                <Link href={`/fleet/${activeTab === 'camry' ? 'toyota-camry-4-seater-taxi' :
-                                    activeTab === 'staria' ? 'hyundai-staria-7-seater-taxi' :
-                                        activeTab === 'starex' ? 'hyundai-h1-starex-7-seater-taxi' :
-                                            activeTab === 'gmc' ? 'gmc-yukon-xl-7-seater-taxi' :
-                                                activeTab === 'hiace' ? 'toyota-hiace-11-seater-taxi' :
-                                                    'toyota-coaster-30-seater-taxi'}`}>
-                                    <Button
-                                        variant="gold"
-                                        className="bg-gold-gradient text-black px-8 py-6 text-sm font-bold tracking-widest hover:scale-105 transition-transform"
-                                    >
-                                        VIEW DETAILS & BOOK
-                                    </Button>
-                                </Link>
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                                    <Link href={`/fleet/${activeTab === 'camry' ? 'toyota-camry-4-seater-taxi' :
+                                        activeTab === 'staria' ? 'hyundai-staria-7-seater-taxi' :
+                                            activeTab === 'starex' ? 'hyundai-h1-starex-7-seater-taxi' :
+                                                activeTab === 'gmc' ? 'gmc-yukon-xl-7-seater-taxi' :
+                                                    activeTab === 'hiace' ? 'toyota-hiace-11-seater-taxi' :
+                                                        'toyota-coaster-30-seater-taxi'}`} className="flex-1 sm:flex-none">
+                                        <Button
+                                            variant="outline"
+                                            className="w-full sm:w-auto border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-black px-6 py-6 text-xs font-bold tracking-widest transition-all"
+                                        >
+                                            VIEW DETAILS
+                                        </Button>
+                                    </Link>
+
+                                    <Link href="/booking" className="flex-1 sm:flex-none">
+                                        <Button
+                                            variant="gold"
+                                            className="w-full sm:w-auto bg-gold-gradient text-black px-8 py-6 text-xs font-bold tracking-widest hover:scale-105 transition-transform"
+                                        >
+                                            BOOK NOW
+                                        </Button>
+                                    </Link>
+                                </div>
                             </div>
                         </motion.div>
                     </AnimatePresence>
