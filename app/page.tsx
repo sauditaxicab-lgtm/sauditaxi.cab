@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/home/HeroSection";
 import { IntroductionSection } from "@/components/home/IntroductionSection";
+import { TwentyFourSeven } from "@/components/home/TwentyFourSeven";
 import { FourPillars } from "@/components/home/FourPillars";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { VehicleFleet } from "@/components/home/VehicleFleet";
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <IntroductionSection />
+      <TwentyFourSeven />
       <FourPillars />
       <ServicesGrid />
       <VehicleFleet />

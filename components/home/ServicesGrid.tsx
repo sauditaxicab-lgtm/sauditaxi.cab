@@ -10,42 +10,42 @@ import { useState, useRef, useEffect } from "react";
 const services = [
     {
         id: "airport",
-        title: "Airport Transfers",
-        description: "Reliable private pickups and drop-offs at Jeddah (KAIA) and Madinah (PRMA) airports with professional meet & greet.",
+        title: "Jeddah Airport to Makkah Ride",
+        description: "Reliable airport taxi pickup. Taxi Book Today for private transfers from Jeddah (KAIA) and Madinah (PRMA) with meet & greet.",
         image: "/services/airport_transfer_luxury.png",
         link: "/services/airport-transfers"
     },
     {
         id: "umrah",
-        title: "Umrah Transfers",
-        description: "Comfortable and spiritual journeys between Makkah, Madinah, and Jeddah. Dedicated premium service for pilgrims.",
+        title: "Premium Makkah Taxi",
+        description: "Book Now for comfortable spiritual journeys. Dedicated service for pilgrims needing a taxi with driver – 24/7 available.",
         image: "/services/umrah_makkah.png",
         link: "/services/umrah-transfers"
     },
     {
         id: "intercity",
-        title: "Intercity Travel",
-        description: "Safe and convenient private travel between Jeddah, Makkah, Madinah, and other major cities across the Kingdom.",
+        title: "Makkah Madinah Comfort Ride",
+        description: "Safe intercity travel. Find a reliable taxi near you for trips between Jeddah, Makkah, Madinah, and other major cities.",
         image: "/services/intercity_jeddah_madinah.png",
         link: "/services/intercity-taxi"
     },
     {
         id: "ziyarat",
-        title: "Ziyarat Tours",
-        description: "Guided private tours to holy sites in Makkah and Madinah with knowledgeable drivers in premium comfort.",
+        title: "Luxury Taxi for Ziyarat Tours",
+        description: "Guided private tours to holy sites. Experience premium comfort in Makkah and Madinah with knowledgeable drivers.",
         image: "/services/ziyarat_holy_sites.png",
         link: "/services/ziyarat-tours"
     },
     {
         id: "luxury",
-        title: "VIP Transport",
+        title: "VIP Transport – Special Offers",
         description: "Elite fleet including GMC Yukon XL and luxury sedans for VIP guests requiring maximum privacy and comfort.",
         image: "/services/vip_transport.png",
         link: "/services/vip-transport"
     },
     {
         id: "family",
-        title: "Family Transport",
+        title: "Family Taxi – 10 Seater",
         description: "Spacious vehicles like Hyundai Staria and Toyota HiAce, perfect for families with large luggage and children.",
         image: "/services/family_transfer.png",
         link: "/services/family-travel"
@@ -102,10 +102,10 @@ export function ServicesGrid() {
                         Elite Transport Services
                     </span>
                     <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-6 leading-tight">
-                        Premium Private Transfers In Saudi Arabia
+                        Best Saudi Taxi Service
                     </h2>
                     <p className="text-black leading-relaxed text-lg max-w-2xl mx-auto">
-                        Looking for Executive Airport Transfers? Whether you’re heading to Jeddah airport, performing Umrah, or travelling between holy cities, we provide refined 24/7 service.
+                        Looking for a <strong>Saudi Airport Taxi</strong>? Whether you’re heading to Jeddah airport, performing Umrah, or need a <strong>family taxi in Saudi Arabia</strong>, we provide a refined 24/7 <strong>online taxi service in Saudi Arabia</strong>.
                     </p>
                 </div>
             </div>

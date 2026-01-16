@@ -7,40 +7,40 @@ import { Button } from "@/components/ui/button";
 
 const vehicles = {
     camry: {
-        title: "Saudi Taxi Camry",
+        title: "Affordable Taxi Services",
         models: "Toyota Camry",
         description: "The preferred choice for reliable Saudi Taxi transfers. Perfect for solo travelers or small families performing Umrah between Jeddah, Makkah, and Madinah.",
-        image: "/fleet/toyota-camry.webp"
+        image: "/camry/Camry main image.jpeg"
     },
     staria: {
-        title: "Luxury Umrah MPV",
+        title: "Staria Taxi – Luxury Ride",
         models: "Hyundai Staria",
         description: "The ultimate luxury MPV for families. Experience premium comfort in our Saudi Taxi Staria during your spiritual journey in Makkah and Madinah.",
-        image: "/fleet/hyundai-staria.webp"
+        image: "/staria/staria main.jpeg"
     },
     starex: {
-        title: "Premium Family Van",
+        title: "Makkah Madinah 7-Seater Taxi",
         models: "Hyundai H1 Starex",
         description: "Spacious Saudi Taxi van ideal for larger families. Plenty of room for Umrah luggage and a comfortable ride to your Makkah hotel.",
-        image: "/fleet/hyundai-starex.webp"
+        image: "/starax/Strax main.jpg"
     },
     gmc: {
-        title: "VIP Executive SUV",
+        title: "VIP Transport – Special Offers",
         models: "GMC Yukon XL | Chevrolet Suburban",
         description: "Top-tier Saudi Taxi luxury for VIP guests. The most comfortable way to travel from Jeddah Airport to the Holy Cities with extra luggage capacity.",
-        image: "/fleet/gmc-yukon.webp"
+        image: "/gmc/Gmc main.jpg"
     },
     hiace: {
-        title: "Large Group Van",
+        title: "Family Taxi – 10 Seater",
         models: "Toyota HiAce",
         description: "Reliable Saudi Taxi transport for medium groups. Perfect for Ziyarat tours in Madinah and airport transfers for large families.",
-        image: "/fleet/luxury_minibus_black.png"
+        image: "/hiace/Main.jpeg"
     },
     coaster: {
-        title: "Pilgrim Minibus",
+        title: "Hiace Taxi Group Rides",
         models: "Toyota Coaster",
         description: "Specialized Saudi Taxi minibus for large pilgrim groups. Safe and comfortable group transfers across Makkah, Madinah, and Jeddah.",
-        image: "/fleet/toyota-coaster.webp"
+        image: "/coaster/Coaster main.jpg"
     }
 };
 
@@ -68,11 +68,11 @@ export function VehicleFleet() {
                     <span className="text-luxury-gold uppercase tracking-widest text-xs font-bold block mb-2">
                         Browse By Vehicle Type
                     </span>
-                    <h2 className="text-3xl md:text-4xl font-serif text-white mb-4">
-                        Choose the Ride That Matches Your Journey
+                    <h2 className="text-white mb-4">
+                        Explore Our VIP Saudi Taxi Fleet
                     </h2>
                     <p className="text-white/80 text-lg font-light mb-8 max-w-3xl mx-auto leading-relaxed">
-                        Book our premium chauffeur service for airport transfers, Makkah to Madinah trips, and luxury travel across Saudi Arabia.
+                        Book our premium Saudi Taxi services for airport transfers, Makkah to Madinah trips, and luxury travel across Saudi Arabia.
                     </p>
                     <div className="flex justify-center gap-4 flex-wrap">
                         {(Object.keys(vehicles) as VehicleType[]).map((type) => (
@@ -112,18 +112,23 @@ export function VehicleFleet() {
                             </div>
 
                             <div className="md:w-2/5 text-center md:text-left">
-                                <h3 className="text-3xl font-serif text-luxury-gold mb-2">{vehicles[activeTab].title}</h3>
+                                <h3 className="text-luxury-gold mb-2">{vehicles[activeTab].title}</h3>
                                 <p className="text-white/50 text-sm mb-6 uppercase tracking-wide">{vehicles[activeTab].models}</p>
                                 <p className="text-white/80 text-lg font-light mb-8 leading-relaxed">
                                     {vehicles[activeTab].description}
                                 </p>
 
-                                <Link href={`/booking?vehicle=${encodeURIComponent(vehicles[activeTab].title)}`}>
+                                <Link href={`/fleet/${activeTab === 'camry' ? 'toyota-camry-4-seater-taxi' :
+                                    activeTab === 'staria' ? 'hyundai-staria-7-seater-taxi' :
+                                        activeTab === 'starex' ? 'hyundai-h1-starex-7-seater-taxi' :
+                                            activeTab === 'gmc' ? 'gmc-yukon-xl-7-seater-taxi' :
+                                                activeTab === 'hiace' ? 'toyota-hiace-11-seater-taxi' :
+                                                    'toyota-coaster-30-seater-taxi'}`}>
                                     <Button
                                         variant="gold"
                                         className="bg-gold-gradient text-black px-8 py-6 text-sm font-bold tracking-widest hover:scale-105 transition-transform"
                                     >
-                                        BOOK THIS VEHICLE
+                                        VIEW DETAILS & BOOK
                                     </Button>
                                 </Link>
                             </div>

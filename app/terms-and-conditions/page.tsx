@@ -3,7 +3,7 @@ import { BUSINESS_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
     title: 'Terms and Conditions | Saudi Taxi',
-    description: 'Terms and Conditions for Saudi Taxi - Review our service agreement, booking policies, payment terms, and service standards for taxi services in Saudi Arabia.',
+    description: 'Terms & Conditions for Saudi Taxi. Review our service agreement, booking policies, payment terms & service standards in Saudi Arabia.',
 };
 
 export default function TermsAndConditionsPage() {

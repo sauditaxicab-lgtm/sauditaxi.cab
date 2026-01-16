@@ -1,16 +1,23 @@
 'use server';
 
-import { supabase } from '@/lib/supabase';
 import { normalizePhoneNumber } from '@/utils/phoneNormalization';
-import { detectCityFromLocations, getCityTimezone } from '@/utils/cityDetection';
-import type { BookingFormData, BookingSubmissionResult, ReturnTripStructure } from '@/types/booking';
+import { supabase } from '@/lib/supabase';
+import type { BookingFormData, BookingSubmissionResult } from '@/types/booking';
 import { ZodError } from 'zod';
+import { Resend } from 'resend';
 
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+/**
+ * Submits the booking form.
+ * Supabase integration has been removed as per user request.
+ * Now simply validates and returns success to allow for UI transitions.
+ */
 export async function submitBookingForm(
   formData: BookingFormData
 ): Promise<BookingSubmissionResult> {
   try {
-    console.log('Submitting booking form:', formData);
+    console.log('Booking form submission (No Database):', formData);
 
     // 1. Validate phone
     if (!formData.phone || formData.phone.trim() === '' || formData.phone === '+' || formData.phone.length < 6) {
@@ -21,32 +28,71 @@ export async function submitBookingForm(
     const normalizedPhone = normalizePhoneNumber(formData.phone);
     console.log('Phone normalized:', formData.phone, '→', normalizedPhone);
 
-    // 3. Prepare submission data
-    const submissionData = {
-      ...formData,
-      phone: normalizedPhone,
-    };
-
-    // 4. Submit to Supabase quotes table (all bookings go here)
-    const { error: submitError } = await supabase
-      .from('quotes')
-      .insert(submissionData);
-
-    if (submitError) {
-      console.error('Supabase error:', submitError);
-      return { 
-        success: false, 
-        error: `Failed to submit booking: ${submitError.message}` 
-      };
+    // Helper to extract destination string
+    let destinationStr = '';
+    if (Array.isArray(formData.destinations)) {
+      destinationStr = formData.destinations.join(' -> ');
+    } else if (typeof formData.destinations === 'object' && formData.destinations !== null) {
+      destinationStr = 'Return Trip';
     }
 
-    // 5. Send email notification
-    await sendBookingNotification(formData);
+    // Insert into Supabase
+    const { error: dbError } = await supabase.from('bookings').insert([{
+      pickup_location: formData.pickupLocation,
+      destination: destinationStr,
+      date: formData.date,
+      passengers: formData.passengers.toString(),
+      luggage: formData.luggage || '',
+      vehicle: formData.vehicle || formData.vehicleName || formData.vehicleType || 'Any',
+      phone: normalizedPhone,
+      status: 'pending'
+    }]);
+
+    if (dbError) {
+      console.error('Supabase booking insert error:', dbError);
+    }
+
+    // Send Email via Resend
+    try {
+      const { data, error } = await resend.emails.send({
+        from: 'Saudi Taxi Booking <onboarding@resend.dev>',
+        to: ['sauditaxicab@gmail.com'],
+        subject: `New Booking Request: ${formData.pickupLocation} to ${destinationStr}`,
+        html: `
+          <h1>New Booking Request</h1>
+          <p><strong>Vehicle:</strong> ${formData.vehicle || formData.vehicleName || formData.vehicleType || 'Any'}</p>
+          <p><strong>Pickup:</strong> ${formData.pickupLocation}</p>
+          <p><strong>Destination:</strong> ${destinationStr}</p>
+          <p><strong>Date:</strong> ${formData.date}</p>
+          <p><strong>Time:</strong> ${formData.time || 'Not specified'}</p>
+          <p><strong>Passengers:</strong> ${formData.passengers}</p>
+          <p><strong>Luggage:</strong> ${formData.luggage}</p>
+          <p><strong>Phone:</strong> ${normalizedPhone}</p>
+          <p><strong>Name:</strong> ${formData.name || 'WhatsApp User'}</p>
+          <h2>Other Details</h2>
+          <p><strong>Service Type:</strong> ${formData.serviceType || 'Standard'}</p>
+          <p><strong>Flight Number:</strong> ${formData.flightNumber || 'N/A'}</p>
+          <p><strong>Instructions:</strong> ${formData.driverInstructions || 'N/A'}</p>
+        `,
+      });
+
+      if (error) {
+        console.error('Resend booking email error:', error);
+      } else {
+        console.log('Resend booking email sent:', data);
+      }
+    } catch (emailError) {
+      console.error('Failed to send booking email:', emailError);
+    }
+
+    if (dbError) {
+      console.error('Supabase booking insert error:', dbError);
+    }
 
     return { success: true };
   } catch (error) {
-    console.error('Error submitting booking form:', error);
-    
+    console.error('Error in booking form submission:', error);
+
     // Handle Zod validation errors
     if (error instanceof ZodError && error.issues) {
       const fieldErrors: Record<string, string> = {};
@@ -56,83 +102,20 @@ export async function submitBookingForm(
           fieldErrors[field] = issue.message;
         }
       });
-      return { 
-        success: false, 
+      return {
+        success: false,
         error: 'Please fix the errors in the form.',
-        fieldErrors 
+        fieldErrors
       };
     }
-    
+
     if (error instanceof Error) {
       return { success: false, error: error.message };
     }
-    
-    return { 
-      success: false, 
-      error: 'Failed to submit booking. Please try again.' 
+
+    return {
+      success: false,
+      error: 'Failed to submit booking. Please try again.'
     };
   }
 }
-
-async function sendBookingNotification(formData: BookingFormData): Promise<void> {
-  try {
-    // Check if this is a return trip
-    const isReturnTrip = formData.destinations && 
-      typeof formData.destinations === 'object' && 
-      !Array.isArray(formData.destinations) &&
-      (formData.destinations as any).type === 'return_trip';
-    
-    let notificationData: any;
-    
-    if (isReturnTrip) {
-      const returnTripData = formData.destinations as ReturnTripStructure;
-      const outboundDests = returnTripData.outbound.destinations || [];
-      
-      notificationData = {
-        ...formData,
-        destinations: formData.destinations,
-        destination1: outboundDests[0] || '',
-        destination2: outboundDests[1] || '',
-        destination3: outboundDests[2] || '',
-        destination4: outboundDests[3] || '',
-        hasReturnTrip: true,
-        returnPickup: returnTripData.return.pickup,
-        returnDestination: returnTripData.return.destination,
-        returnDate: returnTripData.return.date,
-        returnTime: returnTripData.return.time,
-      };
-    } else {
-      const destinationsArray = Array.isArray(formData.destinations)
-        ? formData.destinations
-        : [];
-      
-      notificationData = {
-        ...formData,
-        destinations: destinationsArray,
-        destination1: destinationsArray[0] || '',
-        destination2: destinationsArray[1] || '',
-        destination3: destinationsArray[2] || '',
-        destination4: destinationsArray[3] || '',
-        hasReturnTrip: false,
-      };
-    }
-
-    const { error: notificationError } = await supabase.functions.invoke(
-      'send-notification',
-      {
-        body: {
-          type: 'booking',
-          ...notificationData,
-        },
-      }
-    );
-
-    if (notificationError) {
-      console.error('Notification error:', notificationError);
-      console.warn('Booking saved but notification may not have been sent');
-    }
-  } catch (error) {
-    console.error('Error sending notification:', error);
-  }
-}
-

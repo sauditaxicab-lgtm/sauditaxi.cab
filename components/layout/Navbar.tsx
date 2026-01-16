@@ -3,19 +3,21 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone, Mail, MessageSquare } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import Image from "next/image";
 import { Logo } from "@/components/ui/Logo";
+import { BUSINESS_CONFIG, contactHelpers } from "@/lib/constants";
 
 const navLinks = [
     { name: "Home", href: "/" },
     { name: "Fleet", href: "/fleet" },
     { name: "Services", href: "/services", hasDropdown: true },
+    { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
 ];
@@ -25,11 +27,14 @@ const servicesList = [
     { name: "Umrah Transfers", href: "/services/umrah-transfers" },
     { name: "Family Travel", href: "/services/family-travel" },
     { name: "Ziyarat Tours", href: "/services/ziyarat-tours" },
+    { name: "Sightseeing Tours", href: "/services/sightseeing" },
     { name: "Intercity Transfer", href: "/services/intercity-taxi" },
     { name: "VIP Transport", href: "/services/vip-transport" },
 ];
 
 export function Navbar() {
+    const pathname = usePathname();
+    const isHomePage = pathname === "/";
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
@@ -43,6 +48,8 @@ export function Navbar() {
             setScrolled(window.scrollY > 50);
         };
         window.addEventListener("scroll", handleScroll);
+        // Initial check
+        handleScroll();
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -58,55 +65,59 @@ export function Navbar() {
         };
     }, [mobileMenuOpen]);
 
+    // Background logic: Transparency only on homepage at the top
+    const shouldShowBg = !isHomePage || scrolled || mobileMenuOpen;
+
     return (
         <nav
             className={cn(
-                "fixed top-0 left-0 w-full z-[10001] transition-all duration-300 ease-in-out border-b border-transparent h-20 md:h-24 flex items-center",
-                scrolled
-                    ? "bg-luxury-black/95 backdrop-blur-md border-white/10 shadow-lg"
-                    : "bg-transparent shadow-none"
+                "fixed top-0 left-0 w-full z-[10001] transition-all duration-500 ease-in-out border-b h-20 md:h-24 flex items-center",
+                shouldShowBg
+                    ? "bg-luxury-black/95 backdrop-blur-md border-white/10 shadow-2xl"
+                    : "bg-transparent border-transparent shadow-none"
             )}
         >
-            <div className="container mx-auto px-6 flex items-center justify-between relative h-full">
-                {/* Logo - Absolute to prevent stretching the navbar */}
-                <div className="relative h-full flex items-center">
+            <div className="container mx-auto px-4 md:px-6 flex items-center justify-between relative h-full">
+                {/* Logo Area */}
+                <div className="flex items-center z-[10002]">
                     <Link
                         href="/"
-                        className="absolute left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 top-1/2 -translate-y-1/2 group z-[20000] transition-transform duration-300"
+                        className="group transition-transform duration-300 active:scale-95"
+                        onClick={() => setMobileMenuOpen(false)}
                     >
-                        <Logo className="scale-75 md:scale-90 origin-left" />
+                        <Logo className="scale-[0.85] md:scale-100 origin-left" />
                     </Link>
                 </div>
 
-                {/* Desktop Nav - Spacer to push links right because of absolute logo */}
-                <div className="hidden md:flex flex-1"></div>
-
                 {/* Desktop Nav Links */}
-                <div className="hidden md:flex items-center space-x-8">
-                    <nav className="hidden md:flex space-x-8 items-center">
+                <div className="hidden md:flex items-center space-x-1">
+                    <nav className="flex items-center space-x-1">
                         {navLinks.map((link) => (
-                            // Check if this link has a dropdown (Services)
                             link.hasDropdown ? (
-                                <div key={link.name} className="relative group">
+                                <div key={link.name} className="relative group px-1">
                                     <Link
                                         href={link.href}
-                                        className="flex items-center text-white hover:text-luxury-gold transition-colors text-sm uppercase tracking-wide font-medium py-2"
+                                        className={cn(
+                                            "flex items-center px-4 py-2 text-sm uppercase tracking-widest font-medium transition-all duration-300 rounded-sm",
+                                            pathname.startsWith(link.href) ? "text-luxury-gold" : "text-white/80 hover:text-white hover:bg-white/5"
+                                        )}
                                     >
                                         {link.name}
-                                        <ChevronDown className="ml-1 w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+                                        <ChevronDown className="ml-1 w-3 h-3 group-hover:rotate-180 transition-transform duration-300 opacity-50" />
                                     </Link>
 
                                     {/* Desktop Dropdown Menu */}
-                                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-64 bg-luxury-black/95 backdrop-blur-xl border border-white/10 rounded-sm shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 pt-2 pb-2">
-                                        {/* Little arrow indicator */}
+                                    <div className="absolute top-[calc(100%+0.5rem)] left-1/2 -translate-x-1/2 w-64 bg-luxury-black/98 backdrop-blur-2xl border border-white/10 rounded-sm shadow-[0_20px_50px_rgba(0,0,0,0.5)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 py-2">
                                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1 w-2 h-2 bg-luxury-black border-t border-l border-white/10 rotate-45"></div>
-
                                         <div className="flex flex-col">
                                             {servicesList.map((service) => (
                                                 <Link
                                                     key={service.name}
                                                     href={service.href}
-                                                    className="px-6 py-3 text-white/80 hover:text-luxury-gold hover:bg-white/5 transition-all text-sm font-light border-b border-white/5 last:border-0"
+                                                    className={cn(
+                                                        "px-6 py-3 text-sm font-light transition-all border-b border-white/5 last:border-0 hover:bg-luxury-gold/10 hover:pl-8",
+                                                        pathname === service.href ? "text-luxury-gold" : "text-white/70 hover:text-luxury-gold"
+                                                    )}
                                                 >
                                                     {service.name}
                                                 </Link>
@@ -118,144 +129,195 @@ export function Navbar() {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="text-white hover:text-luxury-gold transition-colors text-sm uppercase tracking-wide font-medium"
+                                    className={cn(
+                                        "px-4 py-2 text-sm uppercase tracking-widest font-medium transition-all duration-300 rounded-sm",
+                                        pathname === link.href ? "text-luxury-gold" : "text-white/80 hover:text-white hover:bg-white/5"
+                                    )}
                                 >
                                     {link.name}
                                 </Link>
                             )
                         ))}
-                        <Link href="/booking">
-                            <Button variant="gold" size="sm" className="bg-luxury-gold text-black hover:bg-white hover:text-luxury-black ml-4 font-bold rounded-sm">
-                                Book Now
-                            </Button>
-                        </Link>
                     </nav>
+
+                    <div className="h-6 w-[1px] bg-white/10 mx-4 hidden lg:block"></div>
+
+                    <Link href="/booking" className="hidden lg:block">
+                        <Button variant="gold" size="sm" className="bg-luxury-gold text-black hover:bg-white hover:text-luxury-black font-bold rounded-sm px-6">
+                            Book Now
+                        </Button>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="md:hidden text-white z-[10000] relative p-2 flex items-center justify-center w-12 h-12"
+                    className="md:hidden text-white z-[10002] p-2 hover:bg-white/5 rounded-full transition-colors active:scale-95 flex items-center justify-center -mr-2"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
                 >
                     {mobileMenuOpen ? (
-                        <X size={28} className="text-luxury-gold absolute" />
+                        <X size={26} className="text-luxury-gold" />
                     ) : (
-                        <Menu size={28} className="absolute" />
+                        <Menu size={26} />
                     )}
                 </button>
 
-                {/* Mobile Nav Overlay - Using Portal to escape stacking context */}
+                {/* Mobile Nav Overlay */}
                 {mounted && createPortal(
                     <AnimatePresence>
                         {mobileMenuOpen && (
-                            <motion.div
-                                initial={{ opacity: 0, x: "100%" }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: "100%" }}
-                                transition={{ type: "tween", duration: 0.3 }}
-                                className="fixed inset-0 top-0 left-0 right-0 bottom-0 bg-luxury-black/95 backdrop-blur-xl z-[9999] flex flex-col pt-24 px-8 overflow-y-auto"
-                            >
-                                <nav className="flex flex-col space-y-6">
-                                    {navLinks.map((link) => (
-                                        link.hasDropdown ? (
-                                            <div key={link.name} className="flex flex-col">
-                                                <button
-                                                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                                                    className="flex items-center justify-between text-2xl font-serif text-white hover:text-luxury-gold transition-colors"
-                                                >
-                                                    {link.name}
-                                                    <ChevronDown
-                                                        className={cn(
-                                                            "w-6 h-6 transition-transform duration-300",
-                                                            mobileServicesOpen ? "rotate-180 text-luxury-gold" : "text-white/50"
-                                                        )}
-                                                    />
-                                                </button>
-
-                                                {/* Mobile Submenu */}
-                                                <AnimatePresence>
-                                                    {mobileServicesOpen && (
-                                                        <motion.div
-                                                            initial={{ opacity: 0, height: 0 }}
-                                                            animate={{ opacity: 1, height: "auto" }}
-                                                            exit={{ opacity: 0, height: 0 }}
-                                                            className="overflow-hidden flex flex-col mt-4 ml-4 space-y-4 border-l border-white/10 pl-4"
-                                                        >
-                                                            {servicesList.map(service => (
-                                                                <Link
-                                                                    key={service.name}
-                                                                    href={service.href}
-                                                                    onClick={() => setMobileMenuOpen(false)}
-                                                                    className="text-lg text-white/70 hover:text-luxury-gold transition-colors"
-                                                                >
-                                                                    {service.name}
-                                                                </Link>
-                                                            ))}
-                                                        </motion.div>
-                                                    )}
-                                                </AnimatePresence>
-                                            </div>
-                                        ) : (
-                                            <Link
-                                                key={link.name}
-                                                href={link.href}
-                                                onClick={() => setMobileMenuOpen(false)}
-                                                className="text-2xl font-serif text-white hover:text-luxury-gold transition-colors"
-                                            >
-                                                {link.name}
-                                            </Link>
-                                        )
-                                    ))}
-                                </nav>
-
-                                <div className="mt-12 w-full">
-                                    <Link href="/booking">
-                                        <Button
-                                            variant="gold"
-                                            size="lg"
-                                            className="w-full bg-luxury-gold text-black hover:bg-white hover:text-luxury-black font-bold text-lg rounded-sm py-6"
+                            <>
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    className="fixed inset-0 bg-black/80 backdrop-blur-md z-[10005]"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                />
+                                <motion.div
+                                    initial={{ x: "100%" }}
+                                    animate={{ x: 0 }}
+                                    exit={{ x: "100%" }}
+                                    transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                                    className="fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-luxury-black border-l border-white/10 z-[10006] flex flex-col shadow-2xl"
+                                >
+                                    {/* Mobile Menu Header */}
+                                    <div className="h-20 flex items-center justify-between px-6 border-b border-white/5 bg-black/20">
+                                        <Logo className="scale-[0.7] origin-left" />
+                                        <button
                                             onClick={() => setMobileMenuOpen(false)}
+                                            className="p-2 -mr-2 text-white/50 hover:text-luxury-gold transition-colors"
                                         >
-                                            Book Now
-                                        </Button>
-                                    </Link>
-                                </div>
-                            </motion.div>
+                                            <X size={24} />
+                                        </button>
+                                    </div>
+
+                                    {/* Mobile Menu content */}
+                                    <div className="flex-1 overflow-y-auto py-6 px-6">
+                                        <nav className="flex flex-col space-y-1">
+                                            {navLinks.map((link) => (
+                                                link.hasDropdown ? (
+                                                    <div key={link.name} className="flex flex-col py-2 border-b border-white/5">
+                                                        <button
+                                                            onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                                                            className="flex items-center justify-between text-lg font-serif text-white py-3 group"
+                                                        >
+                                                            <span className={pathname.startsWith(link.href) ? "text-luxury-gold" : ""}>{link.name}</span>
+                                                            <ChevronDown
+                                                                className={cn(
+                                                                    "w-4 h-4 transition-transform duration-300",
+                                                                    mobileServicesOpen ? "rotate-180 text-luxury-gold" : "text-white/30"
+                                                                )}
+                                                            />
+                                                        </button>
+
+                                                        <AnimatePresence>
+                                                            {mobileServicesOpen && (
+                                                                <motion.div
+                                                                    initial={{ opacity: 0, height: 0 }}
+                                                                    animate={{ opacity: 1, height: "auto" }}
+                                                                    exit={{ opacity: 0, height: 0 }}
+                                                                    className="overflow-hidden flex flex-col ml-4 border-l border-luxury-gold/20 mt-1 mb-2"
+                                                                >
+                                                                    {servicesList.map(service => (
+                                                                        <Link
+                                                                            key={service.name}
+                                                                            href={service.href}
+                                                                            onClick={() => setMobileMenuOpen(false)}
+                                                                            className={cn(
+                                                                                "py-3 pl-4 text-sm text-white/60 hover:text-luxury-gold transition-colors",
+                                                                                pathname === service.href ? "text-luxury-gold font-medium" : ""
+                                                                            )}
+                                                                        >
+                                                                            {service.name}
+                                                                        </Link>
+                                                                    ))}
+                                                                </motion.div>
+                                                            )}
+                                                        </AnimatePresence>
+                                                    </div>
+                                                ) : (
+                                                    <Link
+                                                        key={link.name}
+                                                        href={link.href}
+                                                        onClick={() => setMobileMenuOpen(false)}
+                                                        className={cn(
+                                                            "text-lg font-serif py-4 border-b border-white/5 flex items-center justify-between group",
+                                                            pathname === link.href ? "text-luxury-gold" : "text-white"
+                                                        )}
+                                                    >
+                                                        {link.name}
+                                                        <div className={cn(
+                                                            "w-1.5 h-1.5 rounded-full bg-luxury-gold transition-all",
+                                                            pathname === link.href ? "opacity-100 scale-100" : "opacity-0 scale-50 group-hover:opacity-50"
+                                                        )}></div>
+                                                    </Link>
+                                                )
+                                            ))}
+                                        </nav>
+
+                                        {/* Contact Info in Mobile Menu */}
+                                        <div className="mt-10 space-y-6 pt-8 border-t border-white/5">
+                                            <p className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold">Private Concierge</p>
+                                            <div className="space-y-4">
+                                                <a href={contactHelpers.getPhoneUrl()} className="flex items-center gap-4 group">
+                                                    <div className="w-10 h-10 rounded-sm bg-white/5 flex items-center justify-center border border-white/10 group-active:border-luxury-gold/50 transition-colors">
+                                                        <Phone size={18} className="text-luxury-gold" />
+                                                    </div>
+                                                    <div className="flex flex-col">
+                                                        <span className="text-[10px] text-white/30 uppercase tracking-wider">Call Directly</span>
+                                                        <span className="text-sm font-medium text-white/80">{BUSINESS_CONFIG.PHONE_DISPLAY}</span>
+                                                    </div>
+                                                </a>
+                                                <a href={`mailto:${BUSINESS_CONFIG.EMAIL}`} className="flex items-center gap-4 group">
+                                                    <div className="w-10 h-10 rounded-sm bg-white/5 flex items-center justify-center border border-white/10 group-active:border-luxury-gold/50 transition-colors">
+                                                        <Mail size={18} className="text-luxury-gold" />
+                                                    </div>
+                                                    <div className="flex flex-col">
+                                                        <span className="text-[10px] text-white/30 uppercase tracking-wider">Email Inquiry</span>
+                                                        <span className="text-sm font-medium text-white/80">{BUSINESS_CONFIG.EMAIL}</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Mobile Menu Footer */}
+                                    <div className="p-6 border-t border-white/5 bg-black/40">
+                                        <Link href="/booking">
+                                            <Button
+                                                variant="gold"
+                                                size="lg"
+                                                className="w-full bg-luxury-gold text-black hover:bg-white hover:text-luxury-black font-bold text-base rounded-sm py-6 shadow-xl active:scale-95 transition-all"
+                                                onClick={() => setMobileMenuOpen(false)}
+                                            >
+                                                Book Now
+                                            </Button>
+                                        </Link>
+                                    </div>
+                                </motion.div>
+                            </>
                         )}
                     </AnimatePresence>,
                     document.body
                 )}
             </div>
 
-            {/* Mobile Sticky Bottom Book Button - Only show when menu NOT open */}
+            {/* Mobile Sticky Bottom Bar (When menu NOT open) */}
             {mounted && !mobileMenuOpen && createPortal(
-                <div className="md:hidden fixed bottom-14 right-2 z-[40]">
-                    {/* Floating FAB style for mobile if preferred, but user had sticky bottom before. Keeping logic roughly same but cleaner. */}
-                </div>,
-                document.body
-            )}
-
-            {/* Keeping the sticky bottom bar request from previous files if it was there contextually, 
-                but actually the user's previous code had a full width bottom bar. I'll restore that. */}
-            {mounted && !mobileMenuOpen && createPortal(
-                <div className="md:hidden fixed bottom-0 left-0 w-full p-4 bg-luxury-black/90 backdrop-blur-lg border-t border-white/10 z-[100] flex items-center gap-4">
+                <div className="md:hidden fixed bottom-0 left-0 w-full p-3 bg-luxury-black/95 backdrop-blur-xl border-t border-white/10 z-[100] flex items-center gap-3 animate-in slide-in-from-bottom duration-500">
                     <Link href="/booking" className="flex-1">
                         <Button
                             variant="gold"
                             size="lg"
-                            className="w-full bg-luxury-gold text-black hover:bg-white hover:text-luxury-black font-bold text-lg shadow-lg rounded-sm"
+                            className="w-full bg-luxury-gold text-black hover:scale-[1.02] active:scale-95 transition-all font-bold text-base shadow-xl rounded-sm h-12"
                         >
                             Book Now
                         </Button>
                     </Link>
-
-                    {/* Spacer for Floating Contact Button (which is fixed at bottom-right) */}
-                    <div className="w-16 shrink-0"></div>
                 </div>,
                 document.body
             )}
         </nav>
     );
 }
-

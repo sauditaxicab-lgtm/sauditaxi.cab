@@ -17,11 +17,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sauditaxi.cab'),
-  title: "Saudi Taxi | Premium Umrah & Airport Private Transfers",
-  description: "Reliable private transport in Saudi Arabia. We provide luxury Camry, Staria, GMC, and Coaster for Umrah, Airport, and Intercity transfers.",
-  alternates: {
-    canonical: '/',
-  },
+  title: "Saudi Taxi | Premium Umrah & Airport Transport",
+  description: "Premium Saudi taxi service for Umrah & airport transfers. Book reliable transport in Makkah, Madinah & Jeddah. Available 24/7 with luxury fleet.",
+
   openGraph: {
     title: "Saudi Taxi | Premium Umrah & Airport Private Transfers",
     description: "High-quality private transport in Saudi Arabia. Luxury Camry, Staria, GMC, and Coaster for Umrah, Airport, and Intercity transfers.",

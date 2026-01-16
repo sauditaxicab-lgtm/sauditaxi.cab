@@ -1,4 +1,5 @@
 import React from "react";
+import { Metadata } from "next";
 import { ServiceHero } from "@/components/services/ServiceHero";
 import OurHistory from "@/components/about/OurHistory";
 import Timeline from "@/components/about/Timeline";
@@ -7,6 +8,15 @@ import AboutContent from "@/components/about/AboutContent";
 import OurChauffeurs from "@/components/about/OurChauffeurs";
 import WhyChooseUs from "@/components/about/WhyChooseUs";
 import ReadyToBook from "@/components/about/ReadyToBook";
+
+export const metadata: Metadata = {
+    title: "About Saudi Taxi | Premium Umrah & Airport Transport",
+    description: "Premium taxi service in Saudi Arabia. Trusted for Umrah transfers, airport pickups & intercity travel in Makkah, Madinah & Jeddah.",
+    alternates: {
+        canonical: '/about',
+    },
+};
+
 
 export default function AboutPage() {
     return (

@@ -36,18 +36,18 @@ export default function IntercityTaxiPage() {
     return (
         <main className="bg-luxury-black min-h-screen text-white">
             <ServiceHero
-                title="Saudi Intercity Transfer"
-                subtitle="Kingdom-Wide Travel"
-                description="Premium long-distance transfer services connecting Jeddah, Riyadh, Taif, Dammam, and beyond."
+                title="Makkah to Madinah Coaster"
+                subtitle="Premium Intercity Transfers"
+                description="High-capacity coasters and luxury sedans for your journey between Mecca, Medina, and Jeddah. Professional Kingdom-wide Saudi Taxi service."
                 backgroundImage="/services/intercity_jeddah_madinah.png"
             />
 
             {/* Introduction */}
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4 text-center max-w-4xl">
-                    <h2 className="text-3xl md:text-5xl font-serif mb-6 text-black">Travel Across <span className="text-luxury-gold">Saudi Arabia</span></h2>
+                    <h2 className="text-3xl md:text-5xl font-serif mb-6 text-black">Private Transfers from <span className="text-luxury-gold">Mecca to Jeddah</span> & Beyond</h2>
                     <p className="text-black text-lg leading-relaxed mb-8">
-                        Need to travel from Jeddah to Riyadh? Or Makkah to Taif? Saudi Taxi offers a premium intercity transport booking service. Avoid the hassle of airports and enjoy the scenic drive across the Kingdom in the comfort of a private vehicle. Perfect for business trips, family visits, or tourism.
+                        Need a reliable <strong>Mecca to Jeddah</strong> transfer? Or looking for a <strong>Makkah to Madinah coaster</strong> for your large group? Saudi Taxi offers a premium intercity transport booking service that covers every corner of the Kingdom. Avoid the hassle of public transport and enjoy the scenic drive between <strong>Makkah and Madina</strong> in the comfort of our modern, air-conditioned fleet.
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">

@@ -1,14 +1,15 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Intercity Private Transfers | Long-Distance Taxi Saudi Arabia",
-    description: "Comfortable private long-distance travel between any major cities including Riyadh, Dammam, and Taif. Premium vehicles for a smooth intercity journey.",
+    title: "Saudi Intercity Taxi | Makkah to Madinah Coaster & Transfers",
+    description: "Premium intercity taxi service in Saudi Arabia. Book a private taxi or coaster from Makkah to Madinah, Jeddah to Riyadh, and Makkah to Jeddah with fixed rates.",
     alternates: {
         canonical: '/services/intercity-taxi',
     },
+    keywords: ["makkah to madinah coaster", "mecca to jeddah", "makkah and madina", "jeddah to riyadh taxi", "makkah to taif transport"],
 };
 
-export default function IntercityTaxiLayout({
+export default function IntercityLayout({
     children,
 }: {
     children: React.ReactNode;

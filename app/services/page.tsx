@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 const services = [
     {
         title: "Airport Transfers",
-        description: "Reliable 24/7 private transfers from Jeddah Airport (KAIA) and Madinah Airport using our premium chauffeur fleet.",
+        description: "Reliable 24/7 private transfers from Jeddah Airport (KAIA) and Madinah Airport using our premium fleet.",
         image: "/services/airport_transfer_luxury.png",
         link: "/services/airport-transfers"
     },

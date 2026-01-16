@@ -5,9 +5,9 @@ def audit_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Metadata extraction
-    title_match = re.search(r'title:\s*"([^"]+)"', content)
-    desc_match = re.search(r'description:\s*"([^"]+)"', content)
+    # Metadata extraction (supports " and ')
+    title_match = re.search(r'title:\s*["\']([^"\']+)["\']', content)
+    desc_match = re.search(r'description:\s*["\']([^"\']+)["\']', content)
     
     # H1 check
     h1_count = len(re.findall(r'<h1', content, re.IGNORECASE))
@@ -28,8 +28,8 @@ def audit_file(file_path):
     return results
 
 def main():
-    app_path = r'd:\tehseen\kri\app'
-    components_path = r'd:\tehseen\kri\components'
+    app_path = r'd:\tehseen\saudi-taxi\app'
+    components_path = r'd:\tehseen\saudi-taxi\components'
     
     report = []
     
@@ -57,7 +57,7 @@ def main():
         h1 = r['h1_count']
         alt_err = f"{r['imgs_missing_alt']}/{r['imgs_total']}" if r['imgs_total'] > 0 else "-"
         
-        rel_path = os.path.relpath(r['file'], r'd:\tehseen\kri')
+        rel_path = os.path.relpath(r['file'], r'd:\tehseen\saudi-taxi')
         
         # Only show files that have metadata or H1 or Images
         if r['title'] or r['description'] or r['h1_count'] > 0 or r['imgs_total'] > 0:

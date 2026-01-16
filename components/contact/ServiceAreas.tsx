@@ -5,13 +5,11 @@ import { MapPin } from "lucide-react";
 
 const ServiceAreas = () => {
     const areas = [
-        "Makkah", "Madinah", "Jeddah", "Riyadh",
-        "Taif", "Yanbu", "Dammam", "Al Khobar",
-        "Tabuk", "Abha", "Jizan", "Al Ula"
+        "Makkah", "Madinah", "Jeddah", "Taif", "Al Ula"
     ];
 
     return (
-        <section className="py-24 bg-luxury-black text-white relative overflow-hidden">
+        <section className="py-16 md:py-24 bg-luxury-black text-white relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
 
@@ -24,7 +22,7 @@ const ServiceAreas = () => {
                         From the Holy Cities to all major airports, we provide a reliable journey wherever you need to go.
                     </p>
 
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-12 rounded-3xl">
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 md:p-12 rounded-3xl">
                         <div className="flex items-center justify-center gap-3 mb-8">
                             <MapPin className="text-luxury-gold w-6 h-6" />
                             <h3 className="text-2xl font-serif font-bold">Kingdom Wide Coverage</h3>
@@ -38,7 +36,7 @@ const ServiceAreas = () => {
                             {areas.map((area, index) => (
                                 <span
                                     key={index}
-                                    className="px-6 py-3 rounded-full bg-white/10 border border-white/10 text-gray-200 text-sm md:text-base font-medium hover:bg-luxury-gold hover:text-black hover:border-luxury-gold transition-all duration-300 cursor-default"
+                                    className="px-4 py-2 md:px-6 md:py-3 rounded-full bg-white/10 border border-white/10 text-gray-200 text-xs md:text-base font-medium hover:bg-luxury-gold hover:text-black hover:border-luxury-gold transition-all duration-300 cursor-default"
                                 >
                                     {area}
                                 </span>

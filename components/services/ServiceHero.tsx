@@ -16,7 +16,7 @@ interface ServiceHeroProps {
 
 export function ServiceHero({ title, subtitle, description, backgroundImage, onBookNow, overlay = true, backgroundClassName = "" }: ServiceHeroProps) {
     return (
-        <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
             {/* Background Image */}
             <div
                 className={`absolute inset-0 bg-cover bg-center transition-transform duration-700 ${backgroundClassName}`}
@@ -39,7 +39,7 @@ export function ServiceHero({ title, subtitle, description, backgroundImage, onB
                     <span className="text-luxury-gold uppercase tracking-[0.2em] font-bold text-sm md:text-base mb-4 block">
                         {subtitle}
                     </span>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-tight">
+                    <h1 className="text-white mb-6 leading-tight">
                         <strong>{title}</strong>
                     </h1>
                     {description && (
@@ -48,21 +48,21 @@ export function ServiceHero({ title, subtitle, description, backgroundImage, onB
                         </p>
                     )}
 
-                    <div className="flex flex-row items-center justify-center gap-4">
-                        <Link href="/booking">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <Link href="/booking" className="w-full sm:w-auto">
                             <Button
                                 variant="gold"
                                 size="lg"
-                                className="bg-luxury-gold text-black hover:bg-white hover:text-luxury-black font-bold text-lg min-w-[200px]"
+                                className="w-full sm:min-w-[200px] bg-luxury-gold text-black hover:bg-white hover:text-luxury-black font-bold text-lg h-14"
                             >
                                 Book Now
                             </Button>
                         </Link>
-                        <Link href="/booking">
+                        <Link href="/booking" className="w-full sm:w-auto">
                             <Button
                                 variant="outline"
                                 size="lg"
-                                className="border-white/20 text-white hover:bg-white/10 font-medium text-lg min-w-[200px]"
+                                className="w-full sm:min-w-[200px] border-white/20 text-white hover:bg-white/10 font-medium text-lg h-14"
                             >
                                 Get A Quote
                             </Button>

@@ -7,7 +7,7 @@ import { BUSINESS_CONFIG } from "@/lib/constants";
 
 const ReadyToBook = () => {
     return (
-        <section className="py-24 relative bg-luxury-gold overflow-hidden">
+        <section className="py-16 md:py-24 relative bg-luxury-gold overflow-hidden">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
 
             <div className="container mx-auto px-4 relative z-10 text-center">
@@ -22,14 +22,10 @@ const ReadyToBook = () => {
                 <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
                     <Link
                         href="/booking"
-                        style={{
-
-                            height: "50px"
-                        }}
-                        className="bg-luxury-black text-luxury-gold hover:bg-luxury-black/90 text-lg px-10 py-8 rounded-sm font-bold tracking-widest shadow-2xl inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-1"
+                        className="bg-luxury-black text-luxury-gold hover:bg-zinc-900 h-14 md:h-16 px-8 md:px-12 rounded-sm font-black uppercase text-xs md:text-sm tracking-[0.2em] shadow-2xl inline-flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-1 active:scale-95 group"
                     >
-                        BOOK ONLINE
-                        <ArrowRight size={20} />
+                        Secure Your Ride
+                        <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
 
                     <div className="flex flex-col justify-center text-luxury-black font-semibold text-sm">

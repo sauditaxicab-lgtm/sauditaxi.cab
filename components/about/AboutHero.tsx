@@ -33,7 +33,7 @@ const AboutHero = () => {
                     </h2>
 
                     <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-4">
-                        About Us
+                        About Saudi Taxi
                     </h1>
 
                     <p className="text-lg md:text-2xl text-gray-200 font-light max-w-2xl mx-auto">

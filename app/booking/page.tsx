@@ -1,7 +1,17 @@
+import { Metadata } from "next";
 import BookingForm from "@/components/booking/BookingForm";
 import { ServiceHero } from "@/components/services/ServiceHero";
 import { Phone, Mail, ShieldCheck, Gem, Clock, Star } from "lucide-react";
 import { CTASection } from "@/components/home/CTASection";
+
+export const metadata: Metadata = {
+    title: "Book Saudi Taxi | Instant Umrah & Airport Transfer",
+    description: "Book premium taxi in Saudi Arabia instantly. Reliable Umrah, airport & intercity transfers in Makkah, Madinah & Jeddah. 24/7 availability.",
+    alternates: {
+        canonical: '/booking',
+    },
+};
+
 
 export default function BookingPage() {
     return (
@@ -29,7 +39,7 @@ export default function BookingPage() {
                         Instant Online Reservation
                     </span>
                     <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white leading-tight drop-shadow-lg">
-                        <strong>Book Your Journey</strong>
+                        <strong>Saudi Taxi – Book Your Journey</strong>
                     </h1>
                     <p className="text-lg text-white/80 font-light leading-relaxed max-w-2xl mx-auto drop-shadow-md">
                         Book your taxi in seconds. Fill in your journey details below and connect with us on WhatsApp for an instant confirmation.

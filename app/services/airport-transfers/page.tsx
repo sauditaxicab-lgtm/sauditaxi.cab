@@ -15,6 +15,14 @@ const processSteps = [
 
 const airportFAQs = [
     {
+        question: "How long is the trip from Madinah Airport to the Prophet's Mosque?",
+        answer: "The journey from Prince Mohammad Bin Abdulaziz Airport (MED) to Masjid An-Nabawi takes approximately 20–30 minutes."
+    },
+    {
+        question: "What is the Medina airport taxi booking process?",
+        answer: "Our Medina airport taxi booking process is simple: 1. Contact us via WhatsApp, 2. Provide flight details and hotel name, 3. Receive instant confirmation. Your driver will be waiting at the arrivals gate."
+    },
+    {
         question: "How Long Is The Trip From Jeddah Airport To Makah?",
         answer: "The journey typically takes 60–90 minutes depending on traffic. We recommend booking in advance to ensure a smooth transfer."
     },
@@ -25,10 +33,6 @@ const airportFAQs = [
     {
         question: "Does It Cost Extra If My Flight Is Delayed?",
         answer: "No. We track your flight in real-time and provide complimentary waiting time for international arrivals."
-    },
-    {
-        question: "How Much Does An Airport Transfer Cost?",
-        answer: "Pricing depends on your chosen vehicle. Contact us on WhatsApp for an instant, fixed price quote."
     }
 ];
 
@@ -36,35 +40,63 @@ export default function AirportTransfersPage() {
     return (
         <main className="bg-luxury-black min-h-screen text-white">
             <ServiceHero
-                title="Saudi Airport Transfers"
-                subtitle="Premium & Punctual"
-                description="Reliable airport transfers from Jeddah & Madinah Airports with flight tracking and professional Meet & Greet service."
+                title="Taxi from Jeddah Airport to Makkah"
+                subtitle="Premium Airport Transfers"
+                description="The most reliable taxi from Jeddah Airport to Mecca and Madinah. Book your private pickup with flight tracking and professional meet-and-greet."
                 backgroundImage="/services/airport_transfer.png"
             />
 
             {/* Introduction */}
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4 text-center max-w-4xl">
-                    <h2 className="text-3xl md:text-5xl font-serif mb-6 text-black"><strong>Jeddah & Madinah <span className="text-luxury-gold">Airport Taxi</span></strong></h2>
+                    <h2 className="text-3xl md:text-5xl font-serif mb-6 text-black">Jeddah to Makkah Taxi: <span className="text-luxury-gold">Luxury in Its Finest Form</span></h2>
                     <p className="text-black text-lg leading-relaxed mb-8">
-                        Saudi Taxi offers dependable airport transfers, prioritising comfort, punctuality, and spiritual peace of mind for pilgrims. Skip the taxi queues; your licensed driver will meet you at the terminal, assist with luggage, and transfer you smoothly to your hotel in Makkah or Madinah.
+                        Experience the ultimate standard in pilgrimage travel. Our <strong>Jeddah to Makkah taxi</strong> service is designed for those who seek luxury, punctuality, and the best <strong>Jeddah to Mecca taxi fare</strong>. Whether you're arriving at JED Airport for Umrah or business, we provide a <strong>private taxi from Jeddah to Makkah</strong> that guarantees spiritual peace and physical comfort.
                     </p>
+
+                    {/* Commercial Intent Pricing Table */}
+                    <div className="max-w-4xl mx-auto my-12 bg-luxury-black rounded-sm shadow-2xl overflow-hidden border border-luxury-gold/30">
+                        <div className="p-6 bg-gold-gradient text-black font-bold text-center uppercase tracking-widest text-sm">
+                            2025 Commercial Rates: Jeddah Airport to Makkah
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                            <div className="p-8 flex flex-col items-center">
+                                <span className="text-luxury-gold text-xs font-bold uppercase mb-2">Standard Sedan</span>
+                                <span className="text-white text-3xl font-serif mb-2">SAR 200</span>
+                                <span className="text-white/50 text-[10px] uppercase">Best for 3 Pax</span>
+                            </div>
+                            <div className="p-8 flex flex-col items-center bg-white/5">
+                                <span className="text-luxury-gold text-xs font-bold uppercase mb-2">Luxury SUV (GMC)</span>
+                                <span className="text-white text-3xl font-serif mb-2">SAR 450</span>
+                                <span className="text-white/50 text-[10px] uppercase">Best for Families</span>
+                            </div>
+                            <div className="p-8 flex flex-col items-center">
+                                <span className="text-luxury-gold text-xs font-bold uppercase mb-2">Premium Van (Staria)</span>
+                                <span className="text-white text-3xl font-serif mb-2">SAR 400</span>
+                                <span className="text-white/50 text-[10px] uppercase">Group of 7 Pax</span>
+                            </div>
+                        </div>
+                        <div className="p-4 bg-zinc-900/50 text-[10px] text-white/40 italic text-center border-t border-white/5">
+                            *Prices are fixed for 2025. Inclusive of all taxes, tolls, and 60 mins waiting time.
+                        </div>
+                    </div>
+
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
-                            <span className="block text-luxury-gold font-bold mb-1">Professional</span>
-                            <span className="text-xs text-white/70">Licensed Drivers</span>
+                            <span className="block text-luxury-gold font-bold mb-1">Luxury Fleet</span>
+                            <span className="text-xs text-white/70">Finest Form</span>
                         </div>
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
-                            <span className="block text-luxury-gold font-bold mb-1">Real-time</span>
-                            <span className="text-xs text-white/70">Flight Monitoring</span>
+                            <span className="block text-luxury-gold font-bold mb-1">Fixed Fares</span>
+                            <span className="text-xs text-white/70">No Hidden Costs</span>
                         </div>
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
-                            <span className="block text-luxury-gold font-bold mb-1">Luxury</span>
-                            <span className="text-xs text-white/70">Modern Fleet</span>
+                            <span className="block text-luxury-gold font-bold mb-1">Punctual</span>
+                            <span className="text-xs text-white/70">Airport Greet</span>
                         </div>
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
-                            <span className="block text-luxury-gold font-bold mb-1">24/7</span>
-                            <span className="text-xs text-white/70">Customer Support</span>
+                            <span className="block text-luxury-gold font-bold mb-1">24/7 Support</span>
+                            <span className="text-xs text-white/70">WhatsApp Ready</span>
                         </div>
                     </div>
                 </div>
@@ -82,7 +114,7 @@ export default function AirportTransfersPage() {
             <FleetGrid />
 
             {/* How It Works */}
-            <ProcessSteps steps={processSteps} title="How It Works" />
+            <ProcessSteps steps={processSteps} title="Medina Airport Taxi Booking Process" />
 
             {/* FAQ Section */}
             <FAQSection items={airportFAQs} title="Frequently Asked Questions" className="bg-zinc-900" />

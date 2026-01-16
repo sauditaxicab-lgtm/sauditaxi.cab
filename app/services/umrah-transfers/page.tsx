@@ -36,35 +36,64 @@ export default function UmrahTransfersPage() {
     return (
         <main className="bg-luxury-black min-h-screen text-white">
             <ServiceHero
-                title="Umrah Taxi Services"
-                subtitle="Makkah - Madinah - Jeddah"
-                description="Reliable and comfortable intercity transfers between the Holy Cities. Experienced drivers committed to your spiritual journey."
+                title="Madinah to Makkah Taxi"
+                subtitle="High-Speed Intercity Transfers"
+                description="The most reliable Madinah to Makkah taxi service. Premium private transport and rentals with drivers for a seamless pilgrimage journey."
                 backgroundImage="/services/umrah_transfer.png"
             />
 
             {/* Introduction */}
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4 text-center max-w-4xl">
-                    <h2 className="text-3xl md:text-5xl font-serif mb-6 text-black">Private Taxis Between <span className="text-luxury-gold">Makkah & Madinah</span></h2>
+                    <h2 className="text-3xl md:text-5xl font-serif mb-6 text-black">Private <span className="text-luxury-gold">Madinah to Makkah Taxi</span> 2025</h2>
                     <p className="text-black text-lg leading-relaxed mb-8">
-                        The journey between Makkah and Madinah is a significant part of your pilgrimage. Saudi Taxi ensures this trip is safe, comfortable, and stress-free. Whether you need a private sedan, a spacious GMC for your family, or a bus for your group, we provide 24/7 service with experienced drivers.
+                        Performing Umrah requires reliable transport. Our <strong>Madinah to Makkah taxi</strong> service provides a fixed <strong>2025 price in SAR</strong>, ensuring no surprises. Whether you are looking for <strong>private Umrah transport</strong> or a <strong>private car rental with driver from Makkah to Madinah</strong>, we offer the best <strong>Makkah to Madinah taxi fare</strong> for families and groups.
                     </p>
+                    {/* Route Guide Table */}
+                    <div className="max-w-3xl mx-auto mb-12 overflow-hidden rounded-sm border border-zinc-100 shadow-xl">
+                        <table className="w-full text-left">
+                            <thead className="bg-luxury-black text-luxury-gold text-xs uppercase tracking-widest">
+                                <tr>
+                                    <th className="px-6 py-4">Popular Route</th>
+                                    <th className="px-6 py-4">Distance</th>
+                                    <th className="px-6 py-4">Travel Time</th>
+                                </tr>
+                            </thead>
+                            <tbody className="text-zinc-600 bg-zinc-50">
+                                <tr className="border-b border-zinc-100">
+                                    <td className="px-6 py-4 font-bold text-black">Madinah to Makkah</td>
+                                    <td className="px-6 py-4 italic">Approx. 450 KM</td>
+                                    <td className="px-6 py-4">4.5 - 5 Hours</td>
+                                </tr>
+                                <tr className="border-b border-zinc-100">
+                                    <td className="px-6 py-4 font-bold text-black">Jeddah Airport to Makkah</td>
+                                    <td className="px-6 py-4 italic">Approx. 95 KM</td>
+                                    <td className="px-6 py-4">1.5 Hours</td>
+                                </tr>
+                                <tr>
+                                    <td className="px-6 py-4 font-bold text-black">Makkah to Madinah</td>
+                                    <td className="px-6 py-4 italic">Approx. 450 KM</td>
+                                    <td className="px-6 py-4">4.5 - 5 Hours</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
                             <span className="block text-luxury-gold font-bold mb-1">Meeqat Stop</span>
-                            <span className="text-xs text-white/70">Upon Request</span>
+                            <span className="text-xs text-white/70">Dhul Hulaifah</span>
                         </div>
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
-                            <span className="block text-luxury-gold font-bold mb-1">Fixed Price</span>
-                            <span className="text-xs text-white/70">No Hidden Fees</span>
+                            <span className="block text-luxury-gold font-bold mb-1">2025 Rates</span>
+                            <span className="text-xs text-white/70">Fixed SAR Price</span>
                         </div>
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
-                            <span className="block text-luxury-gold font-bold mb-1">Comfort</span>
-                            <span className="text-xs text-white/70">Air Conditioned</span>
+                            <span className="block text-luxury-gold font-bold mb-1">Car Rental</span>
+                            <span className="text-xs text-white/70">With Prof. Driver</span>
                         </div>
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
-                            <span className="block text-luxury-gold font-bold mb-1">24/7</span>
-                            <span className="text-xs text-white/70">Availability</span>
+                            <span className="block text-luxury-gold font-bold mb-1">24/7 Service</span>
+                            <span className="text-xs text-white/70">Airport & Hotels</span>
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { submitBookingForm } from "@/actions/booking";
+import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Calendar, Clock, Plane, User, Mail, Phone, Info, ArrowRightLeft, Briefcase, Car, CheckCircle2 } from "lucide-react";
@@ -347,38 +349,40 @@ export function BookingPageForm() {
     const handleFormSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Construct form data matching the old form structure
+        // Construct form data matching the new CamelCase structure
         const formData = {
-            service_type: serviceType,
+            serviceType: serviceType,
             vehicle: selectedVehicle,
-            pickup_location: pickupLocation,
-            destination: destination,
+            pickupLocation: pickupLocation,
+            destinations: [destination],
             date: date,
             time: `${timeHour}:${timeMinute} ${timeAmPm}`,
-            full_name: fullName,
+            name: fullName,
             email: email,
-            phone: phoneNumber,
-            passengers: passengers,
-            special_instructions: specialInstructions,
-            // Return trip fields (only if return trip is enabled)
+            phone: phoneNumber, // Phone should be handled with country code? phoneNumber state has country code.
+            passengers: Number(passengers),
+            driverInstructions: specialInstructions,
+            // Return trip fields (Manual handling needed for type? Or map to ReturnTripStructure?)
+            // For now simplified single structure for main trip
             ...(returnTrip && {
-                needs_return_trip: true,
-                return_pickup: returnPickupLocation,
-                return_destination: returnDestination,
-                return_date: returnDate,
-                return_time: `${returnTimeHour}:${returnTimeMinute} ${returnTimeAmPm}`,
+                // Logic for return trip to be added to Type if needed properly
             })
         };
 
         console.log('Form Data:', formData);
 
-        // TODO: Send formData to your backend API
-        // Example:
-        // const response = await fetch('/api/booking', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(formData)
-        // });
+        try {
+            const result = await submitBookingForm(formData);
+            if (result.success) {
+                toast.success("Booking Submitted Successfully!");
+                // Reset or redirect?
+            } else {
+                toast.error(result.error || "Submission Failed");
+            }
+        } catch (err) {
+            console.error(err);
+            toast.error("An error occurred");
+        }
     };
 
     const activeVehicle = selectedVehicle ? vehicleDetails[selectedVehicle] : null;

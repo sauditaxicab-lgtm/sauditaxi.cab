@@ -7,26 +7,26 @@ const pillars = [
     {
         id: "punctuality",
         title: "Punctuality Guarantee",
-        subtitle: "Your Time Is Respected, Always.",
-        description: "We operate on precision, not promises. Whether it's an airport pickup or an Umrah journey, if your driver is not present at the scheduled time, your next ride is on us."
+        subtitle: "The Best Saudi Taxi Service Experience.",
+        description: "We operate on precision, not promises. Whether it's an airport pickup or an Umrah journey, our <strong>Saudi taxi service</strong> ensures you are never late. If your driver is not present, your next ride is on us."
     },
     {
         id: "vetted",
         title: "Experienced Drivers",
         subtitle: "Professionally Trained & Trusted.",
-        description: "Every driver is fully licensed and experienced in navigating Saudi roads, including Makkah and Madinah routes. Safe, respectful, and knowledgeable."
+        description: "Every driver is fully licensed and experienced in navigating Saudi roads. We provide the most <strong>comfortable taxi service to Saudi Arabia</strong> for pilgrims visiting Makkah and Madinah."
     },
     {
         id: "flight",
         title: "24/7 Flight Monitoring",
-        subtitle: "We Adjust, So You Don’t Have To.",
-        description: "Flights don’t always run on schedule. We do. Our team monitors your flight in real-time, automatically adjusting pickup times at Jeddah or Madinah airports."
+        subtitle: "Your Premier Saudi Airport Taxi.",
+        description: "Flights don’t always run on schedule. We do. Our team monitors your flight in real-time, making us the <strong>best Saudi airport taxi</strong> choice for international arrivals at Jeddah or Madinah."
     },
     {
         id: "reviews",
         title: "Verified Client Reviews",
         subtitle: "Trusted by Pilgrims & Families",
-        description: "Our reputation is built on real journeys. From international pilgrims to local families, clients across Saudi Arabia consistently trust us for their travel needs."
+        description: "Our reputation is built on real journeys. From international pilgrims to local families, we are recognized as the <strong>best taxi service in Saudi Arabia</strong> for safety and reliability."
     }
 ];
 
@@ -139,64 +139,118 @@ const Icons = {
 
 export function FourPillars() {
     return (
-        <section className="relative py-24 px-4 overflow-hidden">
+        <section className="relative py-24 px-4 overflow-hidden bg-luxury-black">
             <GoldGradientDef />
-            {/* Background Image with Overlay */}
+
+            {/* Background Image with Aggressive Damping */}
             <div
-                className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
+                className="absolute inset-0 z-0 bg-cover bg-center bg-fixed opacity-40 grayscale-[0.5]"
                 style={{ backgroundImage: "url('/city_night_luxury_bg.png')" }}
             >
-                <div className="absolute inset-0 bg-luxury-black/90"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-luxury-black via-luxury-black/90 to-luxury-black"></div>
+                {/* Side Vignette */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]"></div>
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="text-center mb-16">
-                    <span className="text-luxury-gold uppercase tracking-widest text-xs font-bold block mb-2">
-                        Why Pilgrims Choose Us
-                    </span>
-                    <h2 className="text-3xl md:text-5xl font-serif text-white mb-6 leading-tight">
-                        As The Most Trusted Private Transport?
-                    </h2>
-                    <p className="text-white/70 max-w-3xl mx-auto font-light leading-relaxed text-lg">
-                        Luxury means nothing without reliability. That’s why every part of our service is built on principles that have defined our success: punctuality, safety, transparency, and accountability.
-                    </p>
+                <div className="text-center mb-16 max-w-4xl mx-auto">
+                    <motion.span
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-luxury-gold uppercase tracking-[0.3em] text-[10px] font-bold block mb-4 border-b border-luxury-gold/20 pb-2 w-fit mx-auto"
+                    >
+                        The Pillar of Excellence
+                    </motion.span>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6 leading-[1.1]"
+                    >
+                        Why Pilgrims Trust <br />
+                        <span className="text-luxury-gold">Saudi Taxi Transport?</span>
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-white/50 max-w-2xl mx-auto font-light leading-relaxed text-sm md:text-base uppercase tracking-wider"
+                    >
+                        A service built on absolute punctuality, verified safety, and spiritual accountability.
+                    </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* Grid Layout - Mobile horizontal scroll / Desktop 4 columns */}
+                <div className="flex overflow-x-auto pb-8 lg:pb-0 lg:overflow-x-visible lg:grid lg:grid-cols-4 gap-6 no-scrollbar snap-x snap-mandatory">
                     {pillars.map((pillar, index) => {
                         const IconComponent = Icons[pillar.id as keyof typeof Icons];
+                        const isFeatured = index === 0;
 
                         return (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.15, duration: 0.6 }}
-                                className="bg-white/5 border border-white/10 p-8 text-center hover:bg-white/10 hover:border-luxury-gold/50 transition-all duration-300 group rounded-sm flex flex-col h-full"
+                                transition={{ delay: index * 0.1, duration: 0.6 }}
+                                className={`min-w-[85vw] md:min-w-[45vw] lg:min-w-0 snap-center relative transition-all duration-500 group rounded-3xl p-1 ${isFeatured ? 'lg:col-span-1 border-2 border-luxury-gold/30' : ''}`}
                             >
-                                <div className="mb-6 inline-flex p-4 rounded-full bg-black/40 shadow-inner group-hover:scale-110 transition-transform duration-300 border border-luxury-gold/20 mx-auto">
-                                    <IconComponent />
+                                {isFeatured && (
+                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-luxury-gold text-black text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-widest z-30 shadow-xl">
+                                        Most Reliable
+                                    </div>
+                                )}
+
+                                <div className={`h-full flex flex-col p-8 md:p-10 rounded-[2rem] transition-all duration-500 border border-white/5 
+                                    ${isFeatured ? 'bg-gradient-to-br from-luxury-gold/10 via-white/5 to-transparent' : 'bg-white/5'} 
+                                    hover:bg-white/[0.08] hover:border-luxury-gold/30 hover:-translate-y-2`}>
+
+                                    {/* Icon Pedestal */}
+                                    <div className="relative mb-8 w-20 h-20 mx-auto flex items-center justify-center">
+                                        <div className="absolute inset-0 bg-luxury-gold/10 blur-xl rounded-full group-hover:bg-luxury-gold/20 transition-all"></div>
+                                        <div className="relative z-10 w-full h-full flex items-center justify-center bg-black/40 rounded-2xl border border-white/10 group-hover:border-luxury-gold/30 transition-all">
+                                            <IconComponent />
+                                        </div>
+                                    </div>
+
+                                    <h3 className="text-xl font-serif text-white mb-3 text-center group-hover:text-luxury-gold transition-colors">
+                                        {pillar.title}
+                                    </h3>
+
+                                    <div className="text-luxury-gold text-[10px] uppercase font-bold tracking-[0.15em] mb-6 text-center border-b border-white/5 pb-3">
+                                        {pillar.subtitle.replace('.', '')}
+                                    </div>
+
+                                    <p className="text-white/50 text-xs md:text-sm leading-[1.7] text-center font-light flex-grow">
+                                        {pillar.description.replace(/<strong>|<\/strong>/g, '')}
+                                    </p>
+
                                 </div>
-                                <h3 className="text-xl font-serif text-white mb-2 group-hover:text-luxury-gold transition-colors">
-                                    {pillar.title}
-                                </h3>
-                                <div className="text-luxury-gold/80 text-xs uppercase tracking-wider font-medium mb-4 min-h-[1.5em]">
-                                    {pillar.subtitle}
-                                </div>
-                                <p className="text-white/60 text-sm leading-relaxed flex-grow">
-                                    {pillar.description}
-                                </p>
                             </motion.div>
                         );
                     })}
                 </div>
 
-                <div className="mt-16 text-center max-w-3xl mx-auto border-t border-white/10 pt-10">
-                    <p className="text-white/70 font-light italic text-lg">
+                {/* Professional Conclusion Quote */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mt-20 relative px-8 py-10 md:py-12 bg-white/[0.02] border border-white/5 rounded-[3rem] max-w-4xl mx-auto overflow-hidden text-center group"
+                >
+                    {/* Background Detail */}
+                    <div className="absolute top-0 right-0 p-8 text-luxury-gold/10 italic font-serif text-8xl pointer-events-none">"</div>
+
+                    <p className="text-white/60 font-serif italic text-lg md:text-2xl leading-relaxed relative z-10">
                         "No hidden charges. No last-minute surprises. Just refined service delivered the way it always has been, professionally, reliably, and with quiet confidence."
                     </p>
-                </div>
+
+                    {/* Gold line detail */}
+                    <div className="mt-8 w-24 h-[1px] bg-gradient-to-r from-transparent via-luxury-gold/50 to-transparent mx-auto"></div>
+                </motion.div>
             </div>
         </section>
     );

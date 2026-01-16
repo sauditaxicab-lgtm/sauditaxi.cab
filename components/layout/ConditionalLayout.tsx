@@ -7,17 +7,18 @@ import { FloatingContactButton } from '@/components/ui/FloatingContactButton';
 
 export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  
-  // Hide navigation elements on admin and login pages
-  const isAdminOrLoginPage = pathname?.startsWith('/admin') || pathname?.startsWith('/login');
+  const isAdmin = pathname?.startsWith('/admin');
+
+  if (isAdmin) {
+    return <>{children}</>;
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
-      {!isAdminOrLoginPage && <Navbar />}
+      <Navbar />
       <main className="flex-grow">{children}</main>
-      {!isAdminOrLoginPage && <Footer />}
-      {!isAdminOrLoginPage && <FloatingContactButton />}
+      <Footer />
+      <FloatingContactButton />
     </div>
   );
 }
-

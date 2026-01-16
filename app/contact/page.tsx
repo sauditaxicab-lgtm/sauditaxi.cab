@@ -5,8 +5,8 @@ import ReadyToBook from "@/components/about/ReadyToBook";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Contact Saudi Taxi | 24/7 Airport & Umrah Transfers Support",
-    description: "Get in touch with Saudi Taxi for premium private transport in KSA. Our team is available 24/7 for airport transfers, Makkah & Madinah Umrah taxi bookings.",
+    title: "Contact Saudi Taxi | 24/7 Umrah & Airport Support",
+    description: "Contact Saudi Taxi for premium transport. Available 24/7 for airport transfers and Makkah & Madinah taxi bookings. Instant WhatsApp support.",
     alternates: {
         canonical: '/contact',
     },
@@ -18,7 +18,7 @@ export default function ContactPage() {
             <ServiceHero
                 title="Contact Us"
                 subtitle="24/7 Premium Support"
-                description="Our dedicated team is ready to assist you with your luxury travel needs, any time of day or night."
+                description="Our dedicated team is ready to provide a professional Saudi Taxi near you, any time of day or night."
                 backgroundImage="/about/luxury_chauffeur_opening_door.png"
                 backgroundClassName="scale-110"
                 overlay={true}

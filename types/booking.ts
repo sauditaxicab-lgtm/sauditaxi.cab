@@ -7,30 +7,32 @@ export interface BookingFormData {
   name: string;
   email: string | null;
   phone: string;
-  passengers: number;
-  
+  passengers: number | string;
+  luggage?: string;
+
   // Vehicle
-  vehicle_type: string;
-  vehicle_name: string;
-  vehicle_model: string;
-  
+  vehicleType?: string;
+  vehicleName?: string;
+  vehicleModel?: string;
+  vehicle?: string; // Quick form support
+
   // Location & Time
-  pickup_location: string;
+  pickupLocation: string;
   destinations: string[] | ReturnTripStructure;
   date: string;
   time: string;
-  
+
   // Service Details
-  service_type: string;
-  flight_number: string;
-  terminal_type: string;
-  driver_instructions: string;
-  
+  serviceType?: string;
+  flightNumber?: string;
+  terminalType?: string;
+  driverInstructions?: string;
+
   // Timezone & Location
-  melbourne_datetime: string;
-  timezone: string;
-  user_timezone: string;
-  city: string;
+  melbourneDatetime?: string;
+  timezone?: string;
+  userTimezone?: string;
+  city?: string;
 }
 
 export interface ReturnTripStructure {
@@ -56,4 +58,3 @@ export interface BookingSubmissionResult {
   error?: string;
   fieldErrors?: Record<string, string>;
 }
-

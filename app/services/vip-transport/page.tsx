@@ -56,7 +56,7 @@ export default function VIPTransportPage() {
                         </div>
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
                             <span className="block text-luxury-gold font-bold mb-1">Senior</span>
-                            <span className="text-xs text-white/70">Chauffeurs</span>
+                            <span className="text-xs text-white/70">Drivers</span>
                         </div>
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
                             <span className="block text-luxury-gold font-bold mb-1">Privacy</span>
@@ -73,7 +73,7 @@ export default function VIPTransportPage() {
             {/* Content */}
             <ContentBlock
                 title="Executive Transfer Services"
-                content={`Whether attending a conference in Riyadh, performing a VIP Umrah, or needing a reliable chauffeur for a series of meetings in Jeddah, we have you covered.\n\nOur VIP fleet features immaculate GMC Yukons and premium sedans. Your driver will be immaculately presented, punctual, and knowledgeable about the best routes.\n\nServices include:\n• Airport VIP transfers\n• Corporate roadshows\n• Event transportation\n• VIP Umrah & Ziyarat`}
+                content={`Whether attending a conference in Riyadh, performing a VIP Umrah, or needing a reliable driver for a series of meetings in Jeddah, we have you covered.\n\nOur VIP fleet features immaculate GMC Yukons and premium sedans. Your driver will be immaculately presented, punctual, and knowledgeable about the best routes.\n\nServices include:\n• Airport VIP transfers\n• Corporate roadshows\n• Event transportation\n• VIP Umrah & Ziyarat`}
                 imageSrc="/hero_bg.png"
                 imageAlt="VIP Transport"
             />

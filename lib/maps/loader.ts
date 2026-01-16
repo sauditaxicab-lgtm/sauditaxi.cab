@@ -56,11 +56,10 @@ class MapsLoader {
     try {
       // Get API key from Supabase
       const apiKey = await mapsApiKeyService.getApiKey();
-
       // Set options for the Google Maps loader (only once)
       if (!this.isInitialized) {
         setOptions({
-          apiKey: apiKey as string,
+          key: apiKey as string,
           version: MAPS_CONFIG.version,
           region: MAPS_CONFIG.region,
           language: MAPS_CONFIG.language,
