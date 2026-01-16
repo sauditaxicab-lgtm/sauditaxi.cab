@@ -72,6 +72,7 @@ export function FloatingContactButton() {
                                     setShowCard(false);
                                     setHasInteracted(true);
                                 }}
+                                aria-label="Close chat"
                                 className="ml-auto text-white/40 hover:text-white transition-colors z-10"
                             >
                                 <X size={20} />
@@ -119,6 +120,7 @@ export function FloatingContactButton() {
                         setShowCard(!isOpen);
                         setHasInteracted(true);
                     }}
+                    aria-label={isOpen ? "Close WhatsApp chat" : "Open WhatsApp chat"}
                     className="relative z-10 w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#25D366] hover:bg-[#20ba5a] flex items-center justify-center text-white shadow-lg shadow-[#25D366]/30 transition-all duration-300 transform hover:scale-105 border-2 border-white"
                 >
                     <AnimatePresence mode="popLayout" initial={false}>

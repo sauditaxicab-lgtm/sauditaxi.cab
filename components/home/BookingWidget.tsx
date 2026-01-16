@@ -46,10 +46,11 @@ export function BookingWidget() {
             <div className="space-y-4">
                 {/* Date */}
                 <div className="group space-y-1.5">
-                    <label className="text-[10px] text-luxury-gold/80 group-focus-within:text-luxury-gold uppercase tracking-[0.15em] font-bold ml-1 flex items-center gap-2 transition-colors">
+                    <label htmlFor="booking-date" className="text-[10px] text-luxury-gold/80 group-focus-within:text-luxury-gold uppercase tracking-[0.15em] font-bold ml-1 flex items-center gap-2 transition-colors">
                         <Calendar size={12} className="shrink-0" /> Travel Date
                     </label>
                     <Input
+                        id="booking-date"
                         type="date"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
@@ -60,10 +61,11 @@ export function BookingWidget() {
                 {/* Pickup & Destination Group */}
                 <div className="space-y-3">
                     <div className="group space-y-1.5">
-                        <label className="text-[10px] text-luxury-gold/80 group-focus-within:text-luxury-gold uppercase tracking-[0.15em] font-bold ml-1 flex items-center gap-2 transition-colors">
+                        <label htmlFor="booking-pickup" className="text-[10px] text-luxury-gold/80 group-focus-within:text-luxury-gold uppercase tracking-[0.15em] font-bold ml-1 flex items-center gap-2 transition-colors">
                             <MapPin size={12} className="shrink-0" /> Pickup From
                         </label>
                         <Input
+                            id="booking-pickup"
                             placeholder="Airport, Hotel, or City"
                             value={pickupLocation}
                             onChange={(e) => setPickupLocation(e.target.value)}
@@ -72,10 +74,11 @@ export function BookingWidget() {
                     </div>
 
                     <div className="group space-y-1.5">
-                        <label className="text-[10px] text-luxury-gold/80 group-focus-within:text-luxury-gold uppercase tracking-[0.15em] font-bold ml-1 flex items-center gap-2 transition-colors">
+                        <label htmlFor="booking-destination" className="text-[10px] text-luxury-gold/80 group-focus-within:text-luxury-gold uppercase tracking-[0.15em] font-bold ml-1 flex items-center gap-2 transition-colors">
                             <MapPin size={12} className="shrink-0" /> Destination
                         </label>
                         <Input
+                            id="booking-destination"
                             placeholder="Where are you going?"
                             value={destination}
                             onChange={(e) => setDestination(e.target.value)}
@@ -87,11 +90,12 @@ export function BookingWidget() {
                 <div className="flex gap-4">
                     {/* Passengers */}
                     <div className="group space-y-1.5 flex-1">
-                        <label className="text-[10px] text-luxury-gold/80 group-focus-within:text-luxury-gold uppercase tracking-[0.15em] font-bold ml-1 flex items-center gap-2 transition-colors line-clamp-1">
+                        <label htmlFor="booking-passengers" className="text-[10px] text-luxury-gold/80 group-focus-within:text-luxury-gold uppercase tracking-[0.15em] font-bold ml-1 flex items-center gap-2 transition-colors line-clamp-1">
                             <Users size={12} className="shrink-0" /> Passengers
                         </label>
                         <div className="relative">
                             <Input
+                                id="booking-passengers"
                                 type="number"
                                 min="1"
                                 placeholder="1"
@@ -104,11 +108,12 @@ export function BookingWidget() {
 
                     {/* Luggage */}
                     <div className="group space-y-1.5 flex-1">
-                        <label className="text-[10px] text-luxury-gold/80 group-focus-within:text-luxury-gold uppercase tracking-[0.15em] font-bold ml-1 flex items-center gap-2 transition-colors line-clamp-1">
+                        <label htmlFor="booking-luggage" className="text-[10px] text-luxury-gold/80 group-focus-within:text-luxury-gold uppercase tracking-[0.15em] font-bold ml-1 flex items-center gap-2 transition-colors line-clamp-1">
                             <Briefcase size={12} className="shrink-0" /> Luggage
                         </label>
                         <div className="relative">
                             <Input
+                                id="booking-luggage"
                                 type="number"
                                 min="0"
                                 placeholder="0"
