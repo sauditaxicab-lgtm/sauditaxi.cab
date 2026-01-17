@@ -2,6 +2,7 @@
 
 import { Clock, Phone, Calendar, Shield } from "lucide-react";
 import { motion } from "framer-motion";
+import { BUSINESS_CONFIG } from "@/lib/constants";
 
 export function TwentyFourSeven() {
     return (
@@ -82,7 +83,7 @@ export function TwentyFourSeven() {
                             </p>
 
                             <a
-                                href="https://wa.me/966567086207"
+                                href={`https://wa.me/${BUSINESS_CONFIG.PHONE}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center w-full bg-luxury-gold hover:bg-white text-black font-bold py-5 rounded-2xl transition-all duration-300 tracking-[0.15em] text-xs uppercase shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:-translate-y-1 active:scale-[0.98]"

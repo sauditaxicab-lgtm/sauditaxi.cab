@@ -1,8 +1,8 @@
 // Business Constants Configuration
 export const BUSINESS_CONFIG = {
   // Contact Information
-  PHONE: '966501729282',
-  PHONE_DISPLAY: '+966 50 172 9282',
+  PHONE: '966548174726',
+  PHONE_DISPLAY: '+966 54 817 4726',
   EMAIL: 'info@sauditaxi.cab',
 
   // Business Details
