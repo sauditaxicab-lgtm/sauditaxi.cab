@@ -19,7 +19,7 @@ const fleetList = [
     { name: "Hyundai H1 Starex", href: "/fleet/hyundai-h1-starex-7-seater-taxi" },
     { name: "GMC Yukon XL", href: "/fleet/gmc-yukon-xl-7-seater-taxi" },
     { name: "Toyota HiAce", href: "/fleet/toyota-hiace-11-seater-taxi" },
-    { name: "Toyota Coaster", href: "/fleet/toyota-coaster-30-seater-taxi" }
+    { name: "Toyota Coaster", href: "/fleet/toyota-coaster-17-seater-taxi" }
 ];
 
 const servicesList = [

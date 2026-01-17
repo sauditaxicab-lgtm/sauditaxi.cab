@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/fleet/gmc-yukon-xl-7-seater-taxi',
         '/fleet/toyota-hiace-11-seater-taxi',
         '/fleet/hyundai-h1-starex-7-seater-taxi',
-        '/fleet/toyota-coaster-30-seater-taxi',
+        '/fleet/toyota-coaster-17-seater-taxi',
     ]
 
     return routes.map((route) => ({

@@ -132,7 +132,7 @@ export function VehicleFleet() {
                                             activeTab === 'starex' ? 'hyundai-h1-starex-7-seater-taxi' :
                                                 activeTab === 'gmc' ? 'gmc-yukon-xl-7-seater-taxi' :
                                                     activeTab === 'hiace' ? 'toyota-hiace-11-seater-taxi' :
-                                                        'toyota-coaster-30-seater-taxi'}`} className="flex-1 sm:flex-none">
+                                                        'toyota-coaster-17-seater-taxi'}`} className="flex-1 sm:flex-none">
                                         <Button
                                             variant="outline"
                                             className="w-full sm:w-auto border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-black px-6 py-6 text-xs font-bold tracking-widest transition-all"
