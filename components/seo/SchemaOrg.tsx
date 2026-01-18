@@ -93,7 +93,46 @@ export default function SchemaOrg() {
                     }
                 }
             ]
-        }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "1200",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Ahmed Al-Farsi"
+                },
+                "datePublished": "2024-01-15",
+                "reviewBody": "Excellent service for our Umrah trip. The driver picked us up from Jeddah airport on time and the GMC was very comfortable for my family. Highly recommended for families.",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                }
+            },
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Fatima Khan"
+                },
+                "datePublished": "2024-01-08",
+                "reviewBody": "We booked a Staria for our Ziyarat in Madinah. The driver was very polite and knew all the historical places. The car was clean and spacious. Perfect pilgrim experience.",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                }
+            }
+        ]
     }
 
     const organizationSchema = {
@@ -207,50 +246,7 @@ export default function SchemaOrg() {
         ]
     }
 
-    const reviewSchema = {
-        "@context": "https://schema.org",
-        "@type": "TaxiService",
-        "name": "Saudi Taxi",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "1200",
-            "bestRating": "5",
-            "worstRating": "1"
-        },
-        "review": [
-            {
-                "@type": "Review",
-                "author": {
-                    "@type": "Person",
-                    "name": "Ahmed Al-Farsi"
-                },
-                "datePublished": "2024-01-15",
-                "reviewBody": "Excellent service for our Umrah trip. The driver picked us up from Jeddah airport on time and the GMC was very comfortable for my family. Highly recommended for families.",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5",
-                    "worstRating": "1"
-                }
-            },
-            {
-                "@type": "Review",
-                "author": {
-                    "@type": "Person",
-                    "name": "Fatima Khan"
-                },
-                "datePublished": "2024-01-08",
-                "reviewBody": "We booked a Staria for our Ziyarat in Madinah. The driver was very polite and knew all the historical places. The car was clean and spacious. Perfect pilgrim experience.",
-                "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5",
-                    "bestRating": "5",
-                    "worstRating": "1"
-                }
-            }
-        ]
-    }
+
 
     return (
         <>
@@ -264,11 +260,7 @@ export default function SchemaOrg() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
             />
-            <Script
-                id="schema-review"
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-            />
+
             <Script
                 id="schema-faq"
                 type="application/ld+json"
