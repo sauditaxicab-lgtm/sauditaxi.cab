@@ -28,8 +28,8 @@ const ContactForm = () => {
         {
             icon: <MapPin className="w-6 h-6" />,
             title: "Location",
-            content: "3707 Al Munirah St, Makkah",
-            link: "https://maps.app.goo.gl/r6v9zZ8h8B8z8z8z8"
+            content: "حي الجامعة, 3707 شارع المنيرة, Makkah",
+            link: "https://g.page/r/Cb3L2drXGDwqEAE"
         },
         {
             icon: <Clock className="w-6 h-6" />,

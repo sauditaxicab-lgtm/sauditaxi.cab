@@ -31,14 +31,15 @@ export function LocationMap() {
                             <div>
                                 <h3 className="text-xl font-serif text-white mb-2">Saudi Taxi</h3>
                                 <p className="text-white/60 text-sm leading-relaxed">
-                                    3707 Al Munirah St, Al Jamiah<br />
+                                    حي الجامعة, MEJA3707<br />
+                                    3707 شارع المنيرة، 6806<br />
                                     Makkah 24242, Saudi Arabia
                                 </p>
                             </div>
 
                             <div className="space-y-3">
                                 <a
-                                    href="https://maps.app.goo.gl/r6v9zZ8h8B8z8z8z8" // Using the share link or a generic map link if specific one fails
+                                    href="https://g.page/r/Cb3L2drXGDwqEAE" // Official GMB Location Link
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block"
@@ -50,7 +51,7 @@ export function LocationMap() {
                                 </a>
 
                                 <a
-                                    href="https://search.google.com/local/writereview?placeid=ChIJcwjgV20Cwj0Ra_kF8YqKz_U"
+                                    href="https://g.page/r/Cb3L2drXGDwqEAE/review"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block"

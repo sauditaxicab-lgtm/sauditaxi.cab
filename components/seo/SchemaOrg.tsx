@@ -11,7 +11,7 @@ export default function SchemaOrg() {
         "priceRange": "$$",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "3707 Al Munirah St, Al Jamiah",
+            "streetAddress": "حي الجامعة, MEJA3707، 3707 شارع المنيرة، 6806",
             "addressLocality": "Makkah",
             "postalCode": "24242",
             "addressCountry": "SA",
