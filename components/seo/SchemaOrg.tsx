@@ -3,7 +3,8 @@ import Script from 'next/script'
 export default function SchemaOrg() {
     const taxiSchema = {
         "@context": "https://schema.org",
-        "@type": "TaxiService",
+        "@type": "LocalBusiness",
+        "additionalType": "https://schema.org/TaxiService",
         "name": "Saudi Taxi",
         "image": "https://sauditaxi.cab/og-image.png",
         "url": "https://sauditaxi.cab",
