@@ -93,8 +93,10 @@ export function FloatingContactButton() {
                             </div>
 
                             {/* CTA Button */}
-                            <button
-                                onClick={handleWhatsAppClick}
+                            <a
+                                href={`https://wa.me/${BUSINESS_CONFIG.PHONE}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold py-3.5 rounded-xl shadow-lg flex items-center justify-center gap-2.5 transition-all hover:shadow-xl hover:-translate-y-0.5 group"
                             >
                                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white" xmlns="http://www.w3.org/2000/svg">
@@ -102,7 +104,7 @@ export function FloatingContactButton() {
                                 </svg>
                                 <span>Start Chat on WhatsApp</span>
                                 <Send size={16} className="group-hover:translate-x-1 transition-transform" />
-                            </button>
+                            </a>
                         </div>
                     </motion.div>
                 )}
