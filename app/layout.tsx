@@ -57,6 +57,11 @@ export const metadata: Metadata = {
   icons: {
     icon: '/logo/fav.ico',
   },
+  verification: {
+    other: {
+      'p:domain_verify': '535eb0c4e3fdbd622a90ede84e0e6a7d',
+    },
+  },
 };
 
 export default function RootLayout({
