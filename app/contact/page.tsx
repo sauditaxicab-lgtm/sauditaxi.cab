@@ -2,6 +2,7 @@ import { ServiceHero } from "@/components/services/ServiceHero";
 import ContactForm from "@/components/contact/ContactForm";
 import ServiceAreas from "@/components/contact/ServiceAreas";
 import ReadyToBook from "@/components/about/ReadyToBook";
+import { LocationMap } from "@/components/home/LocationMap";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function ContactPage() {
                 overlay={true}
             />
             <ContactForm />
+            <LocationMap />
 
             <section className="bg-white py-16 px-6">
                 <div className="max-w-4xl mx-auto text-center space-y-8">

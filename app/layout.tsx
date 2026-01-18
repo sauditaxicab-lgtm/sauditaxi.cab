@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
+import SchemaOrg from "@/components/seo/SchemaOrg";
 import { Toaster } from "sonner";
 
 
@@ -39,6 +40,20 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: './',
+  },
   icons: {
     icon: '/logo/fav.ico',
   },
@@ -66,6 +81,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ConditionalLayout>{children}</ConditionalLayout>
+        <SchemaOrg />
         <Toaster position="top-right" richColors />
       </body>
     </html>

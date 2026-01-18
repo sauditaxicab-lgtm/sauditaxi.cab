@@ -9,6 +9,7 @@ import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { VehicleFleet } from "@/components/home/VehicleFleet";
 import { ReviewsSection } from "@/components/home/ReviewsSection";
 import { InformationSection } from "@/components/home/InformationSection";
+import { LocationMap } from "@/components/home/LocationMap";
 import { FAQSection } from "@/components/home/FAQSection";
 import { CTASection } from "@/components/home/CTASection";
 
@@ -23,7 +24,9 @@ export default function Home() {
       <ServicesGrid />
       <VehicleFleet />
       <ReviewsSection />
+
       <InformationSection />
+      <LocationMap />
       <FAQSection />
       <CTASection />
     </main>

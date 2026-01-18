@@ -1,11 +1,19 @@
-"use client";
-
 import { ServiceHero } from "@/components/services/ServiceHero";
 import { ContentBlock } from "@/components/services/ContentBlock";
 import { FleetGrid } from "@/components/services/FleetGrid";
 import { ProcessSteps } from "@/components/services/ProcessSteps";
 import { CTASection } from "@/components/home/CTASection";
 import { FAQSection } from "@/components/home/FAQSection";
+import { Metadata } from 'next';
+import Script from 'next/script';
+
+export const metadata: Metadata = {
+    title: 'Jeddah Airport to Makkah Taxi | Book Umrah Taxi to Mecca',
+    description: 'Book your private taxi from Jeddah Airport (JED) to Makkah. Premium GMC & Camry transfers with meet & greet. Best Jeddah to Mecca taxi fare guaranteed.',
+    alternates: {
+        canonical: '/services/airport-transfers',
+    },
+};
 
 const processSteps = [
     { title: "Book Online", description: "Select your pickup location (Jeddah/Madinah Airport) and destination on our WhatsApp booking form." },
@@ -37,8 +45,34 @@ const airportFAQs = [
 ];
 
 export default function AirportTransfersPage() {
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://sauditaxi.cab"
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://sauditaxi.cab/services"
+        }, {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Airport Transfers",
+            "item": "https://sauditaxi.cab/services/airport-transfers"
+        }]
+    };
+
     return (
         <main className="bg-luxury-black min-h-screen text-white">
+            <Script
+                id="breadcrumb-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
             <ServiceHero
                 title="Taxi from Jeddah Airport to Makkah"
                 subtitle="Premium Airport Transfers"

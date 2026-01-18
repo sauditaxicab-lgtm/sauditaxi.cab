@@ -28,7 +28,8 @@ const ContactForm = () => {
         {
             icon: <MapPin className="w-6 h-6" />,
             title: "Location",
-            content: "Makkah, Saudi Arabia"
+            content: "3707 Al Munirah St, Makkah",
+            link: "https://maps.app.goo.gl/r6v9zZ8h8B8z8z8z8"
         },
         {
             icon: <Clock className="w-6 h-6" />,
