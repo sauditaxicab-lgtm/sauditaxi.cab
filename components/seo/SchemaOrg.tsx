@@ -61,9 +61,10 @@ export default function SchemaOrg() {
         ],
         "sameAs": [
             "https://sauditaxi.cab",
-            "https://www.facebook.com/people/Saudi-Taxi/100093222222222/",
-            "https://twitter.com/SaudiTaxi",
-            "https://www.instagram.com/sauditaxi"
+            "https://www.snapchat.com/add/sauditaxicab",
+            "https://www.quora.com/profile/Saudi-Taxi-1",
+            "https://www.pinterest.com/sauditaxicab/",
+            "https://www.youtube.com/channel/UCJFtqjUo7W899VhS2tzpujw"
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",

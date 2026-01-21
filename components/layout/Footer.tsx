@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Linkedin, Twitter, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { Youtube, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { FaSnapchat, FaQuora, FaPinterest, FaLinkedin, FaTiktok, FaGoogle } from "react-icons/fa";
 import { PaymentIcons } from "./PaymentIcons";
 import { Logo } from "@/components/ui/Logo";
 import { BUSINESS_CONFIG } from "@/lib/constants";
@@ -28,14 +29,19 @@ export function Footer() {
                         </p>
                         <div className="flex gap-4 justify-center md:justify-start">
                             {[
-                                { Icon: Facebook, label: 'Visit our Facebook page' },
-                                { Icon: Instagram, label: 'Follow us on Instagram' },
-                                { Icon: Linkedin, label: 'Connect with us on LinkedIn' },
-                                { Icon: Twitter, label: 'Follow us on Twitter' }
+                                { Icon: FaGoogle, label: 'Find us on Google', href: 'https://www.google.com/search?sca_esv=7961302cda4152b2&sxsrf=ANbL-n4rswqefxhsrao7DBvLqPiQ2-eJ8Q%3A1768996664250&q=saudi%20taxi&stick=H4sIAAAAAAAAAONgU1I1qDA0TTYyMDUwMDJITU2yMDW3MqgwSjRONrRIMU9JTLFMTkpKWcTKVZxYmpKpUJJYkQkAeYwx_zYAAAA&mat=CaNejubRXx4h&ved=2ahUKEwi19Z-OypySAxW-K_sDHbGpAJYQrMcEegQIGRAC' },
+                                { Icon: FaSnapchat, label: 'Follow us on Snapchat', href: 'https://www.snapchat.com/add/sauditaxicab' },
+                                { Icon: FaTiktok, label: 'Follow us on TikTok', href: 'https://www.tiktok.com/@sauditaxiservice' },
+                                { Icon: FaQuora, label: 'Visit our Quora profile', href: 'https://www.quora.com/profile/Saudi-Taxi-1' },
+                                { Icon: FaPinterest, label: 'Follow us on Pinterest', href: 'https://www.pinterest.com/sauditaxicab/' },
+                                { Icon: FaLinkedin, label: 'Follow us on LinkedIn', href: 'https://www.linkedin.com/company/saudi-taxi/' },
+                                { Icon: Youtube, label: 'Subscribe to our YouTube channel', href: 'https://www.youtube.com/channel/UCJFtqjUo7W899VhS2tzpujw' }
                             ].map((social, i) => (
                                 <a
                                     key={i}
-                                    href="#"
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label={social.label}
                                     className="w-10 h-10 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:bg-luxury-gold hover:text-black hover:scale-105 transition-all duration-300"
                                 >
