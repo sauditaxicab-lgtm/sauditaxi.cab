@@ -141,6 +141,9 @@ export function Footer() {
                         { Icon: Youtube, label: 'YouTube', href: 'https://www.youtube.com/channel/UCJFtqjUo7W899VhS2tzpujw', color: 'bg-[#FF0000]' },
                         { Icon: FaSnapchat, label: 'Snapchat', href: 'https://www.snapchat.com/add/sauditaxicab', color: 'bg-[#FFFC00] text-black' },
                         { Icon: FaTiktok, label: 'TikTok', href: 'https://www.tiktok.com/@sauditaxiservice', color: 'bg-[#000000] border border-white/20' },
+                        { Icon: FaLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/company/saudi-taxi/', color: 'bg-[#0077b5]' },
+                        { Icon: FaPinterest, label: 'Pinterest', href: 'https://www.pinterest.com/sauditaxicab/', color: 'bg-[#E60023]' },
+                        { Icon: FaQuora, label: 'Quora', href: 'https://www.quora.com/profile/Saudi-Taxi-1', color: 'bg-[#B92B27]' },
                     ].map((social, i) => (
                         <a
                             key={i}
