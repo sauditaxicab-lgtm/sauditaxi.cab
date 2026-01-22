@@ -4,9 +4,7 @@ import { normalizePhoneNumber } from '@/utils/phoneNormalization';
 import { supabase } from '@/lib/supabase';
 import type { BookingFormData, BookingSubmissionResult } from '@/types/booking';
 import { ZodError } from 'zod';
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { sendEmail } from '@/lib/email';
 
 /**
  * Submits the booking form.
@@ -52,37 +50,32 @@ export async function submitBookingForm(
       console.error('Supabase booking insert error:', dbError);
     }
 
-    // Send Email via Resend
-    try {
-      const { data, error } = await resend.emails.send({
-        from: 'Saudi Taxi Booking <onboarding@resend.dev>',
-        to: ['sauditaxicab@gmail.com'],
-        subject: `New Booking Request: ${formData.pickupLocation} to ${destinationStr}`,
-        html: `
-          <h1>New Booking Request</h1>
-          <p><strong>Vehicle:</strong> ${formData.vehicle || formData.vehicleName || formData.vehicleType || 'Any'}</p>
-          <p><strong>Pickup:</strong> ${formData.pickupLocation}</p>
-          <p><strong>Destination:</strong> ${destinationStr}</p>
-          <p><strong>Date:</strong> ${formData.date}</p>
-          <p><strong>Time:</strong> ${formData.time || 'Not specified'}</p>
-          <p><strong>Passengers:</strong> ${formData.passengers}</p>
-          <p><strong>Luggage:</strong> ${formData.luggage}</p>
-          <p><strong>Phone:</strong> ${normalizedPhone}</p>
-          <p><strong>Name:</strong> ${formData.name || 'WhatsApp User'}</p>
-          <h2>Other Details</h2>
-          <p><strong>Service Type:</strong> ${formData.serviceType || 'Standard'}</p>
-          <p><strong>Flight Number:</strong> ${formData.flightNumber || 'N/A'}</p>
-          <p><strong>Instructions:</strong> ${formData.driverInstructions || 'N/A'}</p>
-        `,
-      });
+    // Send Email via Nodemailer
+    const emailResult = await sendEmail({
+      to: 'sauditaxicab@gmail.com',
+      subject: `New Booking Request: ${formData.pickupLocation} to ${destinationStr}`,
+      html: `
+        <h1>New Booking Request</h1>
+        <p><strong>Vehicle:</strong> ${formData.vehicle || formData.vehicleName || formData.vehicleType || 'Any'}</p>
+        <p><strong>Pickup:</strong> ${formData.pickupLocation}</p>
+        <p><strong>Destination:</strong> ${destinationStr}</p>
+        <p><strong>Date:</strong> ${formData.date}</p>
+        <p><strong>Time:</strong> ${formData.time || 'Not specified'}</p>
+        <p><strong>Passengers:</strong> ${formData.passengers}</p>
+        <p><strong>Luggage:</strong> ${formData.luggage}</p>
+        <p><strong>Phone:</strong> ${normalizedPhone}</p>
+        <p><strong>Name:</strong> ${formData.name || 'WhatsApp User'}</p>
+        <h2>Other Details</h2>
+        <p><strong>Service Type:</strong> ${formData.serviceType || 'Standard'}</p>
+        <p><strong>Flight Number:</strong> ${formData.flightNumber || 'N/A'}</p>
+        <p><strong>Instructions:</strong> ${formData.driverInstructions || 'N/A'}</p>
+      `,
+    });
 
-      if (error) {
-        console.error('Resend booking email error:', error);
-      } else {
-        console.log('Resend booking email sent:', data);
-      }
-    } catch (emailError) {
-      console.error('Failed to send booking email:', emailError);
+    if (!emailResult.success) {
+      console.error('Email sending failed:', emailResult.error);
+    } else {
+      console.log('Email sent successfully');
     }
 
     if (dbError) {

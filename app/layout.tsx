@@ -115,6 +115,13 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "v4xib3kwig");
           `}
         </Script>
+
+        {/* Trustpilot Script */}
+        <Script
+          src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+          strategy="lazyOnload"
+          async
+        />
       </body>
     </html>
   );

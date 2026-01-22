@@ -4,9 +4,7 @@ import { contactSchema } from '@/schemas/contact';
 import { supabase } from '@/lib/supabase';
 import type { ContactFormData, ContactSubmissionResult } from '@/types/contact';
 import { ZodError } from 'zod';
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { sendEmail } from '@/lib/email';
 
 /**
  * Submits the contact form.
@@ -34,30 +32,25 @@ export async function submitContactForm(
       console.error('Supabase contact insert error:', dbError);
     }
 
-    // Send Email via Resend
-    try {
-      const { data, error } = await resend.emails.send({
-        from: 'Saudi Taxi Contact <onboarding@resend.dev>',
-        to: ['sauditaxicab@gmail.com'],
-        subject: `New Contact Message: ${validatedData.subject}`,
-        html: `
-          <h1>New Contact Message</h1>
-          <p><strong>Name:</strong> ${validatedData.name}</p>
-          <p><strong>Email:</strong> ${validatedData.email}</p>
-          <p><strong>Subject:</strong> ${validatedData.subject}</p>
-          <p><strong>Message:</strong></p>
-          <p>${validatedData.message}</p>
-        `,
-        replyTo: validatedData.email,
-      });
+    // Send Email via Nodemailer
+    const emailResult = await sendEmail({
+      to: 'sauditaxicab@gmail.com',
+      subject: `New Contact Message: ${validatedData.subject}`,
+      html: `
+        <h1>New Contact Message</h1>
+        <p><strong>Name:</strong> ${validatedData.name}</p>
+        <p><strong>Email:</strong> ${validatedData.email}</p>
+        <p><strong>Subject:</strong> ${validatedData.subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>${validatedData.message}</p>
+      `,
+      replyTo: validatedData.email,
+    });
 
-      if (error) {
-        console.error('Resend email error:', error);
-      } else {
-        console.log('Resend email sent:', data);
-      }
-    } catch (emailError) {
-      console.error('Failed to send email:', emailError);
+    if (!emailResult.success) {
+      console.error('Email sending failed:', emailResult.error);
+    } else {
+      console.log('Email sent successfully');
     }
 
     if (dbError) {

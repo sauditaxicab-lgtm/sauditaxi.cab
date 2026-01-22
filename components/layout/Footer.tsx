@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Youtube, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
-import { FaSnapchat, FaQuora, FaPinterest, FaLinkedin, FaTiktok, FaGoogle } from "react-icons/fa";
+import { Youtube, MapPin, Phone, Mail, ArrowRight, Star } from "lucide-react";
+import { FaSnapchat, FaQuora, FaPinterest, FaLinkedin, FaTiktok, FaGoogle, FaFacebookF, FaInstagram, FaTwitter, FaTripadvisor } from "react-icons/fa";
+import { SiTrustpilot } from "react-icons/si";
 import { PaymentIcons } from "./PaymentIcons";
 import { Logo } from "@/components/ui/Logo";
 import { BUSINESS_CONFIG } from "@/lib/constants";
+import { TrustBox } from "@/components/ui/TrustBox";
 
 export function Footer() {
     return (
@@ -14,141 +16,169 @@ export function Footer() {
             {/* Subtle Gradient Background */}
             <div className="absolute inset-0 bg-gradient-to-t from-black via-luxury-black to-[#050510] z-0"></div>
 
-            {/* Decorative Top Line */}
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-luxury-gold/30 to-transparent"></div>
+            {/* Decorative Top Line with Star */}
+            <div className="flex items-center justify-center gap-4 mb-16 relative z-10 px-4">
+                <div className="h-[1px] bg-gradient-to-r from-transparent via-luxury-gold to-transparent w-full max-w-[300px] md:max-w-[400px]"></div>
+                <Star className="text-luxury-gold fill-luxury-gold w-6 h-6 md:w-8 md:h-8" />
+                <div className="h-[1px] bg-gradient-to-r from-transparent via-luxury-gold to-transparent w-full max-w-[300px] md:max-w-[400px]"></div>
+            </div>
 
-            <div className="container mx-auto px-6 md:px-16 relative z-10 text-center md:text-left">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-20">
-                    {/* Column 1: Brand Identity */}
-                    <div className="space-y-8 flex flex-col items-center md:items-start text-center md:text-left">
-                        <Link href="/" className="inline-block group">
-                            <Logo className="items-center md:items-start" />
-                        </Link>
-                        <p className="text-white/60 text-sm leading-7 font-light max-w-sm">
-                            Setting the benchmark in Umrah and intercity transport. Saudi Taxi offers premium services across the Kingdom, ensuring every journey is spiritual, private, and comfortable.
-                        </p>
-                        <div className="flex gap-4 justify-center md:justify-start">
-                            {[
-                                { Icon: FaGoogle, label: 'Find us on Google', href: 'https://www.google.com/search?sca_esv=7961302cda4152b2&sxsrf=ANbL-n4rswqefxhsrao7DBvLqPiQ2-eJ8Q%3A1768996664250&q=saudi%20taxi&stick=H4sIAAAAAAAAAONgU1I1qDA0TTYyMDUwMDJITU2yMDW3MqgwSjRONrRIMU9JTLFMTkpKWcTKVZxYmpKpUJJYkQkAeYwx_zYAAAA&mat=CaNejubRXx4h&ved=2ahUKEwi19Z-OypySAxW-K_sDHbGpAJYQrMcEegQIGRAC' },
-                                { Icon: FaSnapchat, label: 'Follow us on Snapchat', href: 'https://www.snapchat.com/add/sauditaxicab' },
-                                { Icon: FaTiktok, label: 'Follow us on TikTok', href: 'https://www.tiktok.com/@sauditaxiservice' },
-                                { Icon: FaQuora, label: 'Visit our Quora profile', href: 'https://www.quora.com/profile/Saudi-Taxi-1' },
-                                { Icon: FaPinterest, label: 'Follow us on Pinterest', href: 'https://www.pinterest.com/sauditaxicab/' },
-                                { Icon: FaLinkedin, label: 'Follow us on LinkedIn', href: 'https://www.linkedin.com/company/saudi-taxi/' },
-                                { Icon: Youtube, label: 'Subscribe to our YouTube channel', href: 'https://www.youtube.com/channel/UCJFtqjUo7W899VhS2tzpujw' }
-                            ].map((social, i) => (
-                                <a
-                                    key={i}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={social.label}
-                                    className="w-10 h-10 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:bg-luxury-gold hover:text-black hover:scale-105 transition-all duration-300"
-                                >
-                                    <social.Icon size={18} />
-                                </a>
-                            ))}
-                        </div>
-                    </div>
+            {/* Top Navigation Grid (4 columns) */}
+            <div className="container mx-auto px-6 md:px-16 relative z-10 mb-20 text-center md:text-left">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-sm">
 
-                    {/* Column 2: Quick Links */}
+                    {/* Column 1: Our Cars */}
                     <div className="flex flex-col items-center md:items-start">
-                        <h3 className="text-xl font-serif text-white mb-8 relative inline-block">
-                            Quick Links
-                            <span className="absolute -bottom-2 lg:left-0 left-1/2 -translate-x-1/2 lg:translate-x-0 w-8 h-[2px] bg-luxury-gold"></span>
-                        </h3>
-                        <ul className="space-y-4 text-sm text-white/70 font-light w-full">
-                            {[
-                                { name: "Home", href: "/" },
-                                { name: "About Us", href: "/about" },
-                                { name: "Our Fleet", href: "/fleet" },
-                                { name: "Services", href: "/services" },
-                                { name: "Get a Quote", href: "/booking" }
-                            ].map((link) => (
-                                <li key={link.name}>
-                                    <Link
-                                        href={link.href}
-                                        className="hover:text-luxury-gold transition-colors flex items-center justify-center md:justify-start gap-2 group"
-                                    >
-                                        <ArrowRight size={14} className="text-luxury-gold opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 hidden md:block" />
-                                        {link.name}
-                                    </Link>
+                        <h4 className="text-luxury-gold uppercase tracking-widest text-sm font-semibold mb-6">Our Cars</h4>
+                        <ul className="space-y-3 text-white/70 font-light">
+                            {['Toyota Camry', 'Hyundai Staria', 'Hyundai H1 Starex', 'GMC Yukon XL', 'Toyota HiAce', 'Toyota Coaster'].map(car => (
+                                <li key={car}>
+                                    <Link href="/fleet" className="hover:text-white transition-colors block py-1">{car}</Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                    {/* Column 3: Premium Services */}
+                    {/* Column 2: Our Services */}
                     <div className="flex flex-col items-center md:items-start">
-                        <h3 className="text-xl font-serif text-white mb-8 relative inline-block">
-                            Our Services
-                            <span className="absolute -bottom-2 lg:left-0 left-1/2 -translate-x-1/2 lg:translate-x-0 w-8 h-[2px] bg-luxury-gold"></span>
-                        </h3>
-                        <ul className="space-y-4 text-sm text-white/70 font-light w-full">
+                        <h4 className="text-luxury-gold uppercase tracking-widest text-sm font-semibold mb-6">Our Services</h4>
+                        <ul className="space-y-3 text-white/70 font-light">
                             {[
-                                { name: "Airport Transfer", href: "/services/airport-transfers" },
                                 { name: "Umrah Transfers", href: "/services/umrah-transfers" },
-                                { name: "Family Travel", href: "/services/family-travel" },
+                                { name: "Airport Transfers", href: "/services/airport-transfers" },
+                                { name: "Jeddah to Makkah", href: "/services/jeddah-to-makkah-taxi" },
+                                { name: "Makkah to Madinah", href: "/services/makkah-to-madinah-taxi" },
                                 { name: "Ziyarat Tours", href: "/services/ziyarat-tours" },
-                                { name: "Intercity Transfer", href: "/services/intercity-taxi" },
                                 { name: "VIP Transport", href: "/services/vip-transport" }
-                            ].map((service) => (
+                            ].map(service => (
                                 <li key={service.name}>
-                                    <Link
-                                        href={service.href}
-                                        className="hover:text-luxury-gold transition-colors flex items-center justify-center md:justify-start gap-2 group"
-                                    >
-                                        <span className="w-1 h-1 rounded-full bg-white/20 group-hover:bg-luxury-gold transition-colors hidden md:block"></span>
-                                        {service.name}
-                                    </Link>
+                                    <Link href={service.href} className="hover:text-white transition-colors block py-1">{service.name}</Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                    {/* Column 4: Concierge & Contact */}
-                    <div className="flex flex-col items-center md:items-start h-full">
-                        <h3 className="text-xl font-serif text-white mb-8 relative inline-block">
-                            Contact Us
-                            <span className="absolute -bottom-2 lg:left-0 left-1/2 -translate-x-1/2 lg:translate-x-0 w-8 h-[2px] bg-luxury-gold"></span>
-                        </h3>
-                        <ul className="space-y-6 text-sm text-white/70 font-light w-full">
-                            <li className="flex flex-col md:flex-row items-center md:items-start gap-4 group">
-                                <div className="p-2 rounded-full bg-white/5 border border-white/10 group-hover:border-luxury-gold/50 transition-colors shrink-0">
-                                    <MapPin className="text-luxury-gold" size={16} />
-                                </div>
-                                <span className="leading-relaxed">Makkah, Saudi Arabia</span>
+                    {/* Column 3: About Us (Links) */}
+                    <div className="flex flex-col items-center md:items-start">
+                        <h4 className="text-luxury-gold uppercase tracking-widest text-sm font-semibold mb-6">About Us</h4>
+                        <ul className="space-y-3 text-white/70 font-light">
+                            {[
+                                { name: "About Saudi Taxi", href: "/about" },
+                                { name: "Our Fleet", href: "/fleet" },
+                                { name: "Terms & Conditions", href: "/terms-and-conditions" },
+                                { name: "Privacy Policy", href: "/privacy-policy" },
+                                { name: "Blogs", href: "/blog" },
+                                { name: "Contact Us", href: "/contact" },
+                            ].map(link => (
+                                <li key={link.name}>
+                                    <Link href={link.href} className="hover:text-white transition-colors block py-1">{link.name}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Column 4: Contact Info */}
+                    <div className="flex flex-col items-center md:items-start">
+                        <h4 className="text-luxury-gold uppercase tracking-widest text-sm font-semibold mb-6">Contact Info</h4>
+                        <ul className="space-y-4 text-white/70 font-light">
+                            <li className="flex items-start gap-3 justify-center md:justify-start">
+                                <Phone size={16} className="text-luxury-gold mt-1 shrink-0" />
+                                <a href={`tel:${BUSINESS_CONFIG.PHONE}`} className="hover:text-white transition-colors">{BUSINESS_CONFIG.PHONE_DISPLAY}</a>
                             </li>
-                            <li className="flex flex-col md:flex-row items-center md:items-center gap-4 group">
-                                <div className="p-2 rounded-full bg-white/5 border border-white/10 group-hover:border-luxury-gold/50 transition-colors shrink-0">
-                                    <Phone className="text-luxury-gold" size={16} />
-                                </div>
-                                <div className="flex flex-col items-center md:items-start">
-                                    <span className="text-[10px] text-white/40 uppercase tracking-wide mb-1">24/7 Support</span>
-                                    <a href={`tel:${BUSINESS_CONFIG.PHONE}`} className="text-white hover:text-luxury-gold transition-colors text-lg font-medium">{BUSINESS_CONFIG.PHONE_DISPLAY}</a>
-                                </div>
+                            <li className="flex items-start gap-3 justify-center md:justify-start">
+                                <Mail size={16} className="text-luxury-gold mt-1 shrink-0" />
+                                <a href="mailto:info@sauditaxi.cab" className="hover:text-white transition-colors">info@sauditaxi.cab</a>
                             </li>
-                            <li className="flex flex-col md:flex-row items-center md:items-center gap-4 group">
-                                <div className="p-2 rounded-full bg-white/5 border border-white/10 group-hover:border-luxury-gold/50 transition-colors shrink-0">
-                                    <Mail className="text-luxury-gold" size={16} />
-                                </div>
-                                <a href="mailto:info@sauditaxi.cab" className="hover:text-luxury-gold transition-colors">info@sauditaxi.cab</a>
+                            <li className="flex items-start gap-3 justify-center md:justify-start text-center md:text-left">
+                                <MapPin size={16} className="text-luxury-gold mt-1 shrink-0" />
+                                <span>Makkah Al Mukarramah,<br />Saudi Arabia</span>
                             </li>
                         </ul>
                     </div>
+
+                </div>
+            </div>
+
+            <div className="container mx-auto px-6 md:px-16 relative z-10 flex flex-col items-center text-center">
+
+                {/* Brand Identity */}
+                <div className="mb-4">
+                    <Link href="/" className="inline-block group transform hover:scale-105 transition-transform duration-500">
+                        <Logo className="items-center text-4xl md:text-5xl" />
+                    </Link>
+                </div>
+
+                {/* Tagline */}
+                <div className="flex items-center gap-3 md:gap-6 text-luxury-gold/80 text-sm md:text-lg font-serif tracking-widest uppercase mb-8 whitespace-nowrap">
+                    <span className="h-[1px] w-8 md:w-12 bg-luxury-gold/50"></span>
+                    <span>Premium</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-luxury-gold/50"></span>
+                    <span>Umrah</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-luxury-gold/50"></span>
+                    <span>Transport</span>
+                    <span className="h-[1px] w-8 md:w-12 bg-luxury-gold/50"></span>
+                </div>
+
+                {/* Description */}
+                <p className="text-white/60 text-sm md:text-base leading-7 font-light max-w-2xl mb-12">
+                    We provide first-class, luxury chauffeur services for pilgrims and travelers at our best and affordable rates. Whether you are looking for Umrah transfers, intercity travel, or airport pickups, we ensure a spiritual and comfortable journey.
+                </p>
+
+                {/* Socials & Reviews Heading */}
+                <h3 className="text-2xl md:text-3xl font-serif text-white mb-8">
+                    Leave a Review and Follow Us
+                </h3>
+
+                {/* Social Icons Grid */}
+                <div className="flex flex-wrap justify-center gap-4 mb-16">
+                    {[
+                        { Icon: FaFacebookF, label: 'Facebook', href: '#', color: 'bg-[#3b5998]' },
+                        { Icon: FaInstagram, label: 'Instagram', href: '#', color: 'bg-[#E1306C]' },
+                        { Icon: FaTwitter, label: 'Twitter', href: '#', color: 'bg-[#1DA1F2]' },
+                        { Icon: FaTripadvisor, label: 'TripAdvisor', href: '#', color: 'bg-[#00AF87]' },
+                        { Icon: SiTrustpilot, label: 'Trustpilot', href: 'https://www.trustpilot.com/review/sauditaxi.cab', color: 'bg-[#00b67a]' },
+                        { Icon: FaGoogle, label: 'Google', href: 'https://g.page/r/CbVn_1c_mHFrEAE', color: 'bg-[#4285F4]' },
+                        { Icon: Youtube, label: 'YouTube', href: 'https://www.youtube.com/channel/UCJFtqjUo7W899VhS2tzpujw', color: 'bg-[#FF0000]' },
+                        { Icon: FaSnapchat, label: 'Snapchat', href: 'https://www.snapchat.com/add/sauditaxicab', color: 'bg-[#FFFC00] text-black' },
+                        { Icon: FaTiktok, label: 'TikTok', href: 'https://www.tiktok.com/@sauditaxiservice', color: 'bg-[#000000] border border-white/20' },
+                    ].map((social, i) => (
+                        <a
+                            key={i}
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={social.label}
+                            className={`w-12 h-12 md:w-14 md:h-14 rounded-lg flex items-center justify-center text-white text-xl md:text-2xl hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl ${social.color} ${social.label === 'Snapchat' ? 'text-black' : ''}`}
+                        >
+                            <social.Icon />
+                        </a>
+                    ))}
+                </div>
+
+                {/* Trustpilot Widget (Optional - kept for functionality) */}
+                <div className="mb-12 overflow-hidden max-w-full">
+                    <TrustBox />
+                </div>
+
+                {/* Quick Links (Minimal) */}
+                <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-sm text-white/50 font-light">
+                    <Link href="/about" className="hover:text-luxury-gold transition-colors">About Us</Link>
+                    <Link href="/fleet" className="hover:text-luxury-gold transition-colors">Our Fleet</Link>
+                    <Link href="/services" className="hover:text-luxury-gold transition-colors">Services</Link>
+                    <Link href="/booking" className="hover:text-luxury-gold transition-colors">Book Now</Link>
+                    <Link href="/contact" className="hover:text-luxury-gold transition-colors">Contact</Link>
+                    <Link href="/blog" className="hover:text-luxury-gold transition-colors">Start Blog</Link>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/30 font-light tracking-wide pb-10 md:pb-0">
-                    <p>&copy; {new Date().getFullYear()} Saudi Taxi. All rights reserved.</p>
-
-                    <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+                <div className="border-t border-white/5 pt-8 w-full flex flex-col items-center gap-4 text-xs text-white/30 font-light tracking-wide">
+                    <p>&copy; {new Date().getFullYear()} Saudi Taxi. All Rights Reserved.</p>
+                    <div className="flex gap-6">
                         <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms of Service</Link>
-                        <a href="#" className="hover:text-white transition-colors">Sitemap</a>
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer >
     );
 }
