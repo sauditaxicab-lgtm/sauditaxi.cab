@@ -1,5 +1,6 @@
 
 
+import Link from "next/link";
 import { ServiceHero } from "@/components/services/ServiceHero";
 import { ContentBlock } from "@/components/services/ContentBlock";
 import { FleetGrid } from "@/components/services/FleetGrid";
@@ -55,7 +56,7 @@ export default function SightseeingPage() {
                 <div className="container mx-auto px-4 text-center max-w-4xl">
                     <h2 className="text-3xl md:text-5xl font-serif mb-6 text-black">Experience the <span className="text-luxury-gold">Beauty of Saudi Arabia</span></h2>
                     <p className="text-black text-lg leading-relaxed mb-8">
-                        Your journey doesn't have to end at the Holy Mosques. Saudi Arabia offers a wealth of historical, cultural, and modern attractions. From the ancient coral houses of Jeddah's Al-Balad to the majestic mountains of Taif and the vibrant markets of Madinah, our private sightseeing tours allow you to explore the Kingdom in comfort and style.
+                        Your journey doesn't have to end at the Holy Mosques. Saudi Arabia offers a wealth of historical, cultural, and modern attractions. From the ancient coral houses of Jeddah's Al-Balad to the majestic mountains of Taif and the vibrant markets of Madinah, our private sightseeing tours allow you to explore the Kingdom in comfort and style. Combine city tours with our spiritual <Link href="/services/ziyarat-tours" className="text-luxury-gold hover:underline font-semibold">Ziyarat tours</Link> for a complete experience. Travel in our spacious <Link href="/fleet/toyota-hiace-11-seater-taxi" className="text-luxury-gold hover:underline font-semibold">11-seater Toyota HiAce</Link>, luxury <Link href="/fleet/hyundai-staria-7-seater-taxi" className="text-luxury-gold hover:underline font-semibold">Hyundai Staria</Link>, or <Link href="/fleet/toyota-coaster-17-seater-taxi" className="text-luxury-gold hover:underline font-semibold">17-seater group transport</Link>.
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
@@ -81,7 +82,7 @@ export default function SightseeingPage() {
             {/* Jeddah Highlights */}
             <ContentBlock
                 title="Jeddah: Bridging Heritage and Modernity"
-                content={`Explore the Bride of the Red Sea. Our Jeddah City Tour covers the essential landmarks:\n\n**Al-Balad (Historical District):** Walk through the UNESCO World Heritage site featuring ancient coral stone buildings with intricate wooden Roshan balconies.\n\n**Jeddah Corniche:** Enjoy a relaxing drive along the beautiful Red Sea waterfront, dotted with sculptures and parks.\n\n**King Fahd's Fountain:** Witness the tallest fountain in the world, a spectacular 312-meter water jet visible from across the city.\n\n**Red Sea Mall:** Experience world-class shopping and dining in one of the region's premier destinations.`}
+                content={`Explore the Bride of the Red Sea with our premium VIP transport service. Our Jeddah City Tour covers the essential landmarks:\n\n**Al-Balad (Historical District):** Walk through the UNESCO World Heritage site featuring ancient coral stone buildings with intricate wooden Roshan balconies.\n\n**Jeddah Corniche:** Enjoy a relaxing drive along the beautiful Red Sea waterfront, dotted with sculptures and parks.\n\n**King Fahd's Fountain:** Witness the tallest fountain in the world, a spectacular 312-meter water jet visible from across the city.\n\n**Red Sea Mall:** Experience world-class shopping and dining in one of the region's premier destinations.`}
                 imageSrc="/hero_bg.png"
                 imageAlt="Jeddah Sightseeing"
             />

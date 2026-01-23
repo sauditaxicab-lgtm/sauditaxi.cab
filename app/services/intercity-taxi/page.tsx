@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ServiceHero } from "@/components/services/ServiceHero";
 import { ContentBlock } from "@/components/services/ContentBlock";
 import { FleetGrid } from "@/components/services/FleetGrid";
@@ -47,7 +48,7 @@ export default function IntercityTaxiPage() {
                 <div className="container mx-auto px-4 text-center max-w-4xl">
                     <h2 className="text-3xl md:text-5xl font-serif mb-6 text-black">Private Transfers from <span className="text-luxury-gold">Mecca to Jeddah</span> and Beyond</h2>
                     <p className="text-black text-lg leading-relaxed mb-8">
-                        Need a reliable <strong>Mecca to Jeddah</strong> transfer? Or looking for a <strong>Makkah to Madinah coaster</strong> for your large group? Saudi Taxi offers a premium intercity transport booking service that covers every corner of the Kingdom. Avoid the hassle of public transport and enjoy the scenic drive between <strong>Makkah and Madina</strong> in the comfort of our modern, air-conditioned fleet.
+                        Need a reliable Mecca to Jeddah transfer? Or looking for comfortable Makkah to Madinah transport for your large group? Saudi Taxi offers a premium intercity transport booking service that covers every corner of the Kingdom. Avoid the hassle of public transport and enjoy the scenic drive between Makkah and Madina in the comfort of our modern fleet including the luxury <Link href="/fleet/gmc-yukon-xl-7-seater-taxi" className="text-luxury-gold hover:underline font-semibold">GMC Yukon XL</Link>, spacious <Link href="/fleet/hyundai-staria-7-seater-taxi" className="text-luxury-gold hover:underline font-semibold">Hyundai Staria</Link>, <Link href="/fleet/toyota-hiace-11-seater-taxi" className="text-luxury-gold hover:underline font-semibold">11-seater HiAce</Link>, or <Link href="/fleet/toyota-coaster-17-seater-taxi" className="text-luxury-gold hover:underline font-semibold">17-seater Coaster</Link>. Need executive travel? Check our <Link href="/services/vip-transport" className="text-luxury-gold hover:underline font-semibold">VIP transport service</Link>.
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
@@ -73,7 +74,7 @@ export default function IntercityTaxiPage() {
             {/* Content */}
             <ContentBlock
                 title="Your Private Long-Distance Transfer"
-                content={`Experience the convenience of private road travel.\n\nPopular Routes:\n• Jeddah to Riyadh\n• Jeddah to Taif\n• Jeddah to Yanbu\n• Makkah/Madinah to anywhere in KSA\n\nOur drivers are experienced in long-haul driving, ensuring your safety and comfort throughout the journey. We use modern vehicles equipped with effective air conditioning to handle the Saudi climate.`}
+                content={`Experience the convenience of private road travel with our comprehensive intercity taxi service.\n\nPopular Routes:\n• Jeddah to Riyadh\n• Jeddah to Taif (perfect for Ziyarat tours)\n• Jeddah to Yanbu\n• Makkah/Madinah to anywhere in KSA\n\nOur drivers are experienced in long-haul driving, ensuring your safety and comfort throughout the journey. We use modern vehicles equipped with effective air conditioning to handle the Saudi climate. Combine intercity travel with our specialized Ziyarat and sightseeing services.`}
                 imageSrc="/hero_bg.png"
                 imageAlt="Intercity Travel"
             />

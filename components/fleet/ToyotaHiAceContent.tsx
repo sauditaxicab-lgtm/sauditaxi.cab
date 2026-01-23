@@ -49,7 +49,7 @@ export function ToyotaHiaceContent() {
                                 <span className="text-luxury-gold italic">11-Seater Taxi</span>
                             </h1>
                             <p className="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                                The ultimate people mover. Efficient, high-roof comfort for large families and pilgrim groups. Perfectly engineered for the long roads between Holy Cities.
+                                The ultimate people mover for <Link href="/services/ziyarat-tours" className="text-luxury-gold hover:underline font-semibold">Ziyarat tours</Link>, <Link href="/services/sightseeing" className="text-luxury-gold hover:underline font-semibold">city sightseeing</Link>, and <Link href="/services/family-travel" className="text-luxury-gold hover:underline font-semibold">family group travel</Link>. Efficient, high-roof comfort for large families and pilgrim groups. Perfectly engineered for the long roads between Holy Cities.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                                 <Link href="/booking?vehicle=Toyota-HiAce" className="w-full sm:w-auto">

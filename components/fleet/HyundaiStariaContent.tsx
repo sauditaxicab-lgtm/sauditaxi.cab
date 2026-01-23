@@ -63,7 +63,7 @@ export function HyundaiStariaContent() {
                                 <span className="text-luxury-gold italic">7-Seater Luxury Taxi</span>
                             </h1>
                             <p className="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                                Experience futuristic luxury with the Hyundai Staria. The most comfortable choice for families and groups performing Umrah.
+                                Experience futuristic luxury with the Hyundai Staria. Perfect for <Link href="/services/vip-transport" className="text-luxury-gold hover:underline font-semibold">VIP transport</Link>, <Link href="/services/airport-transfers" className="text-luxury-gold hover:underline font-semibold">airport transfers</Link>, and <Link href="/services/family-travel" className="text-luxury-gold hover:underline font-semibold">family Umrah journeys</Link>. The most comfortable choice for families and groups performing Umrah.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                                 <Link href="/booking?vehicle=Hyundai-Staria" className="w-full sm:w-auto">

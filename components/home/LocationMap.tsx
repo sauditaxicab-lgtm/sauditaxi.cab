@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { BUSINESS_CONFIG } from "@/lib/constants";
 
 export function LocationMap() {
     return (
@@ -31,9 +32,7 @@ export function LocationMap() {
                             <div>
                                 <h3 className="text-xl font-serif text-white mb-2">Saudi Taxi</h3>
                                 <p className="text-white/60 text-sm leading-relaxed">
-                                    حي الجامعة, MEJA3707<br />
-                                    3707 شارع المنيرة، 6806<br />
-                                    Makkah 24242, Saudi Arabia
+                                    {BUSINESS_CONFIG.ADDRESS}
                                 </p>
                             </div>
 

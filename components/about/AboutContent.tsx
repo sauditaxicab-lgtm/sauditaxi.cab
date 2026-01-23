@@ -24,21 +24,21 @@ const AboutContent = () => {
                         <div className="space-y-6 text-gray-300 font-light text-lg leading-relaxed">
                             <p>
                                 We believe in integrity, comfort, and reliability, providing
-                                exceptional transport services to pilgrims and travelers. From airport transfers to
-                                intercity travel between Holy Cities, we cover all major routes in The Kingdom.
+                                exceptional transport services to pilgrims and travelers. From <Link href="/services/airport-transfers" className="text-luxury-gold hover:underline font-semibold">airport transfers</Link> to
+                                <Link href="/services/intercity-taxi" className="text-luxury-gold hover:underline font-semibold"> intercity travel</Link> between Holy Cities, we cover all major routes in The Kingdom.
                             </p>
 
                             <p>
                                 Based in Jeddah, Saudi Taxi is a licensed transport
                                 provider delivering premium, safe, and efficient travel across
                                 Saudi Arabia. Our experienced drivers and modern fleet ensure
-                                punctual and comfortable journeys for Umrah, Hajj, and business travel.
+                                punctual and comfortable journeys for <Link href="/services/umrah-transfers" className="text-luxury-gold hover:underline font-semibold">Umrah</Link>, Hajj, and business travel including <Link href="/services/vip-transport" className="text-luxury-gold hover:underline font-semibold">VIP executive transport</Link>.
                             </p>
 
                             <p>
-                                With a versatile fleet including Sedans, GMCs, HiAce, and Coasters,
+                                With a versatile fleet including Sedans, <Link href="/fleet/gmc-yukon-xl-7-seater-taxi" className="text-luxury-gold hover:underline font-semibold">GMC Yukon XL</Link>, <Link href="/fleet/toyota-hiace-11-seater-taxi" className="text-luxury-gold hover:underline font-semibold">HiAce 11-seater</Link>, and <Link href="/fleet/toyota-coaster-17-seater-taxi" className="text-luxury-gold hover:underline font-semibold">Coaster 17-seater</Link>,
                                 Saudi Taxi offers flexibility to accommodate families and groups of all sizes.
-                                Travel with us for a reliable and comfortable journey.
+                                We also specialize in spiritual <Link href="/services/ziyarat-tours" className="text-luxury-gold hover:underline font-semibold">Ziyarat tours</Link> across Makkah, Madinah, and Taif.
                             </p>
                         </div>
 

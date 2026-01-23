@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, Share2, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { CTASection } from "@/components/home/CTASection";
 
 export const revalidate = 60;
 
@@ -103,9 +104,34 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
                             </Button>
                         </div>
                     </div>
-
                 </div>
             </article>
+
+            {/* Related Services Links - SEO Highway */}
+            <div className="container mx-auto px-6 pb-20 border-t border-white/10 pt-20">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h3 className="text-2xl font-serif text-white mb-8">Continue Planning Your Journey</h3>
+                    <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+                        <Link href="/services/airport-transfers" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-luxury-gold hover:text-black hover:border-luxury-gold transition-all text-sm font-bold uppercase tracking-widest">
+                            Airport Taxi
+                        </Link>
+                        <Link href="/services/umrah-transfers" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-luxury-gold hover:text-black hover:border-luxury-gold transition-all text-sm font-bold uppercase tracking-widest">
+                            Umrah Transport
+                        </Link>
+                        <Link href="/services/intercity-taxi" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-luxury-gold hover:text-black hover:border-luxury-gold transition-all text-sm font-bold uppercase tracking-widest">
+                            Intercity Rides
+                        </Link>
+                        <Link href="/fleet" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-luxury-gold hover:text-black hover:border-luxury-gold transition-all text-sm font-bold uppercase tracking-widest">
+                            View Fleet
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
+            <CTASection
+                title={<strong>Ready to Experience <span className="text-luxury-black">Premium Travel?</span></strong>}
+                description="Book your reliable Saudi Taxi today. Whether for Umrah, business, or leisure, we ensure a comfortable journey."
+            />
 
         </div>
     );

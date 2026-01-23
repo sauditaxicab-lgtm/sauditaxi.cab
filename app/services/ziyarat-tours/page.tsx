@@ -15,6 +15,8 @@ import { FleetGrid } from "@/components/services/FleetGrid";
 import { ProcessSteps } from "@/components/services/ProcessSteps";
 import { CTASection } from "@/components/home/CTASection";
 import { FAQSection } from "@/components/home/FAQSection";
+import Link from 'next/link';
+import { Button } from "@/components/ui/button";
 
 const processSteps = [
     { title: "Select Your Tour", description: "Choose between our Makkah or Madinah Ziyarat packages via WhatsApp." },
@@ -56,7 +58,7 @@ export default function ZiyaratToursPage() {
                 <div className="container mx-auto px-4 text-center max-w-4xl">
                     <h2 className="text-3xl md:text-5xl font-serif mb-6 text-black">Enhance Your Umrah with <span className="text-luxury-gold">Private Ziyarat</span></h2>
                     <p className="text-black text-lg leading-relaxed mb-8">
-                        Performing Ziyarat is a spiritually enriching part of your Umrah journey. Avoid the hassle of negotiating with standard transport or waiting for crowded buses. Saudi Taxi offers private, air-conditioned comfortable transport to all the significant historical sites in Makkah and Madinah.
+                        Performing Ziyarat is a spiritually enriching part of your <Link href="/services/umrah-transfers" className="text-luxury-gold hover:underline font-semibold">Umrah journey</Link>. Avoid the hassle of negotiating with standard transport or waiting for crowded buses. Saudi Taxi offers private, air-conditioned comfortable transport to all the significant historical sites in Makkah and Madinah. Choose from our spacious <Link href="/fleet/toyota-hiace-11-seater-taxi" className="text-luxury-gold hover:underline font-semibold">11-seater Toyota HiAce</Link> for medium groups, the comfortable <Link href="/fleet/hyundai-h1-starex-7-seater-taxi" className="text-luxury-gold hover:underline font-semibold">7-seater Hyundai Starex</Link> for families, or our <Link href="/fleet/toyota-coaster-17-seater-taxi" className="text-luxury-gold hover:underline font-semibold">17-seater Toyota Coaster</Link> for larger pilgrim groups.
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                         <div className="p-4 bg-luxury-black border border-luxury-gold/20 rounded-sm shadow-lg">
@@ -164,7 +166,7 @@ export default function ZiyaratToursPage() {
                             <span className="text-luxury-gold uppercase tracking-widest text-xs font-bold block mb-4">Mountain City Tours</span>
                             <h2 className="text-3xl md:text-5xl font-serif mb-8 leading-tight">6 Famous <span className="text-luxury-gold">Historical Ziyarat</span> in Taif</h2>
                             <p className="text-white/70 text-lg leading-relaxed mb-6">
-                                Beyond Makkah and Madinah, Taif holds immense spiritual and historical significance. Our <strong>Taif Makkah transport</strong> service takes you through the winding mountain roads to visit the sites where the Prophet (SAW) sought refuge and where early Islamic history was shaped.
+                                Beyond Makkah and Madinah, Taif holds immense spiritual and historical significance. Our <Link href="/services/intercity-taxi" className="text-luxury-gold hover:underline font-semibold">intercity taxi service</Link> takes you through the winding mountain roads to visit the sites where the Prophet (SAW) sought refuge and where early Islamic history was shaped. Combine your Ziyarat with our popular <Link href="/services/sightseeing" className="text-luxury-gold hover:underline font-semibold">sightseeing tours</Link> to explore Taif's rose gardens and historical palaces.
                             </p>
                             <ul className="space-y-4 mb-8">
                                 {[
@@ -205,6 +207,41 @@ export default function ZiyaratToursPage() {
 
             {/* How It Works */}
             <ProcessSteps steps={processSteps} title="Book Your Ziyarat Tour" />
+
+
+
+            {/* Internal Linking: Cross-Sell Services */}
+            <section className="py-16 bg-white border-t border-zinc-100">
+                <div className="container mx-auto px-4 max-w-6xl">
+                    <div className="bg-luxury-black rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-luxury-gold/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+                        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+                            <div className="max-w-2xl">
+                                <h3 className="text-2xl md:text-3xl font-serif text-white mb-4">Streamline Your <span className="text-luxury-gold">Pilgrimage</span></h3>
+                                <p className="text-white/70 leading-relaxed mb-6">
+                                    Most pilgrims combine their Ziyarat tours with our reliable airport transfers. We can pick you up from <a href="https://www.kaia.sa/" target="_blank" rel="noopener noreferrer nofollow" className="text-white hover:text-luxury-gold transition-colors font-bold underline decoration-white/30 hover:decoration-luxury-gold">Jeddah Airport (KAIA)</a> or <strong>Madinah Airport</strong> and take you directly to your hotel, ensuring a smooth transition to your spiritual journey.
+                                </p>
+                                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                                    <Link href="/services/airport-transfers" className="text-luxury-gold font-bold hover:text-white transition-colors underline decoration-luxury-gold/30 hover:decoration-white underline-offset-4">
+                                        Book Airport Transfer Also
+                                    </Link>
+                                    <span className="text-white/20">|</span>
+                                    <Link href="/services/family-travel" className="text-luxury-gold font-bold hover:text-white transition-colors underline decoration-luxury-gold/30 hover:decoration-white underline-offset-4">
+                                        View Family Packages
+                                    </Link>
+                                </div>
+                            </div>
+                            <div className="shrink-0">
+                                <Link href="/booking">
+                                    <Button className="bg-white text-black hover:bg-luxury-gold hover:text-black font-bold rounded-xl px-8 py-6 h-auto tracking-widest uppercase transition-all shadow-lg hover:shadow-gold/20">
+                                        Book Complete Package
+                                    </Button>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* FAQ Section */}
             <FAQSection items={tourFAQs} title="Frequently Asked Questions" className="bg-zinc-900" />

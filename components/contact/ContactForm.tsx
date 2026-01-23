@@ -28,7 +28,7 @@ const ContactForm = () => {
         {
             icon: <MapPin className="w-6 h-6" />,
             title: "Location",
-            content: "حي الجامعة, 3707 شارع المنيرة, Makkah",
+            content: BUSINESS_CONFIG.ADDRESS,
             link: "https://g.page/r/Cb3L2drXGDwqEAE"
         },
         {

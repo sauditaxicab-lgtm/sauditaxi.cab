@@ -180,6 +180,43 @@ export function ToyotaCamryContent() {
                 </div>
             </section>
 
+            {/* Perfect For Section - Internal Linking Strategy */}
+            <section className="py-16 bg-zinc-50 border-b border-black/5">
+                <div className="container mx-auto px-6">
+                    <div className="text-center mb-12">
+                        <span className="text-luxury-gold uppercase tracking-widest text-xs font-bold block mb-3">Versatile & Reliable</span>
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-black">Perfect For <span className="text-luxury-gold italic">Every Journey</span></h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                        <Link href="/services/airport-transfers" className="group relative overflow-hidden rounded-2xl aspect-[4/3] shadow-lg">
+                            <Image src="/services/airport_transfer_luxury.png" alt="Jeddah Airport Taxi" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+                            <div className="absolute bottom-6 left-6 right-6">
+                                <h3 className="text-xl text-white font-serif font-bold mb-2 group-hover:text-luxury-gold transition-colors">Airport Transfers</h3>
+                                <p className="text-white/70 text-sm leading-relaxed">Seamless pickups from Jeddah & Madinah airports directly to your hotel.</p>
+                            </div>
+                        </Link>
+                        <Link href="/services/umrah-transfers" className="group relative overflow-hidden rounded-2xl aspect-[4/3] shadow-lg">
+                            <Image src="/services/umrah_makkah.png" alt="Umrah Taxi Service" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+                            <div className="absolute bottom-6 left-6 right-6">
+                                <h3 className="text-xl text-white font-serif font-bold mb-2 group-hover:text-luxury-gold transition-colors">Umrah Transport</h3>
+                                <p className="text-white/70 text-sm leading-relaxed">Peaceful journeys between Makkah and Madinah for your spiritual pilgrimage.</p>
+                            </div>
+                        </Link>
+                        <Link href="/services/intercity-taxi" className="group relative overflow-hidden rounded-2xl aspect-[4/3] shadow-lg">
+                            <Image src="/services/intercity_jeddah_madinah.png" alt="Intercity Taxi Saudi Arabia" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+                            <div className="absolute bottom-6 left-6 right-6">
+                                <h3 className="text-xl text-white font-serif font-bold mb-2 group-hover:text-luxury-gold transition-colors">Intercity Travel</h3>
+                                <p className="text-white/70 text-sm leading-relaxed">Comfortable long-distance rides to Taif, Riyadh, and other major cities.</p>
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
             {/* Decision Logic: Trust Cards */}
             <section className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">

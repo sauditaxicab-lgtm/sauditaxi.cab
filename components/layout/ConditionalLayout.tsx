@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
 import { usePathname } from 'next/navigation';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { FloatingContactButton } from '@/components/ui/FloatingContactButton';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
 export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -14,8 +15,11 @@ export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen relative">
       <Navbar />
+      <div className="absolute top-20 md:top-24 left-0 w-full z-[50]">
+        <Breadcrumbs />
+      </div>
       <main className="flex-grow">{children}</main>
       <Footer />
       <FloatingContactButton />

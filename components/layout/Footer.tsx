@@ -91,7 +91,7 @@ export function Footer() {
                             </li>
                             <li className="flex items-start gap-3 justify-center md:justify-start text-center md:text-left">
                                 <MapPin size={16} className="text-luxury-gold mt-1 shrink-0" />
-                                <span>Makkah Al Mukarramah,<br />Saudi Arabia</span>
+                                <span>{BUSINESS_CONFIG.ADDRESS}</span>
                             </li>
                         </ul>
                     </div>
@@ -179,6 +179,7 @@ export function Footer() {
                     <div className="flex gap-6">
                         <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms of Service</Link>
+                        <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Disclaimer</Link>
                     </div>
                 </div>
             </div>

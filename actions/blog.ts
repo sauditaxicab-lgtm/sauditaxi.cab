@@ -54,3 +54,36 @@ export async function deletePost(id: string) {
         return { success: false, error: err.message };
     }
 }
+
+export async function updatePost(id: string, data: any) {
+    const supabase = await createClient();
+
+    // Check Auth
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+        return { success: false, error: "Unauthorized" };
+    }
+
+    try {
+        const { error } = await supabase.from('posts').update({
+            title: data.title,
+            slug: data.slug,
+            excerpt: data.excerpt,
+            content: data.content,
+            cover_image: data.coverImage,
+            published: data.published
+        }).eq('id', id);
+
+        if (error) {
+            console.error('Error updating post:', error);
+            return { success: false, error: error.message };
+        }
+
+        revalidatePath('/blog');
+        revalidatePath('/admin/blog');
+        revalidatePath(`/blog/${data.slug}`);
+        return { success: true };
+    } catch (err: any) {
+        return { success: false, error: err.message };
+    }
+}

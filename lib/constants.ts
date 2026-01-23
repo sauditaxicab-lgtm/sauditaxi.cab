@@ -11,6 +11,9 @@ export const BUSINESS_CONFIG = {
 
   // URLs
   WEBSITE_URL: 'https://sauditaxi.cab',
+
+  // Physical Address
+  ADDRESS: 'حي الجامعة, MEJA3707، 3707 شارع المنيرة، 6806, Makkah 24242, Saudi Arabia',
 } as const;
 
 // Contact Helper Functions
