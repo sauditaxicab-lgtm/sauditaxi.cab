@@ -5,8 +5,8 @@ import { Phone, Mail, ShieldCheck, Gem, Clock, Star } from "lucide-react";
 import { CTASection } from "@/components/home/CTASection";
 
 export const metadata: Metadata = {
-    title: "Book Saudi Taxi | Instant Umrah & Airport Transfer",
-    description: "Book premium taxi in Saudi Arabia instantly. Reliable Umrah, airport & intercity transfers in Makkah, Madinah & Jeddah. 24/7 availability.",
+    title: "Book Saudi Taxi | Instant Umrah and Airport Transfer",
+    description: "Book reliable taxi in Saudi Arabia instantly. Reliable Umrah, airport and intercity transfers in Makkah, Madinah and Jeddah. 24/7 availability.",
     alternates: {
         canonical: '/booking',
     },
@@ -38,9 +38,7 @@ export default function BookingPage() {
                     <span className="text-luxury-gold text-sm md:text-base font-bold uppercase tracking-[0.2em] animate-fade-in-up">
                         Instant Online Reservation
                     </span>
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white leading-tight drop-shadow-lg">
-                        <strong>Saudi Taxi – Book Your Journey</strong>
-                    </h1>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight drop-shadow-lg">Book Your Saudi Taxi – <span className="text-luxury-gold italic">Instant Online Taxi Reservation</span></h1>
                     <p className="text-lg text-white/80 font-light leading-relaxed max-w-2xl mx-auto drop-shadow-md">
                         Book your taxi in seconds. Fill in your journey details below and connect with us on WhatsApp for an instant confirmation.
                     </p>
@@ -59,7 +57,7 @@ export default function BookingPage() {
                     </div>
                     <div className="flex flex-col items-center gap-2">
                         <Gem className="w-6 h-6 text-luxury-gold" />
-                        <p className="text-sm text-white font-medium uppercase tracking-wide">Premium Fleet</p>
+                        <p className="text-sm text-white font-medium uppercase tracking-wide">Modern Fleet</p>
                     </div>
                     <div className="flex flex-col items-center gap-2">
                         <Clock className="w-6 h-6 text-luxury-gold" />
@@ -104,7 +102,7 @@ export default function BookingPage() {
                             Need Any  <span className="italic">Assistance?</span>
                         </>
                     }
-                    description="Book your premium taxi service today and travel in total comfort and style."
+                    description="Book your dedicated taxi service today and travel in total comfort and style."
                     buttonText="COMPLETE YOUR BOOKING"
                 />
             </div>

@@ -49,12 +49,12 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://wa.me https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms https://widget.trustpilot.com http://widget.trustpilot.com",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://wa.me https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms https://widget.trustpilot.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://widget-cdn.trustpilot.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https: http:",
               "media-src 'self' blob:",
-              "connect-src 'self' https://wa.me https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms https://api.trustpilot.com https://widget.trustpilot.com http://widget.trustpilot.com",
+              "connect-src 'self' https://wa.me https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms https://api.trustpilot.com https://widget.trustpilot.com",
               "frame-src 'self' https://wa.me https://www.google.com https://widget.trustpilot.com",
               "object-src 'none'",
               "base-uri 'self'",
@@ -87,25 +87,12 @@ const nextConfig: NextConfig = {
       {
         source: '/',
         headers: [
-          // Google Fonts - Preconnect for faster font loading
-          {
-            key: 'Link',
-            value: '<https://fonts.googleapis.com>; rel=preconnect; crossorigin',
-          },
-          {
-            key: 'Link',
-            value: '<https://fonts.gstatic.com>; rel=preconnect; crossorigin',
-          },
           // Transparent Textures - Preconnect to reduce critical chain
           {
             key: 'Link',
             value: '<https://www.transparenttextures.com>; rel=preconnect; crossorigin',
           },
           // DNS-Prefetch as fallback for older browsers
-          {
-            key: 'Link',
-            value: '<https://fonts.googleapis.com>; rel=dns-prefetch',
-          },
           {
             key: 'Link',
             value: '<https://www.transparenttextures.com>; rel=dns-prefetch',

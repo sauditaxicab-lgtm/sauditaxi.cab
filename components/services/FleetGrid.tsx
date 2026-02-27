@@ -30,7 +30,7 @@ const defaultFleet: FleetItem[] = [
     {
         name: "Hyundai Staria",
         slug: "hyundai-staria-7-seater-taxi",
-        description: "Luxury 7-seater MPV with futuristic design and premium comfort for families.",
+        description: "Luxury 7-seater MPV with futuristic design and quality comfort for families.",
         passengers: "7",
         luggage: 5,
         bags: 3,
@@ -48,7 +48,7 @@ const defaultFleet: FleetItem[] = [
     {
         name: "GMC Yukon XL",
         slug: "gmc-yukon-xl-7-seater-taxi",
-        description: "Premium 7-seater VIP SUV with massive luggage space and superior comfort.",
+        description: "Dedicated 7-seater VIP SUV with massive luggage space and superior comfort.",
         passengers: "7",
         luggage: 6,
         bags: 4,
@@ -85,7 +85,7 @@ export function FleetGrid() {
                         Our Exclusive Fleet
                     </span>
                     <h2 className="text-3xl md:text-4xl font-serif text-white">
-                        Travel in <span className="text-luxury-gold">Premium Comfort</span>
+                        Travel in <span className="text-luxury-gold">Quality Comfort</span>
                     </h2>
                 </div>
 

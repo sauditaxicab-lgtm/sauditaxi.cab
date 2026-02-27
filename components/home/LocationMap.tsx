@@ -31,9 +31,17 @@ export function LocationMap() {
                         >
                             <div>
                                 <h3 className="text-xl font-serif text-white mb-2">Saudi Taxi</h3>
-                                <p className="text-white/60 text-sm leading-relaxed">
-                                    {BUSINESS_CONFIG.ADDRESS}
-                                </p>
+                                <div className="space-y-4">
+                                    <p className="text-white/60 text-sm leading-relaxed">
+                                        <strong>Address:</strong> {BUSINESS_CONFIG.ADDRESS}
+                                    </p>
+                                    <p className="text-white/60 text-sm leading-relaxed">
+                                        <strong>Phone:</strong> <a href={`tel:${BUSINESS_CONFIG.PHONE}`} className="hover:text-luxury-gold transition-colors">{BUSINESS_CONFIG.PHONE_DISPLAY}</a>
+                                    </p>
+                                    <p className="text-white/60 text-sm leading-relaxed">
+                                        <strong>Email:</strong> <a href={`mailto:${BUSINESS_CONFIG.EMAIL}`} className="hover:text-luxury-gold transition-colors">{BUSINESS_CONFIG.EMAIL}</a>
+                                    </p>
+                                </div>
                             </div>
 
                             <div className="space-y-3">

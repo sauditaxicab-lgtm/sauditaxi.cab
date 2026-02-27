@@ -17,12 +17,12 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 const stariaGallery = [
-    { src: "/staria/staria-main.jpeg", alt: "Hyundai Staria Black Edition Premium Side View" },
+    { src: "/staria/staria-main.jpeg", alt: "Hyundai Staria Black Edition Side View" },
     { src: "/staria/staria-back.jpeg", alt: "Hyundai Staria Black Edition Rear Profile" },
     { src: "/staria/staria-front-1.jpeg", alt: "Hyundai Staria Black Edition Front View" },
     { src: "/staria/staria-front-2.jpeg", alt: "Hyundai Staria Luxury Front Angle" },
     { src: "/staria/staria-front.jpg", alt: "Hyundai Staria Modern Front Facade" },
-    { src: "/staria/staria-interior-1.jpeg", alt: "Hyundai Staria Premium Leather Captain Seats" },
+    { src: "/staria/staria-interior-1.jpeg", alt: "Hyundai Staria Luxury Leather Captain Seats" },
     { src: "/staria/staria-interior-2.jpeg", alt: "Hyundai Staria Spacious Interior Cabin" },
     { src: "/staria/staria-interior-3.jpeg", alt: "Hyundai Staria Luxury Passenger Seating" },
     { src: "/staria/staria-white-side.jpeg", alt: "Hyundai Staria White Edition Side View" },
@@ -38,6 +38,8 @@ const ArrowLeftIcon = ({ size, className }: { size: number, className: string })
     </svg>
 );
 
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+
 export function HyundaiStariaContent() {
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -52,16 +54,16 @@ export function HyundaiStariaContent() {
 
     return (
         <main className="bg-white font-sans text-zinc-900 overflow-x-hidden">
-            {/* Minimalist Premium Hero - Interactive Gallery */}
+            <div className="pt-20 md:pt-24 bg-zinc-900 border-b border-white/5">
+                <Breadcrumbs />
+            </div>
+            {/* Minimalist Hero - Interactive Gallery */}
             <section className="relative pt-24 pb-12 lg:pt-24 lg:pb-32 bg-[#0A0A0B] text-white overflow-hidden">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
                         <div className="lg:w-1/2 z-10 text-center lg:text-left order-2 lg:order-1">
                             <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-[10px] mb-4 block">Luxury Family MPV</span>
-                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">
-                                Hyundai Staria <br />
-                                <span className="text-luxury-gold italic">7-Seater Luxury Taxi</span>
-                            </h1>
+                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">Hyundai Staria – <span className="text-luxury-gold italic">7-Seater Luxury Family Taxi</span></h1>
                             <p className="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                                 Experience futuristic luxury with the Hyundai Staria. Perfect for <Link href="/services/vip-transport" className="text-luxury-gold hover:underline font-semibold">VIP transport</Link>, <Link href="/services/airport-transfers" className="text-luxury-gold hover:underline font-semibold">airport transfers</Link>, and <Link href="/services/family-travel" className="text-luxury-gold hover:underline font-semibold">family Umrah journeys</Link>. The most comfortable choice for families and groups performing Umrah.
                             </p>
@@ -87,7 +89,7 @@ export function HyundaiStariaContent() {
                             <div className="absolute inset-0 bg-luxury-gold/10 blur-[100px] rounded-full opacity-30"></div>
 
                             {/* Main Image Display */}
-                            <div className="relative w-full aspect-[3/4] max-w-[450px] mx-auto rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 group shadow-2xl mb-6">
+                            <div className="relative w-full aspect-[16/10] max-w-[600px] mx-auto rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 group shadow-2xl mb-6">
                                 <AnimatePresence mode="wait">
                                     <motion.div
                                         key={activeIndex}
@@ -137,10 +139,10 @@ export function HyundaiStariaContent() {
             {/* Decision Logic: Trust Cards */}
             <section className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Premium Features</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Key Features</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                         {[
-                            { icon: Zap, title: "Effortless Comfort", desc: "Premium captain seats with multi-zone climate control for the ultimate family experience.", highlight: false },
+                            { icon: Zap, title: "Effortless Comfort", desc: "Luxury captain seats with multi-zone climate control for the ultimate family experience.", highlight: false },
                             { icon: Shield, title: "Safe Haven Travel", desc: "Top-tier safety ratings with professional drivers trained for family-first service.", highlight: true },
                             { icon: Briefcase, title: "Luggage Freedom", desc: "Designed for groups. Easily fits 5+ large suitcases without compromising legroom.", highlight: false }
                         ].map((item, i) => (
@@ -193,7 +195,7 @@ export function HyundaiStariaContent() {
                                 <div className="size-12 md:size-14 rounded-full bg-luxury-gold/20 flex items-center justify-center font-bold text-luxury-gold border border-luxury-gold/20">MR</div>
                                 <div>
                                     <span className="block text-white font-bold text-base md:text-lg">Muneer R.</span>
-                                    <span className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-widest font-black">October 2025 • Verified Trip</span>
+                                    <span className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-widest font-black">October 2026 • Verified Trip</span>
                                 </div>
                             </div>
                         </div>

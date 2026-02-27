@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { ArrowLeft, Calendar, Share2, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CTASection } from "@/components/home/CTASection";
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { Metadata } from 'next';
+import Script from 'next/script';
 
 export const revalidate = 60;
 
@@ -11,6 +14,24 @@ interface BlogPostProps {
     params: {
         slug: string;
     }
+}
+
+export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
+    const { data: post } = await supabase
+        .from('posts')
+        .select('*')
+        .eq('slug', params.slug)
+        .single();
+
+    if (!post) return {};
+
+    return {
+        title: `${post.title} | Saudi Taxi Blog`,
+        description: post.excerpt || `Read our latest article about ${post.title} on the Saudi Taxi blog. Travel guides and tips for Hajj, Umrah, and more.`,
+        alternates: {
+            canonical: `/blog/${params.slug}`,
+        },
+    };
 }
 
 export default async function BlogPostPage({ params }: BlogPostProps) {
@@ -53,9 +74,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
                                 Article
                             </span>
                         </div>
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight">
-                            {post.title}
-                        </h1>
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight">{post.title}</h1>
                         <div className="flex items-center gap-6 text-white/70 text-sm">
                             <span className="flex items-center gap-2">
                                 <Calendar className="w-4 h-4 text-luxury-gold" />
@@ -72,6 +91,9 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="bg-zinc-900 border-b border-white/5">
+                <Breadcrumbs />
             </div>
 
             {/* Content Body */}
@@ -129,9 +151,35 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
             </div>
 
             <CTASection
-                title={<strong>Ready to Experience <span className="text-luxury-black">Premium Travel?</span></strong>}
+                title={<strong>Ready to Experience <span className="text-luxury-black">Quality Travel?</span></strong>}
                 description="Book your reliable Saudi Taxi today. Whether for Umrah, business, or leisure, we ensure a comfortable journey."
             />
+
+            {/* Article Schema */}
+            <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BlogPosting",
+                    "headline": post.title,
+                    "image": post.cover_image,
+                    "datePublished": post.created_at,
+                    "dateModified": post.updated_at || post.created_at,
+                    "author": [{
+                        "@type": "Organization",
+                        "name": "Saudi Taxi",
+                        "url": "https://sauditaxi.cab"
+                    }],
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "Saudi Taxi",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://sauditaxi.cab/logo.png"
+                        }
+                    },
+                    "description": post.excerpt
+                })
+            }} />
 
         </div>
     );

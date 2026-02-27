@@ -1,5 +1,3 @@
-"use client";
-
 import { ServiceHero } from "@/components/services/ServiceHero";
 import { FleetGrid } from "@/components/services/FleetGrid";
 import { FAQSection } from "@/components/home/FAQSection";
@@ -7,25 +5,40 @@ import { Button } from "@/components/ui/button";
 import { Check, Star, Shield, Car } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Saudi Arabia Taxi Fares and Fleet | Reliable Umrah and Airport Transport',
+    description: 'Explore our extensive fleet of taxis in Saudi Arabia. Transparent fares for Toyota Camry, Hyundai Staria, GMC Yukon XL, and more. 24/7 airport and Umrah transfers.',
+    alternates: {
+        canonical: '/fleet',
+    },
+};
 
 export default function FleetPage() {
     return (
         <main className="bg-luxury-black min-h-screen text-white">
             <ServiceHero
                 title="Saudi Arabia Taxi Fares and Fleet"
-                subtitle="Premium Saudi Private Taxi and Umrah Transfers"
-                description="The most transparent Saudi Arabia taxi fares for your pilgrimage. Book a premium Saudi private taxi near you in Jeddah, Makkah, or Madinah with 24/7 online booking."
+                subtitle="Reliable Saudi Private Taxi and Umrah Transfers"
+                description="The most transparent Saudi Arabia taxi fares for your pilgrimage. Book a reliable Saudi private taxi near you in Jeddah, Makkah, or Madinah with 24/7 online booking."
                 backgroundImage="/fleet/fleet_hero_premium.png"
             />
+            {/* Breadcrumbs */}
+            <div className="bg-zinc-900 border-b border-white/5">
+                <Breadcrumbs />
+            </div>
 
             {/* The Gold Standard */}
             <section className="py-24 bg-white text-black">
                 <div className="container mx-auto px-16 flex flex-col lg:flex-row items-center gap-16">
                     <div className="flex-1 space-y-8">
                         <span className="text-luxury-gold uppercase tracking-widest font-bold text-sm">The Gold Standard</span>
-                        <h2 className="text-3xl md:text-5xl font-serif text-black"><strong>The Saudi Taxi Premium Standard</strong></h2>
+                        <h2 className="text-3xl md:text-5xl font-serif text-black"><strong>The Saudi Taxi Quality Standard</strong></h2>
                         <p className="text-zinc-600 text-lg leading-relaxed">
-                            Our premium fleet is designed for a comfortable and safe travel for pilgrims and travelers. From executive sedans for couples to spacious GMCs and buses for families and groups, each vehicle is selected to suit Umrah transfers, intercity travel, and Ziyarat tours.
+                            Our modern fleet is designed for a comfortable and safe travel for pilgrims and travelers. From executive sedans for couples to spacious GMCs and buses for families and groups, each vehicle is selected to suit Umrah transfers, intercity travel, and Ziyarat tours.
                         </p>
                         <p className="text-zinc-600 text-lg leading-relaxed">
                             Every car is well-maintained, air-conditioned, and operated by experienced professional drivers who prioritise your safety and prayer times. Wherever you’re headed in The Kingdom, enjoy a smooth, dependable ride.
@@ -70,7 +83,7 @@ export default function FleetPage() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 z-10" />
                         <div className="absolute bottom-10 left-10 right-10 z-20">
-                            <h3 className="text-3xl font-serif text-white mb-2">Quality & Comfort</h3>
+                            <h3 className="text-3xl font-serif text-white mb-2">Quality and Comfort</h3>
                             <p className="text-white/80">Travel with the peace of mind that comes from a trusted safety record.</p>
                         </div>
                     </div>
@@ -160,8 +173,8 @@ export default function FleetPage() {
                             </p>
                             <ul className="space-y-4">
                                 {[
-                                    "24/7 Roadside Assistance & Vehicle Tracking",
-                                    "Daily Sanitation & deep cleaning for every ride",
+                                    "24/7 Roadside Assistance and Vehicle Tracking",
+                                    "Daily Sanitation and deep cleaning for every ride",
                                     "Fully Insured vehicles with modern safety features",
                                     "Strict maintenance schedule following manufacturer specs",
                                     "Professional drivers with extensive local knowledge"
@@ -191,27 +204,8 @@ export default function FleetPage() {
                 className="bg-white"
                 darkContent={true}
                 items={[
-                    { question: "How can I book a Saudi Taxi near me?", answer: "You can book a premium Saudi Taxi near you instantly through our website or WhatsApp. We provide 24/7 coverage across Jeddah, Makkah, and Madinah." },
-                    { question: "Can I book a Saudi Taxi for Umrah?", answer: "Yes, we specialize in Umrah transfers between Jeddah, Makkah, and Madinah. We can arrange pickups from Jeddah Airport (KAIA) directly to your hotel in Makkah." },
-                    { question: "Do you offer airport transfers from Jeddah Airport?", answer: "Absolutely. We provide 24/7 airport pickups and drop-offs at King Abdulaziz International Airport in Jeddah." },
-                    { question: "What vehicles are available in the Saudi Taxi fleet?", answer: "Our fleet includes Toyota Camry, Hyundai Staria, Hyundai H1 Starex, GMC Yukon XL, Toyota HiAce, and Toyota Coaster." },
-                    { question: "How many passengers can a GMC Yukon accommodate?", answer: "The GMC Yukon XL can comfortably accommodate up to 7 passengers with extensive luggage space. It's a popular choice for an executive private taxi service." },
-                    { question: "Is the Hyundai Staria suitable for large families?", answer: "Yes, the Staria is a luxury MPV that fits up to 7-9 passengers, offering a premium and spacious experience. Ideal for a family taxi in Jeddah Saudi Arabia." },
-                    { question: "Do you provide Toyota Hiace for group transfers?", answer: "Yes, we have Toyota Hiace vans that are perfect for medium-sized groups or families with a lot of luggage. A reliable taxi in Medina Saudi Arabia for groups." },
-                    { question: "Can I book a Saudi Taxi from Makkah to Madinah?", answer: "Yes, we offer direct private transfers between Makkah and Madinah, including stops at Ziyarat sites if requested. Check our Saudi Arabia taxi fares for this route." },
-                    { question: "Are child seats provided in your vehicles?", answer: "We provide child seats upon request to ensure the safety of your little ones during the journey." },
-                    { question: "Is there a wait time included for airport pickups?", answer: "We monitor flight arrivals and provide a complimentary waiting period to ensure you have time to clear customs." },
-                    { question: "Do you offer Ziyarat tours in Madinah?", answer: "Yes, we provide guided ziyarat tours to historical sites in both Makkah and Madinah with knowledgeable drivers." },
-                    { question: "How much luggage can a Toyota Camry hold?", answer: "A Toyota Camry is ideal for 1-4 passengers and can typically hold 2-3 standard suitcases. A comfortable option for a taxi jeddah saudi arabia." },
-                    { question: "Are your drivers familiar with the holy sites?", answer: "All our drivers are locally experienced and fully familiar with all routes to Holy Sites and major hotels." },
-                    { question: "Can I book a Saudi Taxi for a trip to Al Ula?", answer: "Yes, we provide long-distance transfers to major tourist destinations like Al Ula and Yanbu." },
-                    { question: "Do you offer services in Taif?", answer: "Yes, we cover Taif for both airport transfers and local sightseeing trips." },
-                    { question: "Is there an additional charge for late-night transfers?", answer: "Our pricing is transparent and fixed; we do not charge extra for late-night or early-morning transfers." },
-                    { question: "How do I pay for my Saudi Taxi booking?", answer: "We accept various payment methods for your convenience. Please contact us via WhatsApp for specific details." },
-                    { question: "Can I change my booking details after confirmation?", answer: "Yes, you can modify your booking by contacting our support team via WhatsApp as soon as possible." },
-                    { question: "What is the cancellation policy for Saudi Taxi?", answer: "We offer flexible cancellation policies. Please notify us at least 24 hours in advance for a full refund." },
-                    { question: "Do you monitor flight delays for airport pickups?", answer: "Yes, we track all flights in real-time to ensure your driver is there exactly when you arrive." },
-                    { question: "Are all Saudi Taxi vehicles air-conditioned?", answer: "Yes, every vehicle in our premium fleet is equipped with high-performance air conditioning for your comfort." }
+                    { question: "How can I book a Saudi Taxi near me?", answer: "You can book a reliable Saudi Taxi near you instantly through our website or WhatsApp. We provide 24/7 coverage across Jeddah, Makkah, and Madinah." },
+                    { question: "Are all Saudi Taxi vehicles air-conditioned?", answer: "Yes, every vehicle in our modern fleet is equipped with high-performance air conditioning for your comfort." }
                 ]}
             />
 
@@ -220,7 +214,7 @@ export default function FleetPage() {
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
                 <div className="container mx-auto px-4 max-w-3xl relative z-10">
                     <h2 className="text-3xl md:text-5xl font-serif text-luxury-black mb-6"><strong>Ready to Experience <span className="text-white">Saudi Taxi Comfort?</span></strong></h2>
-                    <p className="text-luxury-black/80 text-xl mb-8">Book your premium Saudi Taxi today.</p>
+                    <p className="text-luxury-black/80 text-xl mb-8">Book your reliable Saudi Taxi today.</p>
                     <div className="flex justify-center gap-6">
                         <Link href="/booking">
                             <Button size="lg" className="bg-luxury-black text-luxury-gold hover:bg-luxury-black/90 font-bold px-10 py-6 text-lg rounded-sm shadow-xl">Book Now</Button>

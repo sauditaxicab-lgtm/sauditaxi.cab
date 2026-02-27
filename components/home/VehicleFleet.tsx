@@ -8,39 +8,39 @@ import Image from "next/image";
 
 const vehicles = {
     camry: {
-        title: "Jeddah Makkah 4 Seater Taxi",
+        title: "Affordable Cabs in Makkah (4 Seater)",
         models: "Toyota Camry",
-        description: "Affordable 4-seater taxi for Umrah transfers between Jeddah, Makkah, and Madinah. Ideal for solo travelers and couples.",
+        description: "Looking for affordable cabs in Makkah? Our 4-seater sedans are perfect for Jeddah airport to Makkah taxi transfers and solo travelers.",
         image: "/camry/camry-main.jpeg"
     },
     staria: {
-        title: "Saudi Luxury 7 Seater Taxi",
-        models: "Hyundai Staria",
-        description: "Premium 7-seater luxury ride. Experience top-tier comfort for family Umrah trips across Saudi Arabia.",
+        title: "Premium Staria Van Makkah",
+        models: "Hyundai Staria Luxury",
+        description: "The luxury Staria vans Makkah residents and tourists prefer. Experience VIP taxi service in Makkah with our elite 7-seater fleet.",
         image: "/staria/staria-main.jpeg"
     },
     starex: {
-        title: "Makkah Madinah 7 Seater Taxi",
+        title: "7 Seater Taxi Makkah to Madina",
         models: "Hyundai H1 Starex",
-        description: "Spacious 7-seater van, perfect for family transfers between Makkah and Madinah hotels with ample luggage space.",
+        description: "The most reliable 7 seater taxi Makkah to Madina. Ideal for family taxi Makkah service and comfortable intercity transfers.",
         image: "/starax/starex-main.jpg"
     },
     gmc: {
-        title: "VIP 7 Seater GMC Taxi",
-        models: "GMC Yukon XL",
-        description: "Executive 7-seater SUV for VIP guests. The most comfortable way to travel from Jeddah Airport to the Holy Cities.",
+        title: "VIP Taxi Service Makkah (SUV)",
+        models: "GMC Yukon XL / Suburban",
+        description: "Luxury transport Makkah with our VIP GMC fleet. Best for 7 seater taxi Makkah to Madina trips and executive airport transfers.",
         image: "/gmc/gmc-main.jpg"
     },
     hiace: {
-        title: "Family Taxi 11 Seater",
-        models: "Toyota HiAce",
-        description: "Reliable 11-seater transport for medium groups. Perfect for Ziyarat tours in Madinah and airport transfers.",
+        title: "10 Seater Family Van Makkah",
+        models: "Toyota HiAce (10-12 Seater)",
+        description: "Spacious 10 seater van hire Makkah for group travel. Perfect Hiace rental Makkah for Ziyarat and family airport pickup/dropoff.",
         image: "/hiace/hiace-main.jpeg"
     },
     coaster: {
-        title: "Coaster 17 Seater Bus",
-        models: "Toyota Coaster",
-        description: "Specialized 17-seater minibus for pilgrim groups. Safe and comfortable group transfers across Makkah and Madinah.",
+        title: "Group Travel Taxi Makkah (Minibus)",
+        models: "Toyota Coaster (17+ Seater)",
+        description: "Large group travel taxi Makkah for Hajj and Umrah groups. High-capacity taxi service Makkah and Madina for all holy sites.",
         image: "/coaster/coaster-main.jpg"
     }
 };
@@ -73,7 +73,7 @@ export function VehicleFleet() {
                         Explore Our VIP Saudi Taxi Fleet
                     </h2>
                     <p className="text-white/80 text-lg font-light mb-8 max-w-3xl mx-auto leading-relaxed">
-                        Book our premium Saudi Taxi services for airport transfers, Makkah to Madinah trips, and luxury travel across Saudi Arabia.
+                        Book our reliable Saudi Taxi services for airport transfers, Makkah to Madinah trips, and luxury travel across Saudi Arabia.
                     </p>
                     <div className="flex justify-center gap-4 flex-wrap">
                         {(Object.keys(vehicles) as VehicleType[]).map((type) => (

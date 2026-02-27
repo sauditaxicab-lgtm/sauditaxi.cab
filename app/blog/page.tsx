@@ -2,8 +2,18 @@ import { supabase } from '@/lib/supabase';
 import Link from 'next/link';
 import { ArrowRight, Calendar, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { Metadata } from 'next';
 
 export const revalidate = 60; // Revalidate every minute
+
+export const metadata: Metadata = {
+    title: 'Saudi Taxi Blog – Hajj and Umrah Travel Guides | Latest News',
+    description: 'Stay updated with the latest Hajj and Umrah travel guides, taxi tips in Saudi Arabia, and vehicle reviews. Discover the best ways to travel between Makkah, Madinah, and Jeddah.',
+    alternates: {
+        canonical: '/blog',
+    },
+};
 
 export default async function BlogIndexPage() {
     const { data: posts } = await supabase
@@ -18,14 +28,15 @@ export default async function BlogIndexPage() {
             <section className="relative py-24 px-6 md:px-12 bg-zinc-900 border-b border-white/10">
                 <div className="max-w-7xl mx-auto text-center space-y-6">
                     <span className="text-luxury-gold uppercase tracking-widest text-sm font-bold">Latest Updates</span>
-                    <h1 className="text-5xl md:text-7xl font-serif font-bold text-white">
-                        News & <span className="text-luxury-gold">Articles</span>
-                    </h1>
+                    <h1 className="text-5xl md:text-7xl font-serif font-bold text-white">Saudi Taxi Blog – <span className="text-luxury-gold">News and Articles</span></h1>
                     <p className="text-xl text-white/60 max-w-2xl mx-auto font-light">
                         Discover travel tips, vehicle guides, and news from Saudi Taxi.
                     </p>
                 </div>
             </section>
+            <div className="bg-zinc-900 border-b border-white/5">
+                <Breadcrumbs />
+            </div>
 
             {/* Posts Grid */}
             <section className="py-20 px-6 md:px-12">
@@ -98,7 +109,7 @@ export default async function BlogIndexPage() {
             {/* Static Content / SEO Text */}
             <section className="py-20 bg-zinc-900 border-t border-white/10">
                 <div className="max-w-4xl mx-auto px-6 text-center">
-                    <h2 className="text-3xl font-serif text-white mb-6">Your Guide to <span className="text-luxury-gold">Hajj & Umrah Travel</span></h2>
+                    <h2 className="text-3xl font-serif text-white mb-6">Your Guide to <span className="text-luxury-gold">Hajj and Umrah Travel</span></h2>
                     <p className="text-white/70 leading-relaxed mb-8">
                         Welcome to the Saudi Taxi blog, your definitive resource for travel information in the Kingdom. Here, we share essential guides for pilgrims performing Umrah and Hajj, including tips on navigating Jeddah Airport, choosing the right transport between Makkah and Madinah, and understanding the Ziyarat sites.
                     </p>

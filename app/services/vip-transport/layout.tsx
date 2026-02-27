@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "VIP Transport & Executive Chauffeur | Saudi Taxi Premium",
-    description: "Elite GMC Yukon and luxury sedan vehicles for those seeking maximum comfort, privacy, and premium style in Saudi Arabia. Professional executive service.",
+    title: "VIP Transport and Executive Driver Service | Saudi Taxi VIP",
+    description: "Elite GMC Yukon and luxury sedan vehicles for those seeking maximum comfort, privacy, and executive style in Saudi Arabia. Professional executive service.",
     alternates: {
         canonical: '/services/vip-transport',
     },

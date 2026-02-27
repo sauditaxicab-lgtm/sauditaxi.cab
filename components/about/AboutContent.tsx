@@ -30,7 +30,7 @@ const AboutContent = () => {
 
                             <p>
                                 Based in Jeddah, Saudi Taxi is a licensed transport
-                                provider delivering premium, safe, and efficient travel across
+                                provider delivering reliable, safe, and efficient travel across
                                 Saudi Arabia. Our experienced drivers and modern fleet ensure
                                 punctual and comfortable journeys for <Link href="/services/umrah-transfers" className="text-luxury-gold hover:underline font-semibold">Umrah</Link>, Hajj, and business travel including <Link href="/services/vip-transport" className="text-luxury-gold hover:underline font-semibold">VIP executive transport</Link>.
                             </p>
@@ -55,8 +55,8 @@ const AboutContent = () => {
                     <div className="w-full md:w-1/2 relative mt-8 md:mt-0">
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group h-[500px] md:h-[600px] w-full">
                             <img
-                                src="/about/about_chauffeur_greeting.png"
-                                alt="Professional Chauffeur Opening Car Door"
+                                src="/fleet/vehicle_suv.png"
+                                alt="Professional Saudi Taxi SUV"
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
 

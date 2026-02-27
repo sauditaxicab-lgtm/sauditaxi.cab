@@ -23,12 +23,12 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sauditaxi.cab'),
-  title: "Saudi Taxi | Premium Umrah & Airport Transport",
-  description: "Premium Saudi taxi service for Umrah & airport transfers. Book reliable transport in Makkah, Madinah & Jeddah. Available 24/7 with luxury fleet.",
+  title: "Saudi Taxi – Hajj, Umrah and Sightseeing Transportation Company in Saudi Arabia | Book Now",
+  description: "Saudi Taxi is a trusted transportation company in Saudi Arabia serving Hajj and Umrah pilgrims and tourists. Book transfers between Makkah, Madinah, Jeddah, Taif, and AlUla sightseeing tours. WhatsApp +966 54 817 4726 for instant booking.",
 
   openGraph: {
-    title: "Saudi Taxi | Premium Umrah & Airport Private Transfers",
-    description: "High-quality private transport in Saudi Arabia. Luxury Camry, Staria, GMC, and Coaster for Umrah, Airport, and Intercity transfers.",
+    title: "Saudi Taxi – Hajj, Umrah and Sightseeing Transportation Company in Saudi Arabia | Book Now",
+    description: "Saudi Taxi is a trusted transportation company in Saudi Arabia serving Hajj and Umrah pilgrims and tourists. Book transfers between Makkah, Madinah, Jeddah, Taif, and AlUla sightseeing tours. WhatsApp +966 54 817 4726 for instant booking.",
     url: 'https://sauditaxi.cab',
     siteName: 'Saudi Taxi',
     images: [
@@ -74,34 +74,29 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* Resource Hints - Establish connections early to reduce critical chain */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.transparenttextures.com" crossOrigin="anonymous" />
-
-        {/* DNS Prefetch as fallback for older browsers */}
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://www.transparenttextures.com" />
       </head>
       <body
         className={`${playfair.variable} ${inter.variable} antialiased bg-luxury-black text-white font-sans`}
-        suppressHydrationWarning
       >
         <ConditionalLayout>{children}</ConditionalLayout>
         <SchemaOrg />
         <Toaster position="top-right" richColors />
 
-        {/* Google Analytics */}
+        {/* Google Tags (Analytics & Ads) */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-4Y7CL86016"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17960093141"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-tags" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'G-4Y7CL86016');
+            gtag('config', 'AW-17960093141');
           `}
         </Script>
 
@@ -118,7 +113,7 @@ export default function RootLayout({
 
         {/* Trustpilot Script */}
         <Script
-          src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+          src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
           strategy="lazyOnload"
           async
         />

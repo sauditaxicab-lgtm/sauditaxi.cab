@@ -21,6 +21,8 @@ const starexGallery = [
     { src: "/starax/starex-main.jpg", alt: "Hyundai H1 Starex Family Van Exterior" }
 ];
 
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+
 export function HyundaiStarexContent() {
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -35,16 +37,16 @@ export function HyundaiStarexContent() {
 
     return (
         <main className="bg-[#FCFBFA] font-sans text-zinc-900 overflow-x-hidden">
-            {/* Minimalist Premium Hero - Interactive Gallery Only */}
+            <div className="pt-20 md:pt-24 bg-zinc-900 border-b border-white/5">
+                <Breadcrumbs />
+            </div>
+            {/* Minimalist Hero - Interactive Gallery Only */}
             <section className="relative pt-24 pb-12 lg:pt-24 lg:pb-32 bg-[#0A0A0B] text-white overflow-hidden">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
                         <div className="lg:w-1/2 z-10 text-center lg:text-left order-2 lg:order-1">
                             <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-[10px] mb-4 block">Reliable Family Van</span>
-                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">
-                                Hyundai H1 Starex <br />
-                                <span className="text-luxury-gold italic">7-Seater Taxi</span>
-                            </h1>
+                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">Hyundai H1 Starex – <span className="text-luxury-gold italic">7-Seater Family Taxi in Saudi Arabia</span></h1>
                             <p className="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                                 The versatile choice for family comfort. Built for stability and space, ensuring a smooth ride for every passenger and their luggage across the Kingdom.
                             </p>
@@ -70,7 +72,7 @@ export function HyundaiStarexContent() {
                             <div className="absolute inset-0 bg-luxury-gold/10 blur-[100px] rounded-full opacity-30"></div>
 
                             {/* Main Image Display */}
-                            <div className="relative w-full aspect-square max-w-[500px] mx-auto rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 group shadow-2xl mb-6">
+                            <div className="relative w-full aspect-[16/10] max-w-[600px] mx-auto rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 group shadow-2xl mb-6">
                                 <AnimatePresence mode="wait">
                                     <motion.div
                                         key={activeIndex}
@@ -120,7 +122,7 @@ export function HyundaiStarexContent() {
             {/* Decision Logic: Trust Cards */}
             <section className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Premium Features</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Key Features</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                         {[
                             { icon: Zap, title: "Reliable Performance", desc: "The workhorse of our fleet. Known for its stability and smooth ride on intercity roads.", highlight: false },
@@ -176,7 +178,7 @@ export function HyundaiStarexContent() {
                                 <div className="size-12 md:size-14 rounded-full bg-luxury-gold/20 flex items-center justify-center font-bold text-luxury-gold border border-luxury-gold/20">AK</div>
                                 <div>
                                     <span className="block text-white font-bold text-base md:text-lg">Abdul K.</span>
-                                    <span className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-widest font-black">November 2025 • Verified Family Trip</span>
+                                    <span className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-widest font-black">November 2026 • Verified Family Trip</span>
                                 </div>
                             </div>
                         </div>

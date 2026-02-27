@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Saudi Intercity Taxi | Makkah to Madinah Coaster & Transfers",
-    description: "Premium intercity taxi service in Saudi Arabia. Book a private taxi or coaster from Makkah to Madinah, Jeddah to Riyadh, and Makkah to Jeddah with fixed rates.",
+    title: "Saudi Intercity Taxi | Makkah to Madinah Coaster and Transfers",
+    description: "Reliable intercity taxi service in Saudi Arabia. Book a private taxi or coaster from Makkah to Madinah, Jeddah to Riyadh, and Makkah to Jeddah with fixed rates.",
     alternates: {
         canonical: '/services/intercity-taxi',
     },

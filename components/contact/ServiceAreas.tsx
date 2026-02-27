@@ -18,7 +18,7 @@ const ServiceAreas = () => {
                     <span className="text-luxury-gold uppercase tracking-[0.2em] font-bold text-sm mb-4 block">Where We Operate</span>
                     <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Service Areas</h2>
                     <p className="text-gray-400 text-lg leading-relaxed mb-12 max-w-2xl mx-auto">
-                        We provide premium taxi services across Saudi Arabia and surrounding regions.
+                        We provide reliable taxi services across Saudi Arabia and surrounding regions.
                         From the Holy Cities to all major airports, we provide a reliable journey wherever you need to go.
                     </p>
 

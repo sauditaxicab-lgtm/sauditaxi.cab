@@ -32,12 +32,18 @@ const servicesList = [
     { name: "VIP Transport", href: "/services/vip-transport" },
 ];
 
+const locationsList = [
+    { name: "Makkah Taxi", href: "/makkah" },
+    { name: "Jeddah Taxi", href: "/jeddah" },
+    { name: "Madinah Taxi", href: "/madinah" },
+];
+
 const navLinks = [
     { name: "Home", href: "/" },
     { name: "Fleet", href: "/fleet", dropdownItems: fleetList },
     { name: "Services", href: "/services", dropdownItems: servicesList },
+    { name: "Locations", href: "/jeddah", dropdownItems: locationsList },
     { name: "Blog", href: "/blog" },
-    { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
 ];
 

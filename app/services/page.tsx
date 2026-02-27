@@ -1,15 +1,22 @@
-"use client";
-
 import { ServiceHero } from "@/components/services/ServiceHero";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: 'Saudi Taxi Services – Reliable Umrah and KSA Transport',
+    description: 'Explore the full range of Saudi Taxi services including Jeddah Airport transfers, Umrah transport (Makkah to Madinah), family travel, and VIP intercity rides across the Kingdom.',
+    alternates: {
+        canonical: '/services',
+    },
+};
 
 const services = [
     {
         title: "Airport Transfers",
-        description: "Reliable 24/7 private transfers from Jeddah Airport (KAIA) and Madinah Airport using our premium fleet.",
+        description: "Reliable 24/7 private transfers from Jeddah Airport (KAIA) and Madinah Airport using our modern fleet.",
         image: "/services/airport_transfer_luxury.png",
         link: "/services/airport-transfers"
     },
@@ -27,21 +34,27 @@ const services = [
     },
     {
         title: "Ziyarat Tours",
-        description: "Visit the holy sites in Makkah and Madinah with our knowledgeable drivers in absolute premium luxury.",
+        description: "Visit the holy sites in Makkah and Madinah with our knowledgeable drivers in absolute comfort.",
         image: "/services/ziyarat_holy_sites.png",
         link: "/services/ziyarat-tours"
     },
     {
         title: "Intercity Transfer",
-        description: "Comfortable private long-distance travel between any major cities in Saudi Arabia including Riyadh, Dammam, and Taif.",
+        description: "Comfortable private long-distance travel between any major cities in Saudi Arabia including Riyadh and Taif.",
         image: "/services/intercity_jeddah_madinah.png",
         link: "/services/intercity-taxi"
     },
     {
         title: "VIP Transport",
-        description: "Elite GMC Yukon and luxury sedan vehicles for those seeking extra comfort, privacy and premium style.",
+        description: "Elite GMC Yukon and luxury sedan vehicles for those seeking extra comfort, privacy and executive style.",
         image: "/services/vip_transport.png",
         link: "/services/vip-transport"
+    },
+    {
+        title: "City-Specific Hubs",
+        description: "Explore our dedicated transport networks in Jeddah and Madinah with localized rates and support.",
+        image: "/city_night_luxury_bg.png",
+        link: "/jeddah"
     }
 ];
 
@@ -49,11 +62,16 @@ export default function ServicesPage() {
     return (
         <main className="bg-luxury-black min-h-screen text-white">
             <ServiceHero
-                title="Our Premium Transfer Services"
+                title="Saudi Taxi Services – Reliable Umrah and KSA Transport"
                 subtitle="Reliable Private Transport"
                 description="We provide the Saudi Taxi Standard for all your journeys. Trusted by thousands of pilgrims."
                 backgroundImage="/services/airport_transfer_luxury.png"
             />
+
+            {/* Breadcrumbs */}
+            <div className="bg-zinc-900 border-b border-white/5">
+                <Breadcrumbs />
+            </div>
 
             {/* Service Grid */}
             <section className="px-16 py-24 container mx-auto">
@@ -68,12 +86,8 @@ export default function ServicesPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {services.map((service, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
                             className="group relative h-[400px] overflow-hidden rounded-sm border border-white/10"
                         >
                             {/* Background Image */}
@@ -102,7 +116,7 @@ export default function ServicesPage() {
                                     </Button>
                                 </Link>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </section>

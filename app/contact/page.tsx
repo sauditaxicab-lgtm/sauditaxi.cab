@@ -3,11 +3,12 @@ import ContactForm from "@/components/contact/ContactForm";
 import ServiceAreas from "@/components/contact/ServiceAreas";
 import ReadyToBook from "@/components/about/ReadyToBook";
 import { LocationMap } from "@/components/home/LocationMap";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Contact Saudi Taxi | 24/7 Umrah & Airport Support",
-    description: "Contact Saudi Taxi for premium transport. Available 24/7 for airport transfers and Makkah & Madinah taxi bookings. Instant WhatsApp support.",
+    title: "Contact Saudi Taxi | 24/7 Umrah and Airport Support",
+    description: "Contact Saudi Taxi for reliable transport. Available 24/7 for airport transfers and Makkah and Madinah taxi bookings. Instant WhatsApp support.",
     alternates: {
         canonical: '/contact',
     },
@@ -17,13 +18,16 @@ export default function ContactPage() {
     return (
         <main>
             <ServiceHero
-                title="Contact Us"
-                subtitle="24/7 Premium Support"
+                title="Contact Saudi Taxi – 24/7 Dedicated Customer Support"
+                subtitle="24/7 Dedicated Support"
                 description="Our dedicated team is ready to provide a professional Saudi Taxi near you, any time of day or night."
-                backgroundImage="/about/luxury_chauffeur_opening_door.png"
+                backgroundImage="/fleet/fleet_hero_premium.png"
                 backgroundClassName="scale-110"
                 overlay={true}
             />
+            <div className="bg-zinc-900 border-b border-white/5">
+                <Breadcrumbs />
+            </div>
             <ContactForm />
             <LocationMap />
 

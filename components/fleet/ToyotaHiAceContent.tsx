@@ -25,6 +25,8 @@ const hiaceGallery = [
     { src: "/hiace/hiace-interior.jpeg", alt: "Toyota HiAce Interior Cabin View" }
 ];
 
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+
 export function ToyotaHiaceContent() {
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -39,15 +41,15 @@ export function ToyotaHiaceContent() {
 
     return (
         <main className="bg-white min-h-screen font-sans text-zinc-900 overflow-x-hidden">
+            <div className="pt-20 md:pt-24 bg-zinc-900 border-b border-white/5">
+                <Breadcrumbs />
+            </div>
             <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-32 bg-[#0A0A0B] text-white min-h-[90vh] flex items-center">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
                         <div className="lg:w-1/2 z-10 text-center lg:text-left order-2 lg:order-1">
                             <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-[10px] mb-4 block">Group Transport Specialist</span>
-                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">
-                                Toyota HiAce <br />
-                                <span className="text-luxury-gold italic">11-Seater Taxi</span>
-                            </h1>
+                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">Toyota HiAce – <span className="text-luxury-gold italic">11-Seater Group Transport Taxi</span></h1>
                             <p className="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                                 The ultimate people mover for <Link href="/services/ziyarat-tours" className="text-luxury-gold hover:underline font-semibold">Ziyarat tours</Link>, <Link href="/services/sightseeing" className="text-luxury-gold hover:underline font-semibold">city sightseeing</Link>, and <Link href="/services/family-travel" className="text-luxury-gold hover:underline font-semibold">family group travel</Link>. Efficient, high-roof comfort for large families and pilgrim groups. Perfectly engineered for the long roads between Holy Cities.
                             </p>
@@ -76,7 +78,7 @@ export function ToyotaHiaceContent() {
                         <div className="lg:w-1/2 relative flex flex-col items-center order-1 lg:order-2">
                             <div className="absolute inset-0 bg-luxury-gold/10 blur-[100px] rounded-full opacity-30"></div>
 
-                            <div className="relative w-full aspect-[3/4] max-w-[600px] rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 group shadow-2xl mb-6">
+                            <div className="relative w-full aspect-[16/10] max-w-[600px] rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 group shadow-2xl mb-6">
                                 <AnimatePresence mode="wait">
                                     <motion.div
                                         key={activeIndex}
@@ -124,7 +126,7 @@ export function ToyotaHiaceContent() {
             {/* Decision Logic: Trust Cards */}
             <section className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Premium Features</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Key Features</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                         {[
                             { icon: Users, title: "Group Comfort", desc: "Individual seating for 11 passengers ensures personal space for everyone during the journey.", highlight: false },
@@ -163,7 +165,7 @@ export function ToyotaHiaceContent() {
                             <span className="text-luxury-gold uppercase tracking-widest font-bold text-xs block mb-4">Virtual Experience</span>
                             <h2 className="text-3xl md:text-5xl font-serif text-white mb-6">Experience <span className="text-luxury-gold">The Journey</span></h2>
                             <p className="text-zinc-400 text-lg leading-relaxed mb-8">
-                                Step inside the Toyota HiAce before you book. Our video tour highlights the spacious high-roof cabin, comfortable individual seating, and ample luggage capacity that makes this the preferred choice for pilgrim groups. See the premium condition and cleanliness we maintain for every trip.
+                                Step inside the Toyota HiAce before you book. Our video tour highlights the spacious high-roof cabin, comfortable individual seating, and ample luggage capacity that makes this the preferred choice for pilgrim groups. See the excellent condition and cleanliness we maintain for every trip.
                             </p>
                             <div className="grid grid-cols-2 gap-6 text-left">
                                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
@@ -171,7 +173,7 @@ export function ToyotaHiaceContent() {
                                     <p className="text-white/60 text-sm">High-roof design allows easy movement.</p>
                                 </div>
                                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                                    <h4 className="text-luxury-gold font-bold mb-2">Premium Comfort</h4>
+                                    <h4 className="text-luxury-gold font-bold mb-2">Quality Comfort</h4>
                                     <p className="text-white/60 text-sm">Individual A/C vents for every row.</p>
                                 </div>
                             </div>
@@ -186,7 +188,7 @@ export function ToyotaHiaceContent() {
                                     className="w-full h-full object-cover"
                                     poster="/hiace/hiace-main.jpeg"
                                 >
-                                    <source src="/hiace/WhatsApp Video 2026-01-12 at 6.03.34 PM.mp4" type="video/mp4" />
+                                    <source src="/hiace/hiace-video.mp4" type="video/mp4" />
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
@@ -221,7 +223,7 @@ export function ToyotaHiaceContent() {
                                 <div className="size-12 md:size-14 rounded-full bg-luxury-gold/20 flex items-center justify-center font-bold text-luxury-gold border border-luxury-gold/20">AH</div>
                                 <div>
                                     <span className="block text-white font-bold text-base md:text-lg">Ahmed H.</span>
-                                    <span className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-widest font-black">December 2025 • Group Trip</span>
+                                    <span className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-widest font-black">December 2026 • Group Trip</span>
                                 </div>
                             </div>
                         </div>

@@ -41,8 +41,8 @@ const vehicleDetails: Record<string, { name: string; image: string; description:
         passengers: 3,
         luggage: 2
     },
-    "premium-sedan": {
-        name: "Premium Sedan",
+    "first-class-sedan": {
+        name: "First Class Sedan",
         image: "/fleet/premium_sedan.png",
         description: "Mercedes-Benz S-Class, BMW 7 Series, Audi A8 or similar",
         passengers: 3,
@@ -469,7 +469,7 @@ export function BookingPageForm() {
                                 <option value="executive-suv" className="bg-luxury-black">Executive SUV - 4 passengers</option>
                                 <option value="people-mover" className="bg-luxury-black">People Mover - 7 passengers</option>
                                 <option value="eco-friendly" className="bg-luxury-black">Eco-Friendly - 3 passengers</option>
-                                <option value="premium-sedan" className="bg-luxury-black">Premium Sedan - 3 passengers</option>
+                                <option value="first-class-sedan" className="bg-luxury-black">First Class Sedan - 3 passengers</option>
                             </select>
                         </div>
 

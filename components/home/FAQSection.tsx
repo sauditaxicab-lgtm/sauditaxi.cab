@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
+import Script from "next/script";
 
 const faqs = [
     {
-        question: "Can I Book A Saudi Taxi For Umrah & Makkah Ziyarat Places?",
+        question: "Can I Book A Saudi Taxi For Umrah and Makkah Ziyarat Places?",
         answer: "Yes, we specialize in Umrah transfers between Jeddah, Makkah, and Madinah. We also provide full-day private tours to all major Makkah Ziyarat places including Jabal Al-Noor and Mount Arafat."
     },
     {
@@ -31,7 +32,7 @@ const faqs = [
     },
     {
         question: "What is the Best Taxi App in Saudi Arabia?",
-        answer: "While there are many taxi apps in Saudi Arabia, Saudi Taxi offers a superior experience for pilgrims and long-distance travelers by providing fixed rates, no surge pricing, and a specialized premium fleet that apps often lack."
+        answer: "While there are many taxi apps in Saudi Arabia, Saudi Taxi offers a superior experience for pilgrims and long-distance travelers by providing fixed rates, no surge pricing, and a specialized modern fleet that apps often lack."
     },
     {
         question: "Do you provide a 24 hour taxi service in Saudi Arabia?",
@@ -123,6 +124,21 @@ export function FAQSection({ items, title = "Saudi Taxi FAQ", className = "bg-lu
                     ))}
                 </div>
             </div>
+
+            <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    "mainEntity": displayFaqs.map(faq => ({
+                        "@type": "Question",
+                        "name": faq.question,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": faq.answer
+                        }
+                    }))
+                })
+            }} />
         </section>
     );
 }

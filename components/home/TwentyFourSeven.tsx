@@ -52,7 +52,7 @@ export function TwentyFourSeven() {
                                     </div>
                                     <div>
                                         <p className="font-bold text-xs uppercase tracking-widest text-luxury-black">Secure Booking</p>
-                                        <p className="text-xs text-luxury-black/60 font-medium">Verified & Licensed</p>
+                                        <p className="text-xs text-luxury-black/60 font-medium">Verified and Licensed</p>
                                     </div>
                                 </div>
                             </div>

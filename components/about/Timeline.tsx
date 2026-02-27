@@ -30,7 +30,7 @@ const timelineData = [
         description: "Surpassed 100,000 successful pilgrim transfers across The Kingdom.",
     },
     {
-        year: "2025",
+        year: "2026",
         title: "Reliable Service",
         description: "Celebrating over a decade of trusted service in Saudi Arabia.",
     },

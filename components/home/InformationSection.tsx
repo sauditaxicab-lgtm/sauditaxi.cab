@@ -39,19 +39,19 @@ export function InformationSection() {
                             </span>
 
                             <h2 className="text-3xl md:text-5xl lg:text-7xl font-serif text-white mb-6 md:mb-10 leading-[1.1]">
-                                Experience <span className="text-luxury-gold italic">Luxury</span> <br />
-                                Chauffeur Service
+                                Experience <span className="text-luxury-gold italic">Premium</span> <br />
+                                Taxi Service with Driver
                             </h2>
 
                             <div className="space-y-8 text-white/60 font-light text-lg leading-[1.8] max-w-2xl">
                                 <p>
-                                    Travel across Saudi Arabia in comfort and style. From the holy cities of Makkah and Madinah to Jeddah and Taif, we provide a reliable <strong className="text-white/80 font-medium">taxi in Mecca</strong>, professional <strong className="text-white/80 font-medium">taxi service in medina saudi arabia</strong>, and <strong className="text-white/80 font-medium">Saudi Taxi transfers near you</strong> for all passengers.
+                                    Experience reliable taxi services across Saudi Arabia. We specialize in long-distance transfers, including <strong>Makkah to Madinah</strong>, <strong>Madinah to Taif</strong>, and <strong>Makkah to Jeddah</strong>. Whether you're performing Umrah or traveling for business, our professional drivers ensure a safe and comfortable journey.
                                 </p>
                                 <p>
-                                    Whether you're performing Umrah, visiting historical sites, or travelling for business, our <strong className="text-luxury-gold/80 font-medium">Umrah taxi service</strong> and premium fleet ensure your journey is safe and relaxing. We offer the best Mecca to Jeddah taxi fare for every traveler.
+                                    From the holy cities of <Link href="/makkah" className="text-white hover:text-luxury-gold transition-colors font-medium">Makkah</Link> and <Link href="/madinah" className="text-white hover:text-luxury-gold transition-colors font-medium">Madinah</Link> to Jeddah and Taif, we provide a reliable <Link href="/makkah" className="text-white/80 hover:text-luxury-gold font-medium transition-colors">taxi in Mecca</Link>, professional <Link href="/madinah" className="text-white/80 hover:text-luxury-gold font-medium transition-colors">taxi service in medina saudi arabia</Link>, and <Link href="/" className="text-white/80 hover:text-luxury-gold font-medium transition-colors">Saudi Taxi transfers near you</Link> for all passengers.
                                 </p>
                                 <p className="text-white/40 italic text-base border-t border-white/5 pt-8">
-                                    With our professional Saudi Taxi service, you can focus on your spiritual journey or business goals while we handle all your transport logistics.
+                                    With our professional <Link href="/" className="hover:text-white transition-colors">Saudi Taxi service</Link>, you can focus on your spiritual journey or business goals while we handle all your transport logistics.
                                 </p>
                             </div>
 
@@ -84,7 +84,7 @@ export function InformationSection() {
                             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] border border-white/5 aspect-[4/5]">
                                 <Image
                                     src="/about/makkah_skyline_premium.png"
-                                    alt="Makkah Premium Skyline"
+                                    alt="Makkah Skyline"
                                     fill
                                     className="object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[4s]"
                                     sizes="(max-width: 768px) 100vw, 40vw"

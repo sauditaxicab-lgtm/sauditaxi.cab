@@ -141,7 +141,7 @@ export function ReviewsSection() {
                                             </span>
                                             <div className="flex items-center gap-2">
                                                 <span className="text-[10px] font-black uppercase tracking-[0.1em] text-black/40">
-                                                    {testimonial.location || "Verified Chauffeur"}
+                                                    {testimonial.location || "Verified Driver Service"}
                                                 </span>
                                                 <span className="w-1 h-1 rounded-full bg-black/20"></span>
                                                 <span className="text-[10px] font-medium text-black/30">

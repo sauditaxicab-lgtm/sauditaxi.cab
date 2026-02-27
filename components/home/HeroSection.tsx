@@ -44,38 +44,44 @@ export function HeroSection() {
                             transition={{ duration: 0.8 }}
                             className="flex flex-col items-center lg:items-start"
                         >
-                            <span className="inline-block px-4 py-1.5 bg-luxury-gold/15 backdrop-blur-sm border border-luxury-gold/30 text-luxury-gold text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] rounded-full mb-6 shadow-lg shadow-gold/5">
-                                Executive Travel Experience
+                            <span className="inline-block px-4 py-2 bg-luxury-gold text-black text-[10px] md:text-xs font-black uppercase tracking-[0.3em] rounded-sm mb-8 shadow-2xl shadow-gold/20 transform -rotate-1">
+                                Premium KSA Transport
                             </span>
 
-                            <h1 className="text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] mb-6">
-                                Saudi Taxi – <br className="hidden lg:block" />
-                                <span className="text-luxury-gold">VIP Taxi</span> Service
+                            <h1 className="text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] mb-6 text-4xl md:text-5xl lg:text-7xl uppercase font-serif tracking-tight leading-[1.05]">
+                                <span className="text-luxury-gold italic block text-2xl md:text-3xl tracking-[0.2em] font-sans mb-3 lowercase">Experience the best</span>
+                                SAUDI <br />
+                                <span className="underline decoration-luxury-gold/40 underline-offset-[12px]">UMRAH TAXI SERVICE</span>
                             </h1>
 
-                            <p className="text-white/90 text-sm md:text-lg font-light leading-relaxed max-w-xl mb-8 md:mb-10 drop-shadow-md">
-                                Direct private transfers between <strong>Jeddah, Makkah, and Madinah</strong>. Best-in-class journeys tailored for pilgrims and executive travelers.
+                            <div className="h-1.5 w-32 bg-luxury-gold mb-8 rounded-full"></div>
+
+                            <p className="text-white/90 text-base md:text-xl font-light leading-relaxed max-w-2xl mb-10 drop-shadow-md text-center lg:text-left">
+                                Book your <strong>private Umrah taxi</strong> with ease. We specialize in <strong>airport taxi Jeddah to Makkah</strong>, reliable <strong>Makkah to Madinah taxi</strong> transfers, and <strong>umrah transport Makkah</strong> tours.
+                                <span className="block mt-4 text-luxury-gold font-bold uppercase tracking-widest text-sm">✓ Fixed 2026 Rates ✓ Professional Drivers</span>
                             </p>
 
-                            {/* Trust Badge - Enhanced Glass Panel */}
+                            {/* Trust Badge - Enhanced Premium Look */}
                             <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.4 }}
-                                className="inline-flex flex-col md:flex-row items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl"
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.5 }}
+                                className="group relative flex flex-col md:flex-row items-center gap-6 p-1 rounded-3xl bg-gradient-to-r from-luxury-gold/40 via-white/10 to-transparent backdrop-blur-xl border border-white/10 shadow-3xl"
                             >
-                                <div className="flex items-center gap-1 text-luxury-gold">
-                                    {[1, 2, 3, 4, 5].map((star) => (
-                                        <span key={star} className="text-sm md:text-base">★</span>
-                                    ))}
+                                <div className="bg-black/40 px-6 py-4 rounded-2xl flex flex-col items-center justify-center border border-white/5">
+                                    <div className="flex items-center gap-1 text-luxury-gold mb-1">
+                                        {[1, 2, 3, 4, 5].map((star) => (
+                                            <span key={star} className="text-sm md:text-lg">★</span>
+                                        ))}
+                                    </div>
+                                    <p className="text-white font-black text-lg">4.9/5</p>
                                 </div>
-                                <div className="flex flex-col md:flex-row items-center gap-2">
-                                    <p className="text-white font-medium text-xs md:text-sm">
-                                        4.9/5 Rating
+                                <div className="pr-8 py-2 text-center md:text-left">
+                                    <p className="text-white font-bold text-sm md:text-base mb-0.5 tracking-tight">
+                                        Trusted by 15,000+ Travelers
                                     </p>
-                                    <span className="hidden md:inline text-white/20">•</span>
-                                    <p className="text-white/60 text-[10px] md:text-xs tracking-wide">
-                                        10,000+ Happy Pilgrims
+                                    <p className="text-white/50 text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium">
+                                        Verified Saudi Umrah Taxi Booking
                                     </p>
                                 </div>
                             </motion.div>
@@ -111,7 +117,7 @@ export function HeroSection() {
                         {[
                             { icon: UserCheck, text: "Licensed Drivers" },
                             { icon: ShieldCheck, text: "Fully Insured" },
-                            { icon: Plane, text: "Airport Meet & Greet" },
+                            { icon: Plane, text: "Airport Meet and Greet" },
                             { icon: Clock, text: "On-Time Guarantee" },
                         ].map((item, index) => (
                             <motion.div

@@ -21,11 +21,13 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 const coasterGallery = [
-    { src: "/coaster/coaster-main.jpg", alt: "Toyota Coaster 30-Seater Bus Exterior" },
+    { src: "/coaster/coaster-main.jpg", alt: "Toyota Coaster 17-Seater Bus Exterior" },
     { src: "/coaster/coaster-interior-1.jpeg", alt: "Toyota Coaster Spacious Aisle" },
     { src: "/coaster/coaster-interior-2.jpeg", alt: "Toyota Coaster Passenger Seating" },
-    { src: "/coaster/coaster-interior-3.jpeg", alt: "Toyota Coaster Premium Interior" }
+    { src: "/coaster/coaster-interior-3.jpeg", alt: "Toyota Coaster Comfortable Interior" }
 ];
+
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export function ToyotaCoasterContent() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -41,15 +43,15 @@ export function ToyotaCoasterContent() {
 
     return (
         <main className="bg-white min-h-screen font-sans text-zinc-900 overflow-x-hidden">
+            <div className="pt-20 md:pt-24 bg-zinc-900 border-b border-white/5">
+                <Breadcrumbs />
+            </div>
             <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-32 bg-[#0A0A0B] text-white min-h-[90vh] flex items-center">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
                         <div className="lg:w-1/2 z-10 text-center lg:text-left order-2 lg:order-1">
                             <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-[10px] mb-4 block">Large Group Transport</span>
-                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">
-                                Toyota Coaster <br />
-                                <span className="text-luxury-gold italic">17-Seater Taxi</span>
-                            </h1>
+                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">Toyota Coaster – <span className="text-luxury-gold italic">17-Seater Group Pilgrimage Taxi</span></h1>
                             <p className="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                                 The choice for large pilgrim groups and touring families. Spacious seating, dedicated luggage space, and air-conditioned comfort for up to 17 passengers.
                             </p>
@@ -128,7 +130,7 @@ export function ToyotaCoasterContent() {
             {/* Decision Logic: Trust Cards */}
             <section className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Premium Features</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Key Features</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                         {[
                             { icon: Users, title: "Keep Group United", desc: "No need to split into multiple taxis. Move 17 people together and stay connected.", highlight: true },
@@ -184,7 +186,7 @@ export function ToyotaCoasterContent() {
                                 <div className="size-12 md:size-14 rounded-full bg-luxury-gold/20 flex items-center justify-center font-bold text-luxury-gold border border-luxury-gold/20">IR</div>
                                 <div>
                                     <span className="block text-white font-bold text-base md:text-lg">Ismail R.</span>
-                                    <span className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-widest font-black">December 2025 • Indonesia Group</span>
+                                    <span className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-widest font-black">December 2026 • Indonesia Group</span>
                                 </div>
                             </div>
                         </div>

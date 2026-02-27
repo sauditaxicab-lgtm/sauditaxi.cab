@@ -8,6 +8,10 @@ export default function SchemaOrg() {
         "name": "Saudi Taxi",
         "image": "https://sauditaxi.cab/og-image.png",
         "url": "https://sauditaxi.cab",
+        "email": "info@sauditaxi.cab",
+        "paymentAccepted": "Cash, Credit Card, Apple Pay",
+        "currenciesAccepted": "SAR, USD",
+        "hasMap": "https://g.page/r/CbVn_1c_mHFrEAE",
         "telephone": "+966548174726",
         "priceRange": "$$",
         "address": {
@@ -60,11 +64,14 @@ export default function SchemaOrg() {
             }
         ],
         "sameAs": [
-            "https://sauditaxi.cab",
             "https://www.snapchat.com/add/sauditaxicab",
             "https://www.quora.com/profile/Saudi-Taxi-1",
             "https://www.pinterest.com/sauditaxicab/",
-            "https://www.youtube.com/channel/UCJFtqjUo7W899VhS2tzpujw"
+            "https://www.youtube.com/channel/UCJFtqjUo7W899VhS2tzpujw",
+            "https://www.tiktok.com/@sauditaxiservice",
+            "https://www.linkedin.com/company/saudi-taxi/",
+            "https://www.trustpilot.com/review/sauditaxi.cab",
+            "https://g.page/r/CbVn_1c_mHFrEAE"
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -143,10 +150,21 @@ export default function SchemaOrg() {
         "name": "Saudi Taxi",
         "url": "https://sauditaxi.cab",
         "logo": "https://sauditaxi.cab/logo/logo-gold.png",
+        "sameAs": [
+            "https://www.snapchat.com/add/sauditaxicab",
+            "https://www.quora.com/profile/Saudi-Taxi-1",
+            "https://www.pinterest.com/sauditaxicab/",
+            "https://www.youtube.com/channel/UCJFtqjUo7W899VhS2tzpujw",
+            "https://www.tiktok.com/@sauditaxiservice",
+            "https://www.linkedin.com/company/saudi-taxi/",
+            "https://www.trustpilot.com/review/sauditaxi.cab",
+            "https://g.page/r/CbVn_1c_mHFrEAE"
+        ],
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+966548174726",
             "contactType": "customer service",
+            "email": "info@sauditaxi.cab",
             "contactOption": "TollFree",
             "areaServed": "SA",
             "availableLanguage": ["English", "Arabic", "Urdu"]

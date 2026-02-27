@@ -46,8 +46,8 @@ export function Footer() {
                             {[
                                 { name: "Umrah Transfers", href: "/services/umrah-transfers" },
                                 { name: "Airport Transfers", href: "/services/airport-transfers" },
-                                { name: "Jeddah to Makkah", href: "/services/jeddah-to-makkah-taxi" },
-                                { name: "Makkah to Madinah", href: "/services/makkah-to-madinah-taxi" },
+                                { name: "Intercity Taxi", href: "/services/intercity-taxi" },
+                                { name: "Family Travel", href: "/services/family-travel" },
                                 { name: "Ziyarat Tours", href: "/services/ziyarat-tours" },
                                 { name: "VIP Transport", href: "/services/vip-transport" }
                             ].map(service => (
@@ -65,9 +65,9 @@ export function Footer() {
                             {[
                                 { name: "About Saudi Taxi", href: "/about" },
                                 { name: "Our Fleet", href: "/fleet" },
-                                { name: "Terms & Conditions", href: "/terms-and-conditions" },
+                                { name: "Terms and Conditions", href: "/terms-and-conditions" },
                                 { name: "Privacy Policy", href: "/privacy-policy" },
-                                { name: "Blogs", href: "/blog" },
+                                { name: "Blog Hub", href: "/blog" },
                                 { name: "Contact Us", href: "/contact" },
                             ].map(link => (
                                 <li key={link.name}>
@@ -111,17 +111,17 @@ export function Footer() {
                 {/* Tagline */}
                 <div className="flex items-center gap-3 md:gap-6 text-luxury-gold/80 text-sm md:text-lg font-serif tracking-widest uppercase mb-8 whitespace-nowrap">
                     <span className="h-[1px] w-8 md:w-12 bg-luxury-gold/50"></span>
-                    <span>Premium</span>
+                    <span>Experience</span>
                     <span className="w-1.5 h-1.5 rounded-full bg-luxury-gold/50"></span>
-                    <span>Umrah</span>
+                    <span>The</span>
                     <span className="w-1.5 h-1.5 rounded-full bg-luxury-gold/50"></span>
-                    <span>Transport</span>
+                    <span>Saudi Taxi Difference</span>
                     <span className="h-[1px] w-8 md:w-12 bg-luxury-gold/50"></span>
                 </div>
 
                 {/* Description */}
                 <p className="text-white/60 text-sm md:text-base leading-7 font-light max-w-2xl mb-12">
-                    We provide first-class, luxury chauffeur services for pilgrims and travelers at our best and affordable rates. Whether you are looking for Umrah transfers, intercity travel, or airport pickups, we ensure a spiritual and comfortable journey.
+                    Saudi Taxi provides first-class, elite taxi services with professional drivers across the Kingdom. From sacred Umrah transfers to business travel and airport pickups, we deliver a professional and reliable experience that has made us the trusted name in Saudi transportation.
                 </p>
 
                 {/* Socials & Reviews Heading */}
@@ -165,12 +165,16 @@ export function Footer() {
 
                 {/* Quick Links (Minimal) */}
                 <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-sm text-white/50 font-light">
+                    <Link href="/makkah" className="hover:text-luxury-gold transition-colors">Makkah Taxi</Link>
+                    <Link href="/jeddah" className="hover:text-luxury-gold transition-colors">Jeddah Taxi</Link>
+                    <Link href="/madinah" className="hover:text-luxury-gold transition-colors">Madinah Taxi</Link>
+                    <div className="w-full md:w-auto h-0 md:h-4 border-l border-white/10 mx-2 hidden md:block"></div>
                     <Link href="/about" className="hover:text-luxury-gold transition-colors">About Us</Link>
                     <Link href="/fleet" className="hover:text-luxury-gold transition-colors">Our Fleet</Link>
                     <Link href="/services" className="hover:text-luxury-gold transition-colors">Services</Link>
                     <Link href="/booking" className="hover:text-luxury-gold transition-colors">Book Now</Link>
                     <Link href="/contact" className="hover:text-luxury-gold transition-colors">Contact</Link>
-                    <Link href="/blog" className="hover:text-luxury-gold transition-colors">Start Blog</Link>
+                    <Link href="/blog" className="hover:text-luxury-gold transition-colors">Latest News and Blog</Link>
                 </div>
 
                 {/* Bottom Bar */}

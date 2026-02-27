@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Our Premium Fleet | Luxury Umrah Taxi & Airport Transfers",
-    description: "Explore our premium fleet of vehicles including Camry, Hyundai Staria, GMC Yukon, and luxury buses. Perfect for Umrah, Airport, and Intercity transfers.",
+    title: "Our Extensive Fleet | Luxury Umrah Taxi and Airport Transfers",
+    description: "Explore our modern fleet of vehicles including Camry, Hyundai Staria, GMC Yukon, and luxury buses. Perfect for Umrah, Airport, and Intercity transfers.",
     alternates: {
         canonical: '/fleet',
     },

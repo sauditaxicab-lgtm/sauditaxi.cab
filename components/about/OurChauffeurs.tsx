@@ -14,7 +14,7 @@ const OurChauffeurs = () => {
                         <div className="relative h-[500px] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl group">
                             <img
                                 src="/about/about_professional_drivers.png"
-                                alt="Professional Chauffeur Team"
+                                alt="Professional Driver Team"
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
 

@@ -11,13 +11,13 @@ const services = [
     {
         id: "airport",
         title: "Jeddah Airport to Makkah Ride",
-        description: "Reliable airport taxi pickup. Taxi Book Today for private transfers from Jeddah (KAIA) and Madinah (PRMA) with meet & greet.",
+        description: "Reliable airport taxi pickup. Taxi Book Today for private transfers from Jeddah (KAIA) and Madinah (PRMA) with meet and greet.",
         image: "/services/airport_transfer_luxury.png",
         link: "/services/airport-transfers"
     },
     {
         id: "umrah",
-        title: "Premium Makkah Taxi",
+        title: "Reliable Makkah Taxi",
         description: "Book Now for comfortable spiritual journeys. Dedicated service for pilgrims needing a taxi with driver – 24/7 available.",
         image: "/services/umrah_makkah.png",
         link: "/services/umrah-transfers"
@@ -32,7 +32,7 @@ const services = [
     {
         id: "ziyarat",
         title: "Luxury Taxi for Ziyarat Tours",
-        description: "Guided private tours to holy sites. Experience premium comfort in Makkah and Madinah with knowledgeable drivers.",
+        description: "Guided private tours to holy sites. Experience quality comfort in Makkah and Madinah with knowledgeable drivers.",
         image: "/services/ziyarat_holy_sites.png",
         link: "/services/ziyarat-tours"
     },
@@ -99,13 +99,13 @@ export function ServicesGrid() {
             <div className="container mx-auto px-4 mb-16">
                 <div className="text-center max-w-4xl mx-auto">
                     <span className="text-luxury-gold-dark uppercase tracking-widest text-xs font-bold block mb-4">
-                        Elite Transport Services
+                        Dedicated Mobility Solutions
                     </span>
                     <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-6 leading-tight">
-                        Best Saudi Taxi Service
+                        Our Exclusive <span className="text-luxury-gold">Saudi Taxi</span> Services
                     </h2>
                     <p className="text-black leading-relaxed text-lg max-w-2xl mx-auto">
-                        Looking for a <strong>Saudi Airport Taxi</strong>? Whether you’re heading to Jeddah airport, performing Umrah, or need a <strong>family taxi in Saudi Arabia</strong>, we provide a refined 24/7 <strong>online taxi service in Saudi Arabia</strong>.
+                        Experience the gold standard in transportation. Whether you require a <strong>Jeddah Airport Taxi</strong>, an <strong>Umrah transfer</strong>, or a <strong>family ride</strong> across the Kingdom, Saudi Taxi delivers excellence every time.
                     </p>
                 </div>
             </div>

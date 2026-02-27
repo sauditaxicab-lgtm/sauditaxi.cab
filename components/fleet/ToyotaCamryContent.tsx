@@ -21,11 +21,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 
 const camryGallery = [
-    { src: "/camry/camry-main.jpeg", alt: "Toyota Camry Black Edition Premium Side View" },
+    { src: "/camry/camry-main.jpeg", alt: "Toyota Camry Black Edition Side View" },
     { src: "/camry/camry-front.jpg", alt: "Toyota Camry Modern Front Facade" },
-    { src: "/camry/camry-interior-1.jpeg", alt: "Toyota Camry Luxury Interior" },
+    { src: "/camry/camry-interior-1.jpeg", alt: "Toyota Camry Modern Interior" },
     { src: "/camry/camry-interior-2.jpeg", alt: "Toyota Camry Spacious Rear Seating" }
 ];
+
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export function ToyotaCamryContent() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -41,6 +43,9 @@ export function ToyotaCamryContent() {
 
     return (
         <main className="bg-[#FCFBFA] font-sans text-zinc-900 overflow-x-hidden">
+            <div className="pt-20 md:pt-24 bg-zinc-900 border-b border-white/5">
+                <Breadcrumbs />
+            </div>
             {/* Sales-Desk Hero - Dominance & Action */}
             <section className="relative pt-24 pb-12 lg:pt-24 lg:pb-32 bg-white border-b border-black/5 overflow-hidden">
                 <div className="container mx-auto px-6 relative z-10">
@@ -56,12 +61,10 @@ export function ToyotaCamryContent() {
                                 {/* Premium Verified Badge */}
                                 <div className="inline-flex items-center gap-3 bg-black text-white px-5 py-2.5 rounded-full shadow-2xl border border-luxury-gold/30 mb-10 transform -rotate-1">
                                     <div className="size-2 rounded-full bg-luxury-gold animate-pulse shadow-[0_0_10px_rgba(198,163,85,0.8)]"></div>
-                                    <span className="text-[11px] font-black uppercase tracking-[0.2em] text-luxury-gold/90">Premium Verified Fleet</span>
+                                    <span className="text-[11px] font-black uppercase tracking-[0.2em] text-luxury-gold/90">Verified Fleet</span>
                                 </div>
 
-                                <h1 className="mb-6 md:mb-8 leading-[0.95] text-black text-4xl md:text-6xl lg:text-7xl font-serif font-bold">
-                                    Toyota <span className="text-luxury-gold italic">Camry</span>
-                                </h1>
+                                <h1 className="mb-6 md:mb-8 leading-[0.95] text-black text-4xl md:text-6xl lg:text-7xl font-serif font-bold">Toyota Camry – <span className="text-luxury-gold italic">Reliable Sedan Taxi</span></h1>
 
                                 <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-6 md:mb-8">
                                     <div className="flex gap-1">
@@ -220,7 +223,7 @@ export function ToyotaCamryContent() {
             {/* Decision Logic: Trust Cards */}
             <section className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Premium Features</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Key Features</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                         {[
                             { icon: Zap, title: "Zero Wait Promise", desc: "Drivers tracked in real-time. We are at the arrivals gate before you exit.", highlight: false },
@@ -289,7 +292,7 @@ export function ToyotaCamryContent() {
                                 <div className="size-12 md:size-14 rounded-full bg-luxury-gold/20 flex items-center justify-center font-bold text-luxury-gold border border-luxury-gold/20">AK</div>
                                 <div>
                                     <span className="block text-white font-bold text-base md:text-lg">Ameen K.</span>
-                                    <span className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-widest font-black">December 2025 • Verified</span>
+                                    <span className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-widest font-black">December 2026 • Verified</span>
                                 </div>
                             </div>
                         </div>
@@ -361,7 +364,7 @@ export function ToyotaCamryContent() {
                             },
                             {
                                 question: "Is this the exact car I will get?",
-                                answer: "Yes. When you book a Camry, you get a premium Toyota Camry (Model 2023 or newer). We never swap sedans without your explicit consent."
+                                answer: "Yes. When you book a Camry, you get a modern Toyota Camry (Model 2023 or newer). We never swap sedans without your explicit consent."
                             }
                         ]}
                     />

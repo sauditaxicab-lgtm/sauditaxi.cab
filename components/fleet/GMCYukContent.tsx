@@ -21,10 +21,12 @@ const yukonGallery = [
     { src: "/gmc/gmc-main.jpg", alt: "GMC Yukon XL VIP Exterior" },
     { src: "/gmc/gmc-interior-1.jpeg", alt: "GMC Yukon Luxurious Interior Front" },
     { src: "/gmc/gmc-interior-2.jpeg", alt: "GMC Yukon Spacious Rear Seating" },
-    { src: "/gmc/gmc-interior-3.jpeg", alt: "GMC Yukon Premium Leather Seats" },
+    { src: "/gmc/gmc-interior-3.jpeg", alt: "GMC Yukon Luxury Leather Seats" },
     { src: "/gmc/gmc-interior-4.jpeg", alt: "GMC Yukon Executive Cabin" },
     { src: "/gmc/gmc-interior-5.jpeg", alt: "GMC Yukon XL Side Profile" }
 ];
+
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export function GMCYukonContent() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -40,15 +42,15 @@ export function GMCYukonContent() {
 
     return (
         <main className="bg-white min-h-screen font-sans text-zinc-900 overflow-x-hidden">
+            <div className="pt-20 md:pt-24 bg-zinc-900 border-b border-white/5">
+                <Breadcrumbs />
+            </div>
             <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-32 bg-[#0A0A0B] text-white min-h-[90vh] flex items-center">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
                         <div className="lg:w-1/2 z-10 text-center lg:text-left order-2 lg:order-1">
-                            <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-[10px] mb-4 block">VIP Premium SUV</span>
-                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">
-                                GMC Yukon XL <br />
-                                <span className="text-luxury-gold italic">7-Seater VIP Taxi</span>
-                            </h1>
+                            <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-[10px] mb-4 block">VIP Executive SUV</span>
+                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">GMC Yukon XL – <span className="text-luxury-gold italic">7-Seater VIP Executive Taxi</span></h1>
                             <p className="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                                 The pinnacle of executive travel. Unmatched power, massive luggage capacity, and supreme comfort for those who demand the best in the Kingdom.
                             </p>
@@ -77,7 +79,7 @@ export function GMCYukonContent() {
                         <div className="lg:w-1/2 relative flex flex-col items-center order-1 lg:order-2">
                             <div className="absolute inset-0 bg-luxury-gold/10 blur-[100px] rounded-full opacity-30"></div>
 
-                            <div className="relative w-full aspect-square max-w-[600px] rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 group shadow-2xl mb-6">
+                            <div className="relative w-full aspect-[16/10] max-w-[600px] rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 group shadow-2xl mb-6">
                                 <AnimatePresence mode="wait">
                                     <motion.div
                                         key={activeIndex}
@@ -126,7 +128,7 @@ export function GMCYukonContent() {
             {/* Decision Logic: Trust Cards */}
             <section className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Premium Features</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Key Features</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                         {[
                             { icon: Zap, title: "Commanding Power", desc: "Effortless highway cruising with V8 engine. Arrive at Makkah or Madinah faster and smoother.", highlight: false },
@@ -189,7 +191,7 @@ export function GMCYukonContent() {
                         <div className="space-y-6 md:space-y-8">
                             {[
                                 { name: "Sarah M.", city: "London, UK", text: "Space is unbelievable. 7 of us plus luggage and we didn't feel cramped at all." },
-                                { name: "John D.", city: "New York, USA", text: "Experience matches the price. Premium water, WiFi, and a very smooth driver." }
+                                { name: "John D.", city: "New York, USA", text: "Experience matches the price. Complimentary water, WiFi, and a very smooth driver." }
                             ].map((r, i) => (
                                 <div key={i} className="bg-white/5 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 border border-white/5 hover:bg-white/[0.07] transition-colors relative">
                                     <div className="flex gap-1 mb-3 md:mb-4">

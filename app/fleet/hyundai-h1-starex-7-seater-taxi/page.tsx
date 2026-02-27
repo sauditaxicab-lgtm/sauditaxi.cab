@@ -4,6 +4,9 @@ import { HyundaiStarexContent } from "@/components/fleet/HyundaiStarexContent";
 export const metadata: Metadata = {
     title: "Hyundai H1 Starex 7-Seater Taxi | Family Umrah Transfer",
     description: "Book a Hyundai H1 Starex 7-seater taxi for your family Umrah trip. Reliable, spacious, and comfortable transfer from Jeddah Airport to Makkah and Madinah.",
+    alternates: {
+        canonical: '/fleet/hyundai-h1-starex-7-seater-taxi',
+    },
     openGraph: {
         title: "Hyundai H1 Starex 7-Seater Family Taxi | Saudi Taxi",
         description: "The reliable choice for families. Hyundai H1 Starex 7-seater with ample luggage space. Book your family transfer today.",

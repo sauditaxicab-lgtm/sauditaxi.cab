@@ -2,8 +2,11 @@ import { Metadata } from 'next';
 import { BUSINESS_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
-    title: 'Terms and Conditions | Service Agreement & Policies | Saudi Taxi',
-    description: 'Terms & Conditions for Saudi Taxi. Review our service agreement, booking policies, payment terms & service standards in Saudi Arabia.',
+    title: 'Terms and Conditions | Service Agreement and Policies | Saudi Taxi',
+    description: 'Terms and Conditions for Saudi Taxi. Review our service agreement, booking policies, payment terms and service standards in Saudi Arabia.',
+    alternates: {
+        canonical: '/terms-and-conditions',
+    },
 };
 
 export default function TermsAndConditionsPage() {
@@ -74,7 +77,7 @@ export default function TermsAndConditionsPage() {
                             <div>
                                 <p className="text-luxury-gold/90 font-semibold mb-2">3.2. Pricing</p>
                                 <p className="text-white/80 leading-relaxed">
-                                    All prices are in Saudi Riyal (SAR) and include VAT where applicable.
+                                    All quotes are provided upon request and include VAT where applicable. Final pricing is confirmed at the time of booking.
                                 </p>
                             </div>
                         </div>

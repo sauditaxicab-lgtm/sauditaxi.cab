@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Jeddah to Makkah Taxi | Luxury Private Transfers & Best Fare",
-    description: "Book the finest Jeddah to Makkah taxi service. Premium luxury transfers, fixed 2025 fares, and professional meet & greet at Jeddah Airport for pilgrims.",
+    title: "Jeddah to Makkah Taxi | Luxury Private Transfers and Best Fare",
+    description: "Book the finest Jeddah to Makkah taxi service. Dedicated luxury transfers, fixed 2026 fares, and professional meet and greet at Jeddah Airport for pilgrims.",
     alternates: {
         canonical: '/services/airport-transfers',
     },

@@ -17,9 +17,6 @@ export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen relative">
       <Navbar />
-      <div className="absolute top-20 md:top-24 left-0 w-full z-[50]">
-        <Breadcrumbs />
-      </div>
       <main className="flex-grow">{children}</main>
       <Footer />
       <FloatingContactButton />

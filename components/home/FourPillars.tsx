@@ -7,26 +7,26 @@ const pillars = [
     {
         id: "punctuality",
         title: "Punctuality Guarantee",
-        subtitle: "The Best Saudi Taxi Service Experience.",
-        description: "We operate on precision, not promises. Whether it's an airport pickup or an Umrah journey, our <strong>Saudi taxi service</strong> ensures you are never late. If your driver is not present, your next ride is on us."
+        subtitle: "The Saudi Taxi Signature.",
+        description: "We operate on precision, not promises. Whether it's an airport pickup or an Umrah journey, our dedicated service ensures you are always on time. If our driver is not present, your next ride is on us."
     },
     {
         id: "vetted",
         title: "Experienced Drivers",
-        subtitle: "Professionally Trained & Trusted.",
-        description: "Every driver is fully licensed and experienced in navigating Saudi roads. We provide the most <strong>comfortable taxi service to Saudi Arabia</strong> for pilgrims visiting Makkah and Madinah."
+        subtitle: "The Face of Saudi Taxi.",
+        description: "Every Saudi Taxi driver is fully licensed and professionally trained. We provide the most comfortable and secure transport for pilgrims visiting the Holy Cities of Makkah and Madinah."
     },
     {
         id: "flight",
         title: "24/7 Flight Monitoring",
-        subtitle: "Your Premier Saudi Airport Taxi.",
-        description: "Flights don’t always run on schedule. We do. Our team monitors your flight in real-time, making us the <strong>best Saudi airport taxi</strong> choice for international arrivals at Jeddah or Madinah."
+        subtitle: "Elite Airport Logistics.",
+        description: "Flights don’t always run on schedule, but Saudi Taxi does. Our team monitors your arrival in real-time, providing the most reliable airport transfer service in Jeddah and Madinah."
     },
     {
         id: "reviews",
-        title: "Verified Client Reviews",
-        subtitle: "Trusted by Pilgrims & Families",
-        description: "Our reputation is built on real journeys. From international pilgrims to local families, we are recognized as the <strong>best taxi service in Saudi Arabia</strong> for safety and reliability."
+        title: "Verified Excellence",
+        subtitle: "Trusted by 10,000+ Guests",
+        description: "Our reputation is built on reliability. From international pilgrims to local families, Saudi Taxi is recognized as the Kingdom's top choice for safety and luxury."
     }
 ];
 
@@ -82,7 +82,7 @@ const Icons = {
     vetted: () => (
         <div className="relative w-16 h-16 flex items-center justify-center -mt-2">
             <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-md">
-                {/* Chauffeur Cap */}
+                {/* Driver Cap */}
                 {/* Crown */}
                 <path d="M25 25 Q 20 10 50 5 Q 80 10 75 25 Z" fill="url(#luxuryGoldGradient)" />
                 {/* Visor/Base */}
