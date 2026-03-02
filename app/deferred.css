@@ -33,8 +33,6 @@
     --sidebar-accent-foreground: 0 0% 20.39%;
     --sidebar-border: 0 0% 92.16%;
     --sidebar-ring: 0 0% 70.98%;
-    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --radius: 0.5rem;
     --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
@@ -80,8 +78,6 @@
     --sidebar-accent-foreground: 46.15 9.77% 73.92%;
     --sidebar-border: 0 0% 92.16%;
     --sidebar-ring: 0 0% 70.98%;
-    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --radius: 0.5rem;
     --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
@@ -97,24 +93,36 @@
 @layer base {
 
     /* Secondary heading styles loaded after initial render */
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-serif);
+        font-size: 36px;
+        font-weight: 100;
+        line-height: 48px;
+        color: rgb(255, 255, 255);
+    }
+
     h2 {
-        @apply text-3xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-[1.15] mb-6;
+        @apply mb-6;
     }
 
     h3 {
-        @apply text-2xl md:text-3xl lg:text-4xl font-serif font-bold tracking-normal leading-snug mb-4;
+        @apply mb-4;
     }
 
     h4 {
-        @apply text-xl md:text-2xl lg:text-3xl font-serif font-semibold tracking-wide mb-3;
+        @apply mb-3;
     }
 
     h5 {
-        @apply text-lg md:text-xl font-serif font-medium tracking-wide mb-2;
+        @apply mb-2;
     }
 
     h6 {
-        @apply text-base md:text-lg font-serif font-medium tracking-widest uppercase mb-2;
+        @apply mb-2 uppercase tracking-widest;
     }
 }
 

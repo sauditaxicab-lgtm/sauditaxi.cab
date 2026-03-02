@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export function EEATBlock() {
     return (
-        <section className="py-24 bg-zinc-50 border-y border-zinc-200 overflow-hidden">
+        <section className="py-24 bg-[#FAFAFA] border-y border-zinc-200 overflow-hidden">
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     {/* Visual EEAT Block */}
@@ -26,7 +26,7 @@ export function EEATBlock() {
                             />
                             {/* Overlay Trust Banner */}
                             <div className="absolute bottom-0 left-0 right-0 bg-luxury-gold p-6 text-black">
-                                <p className="text-xl font-serif font-bold italic">"Trusted by 500+ pilgrims since 2015"</p>
+                                <p className="text-xl font-serif font-thin italic">"Trusted by 5,000+ pilgrims since 2015"</p>
                             </div>
                         </div>
                         {/* Decorative background circle */}
@@ -37,9 +37,9 @@ export function EEATBlock() {
                     <div className="lg:w-1/2 space-y-8 text-black">
                         <div>
                             <span className="text-luxury-gold font-bold uppercase tracking-widest text-xs mb-4 block">Our Authority</span>
-                            <h2 className="text-3xl md:text-5xl font-serif mb-6 leading-tight">Elite <span className="text-luxury-gold italic">Taxi Service</span> with Professional Drivers</h2>
-                            <p className="text-zinc-600 text-lg leading-relaxed">
-                                Led by industry veterans with over 15 years of experience in Saudi Arabian logistics, Saudi Taxi represents the pinnacle of reliability. We are a specialized taxi service providing professional drivers for all your travel needs, specifically for long-distance routes like <strong>Makkah to Madinah</strong>, <strong>Madinah to Taif</strong>, and <strong>Makkah to Jeddah</strong>. Every guest is treated with the highest level of hospitality and safety.
+                            <h2 className="text-[36px] font-thin font-serif mb-6 leading-[48px]">Elite <span className="text-luxury-gold italic">Taxi Service</span> with Professional Drivers</h2>
+                            <p className="text-[rgb(31,33,43)] text-[16px] font-normal leading-[24px]">
+                                Led by industry veterans with over 15 years of experience in Saudi Arabian logistics, Saudi Taxi represents the pinnacle of reliability. We are a specialized taxi service providing professional drivers for all your travel needs, specifically for long-distance routes like <strong>Makkah to Madinah (450km)</strong>, <strong>Madinah to Taif (480km)</strong>, and <strong>Makkah to Jeddah (90km)</strong>. Every guest is treated with the highest level of hospitality and safety, aligned with Vision 2030 transport standards.
                             </p>
                         </div>
 
@@ -91,7 +91,7 @@ export function EEATBlock() {
                                         </div>
                                     ))}
                                 </div>
-                                <p className="text-sm font-medium">Join 500+ travelers who trust us yearly.</p>
+                                <p className="text-sm font-medium">Join 5,000+ travelers who trust us yearly. <span className="text-luxury-gold font-bold">Verified 2026 Fleet.</span></p>
                             </div>
                         </div>
                     </div>

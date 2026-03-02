@@ -75,7 +75,7 @@ export function FAQSection({ items, title = "Saudi Taxi FAQ", className = "bg-lu
                     <span className={`uppercase tracking-widest text-xs font-bold block mb-4 ${darkContent ? 'text-luxury-gold-dark' : 'text-luxury-gold'}`}>
                         Common Questions
                     </span>
-                    <h2 className={`text-3xl md:text-5xl font-serif ${darkContent ? "text-black" : "text-white"}`}>
+                    <h2 className={`text-[36px] font-serif font-thin leading-[48px] ${darkContent ? "text-black" : "text-white"}`}>
                         {title}
                     </h2>
                 </div>
@@ -111,7 +111,7 @@ export function FAQSection({ items, title = "Saudi Taxi FAQ", className = "bg-lu
                                         exit={{ height: 0, opacity: 0 }}
                                         className="overflow-hidden"
                                     >
-                                        <div className={`p-6 pt-0 font-light leading-relaxed border-t mt-2 ${darkContent
+                                        <div className={`p-6 pt-0 font-normal leading-[24px] text-[16px] border-t mt-2 ${darkContent
                                             ? "text-black/70 border-black/5"
                                             : "text-white/70 border-white/5"
                                             }`}>

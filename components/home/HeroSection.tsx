@@ -48,16 +48,16 @@ export function HeroSection() {
                                 Premium KSA Transport
                             </span>
 
-                            <h1 className="text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] mb-6 text-4xl md:text-5xl lg:text-7xl uppercase font-serif tracking-tight leading-[1.05]">
-                                <span className="text-luxury-gold italic block text-2xl md:text-3xl tracking-[0.2em] font-sans mb-3 lowercase">Experience the best</span>
+                            <h1 className="text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] mb-6 text-[36px] uppercase font-serif tracking-tight leading-[48px] font-thin">
+                                <span className="text-luxury-gold italic block text-[24px] tracking-[0.2em] font-sans mb-3 lowercase">Experience the best</span>
                                 SAUDI <br />
                                 <span className="underline decoration-luxury-gold/40 underline-offset-[12px]">UMRAH TAXI SERVICE</span>
                             </h1>
 
                             <div className="h-1.5 w-32 bg-luxury-gold mb-8 rounded-full"></div>
 
-                            <p className="text-white/90 text-base md:text-xl font-light leading-relaxed max-w-2xl mb-10 drop-shadow-md text-center lg:text-left">
-                                Book your <strong>private Umrah taxi</strong> with ease. We specialize in <strong>airport taxi Jeddah to Makkah</strong>, reliable <strong>Makkah to Madinah taxi</strong> transfers, and <strong>umrah transport Makkah</strong> tours.
+                            <p className="text-white/80 text-[16px] font-normal leading-[24px] max-w-2xl mb-10 drop-shadow-md text-center lg:text-left">
+                                Book your <strong>private Umrah taxi</strong> with ease. We specialize in <strong>airport taxi Jeddah to Makkah</strong>, reliable <strong>Makkah to Madinah taxi</strong> transfers, <strong>Taif taxi</strong> services, and <strong>umrah transport Makkah</strong> tours.
                                 <span className="block mt-4 text-luxury-gold font-bold uppercase tracking-widest text-sm">✓ Fixed 2026 Rates ✓ Professional Drivers</span>
                             </p>
 
@@ -102,7 +102,7 @@ export function HeroSection() {
                             {/* Grounding Shadow */}
                             <div className="absolute -bottom-10 left-10 right-10 h-10 bg-black/40 blur-3xl opacity-60"></div>
 
-                            <div className="relative z-30 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-2xl">
+                            <div className="relative z-30 shadow-[0_40px_80px_rgba(0,0,0,0.6)] rounded-3xl overflow-hidden glass-panel">
                                 <BookingWidget />
                             </div>
                         </motion.div>

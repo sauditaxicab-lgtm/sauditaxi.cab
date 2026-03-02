@@ -36,6 +36,7 @@ const locationsList = [
     { name: "Makkah Taxi", href: "/makkah" },
     { name: "Jeddah Taxi", href: "/jeddah" },
     { name: "Madinah Taxi", href: "/madinah" },
+    { name: "Taif Taxi", href: "/taif" },
 ];
 
 const navLinks = [

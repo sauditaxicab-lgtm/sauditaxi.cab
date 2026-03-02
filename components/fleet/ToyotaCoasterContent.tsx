@@ -53,7 +53,7 @@ export function ToyotaCoasterContent() {
                             <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-[10px] mb-4 block">Large Group Transport</span>
                             <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">Toyota Coaster – <span className="text-luxury-gold italic">17-Seater Group Pilgrimage Taxi</span></h1>
                             <p className="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                                The choice for large pilgrim groups and touring families. Spacious seating, dedicated luggage space, and air-conditioned comfort for up to 17 passengers.
+                                The choice for large pilgrim groups and touring families. We offer reliable 17-seater group transport across <Link href="/makkah" className="text-luxury-gold hover:underline">Makkah</Link>, <Link href="/madinah" className="text-luxury-gold hover:underline">Madinah</Link>, <Link href="/jeddah" className="text-luxury-gold hover:underline">Jeddah</Link>, and <Link href="/taif" className="text-luxury-gold hover:underline">Taif</Link>. Spacious seating, dedicated luggage space, and air-conditioned comfort for up to 17 passengers.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                                 <Link href="/booking?vehicle=Toyota-Coaster" className="w-full sm:w-auto">

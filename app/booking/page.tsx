@@ -38,8 +38,8 @@ export default function BookingPage() {
                     <span className="text-luxury-gold text-sm md:text-base font-bold uppercase tracking-[0.2em] animate-fade-in-up">
                         Instant Online Reservation
                     </span>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight drop-shadow-lg">Book Your Saudi Taxi – <span className="text-luxury-gold italic">Instant Online Taxi Reservation</span></h1>
-                    <p className="text-lg text-white/80 font-light leading-relaxed max-w-2xl mx-auto drop-shadow-md">
+                    <h1 className="text-[36px] font-thin font-serif text-white leading-[48px] drop-shadow-lg">Book Your Saudi Taxi – <span className="text-luxury-gold italic">Instant Online Taxi Reservation</span></h1>
+                    <p className="text-[16px] text-white/80 font-normal leading-[24px] max-w-2xl mx-auto drop-shadow-md">
                         Book your taxi in seconds. Fill in your journey details below and connect with us on WhatsApp for an instant confirmation.
                     </p>
                 </div>

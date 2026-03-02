@@ -8,37 +8,64 @@
   --color-luxury-gold-light: #E0C691;
   --color-luxury-gold-dark: #8E7040;
 
-  --font-serif: var(--font-serif);
-  --font-sans: var(--font-sans);
+  --font-serif: Jotia, Verdana, Geneva, sans-serif;
+  --font-sans: Graphik, "Graphik Web", Arial, sans-serif;
 }
 
 @layer base {
+
   /* Critical base styles */
   body {
     background-color: var(--color-luxury-black);
-    color: #FFFFFF;
+    color: rgb(31, 33, 43);
+    /* Requested Paragraph Color */
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
   }
 
   /* Only h1 for above-the-fold critical rendering */
   h1 {
-    @apply text-4xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight leading-[1.1] mb-6;
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 100;
+    line-height: 48px;
+    color: rgb(255, 255, 255);
+    @apply mb-6 text-center;
   }
 
   /* Default Paragraph Style for consistency */
   p {
-    @apply leading-relaxed opacity-90;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgb(31, 33, 43);
+    @apply opacity-90;
   }
 }
 
 /* Critical utility classes used above the fold */
 .glass-panel {
-  @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-2xl;
+  @apply bg-black/40 backdrop-blur-xl border border-white/15;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.premium-card {
+  @apply bg-white rounded-[2rem] border border-zinc-100 transition-all duration-500;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
+}
+
+.premium-card:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
 }
 
 .text-gold-gradient {
-  @apply bg-gradient-to-r from-luxury-gold via-luxury-gold-dark to-luxury-gold bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-luxury-gold via-luxury-gold-light to-luxury-gold-dark bg-clip-text text-transparent;
 }
 
 .bg-gold-gradient {
   @apply bg-gradient-to-b from-luxury-gold to-luxury-gold-dark hover:brightness-110 transition-all;
+  box-shadow: 0 10px 20px rgba(196, 169, 117, 0.2);
 }

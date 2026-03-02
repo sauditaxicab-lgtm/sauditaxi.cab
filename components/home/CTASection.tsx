@@ -23,10 +23,10 @@ export function CTASection({
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
 
             <div className="container mx-auto px-4 relative z-10 text-center">
-                <h2 className="text-3xl md:text-5xl font-serif text-luxury-black mb-6">
+                <h2 className="text-[36px] font-thin font-serif text-luxury-black mb-6 leading-[48px]">
                     {title}
                 </h2>
-                <p className="text-luxury-black/80 text-lg max-w-2xl mx-auto mb-10 font-medium">
+                <p className="text-luxury-black/80 text-[16px] max-w-2xl mx-auto mb-10 font-normal leading-[24px]">
                     {description}
                 </p>
 

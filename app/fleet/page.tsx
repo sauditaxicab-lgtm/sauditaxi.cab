@@ -10,16 +10,40 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Saudi Arabia Taxi Fares and Fleet | Reliable Umrah and Airport Transport',
-    description: 'Explore our extensive fleet of taxis in Saudi Arabia. Transparent fares for Toyota Camry, Hyundai Staria, GMC Yukon XL, and more. 24/7 airport and Umrah transfers.',
+    title: 'Saudi Taxi Fleet: Premium Umrah & Airport Transport Fares 2026',
+    description: 'Explore our luxury taxi fleet in Saudi Arabia. Professional Toyota Camry, Hyundai Staria, and GMC Yukon transfers. Fixed rates for Jeddah Airport, Makkah, and Madinah.',
     alternates: {
         canonical: '/fleet',
     },
+    openGraph: {
+        title: 'Saudi Taxi Fleet | Premium Pilgrimage Transport',
+        description: 'Elite vehicle fleet for Umrah and Airport transfers in Saudi Arabia.',
+    }
+};
+
+const fleetSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Saudi Taxi Private Fleet",
+    "description": "Professional private hire vehicles for Umrah and Airport transfers including Camry, Staria, and GMC Yukon.",
+    "brand": {
+        "@type": "Brand",
+        "name": "Saudi Taxi"
+    },
+    "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "SAR",
+        "availability": "https://schema.org/InStock"
+    }
 };
 
 export default function FleetPage() {
     return (
         <main className="bg-luxury-black min-h-screen text-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(fleetSchema) }}
+            />
             <ServiceHero
                 title="Saudi Arabia Taxi Fares and Fleet"
                 subtitle="Reliable Saudi Private Taxi and Umrah Transfers"

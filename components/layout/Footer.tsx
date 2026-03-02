@@ -120,12 +120,12 @@ export function Footer() {
                 </div>
 
                 {/* Description */}
-                <p className="text-white/60 text-sm md:text-base leading-7 font-light max-w-2xl mb-12">
+                <p className="text-white/80 text-[16px] leading-[24px] font-normal max-w-2xl mb-12">
                     Saudi Taxi provides first-class, elite taxi services with professional drivers across the Kingdom. From sacred Umrah transfers to business travel and airport pickups, we deliver a professional and reliable experience that has made us the trusted name in Saudi transportation.
                 </p>
 
                 {/* Socials & Reviews Heading */}
-                <h3 className="text-2xl md:text-3xl font-serif text-white mb-8">
+                <h3 className="text-[36px] font-thin font-serif text-white mb-8 leading-[48px]">
                     Leave a Review and Follow Us
                 </h3>
 
@@ -168,6 +168,7 @@ export function Footer() {
                     <Link href="/makkah" className="hover:text-luxury-gold transition-colors">Makkah Taxi</Link>
                     <Link href="/jeddah" className="hover:text-luxury-gold transition-colors">Jeddah Taxi</Link>
                     <Link href="/madinah" className="hover:text-luxury-gold transition-colors">Madinah Taxi</Link>
+                    <Link href="/taif" className="hover:text-luxury-gold transition-colors">Taif Taxi</Link>
                     <div className="w-full md:w-auto h-0 md:h-4 border-l border-white/10 mx-2 hidden md:block"></div>
                     <Link href="/about" className="hover:text-luxury-gold transition-colors">About Us</Link>
                     <Link href="/fleet" className="hover:text-luxury-gold transition-colors">Our Fleet</Link>

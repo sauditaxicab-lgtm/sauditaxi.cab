@@ -60,20 +60,16 @@ const jeddahSummaryRoutes = [
 
 const jeddahFAQs = [
     {
-        question: "How much is a taxi from Jeddah Airport to the Corniche?",
-        answer: "A private taxi from Jeddah Airport (KAIA) to the Corniche or city center hotels is priced competitively based on the vehicle type. We offer fixed-rate transfers to avoid meter anxiety. Contact us for the current rates."
+        question: "How much is a taxi from Jeddah Airport (JED) to Makkah Clock Tower in 2026?",
+        answer: "We offer fixed-rate private transfers from Jeddah Airport Terminal 1 to hotels in the Makkah area. Vehicle options range from sedan (Toyota Camry) to family SUVs (GMC Yukon, Hyundai MPV). Contact us via WhatsApp for the latest pricing."
     },
     {
-        question: "Can I book a Jeddah taxi for Makkah Umrah transfer?",
-        answer: "Yes, we specialize in Jeddah to Makkah transfers. Our drivers can pick you up from your hotel or the airport and take you directly to your hotel in Makkah or the Haram. The trip takes about 60-90 minutes."
+        question: "Where is the Saudi Taxi pickup point at Jeddah Terminal 1?",
+        answer: "The primary pickup point is located at Terminal 1, Arrival Level, near Gate 4. Your driver will meet you with a personalized name card and assist with your luggage to the priority parking area."
     },
     {
-        question: "Do you provide taxi service to King Abdullah Economic City (KAEC)?",
-        answer: "Absolutely. We offer comfortable long-distance rides from Jeddah to KAEC, complete with professional drivers who know the best routes."
-    },
-    {
-        question: "Is your Jeddah taxi service available 24/7?",
-        answer: "Yes, our operations run 24 hours a day, 7 days a week. Whether you have a late-night flight arrival or an early morning departure, our team is ready to serve you."
+        question: "Can I get a taxi from Jeddah to Makkah for Umrah with a stop at the Meeqat?",
+        answer: "Yes, our Jeddah to Makkah service includes a complimentary 20-30 minute stop at the Meeqat (Al-Juhfah) for pilgrims. Please mention this during your WhatsApp booking to ensure the driver is prepared."
     }
 ];
 
@@ -95,9 +91,9 @@ export default function JeddahCityPage() {
             <section className="py-24 bg-white text-black">
                 <div className="container mx-auto px-4 max-w-5xl text-center">
                     <span className="text-luxury-gold uppercase tracking-[0.2em] font-bold text-xs mb-4 block">Destination: Jeddah</span>
-                    <h2 className="text-3xl md:text-5xl font-serif mb-6 text-black">Professional <span className="text-luxury-gold">Jeddah Taxi</span> Solutions</h2>
-                    <p className="text-zinc-600 text-lg leading-relaxed mb-12">
-                        As the main entry point for millions of pilgrims and business travelers, Jeddah demands a higher standard of transport. <Link href="/" className="text-luxury-gold hover:underline font-bold">Saudi Taxi</Link> provides licensed, professional drivers for every journey. Whether you're landing at <strong>KAIA Terminal 1</strong>, staying near <strong>Mall of Arabia</strong>, or exploring the <Link href="/services/sightseeing" className="text-luxury-gold hover:underline font-bold">Red Sea Corniche</Link>, our extensive fleet is always nearby.
+                    <h2 className="text-[36px] font-serif font-thin mb-6 text-black leading-[48px]">Professional <span className="text-luxury-gold">Jeddah Taxi</span> Solutions</h2>
+                    <p className="text-[rgb(31,33,43)] text-[16px] font-normal leading-[24px] mb-12 border-l-4 border-luxury-gold pl-6 bg-zinc-50 py-4 rounded-r-xl">
+                        Saudi Taxi is the primary private transport provider for <Link href="/jeddah/airport-taxi" className="text-luxury-gold hover:underline font-bold">Jeddah Airport (JED)</Link>, with stationary dispatch at <strong>KAIA Terminal 1 (Gate 4)</strong> and the <strong>North Terminal</strong>. We offer guaranteed 60-minute transfers to Makkah at competitive fixed rates. Our Jeddah fleet includes <Link href="/fleet" className="text-luxury-gold hover:underline font-bold">luxury Camry sedans</Link>, <Link href="/fleet/gmc-yukon-xl-7-seater-taxi" className="text-luxury-gold hover:underline font-bold">GMC Yukon XLs</Link>, and <strong>Hyundai MPVs</strong> for families.
                     </p>
 
                     <div className="grid md:grid-cols-3 gap-8">
@@ -133,16 +129,41 @@ export default function JeddahCityPage() {
             <section className="py-16 bg-zinc-50 border-y border-zinc-200">
                 <div className="container mx-auto px-4 max-w-4xl">
                     <div className="bg-white p-10 rounded-2xl shadow-xl border-l-[6px] border-luxury-gold">
-                        <h2 className="text-2xl font-bold text-black mb-6 flex items-center gap-3">
-                            <AlertCircle className="text-luxury-gold" />
-                            Jeddah Taxi Rates and Info
+                        <h2 className="text-[36px] font-serif font-thin text-black mb-8 leading-[48px]">
+                            <Car className="text-luxury-gold inline-block mr-3" />
+                            Jeddah Taxi Rates & Quick Info
                         </h2>
-                        <p className="text-zinc-700 text-lg leading-relaxed mb-6">
-                            Taxi fares in Jeddah are transparent with us. We provide clearly defined fixed rates for airport transfers to the city center and trips to Makkah, so you never have to worry about meters or traffic delays. Contact us on WhatsApp for an instant customized quote.
+
+                        {/* AEO/Zero-Click Summary Table */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-black">
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="font-bold">JED Airport to Makkah:</span>
+                                <span className="text-luxury-gold font-bold">Fixed Rate</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="font-bold">JED to Madinah:</span>
+                                <span className="text-luxury-gold font-bold">Fixed Rate</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="font-bold">Wait Time (Complementary):</span>
+                                <span className="text-luxury-gold font-bold">60 Mins</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="font-bold">Operating Hours:</span>
+                                <span className="text-luxury-gold font-bold">24/7 Service</span>
+                            </div>
+                        </div>
+
+                        <p className="text-[rgb(31,33,43)] text-[16px] font-normal leading-[24px] mb-6">
+                            Taxi fares in Jeddah are fixed and transparent with Saudi Taxi. We specialize in <Link href="/jeddah/airport-taxi" className="text-luxury-gold hover:underline font-bold">King Abdulaziz International Airport (JED)</Link> transfers to city-center hotels in <strong>Al-Hamra</strong>, <strong>Rawdah</strong>, and the <strong>Jeddah Corniche</strong>. For pilgrims, we offer the most reliable <Link href="/makkah" className="text-luxury-gold hover:underline font-bold">Jeddah to Mecca taxi</Link> experience with drivers trained in Umrah logistics.
                         </p>
-                        <p className="text-zinc-500 text-sm italic py-4 border-t border-zinc-100">
-                            *Pre-booking is highly recommended for airport pickups to ensure seamless meet and greet.
-                        </p>
+                        <div className="mt-8 p-6 bg-luxury-gold/5 border border-luxury-gold/10 rounded-xl relative overflow-hidden">
+                            <div className="absolute top-0 right-0 px-4 py-1 bg-luxury-gold text-black text-[10px] font-bold uppercase tracking-tighter rounded-bl-lg">2026 Protocol</div>
+                            <h4 className="text-sm font-bold text-luxury-gold uppercase tracking-widest mb-3">Retrival-Ready Logistics:</h4>
+                            <p className="text-[14px] text-zinc-700 leading-relaxed italic">
+                                "Jeddah Taxi passengers arriving at <strong>Terminal 1</strong> should proceed to <strong>Arrival Hall Gate 4</strong>. Our dedicated Saudi Taxi dispatchers are available 24/7 to coordinate immediate meet-and-greet. All <Link href="/services/umrah-transfers" className="text-luxury-gold hover:underline font-bold">Umrah rides</Link> include an optional 30-minute stop at <strong>The Meeqat (Al-Juhfah)</strong> for Ihram changes at no additional cost."
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -157,8 +178,8 @@ export default function JeddahCityPage() {
             <section className="bg-white pb-24">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-serif text-black mb-4">Available Fleet in Jeddah</h2>
-                        <p className="text-zinc-500">Modern vehicles ranging from sedans to 7-seater SUVs and vans.</p>
+                        <h2 className="text-[36px] font-serif font-thin text-black mb-4 leading-[48px]">Available Fleet in Jeddah</h2>
+                        <p className="text-[rgb(31,33,43)] text-[16px] font-normal leading-[24px]">Modern vehicles ranging from sedans to 7-seater SUVs and vans.</p>
                     </div>
                     <FleetGrid />
                 </div>
@@ -169,8 +190,8 @@ export default function JeddahCityPage() {
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row items-center gap-16">
                         <div className="lg:w-1/2 space-y-8">
-                            <h2 className="text-3xl md:text-5xl font-serif pt-10">A Professional Hand in <br /><span className="text-luxury-gold">Jeddah’s Rush</span></h2>
-                            <p className="text-white/60 text-lg leading-relaxed">
+                            <h2 className="text-[36px] font-serif font-thin text-white leading-[48px] pt-10">A Professional Hand in <br /><span className="text-luxury-gold">Jeddah’s Rush</span></h2>
+                            <p className="text-white/80 text-[16px] font-normal leading-[24px]">
                                 We know Jeddah’s traffic patterns, from the Tahliah Street hustle to the calm of the North Corniche. Our drivers use GPS-optimized routes to ensure you always arrive on time, whether for a flight or a prayer.
                             </p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -219,17 +240,46 @@ export default function JeddahCityPage() {
                 __html: JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "TaxiService",
+                    "@id": "https://sauditaxi.cab/jeddah/#localbusiness",
                     "name": "Saudi Taxi - Jeddah Hub",
                     "description": "Dedicated airport transfers and city taxi services in Jeddah. Serving KAIA Terminal 1 and North Terminal.",
-                    "areaServed": {
-                        "@type": "City",
-                        "name": "Jeddah"
+                    "mainEntityOfPage": "https://sauditaxi.cab/jeddah",
+                    "parentOrganization": {
+                        "@type": "Organization",
+                        "@id": "https://sauditaxi.cab/#organization"
                     },
+                    "areaServed": [
+                        {
+                            "@type": "City",
+                            "name": "Jeddah",
+                            "@id": "http://www.wikidata.org/entity/Q37038"
+                        },
+                        {
+                            "@type": "LandmarkOrHistoricalService",
+                            "name": "KAIA Terminal 1",
+                            "sameAs": "http://www.wikidata.org/entity/Q1138837"
+                        },
+                        { "@type": "LandmarkOrHistoricalService", "name": "Red Sea Corniche" },
+                        { "@type": "LandmarkOrHistoricalService", "name": "Mall of Arabia" }
+                    ],
                     "address": {
                         "@type": "PostalAddress",
                         "addressLocality": "Jeddah",
                         "addressRegion": "Makkah Province",
                         "addressCountry": "SA"
+                    },
+                    "hasOfferCatalog": {
+                        "@type": "OfferCatalog",
+                        "name": "Jeddah Taxi Services",
+                        "itemListElement": [
+                            {
+                                "@type": "Offer",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Jeddah Airport Taxi to Makkah"
+                                }
+                            }
+                        ]
                     },
                     "geo": {
                         "@type": "GeoCoordinates",
@@ -239,6 +289,6 @@ export default function JeddahCityPage() {
                     "telephone": "+966548174726"
                 })
             }} />
-        </main>
+        </main >
     );
 }

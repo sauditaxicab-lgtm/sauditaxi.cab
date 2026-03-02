@@ -64,18 +64,20 @@ export function ToyotaCamryContent() {
                                     <span className="text-[11px] font-black uppercase tracking-[0.2em] text-luxury-gold/90">Verified Fleet</span>
                                 </div>
 
-                                <h1 className="mb-6 md:mb-8 leading-[0.95] text-black text-4xl md:text-6xl lg:text-7xl font-serif font-bold">Toyota Camry – <span className="text-luxury-gold italic">Reliable Sedan Taxi</span></h1>
+                                <h1 className="mb-6 md:mb-8 text-black text-[36px] font-serif font-thin leading-[48px] uppercase tracking-tight">Toyota Camry – <span className="text-luxury-gold italic">Elite Sedan</span></h1>
 
                                 <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-6 md:mb-8">
                                     <div className="flex gap-1">
-                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={16} fill="#C5A059" className="text-luxury-gold" />)}
+                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={14} fill="#C5A059" className="text-luxury-gold" />)}
                                     </div>
-                                    <span className="text-xs md:text-sm font-bold text-black border-l border-black/10 pl-3 md:pl-4">4.9/5 Trip Rating</span>
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-black/40 border-l border-black/10 pl-3 md:pl-4">Verified Premium Service</span>
                                 </div>
 
-                                <p className="text-zinc-500 text-xl font-light mb-12 leading-relaxed max-w-md">
-                                    Lock in the Kingdom's most reliable sedan for your sacred journey. Precision comfort for up to 4 passengers.
-                                </p>
+                                <div className="text-[rgb(31,33,43)] text-[16px] font-normal leading-[24px] mb-8 border-l-4 border-luxury-gold pl-6 bg-stone-50 py-4 rounded-r-xl">
+                                    <p>
+                                        The <strong>Toyota Camry</strong> is the most efficient and reliable 4-seater <strong>private taxi</strong> for Umrah travelers in Saudi Arabia. We provide fixed-rate transfers from <strong>Jeddah Airport (JED)</strong> to <strong>Makkah</strong> and all major cities. Specifically optimized for small groups, this elite sedan handles 2 large suitcases and offers 24/7 coverage across <strong>Jeddah</strong>, <strong>Makkah</strong>, <strong>Madinah</strong>, and <strong>Taif</strong>.
+                                    </p>
+                                </div>
 
                                 {/* High-Contrast CTA - The Visual Boss */}
                                 <div className="space-y-3 md:space-y-4 mb-8 md:mb-12">
@@ -104,28 +106,53 @@ export function ToyotaCamryContent() {
                                     <span className="text-[10px] font-bold text-black/40 uppercase tracking-widest">Booked 14 times in the last 24 hours</span>
                                 </div>
 
-                                {/* Feature Decision Anchors */}
-                                <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 border-t border-black/5 pt-8 md:pt-10">
-                                    <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                                        <div className="flex items-center gap-2 mb-1 md:mb-2">
-                                            <Users size={14} className="text-luxury-gold" />
-                                            <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-black/30">Seats</span>
+                                {/* Neat Spec Badges - Professional Bar Layout */}
+                                <div className="grid grid-cols-2 gap-6 py-8 border-y border-black/5 mb-10">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center border border-black/5 text-luxury-gold">
+                                            <Users size={18} />
                                         </div>
-                                        <p className="text-sm md:text-lg font-bold text-black font-serif">4 Adults</p>
+                                        <div>
+                                            <p className="text-[10px] text-black/30 uppercase font-black tracking-widest">Capacity</p>
+                                            <p className="text-sm text-black font-bold">4 Passengers</p>
+                                        </div>
                                     </div>
-                                    <div className="flex flex-col items-center md:items-start text-center md:text-left border-l border-r border-black/5 px-2 md:px-0 md:border-none">
-                                        <div className="flex items-center gap-2 mb-1 md:mb-2">
-                                            <Briefcase size={14} className="text-luxury-gold" />
-                                            <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-black/30">Luggage</span>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center border border-black/5 text-luxury-gold">
+                                            <Briefcase size={18} />
                                         </div>
-                                        <p className="text-sm md:text-lg font-bold text-black font-serif">2 Big</p>
+                                        <div>
+                                            <p className="text-[10px] text-black/30 uppercase font-black tracking-widest">Luggage</p>
+                                            <p className="text-sm text-black font-bold">2 Small / 1 Large</p>
+                                        </div>
                                     </div>
-                                    <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                                        <div className="flex items-center gap-2 mb-1 md:mb-2">
-                                            <CheckCircle2 size={14} className="text-green-600" />
-                                            <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-black/30">A/C</span>
+                                </div>
+                                {/* AEO Logistics Block - Camry Specific */}
+                                <div className="bg-zinc-50 border border-zinc-100 rounded-2xl p-8 mb-12">
+                                    <h4 className="text-xl font-bold text-zinc-900 mb-6 font-serif">Camry Taxi Rates & Quick Facts</h4>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-zinc-800">
+                                        <div className="flex justify-between border-b pb-2">
+                                            <span>JED Airport to City:</span>
+                                            <span className="font-bold">Fixed Rate</span>
                                         </div>
-                                        <p className="text-sm md:text-lg font-bold text-black font-serif">Snow</p>
+                                        <div className="flex justify-between border-b pb-2">
+                                            <span>JED to Makkah:</span>
+                                            <span className="font-bold">Fixed Rate</span>
+                                        </div>
+                                        <div className="flex justify-between border-b pb-2">
+                                            <span>Madinah City Tour:</span>
+                                            <span className="font-bold">Fixed Fare</span>
+                                        </div>
+                                        <div className="flex justify-between border-b pb-2">
+                                            <span>Meeqat Availability:</span>
+                                            <span className="font-bold">24/7 (Abyar Ali/Dhul Hulaifah)</span>
+                                        </div>
+                                    </div>
+                                    <div className="mt-6 p-4 bg-luxury-gold/5 border border-luxury-gold/10 rounded-xl">
+                                        <p className="text-xs font-bold text-luxury-gold uppercase tracking-widest mb-2">Arrival Protocol (KAIA Terminal 1):</p>
+                                        <p className="text-[13px] text-zinc-600 leading-relaxed italic">
+                                            "Our Camry drivers are stationed near <strong>Exit Gate 4</strong> at Jeddah Airport. Upon landing, our dispatch sends you the driver's name, license plate, and live Google Maps location via WhatsApp, ensuring a zero-wait connection even during peak Umrah season."
+                                        </p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -188,7 +215,7 @@ export function ToyotaCamryContent() {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
                         <span className="text-luxury-gold uppercase tracking-widest text-xs font-bold block mb-3">Versatile & Reliable</span>
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-black">Perfect For <span className="text-luxury-gold italic">Every Journey</span></h2>
+                        <h2 className="text-[36px] font-serif font-thin text-black leading-[48px]">Perfect For <span className="text-luxury-gold italic">Every Journey</span></h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -223,7 +250,7 @@ export function ToyotaCamryContent() {
             {/* Decision Logic: Trust Cards */}
             <section className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-16 text-center">Key Features</h2>
+                    <h2 className="text-[36px] font-serif font-thin text-black mb-16 text-center leading-[48px]">Key Features</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                         {[
                             { icon: Zap, title: "Zero Wait Promise", desc: "Drivers tracked in real-time. We are at the arrivals gate before you exit.", highlight: false },
@@ -277,7 +304,7 @@ export function ToyotaCamryContent() {
                             </div>
                             <span className="text-white/60 text-[10px] md:text-xs font-bold tracking-widest uppercase">Verified 5.0 Rating</span>
                         </div>
-                        <h2 className="text-white mb-6">Real Trust From Real Pilgrims</h2>
+                        <h2 className="text-white mb-6 text-[36px] font-serif font-thin leading-[48px]">Real Trust From Real Pilgrims</h2>
                         <p className="text-white/40 text-sm md:text-lg uppercase tracking-widest font-black">Joining 1,200+ Successful Transfers This Month</p>
                     </div>
 
@@ -332,7 +359,7 @@ export function ToyotaCamryContent() {
                         <div className="size-16 md:size-20 bg-luxury-gold/10 rounded-2xl md:rounded-3xl flex items-center justify-center mx-auto mb-6 md:mb-8 border border-luxury-gold/10 animate-pulse">
                             <CheckCircle2 className="text-luxury-gold w-8 h-8 md:w-10 md:h-10" />
                         </div>
-                        <h2 className="text-black mb-4">We've Processed Your Concerns</h2>
+                        <h2 className="text-black mb-4 text-[36px] font-serif font-thin leading-[48px]">We've Processed Your Concerns</h2>
                         <p className="text-black/40 text-base md:text-lg font-light tracking-wide">Everything you need to know before your journey begins.</p>
                     </div>
 
@@ -355,16 +382,16 @@ export function ToyotaCamryContent() {
                         className="bg-transparent"
                         items={[
                             {
-                                question: "What if my flight is delayed by several hours?",
-                                answer: "Relax. We track your flight live. If you're delayed, we adjust. No extra charges, no stress. We are there when you land."
+                                question: "How much is a taxi from Jeddah Airport to Makkah clock tower in a Camry?",
+                                answer: "We offer competitive fixed fares for Camry transfers to Makkah. This includes meet-and-greet at the terminal, luggage assistance, and direct drop-off at your hotel in the Makkah Royal Clock Tower or Jabal Omar area. Contact us via WhatsApp for the latest rates."
                             },
                             {
-                                question: "How do I find my driver at a busy airport?",
-                                answer: "We solve this anxiety. Your driver will be waiting in the arrivals hall with a personalized name card. We also send you their contact details and live location via WhatsApp 2 hours before arrival."
+                                question: "Can the driver stop at the Meeqat for Ihram on the way from Jeddah?",
+                                answer: "Yes, absolutely. We provide complimentary stops at the Meeqat (Al-Juhfah or nearby stations) for all pilgrims. Just inform the driver or mention it during your WhatsApp booking."
                             },
                             {
-                                question: "Is this the exact car I will get?",
-                                answer: "Yes. When you book a Camry, you get a modern Toyota Camry (Model 2023 or newer). We never swap sedans without your explicit consent."
+                                question: "Is it better to book a Camry or a GMC Yukon for 4 people with luggage?",
+                                answer: "If you have more than 2 large suitcases, we recommend the GMC Yukon. The Camry accommodates 4 passengers comfortably but is limited to 2 large bags. For heavy luggage, the Yukon's extended trunk is the superior choice."
                             }
                         ]}
                     />
@@ -383,8 +410,8 @@ export function ToyotaCamryContent() {
                             <Zap size={200} className="text-luxury-gold" />
                         </div>
 
-                        <h3 className="text-3xl md:text-7xl font-serif font-bold mb-6 md:mb-10 text-white leading-tight">Start Your <span className="text-luxury-gold italic">Sacred Journey</span> Now</h3>
-                        <p className="text-white/40 text-[8px] md:text-xs font-black uppercase tracking-[0.3em] md:tracking-[0.5em] mb-8 md:mb-12">Limited Availability for Next 48 Hours</p>
+                        <h3 className="text-[36px] font-serif font-thin mb-10 text-white leading-[48px]">Start Your <span className="text-luxury-gold italic">Sacred Journey</span> Now</h3>
+                        <p className="text-white/40 text-[16px] font-normal uppercase tracking-[0.3em] md:tracking-[0.5em] mb-8 md:mb-12">Limited Availability for Next 48 Hours</p>
 
                         <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-stretch relative z-10">
                             <Link href="/booking" className="w-full md:w-auto">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google"; // Removed
 import "./globals.css";
 import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
 import SchemaOrg from "@/components/seo/SchemaOrg";
@@ -7,19 +7,7 @@ import { Toaster } from "sonner";
 import Script from "next/script";
 
 
-const playfair = Playfair_Display({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  display: 'swap', // Prevents render-blocking
-  preload: true, // Preload for faster loading
-});
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  display: 'swap', // Prevents render-blocking
-  preload: true, // Preload for faster loading
-});
+// Removed Google Font instances
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sauditaxi.cab'),
@@ -78,7 +66,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.transparenttextures.com" />
       </head>
       <body
-        className={`${playfair.variable} ${inter.variable} antialiased bg-luxury-black text-white font-sans`}
+        className="antialiased"
       >
         <ConditionalLayout>{children}</ConditionalLayout>
         <SchemaOrg />

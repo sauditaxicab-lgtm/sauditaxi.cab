@@ -20,7 +20,7 @@ import Script from "next/script";
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative bg-luxury-black text-white selection:bg-luxury-gold selection:text-black">
+    <main className="min-h-screen relative selection:bg-luxury-gold selection:text-black">
 
 
       <Navbar />
@@ -41,8 +41,54 @@ export default function Home() {
 
       <InformationSection />
 
-      <FAQSection />
       <CTASection />
+
+      {/* AI-First SEO Schema Layer */}
+      <Script id="homepage-advanced-schema" type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TaxiService",
+          "name": "Saudi Taxi - Executive Transport & Umrah Transfers",
+          "alternateName": "SaudiTaxi.cab",
+          "description": "Professional 24/7 taxi service in Saudi Arabia specializing in Jeddah Airport transfers, Makkah Umrah transport, and Madinah Ziyarat tours.",
+          "url": "https://sauditaxi.cab",
+          "logo": "https://sauditaxi.cab/logo.png",
+          "areaServed": [
+            { "@type": "City", "name": "Makkah" },
+            { "@type": "City", "name": "Madinah" },
+            { "@type": "City", "name": "Jeddah" },
+            { "@type": "City", "name": "Taif" }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Transport Categories",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Jeddah Airport to Makkah Taxi"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Makkah to Madinah Private Transfer"
+                }
+              }
+            ]
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jeddah",
+            "addressRegion": "Makkah Province",
+            "addressCountry": "SA"
+          },
+          "telephone": "+966548174726",
+          "priceRange": "$$$"
+        })
+      }} />
     </main>
   );
 }

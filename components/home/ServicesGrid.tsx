@@ -98,13 +98,13 @@ export function ServicesGrid() {
         <section className="py-24 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 mb-16">
                 <div className="text-center max-w-4xl mx-auto">
-                    <span className="text-luxury-gold-dark uppercase tracking-widest text-xs font-bold block mb-4">
+                    <span className="text-luxury-gold uppercase tracking-[0.3em] text-[10px] font-bold block mb-4 border-b border-luxury-gold/20 pb-2 w-fit mx-auto">
                         Dedicated Mobility Solutions
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-black mb-6 leading-tight">
-                        Our Exclusive <span className="text-luxury-gold">Saudi Taxi</span> Services
+                    <h2 className="text-[36px] font-serif font-thin text-black mb-6 leading-[48px] uppercase">
+                        Our Exclusive <span className="text-luxury-gold italic">Saudi Taxi</span> Services
                     </h2>
-                    <p className="text-black leading-relaxed text-lg max-w-2xl mx-auto">
+                    <p className="text-[rgb(31,33,43)] leading-[24px] text-[16px] font-normal max-w-2xl mx-auto">
                         Experience the gold standard in transportation. Whether you require a <strong>Jeddah Airport Taxi</strong>, an <strong>Umrah transfer</strong>, or a <strong>family ride</strong> across the Kingdom, Saudi Taxi delivers excellence every time.
                     </p>
                 </div>

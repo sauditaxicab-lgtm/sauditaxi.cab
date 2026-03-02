@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { BUSINESS_CONFIG } from "@/lib/constants";
 import { FAQSection } from "@/components/home/FAQSection";
 import {
+    Users,
     Maximize2,
     Zap,
     Star,
@@ -63,10 +64,12 @@ export function HyundaiStariaContent() {
                     <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
                         <div className="lg:w-1/2 z-10 text-center lg:text-left order-2 lg:order-1">
                             <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-[10px] mb-4 block">Luxury Family MPV</span>
-                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">Hyundai Staria – <span className="text-luxury-gold italic">7-Seater Luxury Family Taxi</span></h1>
-                            <p className="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                                Experience futuristic luxury with the Hyundai Staria. Perfect for <Link href="/services/vip-transport" className="text-luxury-gold hover:underline font-semibold">VIP transport</Link>, <Link href="/services/airport-transfers" className="text-luxury-gold hover:underline font-semibold">airport transfers</Link>, and <Link href="/services/family-travel" className="text-luxury-gold hover:underline font-semibold">family Umrah journeys</Link>. The most comfortable choice for families and groups performing Umrah.
-                            </p>
+                            <h1 className="mb-6 leading-[48px] text-[36px] font-serif font-thin uppercase tracking-tight">Hyundai Staria – <span className="text-luxury-gold italic">VIP Family MPV</span></h1>
+                            <div className="text-[rgb(255,255,255)] text-[16px] font-normal leading-[24px] mb-8 border-l-4 border-luxury-gold pl-6 bg-white/5 py-4 rounded-r-xl text-left">
+                                <p>
+                                    The <strong>Hyundai Staria</strong> is our signature 7-seater luxury MPV for family Umrah travel. We provide fixed-rate <strong>Staria Taxi</strong> services between <strong>Jeddah Airport (JED)</strong>, <strong>Makkah</strong>, and <strong>Madinah</strong>. Featuring futuristic design, dual-zone climate control, and capacity for 5-7 large suitcases, it is the highest-rated choice for families seeking a premium, spacious <strong>private van with driver</strong> in Saudi Arabia.
+                                </p>
+                            </div>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                                 <Link href="/booking?vehicle=Hyundai-Staria" className="w-full sm:w-auto">
                                     <Button className="w-full bg-luxury-gold text-black hover:bg-white transition-all h-14 sm:h-12 px-8 rounded-full font-bold uppercase text-[10px] tracking-widest shadow-lg shadow-gold/20">
@@ -81,6 +84,28 @@ export function HyundaiStariaContent() {
                                         WhatsApp Inquiry
                                     </Button>
                                 </a>
+                            </div>
+
+                            {/* Neat Spec Badges - Professional Bar Layout */}
+                            <div className="grid grid-cols-2 gap-6 py-8 border-y border-white/10 mb-10">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/5 text-luxury-gold">
+                                        <Users size={18} />
+                                    </div>
+                                    <div className="text-left">
+                                        <p className="text-[10px] text-white/30 uppercase font-black tracking-widest">Capacity</p>
+                                        <p className="text-sm text-white font-bold">7 Passengers</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-4">
+                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/5 text-luxury-gold">
+                                        <Briefcase size={18} />
+                                    </div>
+                                    <div className="text-left">
+                                        <p className="text-[10px] text-white/30 uppercase font-black tracking-widest">Luggage</p>
+                                        <p className="text-sm text-white font-bold">5 Large Items</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -237,20 +262,16 @@ export function HyundaiStariaContent() {
                         className="bg-transparent"
                         items={[
                             {
-                                question: "How many suitcases can the Hyundai Staria hold?",
-                                answer: "The Staria can hold up to 5 large suitcases and several smaller bags, making it ideal for families with Umrah luggage."
+                                question: "How much is a Hyundai Staria taxi from Jeddah Airport to Makkah?",
+                                answer: "We offer competitive fixed fares for Hyundai Staria luxury van transfers from KAIA Airport to Makkah. This price includes meet-and-greet service, 60 minutes free waiting time, and all parking fees. Contact us via WhatsApp for the latest rates."
                             },
                             {
-                                question: "Is the Staria suitable for elderly passengers?",
-                                answer: "Yes, the low floor and wide electric sliding doors make it very easy for elderly passengers to enter and exit comfortably."
+                                question: "Can the Hyundai Staria fit 7 passengers with luggage?",
+                                answer: "Our 7-seater Staria configuration comfortably fits 7 passengers with 5 large suitcases. For groups with more than 7 bags, we recommend the Toyota HiAce or GMC Yukon XL."
                             },
                             {
-                                question: "Do you offer the Staria for group Ziyarat?",
-                                answer: "Absolutely! The panoramic windows make it the best choice for sightseeing and Ziyarat tours in Madinah and Makkah."
-                            },
-                            {
-                                question: "What is the seating arrangement?",
-                                answer: "Our Starias usually feature a 7-seater configuration with premium captain seats in the second row for maximum comfort."
+                                question: "Is the Hyundai Staria available for Makkah to Madinah transfers?",
+                                answer: "Yes, we provide direct Makkah to Madinah transfers in the Hyundai Staria at competitive fixed rates. The journey takes approximately 4.5 hours and includes a complimentary stop at a highway rest area. Contact us for pricing."
                             }
                         ]}
                     />

@@ -4,14 +4,23 @@ export default function SchemaOrg() {
     const taxiSchema = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "additionalType": "https://schema.org/TaxiService",
+        "@id": "https://sauditaxi.cab/#localbusiness",
+        "additionalType": [
+            "https://schema.org/TaxiService",
+            "https://schema.org/PublicTransport"
+        ],
+        "mainEntityOfPage": "https://sauditaxi.cab",
         "name": "Saudi Taxi",
         "image": "https://sauditaxi.cab/og-image.png",
         "url": "https://sauditaxi.cab",
         "email": "info@sauditaxi.cab",
         "paymentAccepted": "Cash, Credit Card, Apple Pay",
         "currenciesAccepted": "SAR, USD",
-        "hasMap": "https://g.page/r/CbVn_1c_mHFrEAE",
+        "hasMap": {
+            "@type": "Map",
+            "@id": "https://g.page/r/CbVn_1c_mHFrEAE",
+            "url": "https://g.page/r/CbVn_1c_mHFrEAE"
+        },
         "telephone": "+966548174726",
         "priceRange": "$$",
         "address": {
@@ -44,22 +53,27 @@ export default function SchemaOrg() {
         "areaServed": [
             {
                 "@type": "City",
+                "@id": "http://www.wikidata.org/entity/Q5806",
                 "name": "Makkah"
             },
             {
                 "@type": "City",
+                "@id": "http://www.wikidata.org/entity/Q35484",
                 "name": "Madinah"
             },
             {
                 "@type": "City",
+                "@id": "http://www.wikidata.org/entity/Q37038",
                 "name": "Jeddah"
             },
             {
                 "@type": "City",
+                "@id": "http://www.wikidata.org/entity/Q168532",
                 "name": "Taif"
             },
             {
                 "@type": "AdministrativeArea",
+                "@id": "http://www.wikidata.org/entity/Q851",
                 "name": "Saudi Arabia"
             }
         ],
@@ -147,6 +161,7 @@ export default function SchemaOrg() {
     const organizationSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://sauditaxi.cab/#organization",
         "name": "Saudi Taxi",
         "url": "https://sauditaxi.cab",
         "logo": "https://sauditaxi.cab/logo/logo-gold.png",

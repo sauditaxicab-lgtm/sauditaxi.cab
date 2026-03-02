@@ -9,8 +9,9 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdmin = pathname?.startsWith('/admin');
+  const isLandingPage = pathname?.startsWith('/lp');
 
-  if (isAdmin) {
+  if (isAdmin || isLandingPage) {
     return <>{children}</>;
   }
 

@@ -63,26 +63,28 @@ export function VehicleFleet() {
     };
 
     return (
-        <section className="py-24 bg-gradient-to-b from-luxury-black to-[#050510] relative">
+        <section className="py-24 bg-luxury-black relative overflow-hidden">
+            {/* Ambient background glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(196,169,117,0.05)_0%,transparent_70%)] pointer-events-none"></div>
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <span className="text-luxury-gold uppercase tracking-widest text-xs font-bold block mb-2">
                         Browse By Vehicle Type
                     </span>
-                    <h2 className="text-white mb-4">
+                    <h2 className="text-white mb-4 text-[36px] font-serif font-thin leading-[48px]">
                         Explore Our VIP Saudi Taxi Fleet
                     </h2>
-                    <p className="text-white/80 text-lg font-light mb-8 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-white/80 text-[16px] font-normal mb-8 max-w-3xl mx-auto leading-[24px]">
                         Book our reliable Saudi Taxi services for airport transfers, Makkah to Madinah trips, and luxury travel across Saudi Arabia.
                     </p>
-                    <div className="flex justify-center gap-4 flex-wrap">
+                    <div className="flex justify-center gap-3 flex-wrap relative z-10">
                         {(Object.keys(vehicles) as VehicleType[]).map((type) => (
                             <button
                                 key={type}
                                 onClick={() => setActiveTab(type)}
-                                className={`px-6 py-2 rounded-full border transition-all uppercase text-xs tracking-wider ${activeTab === type
-                                    ? "bg-luxury-gold text-black border-luxury-gold font-bold"
-                                    : "border-white/20 text-white/60 hover:border-luxury-gold/50 hover:text-white"
+                                className={`px-8 py-3 rounded-full border transition-all duration-300 uppercase text-[10px] font-bold tracking-[0.2em] ${activeTab === type
+                                    ? "bg-luxury-gold text-black border-luxury-gold shadow-lg shadow-luxury-gold/20"
+                                    : "border-white/10 text-white/40 hover:border-white/30 hover:text-white bg-white/5"
                                     }`}
                             >
                                 {getLabel(type)}
@@ -119,10 +121,12 @@ export function VehicleFleet() {
                                 </motion.div>
                             </div>
 
-                            <div className="md:w-2/5 text-center md:text-left">
-                                <h3 className="text-luxury-gold mb-2">{vehicles[activeTab].title}</h3>
-                                <p className="text-white/50 text-sm mb-6 uppercase tracking-wide">{vehicles[activeTab].models}</p>
-                                <p className="text-white/80 text-lg font-light mb-8 leading-relaxed">
+                            <div className="md:w-2/5 text-center md:text-left space-y-6">
+                                <div>
+                                    <h3 className="text-luxury-gold text-2xl font-serif italic mb-2">{vehicles[activeTab].title}</h3>
+                                    <p className="text-white/30 text-[10px] uppercase font-black tracking-[0.3em]">{vehicles[activeTab].models}</p>
+                                </div>
+                                <p className="text-white/70 text-[16px] font-normal leading-[24px]">
                                     {vehicles[activeTab].description}
                                 </p>
 

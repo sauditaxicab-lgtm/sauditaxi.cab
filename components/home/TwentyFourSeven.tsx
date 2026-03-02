@@ -6,7 +6,7 @@ import { BUSINESS_CONFIG } from "@/lib/constants";
 
 export function TwentyFourSeven() {
     return (
-        <section className="py-24 bg-gradient-to-b from-luxury-gold via-[#D4B043] to-luxury-gold relative overflow-hidden">
+        <section className="py-24 bg-luxury-black relative overflow-hidden">
             {/* Cinematic depth layers */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.1)_100%)]"></div>
             <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black/5 to-transparent"></div>
@@ -15,44 +15,44 @@ export function TwentyFourSeven() {
                 <div className="flex flex-col lg:flex-row items-stretch justify-between gap-12 lg:gap-20">
 
                     {/* Left Section: Context & Trust */}
-                    <div className="lg:w-1/2 text-luxury-black flex flex-col justify-center order-2 lg:order-1">
+                    <div className="lg:w-1/2 text-white flex flex-col justify-center order-2 lg:order-1">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                         >
-                            <span className="inline-block px-4 py-1.5 bg-black/5 border border-black/10 text-luxury-black text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] rounded-full mb-8">
+                            <span className="inline-block px-4 py-1.5 bg-luxury-gold/10 border border-luxury-gold/20 text-luxury-gold text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] rounded-full mb-8">
                                 Always Available
                             </span>
 
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 leading-[1.1]">
-                                Reliable <span className="text-white drop-shadow-sm">24 Hour Taxi</span> <br className="hidden md:block" /> Across the Kingdom
+                            <h2 className="text-[36px] font-serif font-thin mb-8 leading-[48px] text-white">
+                                Reliable <span className="text-luxury-gold italic">24 Hour Taxi</span> <br className="hidden md:block" /> Across the Kingdom
                             </h2>
 
-                            <div className="w-16 h-1 bg-black/20 rounded-full mb-8"></div>
+                            <div className="w-16 h-1 bg-luxury-gold/30 rounded-full mb-8"></div>
 
-                            <p className="text-luxury-black/80 text-lg mb-12 leading-relaxed max-w-xl font-light">
+                            <p className="text-white/70 text-lg mb-12 leading-relaxed max-w-xl font-light">
                                 Whether it's a 3 AM airport pickup or a late-night transfer between Makkah and Madinah, we are your trusted <strong>24 hour taxi</strong> partner.
                             </p>
 
                             {/* Trust Anchors - Cardified for rhythm */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="flex items-center gap-5 p-6 bg-white/10 backdrop-blur-sm border border-black/5 rounded-2xl shadow-sm hover:bg-white/20 transition-all group">
-                                    <div className="p-3 bg-luxury-black rounded-xl text-luxury-gold shadow-lg group-hover:scale-110 transition-transform">
+                                <div className="flex items-center gap-5 p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-sm hover:bg-white/10 transition-all group">
+                                    <div className="p-3 bg-luxury-gold rounded-xl text-black shadow-lg group-hover:scale-110 transition-transform">
                                         <Clock size={24} />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-xs uppercase tracking-widest text-luxury-black">24/7 Availability</p>
-                                        <p className="text-xs text-luxury-black/60 font-medium">Ready when you are</p>
+                                        <p className="font-bold text-xs uppercase tracking-widest text-white">24/7 Availability</p>
+                                        <p className="text-xs text-white/50 font-medium">Ready when you are</p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-5 p-6 bg-white/10 backdrop-blur-sm border border-black/5 rounded-2xl shadow-sm hover:bg-white/20 transition-all group">
-                                    <div className="p-3 bg-luxury-black rounded-xl text-luxury-gold shadow-lg group-hover:scale-110 transition-transform">
+                                <div className="flex items-center gap-5 p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-sm hover:bg-white/10 transition-all group">
+                                    <div className="p-3 bg-luxury-gold rounded-xl text-black shadow-lg group-hover:scale-110 transition-transform">
                                         <Shield size={24} />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-xs uppercase tracking-widest text-luxury-black">Secure Booking</p>
-                                        <p className="text-xs text-luxury-black/60 font-medium">Verified and Licensed</p>
+                                        <p className="font-bold text-xs uppercase tracking-widest text-white">Secure Booking</p>
+                                        <p className="text-xs text-white/50 font-medium">Verified and Licensed</p>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@ export function TwentyFourSeven() {
                                 <span className="text-[10px] text-white/70 uppercase font-bold tracking-widest">Operators Online</span>
                             </div>
 
-                            <h3 className="text-3xl font-serif text-white mb-6 leading-snug">Need a 24 Hour Taxi?</h3>
+                            <h3 className="text-[36px] font-serif text-white mb-6 leading-[48px] font-thin">Need a 24 Hour Taxi?</h3>
 
                             <p className="text-white/60 text-base mb-10 leading-relaxed font-light">
                                 Don't rely on standard apps for late-night airport transfers. Our dedicated <strong>24 hour airport taxi</strong> service guarantees a driver will be waiting.

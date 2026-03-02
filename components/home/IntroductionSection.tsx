@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 export function IntroductionSection() {
     return (
-        <section className="py-24 relative overflow-hidden bg-[#FDFCFB] text-black">
+        <section className="py-24 relative overflow-hidden bg-[#FAFAFA] text-black">
             {/* Elegant Background Elements */}
             <div className="absolute top-0 right-0 w-1/3 h-full bg-luxury-gold/5 blur-3xl rounded-full -mr-20 -mt-20 z-0"></div>
             <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-white/50 rounded-tr-[10rem] z-0 shadow-inner"></div>
@@ -37,7 +37,7 @@ export function IntroductionSection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
-                                className="font-serif font-bold text-black leading-[1.1] tracking-tighter text-4xl md:text-6xl uppercase"
+                                className="font-serif font-thin text-black leading-[48px] tracking-tighter text-[36px] uppercase"
                             >
                                 Professional <span className="text-luxury-gold italic">Umrah Taxi Service</span> <br />
                                 and Private Transfers
@@ -48,17 +48,17 @@ export function IntroductionSection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: 0.2 }}
-                                className="text-zinc-500 text-lg md:text-xl leading-relaxed max-w-2xl font-light"
+                                className="text-[rgb(31,33,43)] text-[16px] leading-[24px] max-w-2xl font-normal"
                             >
-                                Experience seamless spiritual journeys with our specialized <strong>Umrah transport Makkah</strong> solutions. From <strong>taxi Jeddah to Makkah</strong> for airport arrivals to high-speed <strong>Makkah to Madinah taxi</strong> transfers, <Link href="/" className="text-luxury-gold font-bold decoration-luxury-gold/30 underline decoration-2 underline-offset-4 hover:decoration-luxury-gold">Saudi Taxi</Link> provides the reliability and comfort you deserve.
+                                Experience seamless spiritual journeys with our specialized <Link href="/services/umrah-transfers" className="text-luxury-gold font-bold decoration-luxury-gold/30 underline decoration-2 underline-offset-4 hover:decoration-luxury-gold transition-colors">Umrah transport Makkah</Link> solutions. From <Link href="/jeddah/airport-taxi" className="text-luxury-gold font-bold decoration-luxury-gold/30 underline decoration-2 underline-offset-4 hover:decoration-luxury-gold transition-colors">taxi Jeddah to Makkah</Link> for <strong>KAIA Terminal 1</strong> arrivals to high-speed <Link href="/services/umrah-transfers" className="text-luxury-gold font-bold decoration-luxury-gold/30 underline decoration-2 underline-offset-4 hover:decoration-luxury-gold transition-colors">Makkah to Madinah taxi</Link> transfers near the <strong>Prophet's Mosque</strong>, <Link href="/" className="text-luxury-gold font-bold decoration-luxury-gold/30 underline decoration-2 underline-offset-4 hover:decoration-luxury-gold hover:text-luxury-gold-dark transition-colors">Saudi Taxi</Link> provides the reliability you deserve.
                             </motion.div>
                         </div>
 
                         {/* High-End Service Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {[
-                                { title: "Jeddah to Makkah", price: "From 150 SAR", desc: "Premium airport taxi services with meet & greet." },
-                                { title: "Makkah to Madinah", price: "From 450 SAR", desc: "Fast, safe, and comfortable highway transfers." },
+                                { title: "Jeddah to Makkah", price: "Fixed Rate", desc: "Premium airport taxi services with meet & greet." },
+                                { title: "Makkah to Madinah", price: "Fixed Rate", desc: "Fast, safe, and comfortable highway transfers." },
                                 { title: "Ziyarat Tours", price: "Custom Rates", desc: "Guided private tours to holy sites in Makkah & Madinah." },
                                 { title: "VIP Transport", price: "Executive", desc: "Luxury SUVs and Business Sedans for elite guests." }
                             ].map((item, idx) => (
@@ -90,7 +90,7 @@ export function IntroductionSection() {
                         >
                             <div className="aspect-[4/5] relative">
                                 <Image
-                                    src="/about/staria_fleet_white.png"
+                                    src="/staria/staria-white-front.jpeg"
                                     alt="Professional Umrah Taxi Service and Private Transfers"
                                     fill
                                     className="object-cover"

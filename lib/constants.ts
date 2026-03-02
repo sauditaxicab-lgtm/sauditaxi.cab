@@ -14,6 +14,9 @@ export const BUSINESS_CONFIG = {
 
   // Physical Address
   ADDRESS: 'حي الجامعة, MEJA3707، 3707 شارع المنيرة، 6806, Makkah 24242, Saudi Arabia',
+
+  // Service Areas
+  SERVICE_AREAS: ['Makkah', 'Madinah', 'Jeddah', 'Taif'],
 } as const;
 
 // Contact Helper Functions

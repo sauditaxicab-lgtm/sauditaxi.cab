@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { BUSINESS_CONFIG } from "@/lib/constants";
 import { FAQSection } from "@/components/home/FAQSection";
 import {
+    Users,
     Maximize2,
     ArrowLeft,
     Zap,
@@ -50,10 +51,12 @@ export function GMCYukonContent() {
                     <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
                         <div className="lg:w-1/2 z-10 text-center lg:text-left order-2 lg:order-1">
                             <span className="text-luxury-gold uppercase tracking-[0.3em] font-bold text-[10px] mb-4 block">VIP Executive SUV</span>
-                            <h1 className="mb-6 leading-tight text-3xl md:text-5xl lg:text-6xl font-serif font-bold">GMC Yukon XL – <span className="text-luxury-gold italic">7-Seater VIP Executive Taxi</span></h1>
-                            <p className="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                                The pinnacle of executive travel. Unmatched power, massive luggage capacity, and supreme comfort for those who demand the best in the Kingdom.
-                            </p>
+                            <h1 className="mb-6 leading-[48px] text-[36px] font-serif font-thin uppercase tracking-tight">GMC Yukon XL – <span className="text-luxury-gold italic">Elite VIP SUV</span></h1>
+                            <div className="text-[rgb(255,255,255)] text-[16px] font-normal leading-[24px] mb-8 border-l-4 border-luxury-gold pl-6 bg-white/5 py-4 rounded-r-xl text-left">
+                                <p>
+                                    The <strong>GMC Yukon XL</strong> is our premier <strong>VIP Taxi</strong> and executive SUV for 7 passengers. Specializing in <strong>VIP Umrah transfers</strong>, we offer fixed-rate services from <strong>Jeddah Airport (JED)</strong> to <strong>Makkah (Jabal Omar)</strong> and <strong>Madinah (Markazia)</strong>. With a dedicated V8 engine and massive boot space for 7 large suitcases, it is the elite choice for dignitaries and high-net-worth pilgrims seeking 24/7 private transport in Saudi Arabia.
+                                </p>
+                            </div>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                                 <Link href="/booking?vehicle=GMC-Yukon-XL" className="w-full sm:w-auto">
                                     <Button className="w-full bg-luxury-gold text-black hover:bg-white transition-all h-14 sm:h-12 px-8 rounded-full font-bold uppercase text-[10px] tracking-widest shadow-lg shadow-gold/20">
@@ -68,6 +71,27 @@ export function GMCYukonContent() {
                                         WhatsApp Inquiry
                                     </Button>
                                 </a>
+                                {/* Neat Spec Badges - Professional Bar Layout */}
+                                <div className="grid grid-cols-2 gap-6 py-8 border-y border-white/10 mb-10">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/5 text-luxury-gold">
+                                            <Users size={18} />
+                                        </div>
+                                        <div className="text-left">
+                                            <p className="text-[10px] text-white/30 uppercase font-black tracking-widest">Capacity</p>
+                                            <p className="text-sm text-white font-bold">7 Passengers</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/5 text-luxury-gold">
+                                            <Briefcase size={18} />
+                                        </div>
+                                        <div className="text-left">
+                                            <p className="text-[10px] text-white/30 uppercase font-black tracking-widest">Luggage</p>
+                                            <p className="text-sm text-white font-bold">7 Large Items</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="mt-12">
                                 <Link href="/fleet" className="inline-flex items-center gap-2 text-luxury-gold/60 hover:text-luxury-gold transition-colors text-xs uppercase tracking-widest font-bold">
@@ -226,20 +250,16 @@ export function GMCYukonContent() {
                         className="bg-transparent"
                         items={[
                             {
-                                question: "Is this the Yukon XL (Extended) version?",
-                                answer: "Yes, we exclusively operate the GMC Yukon XL to ensure maximum luggage capacity for all 7 passengers."
+                                question: "How much is a GMC Yukon XL taxi from Jeddah Airport to Makkah in 2026?",
+                                answer: "We offer competitive fixed VIP rates for GMC Yukon XL transfers from JED Airport to Makkah. This includes a professional driver in formal attire, meet-and-greet service, and direct hotel drop-off. Contact us via WhatsApp for the latest pricing."
                             },
                             {
-                                question: "Does the booking include meet & greet?",
-                                answer: "For all Yukon VIP bookings, we include a complimentary Meet & Greet service inside the airport terminal."
+                                question: "Can a GMC Yukon accommodate 7 people with 7 large suitcases?",
+                                answer: "Yes, our GMC Yukon XL fleet is specifically chosen for its extended length, providing a full 7-seater cabin plus a deep trunk capable of holding 7 full-sized pilgrim suitcases and several hand-carries."
                             },
                             {
-                                question: "Is there privacy glass?",
-                                answer: "Yes, the rear cabin features factory-tinted privacy glass, perfect for families and dignitaries."
-                            },
-                            {
-                                question: "What is the luggage capacity?",
-                                answer: "The Yukon XL can accommodate 7 large suitcases and 5-6 carry-on bags comfortably."
+                                question: "Is the GMC Yukon available for hourly VIP hire in Jeddah?",
+                                answer: "Absolutely. We offer hourly VIP chauffeuring for business meetings, diplomatic visits, and luxury shopping tours in Jeddah, typically starting with a 4-hour minimum booking."
                             }
                         ]}
                     />

@@ -16,17 +16,17 @@ export function ComparisonChart() {
         <section className="py-24 bg-white text-black">
             <div className="container mx-auto px-6 max-w-4xl">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-serif mb-4">The Benefit of <span className="text-luxury-gold italic">Private Booking</span></h2>
-                    <p className="text-zinc-500 max-w-2xl mx-auto">Why travelers choose Saudi Taxi over standard street cabs or unregulated apps for their spiritual journeys.</p>
+                    <h2 className="text-[36px] font-thin font-serif mb-4 leading-[48px]">The Benefit of <span className="text-luxury-gold italic">Private Booking</span></h2>
+                    <p className="text-[rgb(31,33,43)] text-[16px] font-normal leading-[24px] max-w-2xl mx-auto">Why travelers choose Saudi Taxi over standard street cabs or unregulated apps for their spiritual journeys.</p>
                 </div>
 
                 <div className="overflow-hidden rounded-2xl border border-zinc-200 shadow-xl">
                     <table className="w-full text-left border-collapse">
                         <thead>
-                            <tr className="bg-zinc-900 text-white">
-                                <th className="p-6 text-lg font-serif">Feature</th>
-                                <th className="p-6 text-center text-luxury-gold font-bold">Saudi Taxi</th>
-                                <th className="p-6 text-center text-zinc-400">Regular Apps / Cabs</th>
+                            <tr className="bg-luxury-black text-white">
+                                <th className="p-6 text-lg font-serif font-thin uppercase tracking-widest">Feature</th>
+                                <th className="p-6 text-center text-luxury-gold font-bold uppercase tracking-widest text-xs">Saudi Taxi</th>
+                                <th className="p-6 text-center text-zinc-500 font-bold uppercase tracking-widest text-xs">Regular Apps / Cabs</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-zinc-200">

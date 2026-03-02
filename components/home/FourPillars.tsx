@@ -167,7 +167,7 @@ export function FourPillars() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6 leading-[1.1]"
+                        className="text-[36px] font-serif text-white mb-6 leading-[48px] font-thin"
                     >
                         Why Pilgrims Trust <br />
                         <span className="text-luxury-gold">Saudi Taxi Transport?</span>
@@ -177,7 +177,7 @@ export function FourPillars() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-white/50 max-w-2xl mx-auto font-light leading-relaxed text-sm md:text-base uppercase tracking-wider"
+                        className="text-white/50 max-w-2xl mx-auto font-normal leading-[24px] text-[16px] uppercase tracking-wider"
                     >
                         A service built on absolute punctuality, verified safety, and spiritual accountability.
                     </motion.p>
@@ -224,7 +224,7 @@ export function FourPillars() {
                                         {pillar.subtitle.replace('.', '')}
                                     </div>
 
-                                    <p className="text-white/50 text-xs md:text-sm leading-[1.7] text-center font-light flex-grow">
+                                    <p className="text-white/50 text-[16px] leading-[24px] text-center font-normal flex-grow">
                                         {pillar.description.replace(/<strong>|<\/strong>/g, '')}
                                     </p>
 

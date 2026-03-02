@@ -64,7 +64,7 @@ export default function UmrahTransfersPage() {
                 <div className="container mx-auto px-4 text-center max-w-4xl">
                     <h2 className="text-3xl md:text-5xl font-serif mb-6 text-black">Private <span className="text-luxury-gold">Madinah to Makkah Taxi</span> 2026</h2>
                     <p className="text-black text-lg leading-relaxed mb-8">
-                        Performing Umrah requires reliable transport that respects your time and spiritual focus. Our <Link href="/madinah" className="text-luxury-gold hover:underline font-bold">Madinah to Makkah taxi</Link> service provides transparent and fixed pricing, ensuring no surprises. Whether you are looking for <Link href="/services/umrah-transfers" className="text-luxury-gold hover:underline font-bold">private Umrah transport</Link> or a <strong>private car rental with driver from Makkah to Madinah</strong>, we offer competitive rates for families and groups. <Link href="/" className="text-luxury-gold hover:underline font-bold">Saudi Taxi</Link> is dedicated to providing high-end, comfortable transfers between the Harams.
+                        Umrah is a journey of a lifetime, and the logistics of moving between the <strong>Two Holy Mosques</strong> should never distract from your spiritual focus. <Link href="/" className="text-luxury-gold hover:underline font-bold">Saudi Taxi</Link> specializes in comprehensive <Link href="/services/umrah-transfers" className="text-luxury-gold hover:underline font-bold">Umrah transport packages</Link> that span from your arrival at <strong>Jeddah Airport (KAIA)</strong> to your final departure from <strong>Madinah (MED)</strong>. We provide synchronized transfers between <strong>Makkah (Haram Area)</strong> and <strong>Madinah (Markazia)</strong>, featuring professional drivers who are well-versed in the <strong>Haramain Expressway</strong> routes. Our service includes essential stops at the <strong>Meeqat</strong> points, such as <strong>Dhul Hulaifah (Abyar Ali)</strong> and <strong>Al-Juhfah</strong>, allowing for 45-60 minutes of preparation for your pilgrimage at no extra cost.
                     </p>
 
                     {/* Primary CTAs - Above the Fold */}
@@ -79,11 +79,33 @@ export default function UmrahTransfersPage() {
 
                     {/* AI Overview Block - Pricing Information */}
                     <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-8 mb-8 text-left">
-                        <h3 className="text-2xl font-bold text-black mb-4">How much does Umrah transfer cost between Makkah and Madinah?</h3>
-                        <p className="text-black leading-relaxed mb-3">
-                            Umrah transfer service between Makkah and Madinah is priced competitively based on your vehicle choice and group size. We operate 24/7, including peak Hajj and Umrah seasons, with complimentary Meeqat stops at Dhul Hulaifah for pilgrims traveling from Madinah to Makkah.
-                        </p>
-                        <p className="text-sm text-zinc-500 italic">Prices vary by vehicle size (sedan, SUV, or bus) and exact route; confirm your quote before booking.</p>
+                        <h3 className="text-2xl font-bold text-black mb-6">Umrah Transfer Logistics (AEO Summary)</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-black">
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="text-zinc-600 font-medium">Route:</span>
+                                <span className="font-bold">Makkah ↔ Madinah</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="text-zinc-600 font-medium">Stopover:</span>
+                                <span className="font-bold">Dhul Hulaifah Meeqat</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="text-zinc-600 font-medium">Luggage Capacity:</span>
+                                <span className="font-bold">7+ Bags (GMC Yukon)</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="text-zinc-600 font-medium">Wait Time at Meeqat:</span>
+                                <span className="font-bold">Included (~45 Mins)</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="text-zinc-600 font-medium">Highway Rest Stops:</span>
+                                <span className="font-bold">Sasly / Al-Hijrah Road</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="text-zinc-600 font-medium">Booking Window:</span>
+                                <span className="font-bold">24-Hr Advance Preferred</span>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Why Choose Us - 5 Bullets */}
@@ -396,18 +418,55 @@ export default function UmrahTransfersPage() {
             {/* FAQ Section with Schema */}
             <FAQSection items={umrahFAQs} title="Umrah Transfers FAQ" className="bg-zinc-900" />
 
-            <Script id="umrah-faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{
+            <Script id="umrah-transfer-schema" type="application/ld+json" dangerouslySetInnerHTML={{
                 __html: JSON.stringify({
                     "@context": "https://schema.org",
-                    "@type": "FAQPage",
-                    "mainEntity": umrahFAQs.map(faq => ({
-                        "@type": "Question",
-                        "name": faq.question,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": faq.answer
+                    "@type": "TaxiService",
+                    "@id": "https://sauditaxi.cab/services/umrah-transfers/#service",
+                    "name": "Saudi Taxi Umrah Transfers",
+                    "description": "Premium intercity taxi service for pilgrims traveling between Makkah and Madinah with Meeqat stops included.",
+                    "url": "https://sauditaxi.cab/services/umrah-transfers",
+                    "provider": {
+                        "@type": "Organization",
+                        "@id": "https://sauditaxi.cab/#organization"
+                    },
+                    "audience": {
+                        "@type": "Audience",
+                        "audienceType": "Umrah & Hajj Pilgrims"
+                    },
+                    "areaServed": [
+                        {
+                            "@type": "City",
+                            "name": "Makkah",
+                            "@id": "http://www.wikidata.org/entity/Q5806"
+                        },
+                        {
+                            "@type": "City",
+                            "name": "Madinah",
+                            "@id": "http://www.wikidata.org/entity/Q35484"
+                        },
+                        {
+                            "@type": "LandmarkOrHistoricalService",
+                            "name": "Dhul Hulaifah Meeqat",
+                            "sameAs": "http://www.wikidata.org/entity/Q4055278"
                         }
-                    }))
+                    ],
+                    "offers": {
+                        "@type": "Offer",
+                        "description": "Fixed rate private transfers with Meeqat stopover",
+                        "priceCurrency": "SAR"
+                    },
+                    "mainEntityOfPage": {
+                        "@type": "FAQPage",
+                        "mainEntity": umrahFAQs.map(faq => ({
+                            "@type": "Question",
+                            "name": faq.question,
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": faq.answer
+                            }
+                        }))
+                    }
                 })
             }} />
 

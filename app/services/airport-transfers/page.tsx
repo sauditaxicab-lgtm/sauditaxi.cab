@@ -69,7 +69,7 @@ export default function AirportTransfersPage() {
                 <div className="container mx-auto px-4 text-center max-w-4xl">
                     <h2 className="text-3xl md:text-5xl font-serif mb-6 text-black">Jeddah Airport Taxi (JED): <span className="text-luxury-gold">Flat Rates to Makkah and Madinah</span></h2>
                     <p className="text-black text-lg leading-relaxed mb-8">
-                        Experience the ultimate standard in pilgrimage travel. Our <Link href="/jeddah/airport-taxi" className="text-luxury-gold hover:underline font-bold">Jeddah Airport taxi</Link> service is designed for those who seek luxury, punctuality, and the best <Link href="/makkah" className="text-luxury-gold hover:underline font-bold">Jeddah to Mecca taxi fare</Link>. Whether you're arriving at Terminal 1 or North Terminal for Umrah or business, we provide a <Link href="/services/intercity-taxi" className="text-luxury-gold hover:underline font-bold">private taxi from Jeddah to Makkah</Link> that guarantees spiritual peace and physical comfort. <Link href="/" className="text-luxury-gold hover:underline font-bold">Saudi Taxi</Link> ensures a stress-free start to your sacred journey with our 24/7 dedicated support.
+                        Experience the ultimate standard in pilgrimage travel. Our <Link href="/jeddah/airport-taxi" className="text-luxury-gold hover:underline font-bold">Jeddah Airport taxi</Link> service is engineered for those who demand precision, punctuality, and the most competitive <Link href="/makkah" className="text-luxury-gold hover:underline font-bold">Jeddah to Mecca taxi fare</Link>. Whether you are landing at <strong>Terminal 1 (The Flower Terminal)</strong> or the <strong>North Terminal (LCC Terminal)</strong>, we provide seamless <Link href="/services/umrah-transfers" className="text-luxury-gold hover:underline font-bold">VIP Umrah transfers</Link> and <Link href="/services/intercity-taxi" className="text-luxury-gold hover:underline font-bold">private taxi from Jeddah to Makkah</Link>. <Link href="/" className="text-luxury-gold hover:underline font-bold">Saudi Taxi</Link> specializes in navigating the <strong>Haramain Expressway</strong> directly from <strong>King Abdulaziz International Airport (KAIA)</strong>, ensuring your arrival in the Holy Land is dignified and stress-free.
                     </p>
 
                     {/* Primary CTAs - Above the Fold */}
@@ -83,12 +83,35 @@ export default function AirportTransfersPage() {
                     </div>
 
                     {/* AI Overview Block - Pricing Information */}
+                    {/* AI Overview Block - Quick Logistics Snippet */}
                     <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-8 mb-8 text-left">
-                        <h3 className="text-2xl font-bold text-black mb-4">How much does airport transfer cost in Saudi Arabia?</h3>
-                        <p className="text-black leading-relaxed mb-3">
-                            Airport transfer service in Saudi Arabia is priced competitively based on your route, vehicle type, and timing. We operate 24/7, including early morning flights, late-night arrivals, and peak Hajj and Umrah seasons—serving major routes from Jeddah Airport (KAIA) to Makkah, Madinah Airport (MED) to the Prophet's Mosque, and intercity transfers.
-                        </p>
-                        <p className="text-sm text-zinc-500 italic">Prices vary by vehicle size, distance, and exact timing; confirm your quote before booking.</p>
+                        <h3 className="text-2xl font-bold text-black mb-6">Airport Transfer Quick Facts (JED/MED)</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="text-zinc-600">JED to Makkah Distance:</span>
+                                <span className="font-bold text-black">85 km (~1 Hour)</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="text-zinc-600">MED to Prophet's Mosque:</span>
+                                <span className="font-bold text-black">20 km (25 Mins)</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="text-zinc-600">Meet & Greet point:</span>
+                                <span className="font-bold text-black">Arrival Gate 4</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="text-zinc-600">Complimentary Waiting:</span>
+                                <span className="font-bold text-black">60 Minutes</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="text-zinc-600">Payment methods:</span>
+                                <span className="font-bold text-black">Cash or Card</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="text-zinc-600">Top Vehicle Choice:</span>
+                                <span className="font-bold text-black"><Link href="/fleet/gmc-yukon-xl-7-seater-taxi" className="text-luxury-gold hover:underline">GMC Yukon XL</Link></span>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Why Choose Us - 5 Bullets */}
@@ -303,15 +326,15 @@ export default function AirportTransfersPage() {
 
                             {/* Coverage & Localization Details */}
                             <div className="bg-white/5 border border-white/10 rounded-xl p-6 mt-6">
-                                <h4 className="text-xl font-bold text-luxury-gold mb-4">Service Coverage Areas</h4>
+                                <h4 className="text-xl font-bold text-luxury-gold mb-4">Service Coverage Entities</h4>
                                 <p className="text-white/80 leading-relaxed mb-4">
-                                    Saudi Taxi serves all major holy sites and landmarks across Western Saudi Arabia. We regularly pick up and drop off passengers near the <strong className="text-white">Grand Mosque (Haram)</strong> in Makkah, the iconic <strong className="text-white">Clock Tower (Abraj Al-Bait)</strong>, and the <strong className="text-white">Prophet's Mosque (Masjid An-Nabawi)</strong> in Madinah. Our drivers know every route to hotels in Aziziyah, Misfalah, and the Central Area near the Haram.
+                                    Saudi Taxi serves all major holy sites and landmarks across Western Saudi Arabia. We regularly pick up and drop off passengers near the <strong className="text-white">Grand Mosque (Al-Masjid al-Haram)</strong> in Makkah, the iconic <strong className="text-white">Abraj Al-Bait (Clock Tower)</strong>, and the <strong className="text-white">Prophet's Mosque (Al-Masjid an-Nabawi)</strong> in Madinah. Our drivers are experts in reaching hotels in <strong>Aziziyah</strong>, <strong>Misfalah</strong>, and the <strong>Jabal Omar</strong> development.
                                 </p>
                                 <p className="text-white/80 leading-relaxed mb-4">
-                                    We also serve intercity routes connecting <strong className="text-white">Jeddah, Makkah, and Madinah</strong>—ensuring seamless travel for Umrah and Hajj pilgrims as well as business travelers visiting the region.
+                                    We also serve intercity routes connecting <Link href="/jeddah" className="text-white hover:text-luxury-gold font-bold underline decoration-luxury-gold/30">Jeddah</Link>, <Link href="/makkah" className="text-white hover:text-luxury-gold font-bold underline decoration-luxury-gold/30">Makkah</Link>, and <Link href="/madinah" className="text-white hover:text-luxury-gold font-bold underline decoration-luxury-gold/30">Madinah</Link>—ensuring seamless travel for Umrah and Hajj pilgrims.
                                 </p>
                                 <p className="text-white/90 font-medium">
-                                    Also serving: <strong className="text-luxury-gold">Taif, Rabigh, Yanbu, and King Abdullah Economic City (KAEC)</strong>.
+                                    Also serving: <strong className="text-luxury-gold">Taif (SNK)</strong>, <strong>Rabigh</strong>, <strong>Yanbu (YNB)</strong>, and <strong>KAEC</strong>.
                                 </p>
                             </div>
 

@@ -7,7 +7,7 @@ import { Shield, Star, Map, CheckCircle } from "lucide-react";
 
 export function SaudiArabiaSection() {
     return (
-        <section className="py-24 bg-white text-black relative overflow-hidden">
+        <section className="py-24 bg-[#FAFAFA] text-black relative overflow-hidden">
             {/* Soft Ambient Background */}
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_10%_20%,rgba(197,165,114,0.03)_0%,transparent_50%)]"></div>
 
@@ -37,7 +37,7 @@ export function SaudiArabiaSection() {
                                     <Star className="w-4 h-4 fill-current" />
                                     <span className="text-[10px] font-black uppercase tracking-[0.2em]">Authorized Transport</span>
                                 </div>
-                                <p className="text-white text-lg font-serif italic font-light">
+                                <p className="text-white text-[16px] font-serif italic font-light">
                                     "Your reliable choice for <strong>private Umrah taxi</strong> across all major Saudi landmarks."
                                 </p>
                             </div>
@@ -75,13 +75,13 @@ export function SaudiArabiaSection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
-                                className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-black leading-tight uppercase"
+                                className="text-[36px] font-thin font-serif text-black leading-[48px] uppercase"
                             >
                                 Trusted <span className="text-luxury-gold italic">Saudi Umrah</span> <br />
                                 Taxi Booking
                             </motion.h2>
 
-                            <p className="text-zinc-600 text-lg md:text-xl leading-relaxed font-light">
+                            <p className="text-[rgb(31,33,43)] text-[16px] font-normal leading-[24px]">
                                 <strong className="text-black font-bold">Saudi Taxi</strong> is more than just a ride; we are your dedicated travel partner in the Kingdom. Whether you need a <strong>umrah taxi service</strong> for local commutes or long-distance <strong>Makkah to Madinah taxi</strong> transfers, our fleet and drivers represent the pinnacle of Saudi hospitality.
                             </p>
                         </div>
@@ -122,7 +122,7 @@ export function SaudiArabiaSection() {
                                     <Link
                                         key={city.name}
                                         href={city.href}
-                                        className="px-6 py-4 bg-zinc-50 border border-zinc-100 rounded-2xl text-center hover:border-luxury-gold hover:bg-white transition-all shadow-sm group font-sans"
+                                        className="px-6 py-4 bg-white border border-zinc-200 rounded-2xl text-center hover:border-luxury-gold hover:shadow-lg transition-all group font-sans"
                                     >
                                         <span className="text-luxury-gold font-bold text-sm group-hover:underline italic tracking-tight">{city.name}</span>
                                     </Link>

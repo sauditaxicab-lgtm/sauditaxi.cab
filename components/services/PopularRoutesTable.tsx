@@ -69,8 +69,8 @@ export function PopularRoutesTable({
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="text-center mb-16">
                     <span className="text-luxury-gold uppercase tracking-[0.2em] font-bold text-xs mb-4 block">Transparent Pricing</span>
-                    <h2 className="text-3xl md:text-5xl font-serif text-black mb-6">{title}</h2>
-                    <p className="text-zinc-500 max-w-2xl mx-auto leading-relaxed">
+                    <h2 className="text-[36px] font-thin font-serif text-black mb-6 leading-[48px]">{title}</h2>
+                    <p className="text-[rgb(31,33,43)] text-[16px] font-normal max-w-2xl mx-auto leading-[24px]">
                         Explore our fixed-rate taxi fares between major hubs. Our prices are all-inclusive with no hidden surprises, tailored for pilgrims and travelers.
                     </p>
                 </div>

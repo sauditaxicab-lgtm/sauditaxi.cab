@@ -60,24 +60,16 @@ const jeddahRoutes = [
 
 const jeddahFAQs = [
     {
-        question: "How do I find my Jeddah airport taxi driver after landing?",
-        answer: "For a seamless experience, we offer a dedicated 'Meet and Greet' service. Your professional driver will be waiting at the arrivals exit of Terminal 1 or the North Terminal with a personalized name board. You will also receive the driver's name, photo, and WhatsApp contact details via text 30 minutes before your flight lands at King Abdulaziz International Airport."
+        question: "How do I find my Jeddah airport taxi driver at Terminal 1?",
+        answer: "Our drivers wait at Arrival Gate 4 of Terminal 1 with a digital name board. For the North Terminal, the meeting point is Lane 2. You will receive the driver's WhatsApp live location 15 minutes before landing."
     },
     {
-        question: "What happens if my flight to Jeddah is delayed or arrives at a different terminal?",
-        answer: "We monitor every flight status in real-time using live tracking data. If your flight is delayed or redirected to a different terminal at KAIA, your pickup time is automatically adjusted at no extra cost. Our system ensures your driver is synced with your actual landing time, eliminating any stress for the passenger."
+        question: "What is the fixed price for a taxi from Jeddah Airport (JED) to Makkah?",
+        answer: "We offer fixed-rate private transfers from King Abdulaziz Airport to Makkah. The fare includes all tolls, fuel, and a 60-minute wait window for immigration. Contact us via WhatsApp for the latest rates."
     },
     {
-        question: "Is the Makkah to Jeddah airport taxi fare fixed for Umrah pilgrims?",
-        answer: "Yes, we guarantee a completely transparent, flat-rate pricing model. The fee for a Jeddah to Makkah transfer covers all fuel, road tolls, and standard waiting times. Unlike local apps that use surge pricing during peak prayer times or Hajj season, our price remains fixed regardless of traffic or timing. Contact us for a quote."
-    },
-    {
-        question: "Can your vehicles accommodate large groups with heavy Umrah luggage?",
-        answer: "Absolutely. We specialize in group transport for pilgrims. Our fleet includes the 7-seater Hyundai Staria for families and the 11-seater Toyota HiAce for larger groups. These vehicles feature dedicated extra-large trunks specifically designed to hold multiple large suitcases and Zamzam containers without compromising passenger comfort."
-    },
-    {
-        question: "Are your drivers familiar with the Meeqat stops and Makkah hotel routes?",
-        answer: "Our drivers are local western province experts. They are fully knowledgeable about the Dhul Hulaifah Meeqat for those starting Umrah and know the specific drop-off zones for all major hotels surrounding the Masjid Al-Haram, including the Abraj Al-Bait Complex and Jabal Omar area."
+        question: "Does the Jeddah airport taxi include a free Meeqat stop?",
+        answer: "Yes, all our airport transfers to Makkah include a complimentary stop at the Meeqat (Dhul Hulaifah) for pilgrims intending to perform Umrah. Please notify the driver upon pickup."
     }
 ];
 
@@ -102,12 +94,9 @@ export default function JeddahAirportTaxiPage() {
                     <h1 className="text-3xl md:text-5xl font-serif mb-8 text-black leading-tight">
                         Trusted <strong>Jeddah Airport Taxi</strong> Service for Umrah and Business (JED)
                     </h1>
-                    <div className="text-zinc-600 text-lg leading-[1.8] space-y-6 text-justify md:text-center">
+                    <div className="text-[rgb(31,33,43)] text-[16px] font-normal leading-[24px] mb-12 border-l-4 border-luxury-gold pl-6 bg-zinc-50 py-4 rounded-r-xl text-left">
                         <p>
-                            Arriving at King Abdulaziz International Airport (JED) can be overwhelming, especially during the peak Umrah and Hajj seasons. When you require a smooth, on-time ride, choose <strong>Saudi Taxi</strong> for guaranteed flat-rate transfers to Makkah, Madinah, and all Jeddah neighborhoods. We specialize in providing a bridge between the airport and the Holy Cities, tracking your flight in real-time to ensure your driver is waiting the moment you clear customs.
-                        </p>
-                        <p>
-                            Whether you are landing at the state-of-the-art <strong>Terminal 1 (Haramain)</strong> or the North Terminal, our service offers the choice of a quick curbside pickup or a professional meet-and-greet inside the terminal. We assist with your luggage, handle the heavy lifting, and navigate through Jeddah’s often congested traffic to get you to your hotel or residence fast—without the stress of surge pricing or language barriers.
+                            Saudi Taxi provides premium <strong>Jeddah Airport Taxi (JED)</strong> services with fixed-rate transfers to Makkah and Jeddah city hotels. We operate 24/7 at <strong>Terminal 1 (Gate 4)</strong> and the <strong>North Terminal</strong>, offering real-time flight tracking, 60 minutes of free waiting time, and <strong>GMC Yukon</strong> or <strong>Toyota Camry</strong> fleets for group and individual travel. Our licensed drivers ensure a 15-minute average response time for all <Link href="/services/airport-transfers" className="text-luxury-gold hover:underline font-bold">airport pickups</Link>.
                         </p>
                     </div>
                     <div className="flex flex-wrap justify-center gap-6 mt-12 pb-4">
@@ -133,12 +122,13 @@ export default function JeddahAirportTaxiPage() {
                             <AlertCircle className="text-luxury-gold" />
                             How much does a Jeddah Airport Taxi cost?
                         </h2>
-                        <p className="text-zinc-700 text-lg leading-relaxed mb-6">
-                            A private Jeddah airport taxi is competitively priced for transfers to Jeddah city center and Makkah. We operate 24/7 with professional meet-and-greet, live flight monitoring, and transparent flat rates across neighborhoods like <strong>Al-Shati</strong> and <strong>Al-Hamra</strong>. Quotes are confirmed upfront to avoid any surprises or hidden fees.
-                        </p>
-                        <p className="text-zinc-500 text-sm italic py-4 border-t border-zinc-100">
-                            <strong>Disclaimer:</strong> Final pricing depends on vehicle class (Sedan, SUV, Van), luggage requirements, and exact destination; always confirm your personalized quote before booking.
-                        </p>
+                        <div className="mt-8 p-6 bg-luxury-gold/5 border border-luxury-gold/10 rounded-xl relative overflow-hidden">
+                            <div className="absolute top-0 right-0 px-4 py-1 bg-luxury-gold text-black text-[10px] font-bold uppercase tracking-tighter rounded-bl-lg">2026 Protocol</div>
+                            <h4 className="text-sm font-bold text-luxury-gold uppercase tracking-widest mb-3">JED Arrival Protocol Signal:</h4>
+                            <p className="text-[14px] text-zinc-700 leading-relaxed italic">
+                                "Jeddah Airport taxi passengers arriving at <strong>Terminal 1</strong> are met by pre-assigned drivers at <strong>Arrival Gate 4</strong> or the <strong>Haramain Train Station</strong> lobby. Our 2026 retrieval protocol ensures that all <Link href="/fleet/toyota-camry-4-seater-taxi" className="text-luxury-gold hover:underline font-bold">Toyota Camry</Link> and <Link href="/fleet/hyundai-staria-luxury-van" className="text-luxury-gold hover:underline font-bold">Staria Van</Link> bookings include automated manifest synchronization with <strong>KAI Airport (JED)</strong> arrival boards for zero-wait coordination."
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>

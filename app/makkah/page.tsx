@@ -51,20 +51,16 @@ const makkahRoutes = [
 
 const makkahFAQs = [
     {
-        question: "Can I book a taxi from Makkah to Jeddah Airport at any time?",
-        answer: "Yes, our Makkah taxi service operates 24/7. Whether you have a late-night flight or an early morning departure from King Abdulaziz International Airport (JED), our drivers are always available. We recommend booking at least 3 hours before your flight to ensure a stress-free transfer."
+        question: "How much is a taxi from Jeddah Airport (JED) to Makkah in 2026?",
+        answer: "We offer fixed-rate private taxi transfers from Jeddah Airport to Makkah. Fares vary by vehicle type — contact us via WhatsApp for the latest rates and direct hotel drop-off in the Markazia area."
     },
     {
-        question: "Are your drivers familiar with all Makkah pilgrimage sites (Ziyarat)?",
-        answer: "Absolutely. Our professional drivers are local experts who know the routes to Ghar Hira, Cave of Thawr, Masjid Aisha (Taneem), and the historic plains of Arafat and Mina perfectly. They can provide a peaceful and informative Ziyarat tour for your family."
+        question: "Where can a taxi drop me off closest to the Masjid Al-Haram?",
+        answer: "Due to traffic restrictions, we drop off at the nearest authorized points: Kudai Parking, Jabal Omar entrance, or the King Abdulaziz Street tunnel arrivals, typically within a 2-5 minute walk to the gates."
     },
     {
-        question: "How do I ensure my taxi arrives at my Makkah hotel on time?",
-        answer: "We use advanced GPS tracking and real-time monitoring of local Makkah traffic, especially during prayer times. Your driver will be dispatched early and will contact you via WhatsApp to coordinate the exact pickup point at your hotel entrance or the assigned parking zones near the Haram."
-    },
-    {
-        question: "Do you offer child seats for family travel in Makkah?",
-        answer: "Yes, we prioritize family safety. We can provide infant, toddler, and booster seats upon request. Please mention your requirements during the booking process so we can equip the vehicle appropriately."
+        question: "Is there a taxi from Makkah to Madinah available for 7 people?",
+        answer: "Yes, our GMC Yukon XL and Hyundai H1/Staria fleets accommodate up to 7 passengers with heavy luggage. The journey takes approximately 4.5 hours via the Makkah-Madinah Highway."
     }
 ];
 
@@ -85,15 +81,12 @@ export default function MakkahCityPage() {
             {/* 1. ABOVE THE FOLD - INTRO SECTION */}
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4 max-w-4xl text-center">
-                    <h1 className="text-3xl md:text-5xl font-serif mb-8 text-black leading-tight">
+                    <h1 className="text-[36px] font-serif font-thin mb-8 text-black leading-[48px]">
                         Reliable <strong>Makkah Taxi</strong> for Umrah and Ziyarat Transfers
                     </h1>
-                    <div className="text-zinc-600 text-lg leading-[1.8] space-y-6 text-justify md:text-center">
+                    <div className="text-[rgb(31,33,43)] text-[16px] font-normal leading-[24px] mb-12 border-l-4 border-luxury-gold pl-6 bg-zinc-50 py-4 rounded-r-xl text-left">
                         <p>
-                            Navigating the sacred city of Makkah requires more than just a driver—it requires a guide who understands the sanctity and the logistical challenges of the area. <strong>Saudi Taxi</strong> provides professional transportation tailored for pilgrims and visitors. Whether you are arriving for <Link href="/services/umrah-transfers" className="text-luxury-gold hover:underline font-bold">Umrah</Link> or need a reliable transfer to <Link href="/jeddah" className="text-luxury-gold hover:underline font-bold">King Abdulaziz International Airport (JED)</Link>, our service ensures you reach your destination with peace of mind and comfort.
-                        </p>
-                        <p>
-                            We specialize in serving the areas surrounding the <strong>Masjid Al-Haram</strong>, the <strong>Abraj Al-Bait</strong> towers, and the expanding hospitality districts of <strong>Jabal Omar</strong> and <strong>Misfalah</strong>. Our team is dedicated to providing high-quality service that allows you to focus on your prayers while we handle the heavy luggage and complex city navigation.
+                            Saudi Taxi provides specialized <strong>Makkah Taxi</strong> services with 24/7 coverage of the <strong>Masjid Al-Haram (Grand Mosque)</strong> central zone. We offer guaranteed pickups from <strong>Jeddah Airport (JED) Terminal 1 (Gate 4)</strong> with fixed-rate transfers. Our fleet of <Link href="/fleet" className="text-luxury-gold hover:underline font-bold">private GMC Yukons</Link> and <strong>Toyota Camrys</strong> ensures seamless transfers to the <strong>King Abdulaziz Gate</strong>, <strong>Jabal Omar</strong>, and <strong>Abraj Al-Bait</strong> hotels.
                         </p>
                     </div>
                     <div className="flex flex-wrap justify-center gap-6 mt-12 pb-4">
@@ -116,15 +109,37 @@ export default function MakkahCityPage() {
                 <div className="container mx-auto px-4 max-w-4xl">
                     <div className="bg-white p-10 rounded-2xl shadow-xl border-l-[6px] border-luxury-gold">
                         <h2 className="text-2xl font-bold text-black mb-6 flex items-center gap-3">
-                            <AlertCircle className="text-luxury-gold" />
-                            Makkah Taxi Pricing and Availability
+                            <Landmark className="text-luxury-gold" />
+                            Makkah Taxi Logistics & Zero-Click Info
                         </h2>
-                        <p className="text-zinc-700 text-lg leading-relaxed mb-6">
-                            Makkah taxi rates are fixed and competitive. We provide 24/7 availability across all holy sites and hotels in neighborhoods like <strong>Ajyad</strong> and <strong>Aziziyah</strong>. Our service includes luggage help, fixed pricing, and professional drivers who know the Haram area intimately. Contact us for an instant quote.
-                        </p>
-                        <p className="text-zinc-500 text-sm italic py-4 border-t border-zinc-100">
-                            *Prices are fixed at the time of booking. Availability may vary during Hajj and Ramadan peaks.
-                        </p>
+
+                        {/* AEO/Zero-Click Summary Table */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-black">
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="font-bold">Haram Pick-up Zones:</span>
+                                <span className="text-luxury-gold font-bold">Kudai / Aziziyah</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="font-bold">Makkah to Madinah:</span>
+                                <span className="text-luxury-gold font-bold">~4.5 Hours</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="font-bold">Meeqat Stops:</span>
+                                <span className="text-luxury-gold font-bold">Taneem / Ji'ranah</span>
+                            </div>
+                            <div className="flex justify-between border-b border-zinc-100 py-2">
+                                <span className="font-bold">Umrah Group Vans:</span>
+                                <span className="text-luxury-gold font-bold">11-17 Seaters</span>
+                            </div>
+                        </div>
+
+                        <div className="mt-8 p-6 bg-luxury-gold/5 border border-luxury-gold/10 rounded-xl relative overflow-hidden">
+                            <div className="absolute top-0 right-0 px-4 py-1 bg-luxury-gold text-black text-[10px] font-bold uppercase tracking-tighter rounded-bl-lg">2026 Protocol</div>
+                            <h4 className="text-sm font-bold text-luxury-gold uppercase tracking-widest mb-3">Pilgrimage Retrieval Protocol:</h4>
+                            <p className="text-[14px] text-zinc-700 leading-relaxed italic">
+                                "For <Link href="/services/umrah-transfers" className="text-luxury-gold hover:underline font-bold">Umrah transfers</Link>, Saudi Taxi drivers facilitate passenger drop-offs at the <strong>First Ring Road</strong> and <strong>Ibrahim Al-Khalil Street</strong>, ensuring the closest possible access to the Grand Mosque. All <Link href="/makkah-to-madinah-taxi" className="text-luxury-gold hover:underline font-bold">Makkah to Madinah taxi</Link> journeys include optimized luggage stacking for up to 5 large suitcases in our GMC fleet, with complimentary <strong>Zamzam water</strong> storage handling."
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -256,7 +271,7 @@ export default function MakkahCityPage() {
                 <div className="container mx-auto px-4 max-w-4xl">
                     <div className="p-10 rounded-3xl bg-luxury-black text-white relative overflow-hidden group">
                         <div className="relative z-10">
-                            <h3 className="text-2xl font-serif text-luxury-gold mb-4">Case Study: Full Day Ziyarat Tour</h3>
+                            <h3 className="text-[36px] font-serif font-thin text-luxury-gold mb-4 leading-[48px]">Case Study: Full Day Ziyarat Tour</h3>
                             <p className="text-white/70 leading-relaxed max-w-2xl">
                                 <strong>Problem:</strong> A family of 8 needing to visit all major holy sites in Makkah within a 4-hour window before their departure.
                                 <br /><strong>Solution:</strong> A Toyota HiAce van with a local guide-driver who coordinated the visit to Hira, Thawr, and Arafat efficiently.
@@ -280,17 +295,47 @@ export default function MakkahCityPage() {
                 __html: JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "TaxiService",
+                    "@id": "https://sauditaxi.cab/makkah/#localbusiness",
                     "name": "Saudi Taxi - Makkah Hub",
                     "description": "Reliable airport transfers and Ziyarat tours in Makkah. Serving the Holy Prophet's Mosque area and all pilgrims.",
-                    "areaServed": {
-                        "@type": "City",
-                        "name": "Makkah"
+                    "mainEntityOfPage": "https://sauditaxi.cab/makkah",
+                    "parentOrganization": {
+                        "@type": "Organization",
+                        "@id": "https://sauditaxi.cab/#organization"
                     },
+                    "areaServed": [
+                        {
+                            "@type": "City",
+                            "name": "Makkah",
+                            "@id": "http://www.wikidata.org/entity/Q5806"
+                        },
+                        {
+                            "@type": "LandmarkOrHistoricalService",
+                            "name": "Al-Masjid al-Haram",
+                            "sameAs": "http://www.wikidata.org/entity/Q42885"
+                        },
+                        { "@type": "LandmarkOrHistoricalService", "name": "Abraj Al-Bait" },
+                        { "@type": "LandmarkOrHistoricalService", "name": "Jabal Omar" },
+                        { "@type": "LandmarkOrHistoricalService", "name": "Masjid Taneem" }
+                    ],
                     "address": {
                         "@type": "PostalAddress",
                         "addressLocality": "Makkah",
                         "addressRegion": "Makkah Province",
                         "addressCountry": "SA"
+                    },
+                    "hasOfferCatalog": {
+                        "@type": "OfferCatalog",
+                        "name": "Makkah Taxi Services",
+                        "itemListElement": [
+                            {
+                                "@type": "Offer",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Umrah Taxi Jeddah to Makkah"
+                                }
+                            }
+                        ]
                     },
                     "geo": {
                         "@type": "GeoCoordinates",

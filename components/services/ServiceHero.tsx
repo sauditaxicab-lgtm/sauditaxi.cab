@@ -56,7 +56,7 @@ export function ServiceHero({ title, subtitle, description, backgroundImage, onB
                         </div>
 
                         {/* Title with specialized styling for branding */}
-                        <h1 className="text-white mb-8 leading-[1.1] text-3xl md:text-5xl lg:text-7xl font-serif tracking-tight drop-shadow-2xl">{title.split('–').map((part, i) => (<span key={i} className="block last:text-luxury-gold last:mt-2">{part.trim()}</span>))}</h1>
+                        <h1 className="text-white mb-8 leading-[48px] text-[36px] font-thin font-serif tracking-tight drop-shadow-2xl">{title.split('–').map((part, i) => (<span key={i} className="block last:text-luxury-gold last:mt-2">{part.trim()}</span>))}</h1>
 
                         <motion.div
                             initial={{ opacity: 0, scaleX: 0 }}
@@ -66,7 +66,7 @@ export function ServiceHero({ title, subtitle, description, backgroundImage, onB
                         />
 
                         {description && (
-                            <p className="text-white/70 text-base md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed tracking-wide italic">
+                            <p className="text-white/80 text-[16px] max-w-2xl mx-auto mb-12 font-normal leading-[24px] tracking-wide italic">
                                 "{description}"
                             </p>
                         )}

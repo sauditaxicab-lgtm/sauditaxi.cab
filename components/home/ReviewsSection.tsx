@@ -54,7 +54,7 @@ export function ReviewsSection() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-4xl md:text-6xl font-serif text-black leading-[1.1]"
+                            className="text-[36px] font-serif font-thin text-black leading-[48px]"
                         >
                             Trusted by <span className="text-luxury-gold italic">Thousands</span> <br />
                             of Sacred Travelers.
@@ -116,7 +116,7 @@ export function ReviewsSection() {
 
                                     {/* Quote Text */}
                                     <div className="relative mb-10">
-                                        <p className="text-xl md:text-2xl font-serif italic text-black/80 leading-relaxed font-light line-clamp-4">
+                                        <p className="text-[16px] font-serif italic text-black/80 leading-[24px] font-light line-clamp-6">
                                             "{testimonial.text}"
                                         </p>
                                     </div>
