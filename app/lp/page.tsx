@@ -63,7 +63,8 @@ const fleet = [
     { name: 'Toyota Camry', tag: 'Executive Sedan', seats: '4', img: '/fleet/toyota-camry.webp' },
     { name: 'GMC Yukon XL', tag: 'Luxury VIP SUV', seats: '7', img: '/fleet/gmc-yukon.webp' },
     { name: 'Hyundai Staria', tag: 'Family 7-Seater', seats: '7', img: '/fleet/hyundai-staria.webp' },
-    { name: 'Toyota HiAce', tag: 'Group Travel', seats: '10', img: '/fleet/hyundai-starex.webp' },
+    { name: 'Hyundai Starex', tag: 'Family 7-Seater', seats: '7', img: '/fleet/hyundai-starex.webp' },
+    { name: 'Toyota HiAce', tag: 'Group Travel', seats: '10', img: '/hiace/hiace-main.jpeg' },
     { name: 'Toyota Coaster', tag: 'Large Groups', seats: '17', img: '/fleet/toyota-coaster.webp' },
 ];
 
@@ -164,18 +165,18 @@ export default function LandingPage() {
                     </div>
 
                     {/* Fleet Preview Strip */}
-                    <div className="mt-12 grid grid-cols-5 gap-2 md:gap-4 max-w-xl mx-auto">
+                    <div className="mt-12 grid grid-cols-3 sm:grid-cols-6 gap-2 md:gap-4 max-w-2xl mx-auto">
                         {fleet.map((v) => (
-                            <div key={v.name} className="relative aspect-[4/3] rounded-xl overflow-hidden border border-white/10 group">
+                            <div key={v.name} className="relative aspect-[4/3] rounded-xl overflow-hidden border border-white/10 group bg-white/[0.02]">
                                 <Image
                                     src={v.img}
                                     alt={v.name}
                                     fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                    sizes="20vw"
+                                    className="object-contain p-2 group-hover:scale-110 transition-transform duration-500"
+                                    sizes="(max-width: 640px) 33vw, 16vw"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                                <span className="absolute bottom-1 left-1 right-1 text-[9px] md:text-[10px] font-bold text-center text-white/90 truncate">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+                                <span className="absolute bottom-1 left-1 right-1 text-[9px] md:text-[10px] font-bold text-center text-white/90 truncate z-10">
                                     {v.name}
                                 </span>
                             </div>
@@ -221,7 +222,7 @@ export default function LandingPage() {
                         </h2>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                         {fleet.map((v) => (
                             <a
                                 key={v.name}
@@ -230,13 +231,13 @@ export default function LandingPage() {
                                 rel="noopener noreferrer"
                                 className="bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden hover:border-[#C4A975]/40 transition-all duration-300 group block"
                             >
-                                <div className="relative aspect-[4/3]">
+                                <div className="relative aspect-[4/3] bg-white/[0.02]">
                                     <Image
                                         src={v.img}
                                         alt={`${v.name} Saudi Taxi`}
                                         fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                        sizes="(max-width: 768px) 50vw, 20vw"
+                                        className="object-contain p-3 group-hover:scale-105 transition-transform duration-500"
+                                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 16vw"
                                     />
                                 </div>
                                 <div className="p-3 text-center">
