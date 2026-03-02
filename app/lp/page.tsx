@@ -379,6 +379,20 @@ export default function LandingPage() {
                     }
                 })
             }} />
+
+            {/* Google Ads Conversion Tracking — fires on every WhatsApp click */}
+            <Script id="lp-conversion-tracking" strategy="afterInteractive">
+                {`
+                    document.addEventListener('click', function(e) {
+                        var link = e.target.closest('a[href*="wa.me"]');
+                        if (link && typeof gtag === 'function') {
+                            gtag('event', 'conversion', {
+                                'send_to': 'AW-17960093141/idL3CO2C__0bENWLhfRC'
+                            });
+                        }
+                    });
+                `}
+            </Script>
         </main>
     );
 }
