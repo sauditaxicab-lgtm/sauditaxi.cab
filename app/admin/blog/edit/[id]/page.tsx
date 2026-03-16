@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import { updatePost } from '@/actions/blog';
 import { Button } from '@/components/ui/button';
@@ -12,12 +12,13 @@ import Link from 'next/link';
 import { createClient } from '@/utils/supabase/client';
 
 interface EditPostPageProps {
-    params: {
+    params: Promise<{
         id: string;
-    };
+    }>;
 }
 
 export default function EditPostPage({ params }: EditPostPageProps) {
+    const { id } = use(params);
     const router = useRouter();
     const supabase = createClient();
     const [loading, setLoading] = useState(false);
@@ -34,7 +35,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
             const { data, error } = await supabase
                 .from('posts')
                 .select('*')
-                .eq('id', params.id)
+                .eq('id', id)
                 .single();
 
             if (error || !data) {
@@ -53,7 +54,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
         }
 
         fetchPost();
-    }, [params.id, router, supabase]);
+    }, [id, router, supabase]);
 
     const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const val = e.target.value;
@@ -73,7 +74,7 @@ export default function EditPostPage({ params }: EditPostPageProps) {
 
         setLoading(true);
         try {
-            const result = await updatePost(params.id, {
+            const result = await updatePost(id, {
                 title,
                 slug,
                 excerpt,
