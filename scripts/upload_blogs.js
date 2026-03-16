@@ -50,17 +50,17 @@ async function upload() {
                 const parts = trimmed.split('|').slice(1, -1).map(p => p.trim());
                 const tag = resultRows[resultRows.length - 1].includes('<thead>') || resultRows.some(r => r.includes('<table') && !r.includes('<tbody>')) ? 'th' : 'td';
                 let rowHtml = '<tr class="border-b border-white/10">';
-                parts.forEach(p => { rowHtml += `<${tag} class="p-4 text-left border-r border-white/10 text-white/80">${p}</${tag}>`; });
+                parts.forEach(p => { rowHtml += `<${tag} class="p-4 text-left border-r border-white/10 text-white/80 font-medium">${p}</${tag}>`; });
                 rowHtml += '</tr>';
                 resultRows.push(rowHtml);
                 continue;
             } else if (inTable) { resultRows.push('</table>'); inTable = false; }
             const isLi = trimmed.startsWith('<li>');
-            if (isLi && !inList) { resultRows.push('<ul class="list-disc pl-6 space-y-2 my-4 text-white/80">'); inList = true; }
+            if (isLi && !inList) { resultRows.push('<ul class="list-disc pl-6 space-y-3 my-6 text-white/80">'); inList = true; }
             else if (!isLi && inList && trimmed !== '') { resultRows.push('</ul>'); inList = false; }
             if (!trimmed) { if (inList) { resultRows.push('</ul>'); inList = false; } resultRows.push(''); continue; }
             if (trimmed.match(/^<(h1|h2|h3|ul|li|table|tr|p|br)/)) { resultRows.push(trimmed); }
-            else { resultRows.push(`<p class="my-4 text-white/70 leading-relaxed">${trimmed}</p>`); }
+            else { resultRows.push(`<p class="my-6 text-white/70 leading-relaxed">${trimmed}</p>`); }
         }
         if (inList) resultRows.push('</ul>');
         if (inTable) resultRows.push('</table>');
@@ -71,9 +71,41 @@ async function upload() {
     for (let i = 0; i < 15; i++) dates.push(new Date(2026, 2, 16 - i, 12, 0, 0).toISOString());
     for (let i = 0; i < 15; i++) dates.push(new Date(2026, 1, 28 - i, 12, 0, 0).toISOString());
 
+    const fleetModule = `
+## Choosing the Right Vehicle for Your Group
+When navigating the 450km stretch between the Holy Cities, choosing the right vehicle is paramount. Here is a breakdown of why pilgrims prefer specific models:
+- **Toyota Camry**: Best for couples or business solo travelers. It handles the speed of Highway 15 with surprising stability.
+- **Hyundai Staria**: Family favorite. The captain seats and large windows are perfect for children to view the desert vistas.
+- **GMC Yukon XL**: VIP choice. Often used for large families carrying significant luggage (Zamzam water, multiple suitcases).
+- **Toyota HiAce**: Essential for groups of 10+. Features high roofs for easy entry and exit.
+`;
+
+    const highwayModule = `
+## Highway 15 vs Highway 5: Strategic Routing
+The journey from Makkah to Madinah is traditionally done via **Highway 15**, also known as the **Al-Hijrah Highway**. 
+- **The Direct Path (H15)**: A 4-hour sprint. World-class expressway with 4 to 5 lanes, monitored by Highway Patrol for safety.
+- **The Coastal Scenic Path (H5)**: Traveling via Jeddah and Yanbu. Approximately 6-7 hours but offers stunning views of the Red Sea coast.
+- **Special Routes**: During peak Umrah seasons, drivers may use specialized bypasses to avoid congestion, ensuring timely arrival.
+`;
+
+    const restStopModule = `
+## Premium Rest Stops & Amenities
+Safety regulations require drivers to rest. The stops along the Makkah-Madinah road are elite:
+- **Sasco Palm**: The gold standard. Fresh coffee, high-quality snacks, and clean air-conditioned prayer halls.
+- **Petromin Stations**: Quick service and reliable restrooms.
+- **Local Highlights**: Stops like **Alyutamah** feature stalls selling fresh dates, traditional Saudi tea, and local honey.
+- **24/7 Safety**: Every station is well-lit and equipped with emergency services.
+`;
+
     const posts = [];
     files.forEach((file, index) => {
         let content = fs.readFileSync(path.join(articlesDir, file), 'utf8');
+        
+        // Inject deep modules to increase word count and quality
+        if (index % 3 === 0) content += fleetModule;
+        if (index % 3 === 1) content += highwayModule;
+        if (index % 3 === 2) content += restStopModule;
+
         const titleMatch = content.match(/^# (.*)/);
         const title = titleMatch ? titleMatch[1] : file.replace('.md', '');
         const slug = file.replace('.md', '');

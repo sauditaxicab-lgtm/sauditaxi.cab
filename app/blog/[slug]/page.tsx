@@ -9,6 +9,7 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 import { BUSINESS_CONFIG } from '@/lib/constants';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
+import { TableOfContents } from '@/components/ui/TableOfContents';
 
 export const revalidate = 60;
 
@@ -48,6 +49,14 @@ export default async function BlogPostPage(props: BlogPostProps) {
     if (!post) {
         notFound();
     }
+
+    // Process content to add IDs to headings for ToC
+    const headingLinks: { id: string; text: string; level: number }[] = [];
+    const processedContent = post.content.replace(/<(h2|h3)>(.*?)<\/\1>/gi, (match: string, tag: string, text: string) => {
+        const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        headingLinks.push({ id, text, level: parseInt(tag[1]) });
+        return `<${tag} id="${id}">${text}</${tag}>`;
+    });
 
     return (
         <div className="min-h-screen bg-black text-white">
@@ -112,16 +121,20 @@ export default async function BlogPostPage(props: BlogPostProps) {
                             </p>
                         )}
 
+                        {/* Table of Contents */}
+                        <TableOfContents links={headingLinks} />
+
                         {/* Main Content */}
                         <div
                             className="prose prose-invert prose-lg max-w-none 
                             prose-headings:font-serif prose-headings:text-white 
+                            prose-headings:scroll-mt-32
                             prose-p:text-white/70 prose-p:leading-relaxed
                             prose-a:text-luxury-gold prose-a:no-underline hover:prose-a:underline
                             prose-img:rounded-xl prose-img:border prose-img:border-white/10
                             prose-strong:text-white prose-blockquote:border-luxury-gold prose-blockquote:bg-white/5 prose-blockquote:p-6 prose-blockquote:rounded-r-lg"
                             dangerouslySetInnerHTML={{ 
-                                __html: post.content.replace(/<div id="faq-section-data".*?<\/div>/s, '') 
+                                __html: processedContent.replace(/<div id="faq-section-data".*?<\/div>/s, '') 
                             }}
                         />
 
