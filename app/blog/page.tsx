@@ -15,12 +15,31 @@ export const metadata: Metadata = {
     },
 };
 
-export default async function BlogIndexPage() {
+interface BlogIndexProps {
+    searchParams: Promise<{ page?: string }>;
+}
+
+export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
+    const params = await searchParams;
+    const currentPage = Number(params.page) || 1;
+    const postsPerPage = 8;
+    const start = (currentPage - 1) * postsPerPage;
+    const end = start + postsPerPage - 1;
+
+    // Get total count for pagination
+    const { count } = await supabase
+        .from('posts')
+        .select('*', { count: 'exact', head: true })
+        .eq('published', true);
+
+    const totalPages = Math.ceil((count || 0) / postsPerPage);
+
     const { data: posts } = await supabase
         .from('posts')
         .select('*')
         .eq('published', true)
-        .order('created_at', { ascending: false });
+        .order('created_at', { ascending: false })
+        .range(start, end);
 
     return (
         <div className="min-h-screen bg-black text-white">
@@ -97,6 +116,40 @@ export default async function BlogIndexPage() {
                             </Link>
                         ))}
                     </div>
+
+                    {/* Pagination Controls */}
+                    {totalPages > 1 && (
+                        <div className="mt-16 flex flex-wrap justify-center items-center gap-2">
+                            {currentPage > 1 && (
+                                <Link href={`/blog?page=${currentPage - 1}`}>
+                                    <Button variant="outline" className="border-white/10 text-white hover:bg-luxury-gold hover:text-black">
+                                        Previous
+                                    </Button>
+                                </Link>
+                            )}
+
+                            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                                <Link href={`/blog?page=${pageNum}`} key={pageNum}>
+                                    <Button
+                                        variant={currentPage === pageNum ? "default" : "outline"}
+                                        className={currentPage === pageNum
+                                            ? "bg-luxury-gold text-black"
+                                            : "border-white/10 text-white hover:bg-white/5"}
+                                    >
+                                        {pageNum}
+                                    </Button>
+                                </Link>
+                            ))}
+
+                            {currentPage < totalPages && (
+                                <Link href={`/blog?page=${currentPage + 1}`}>
+                                    <Button variant="outline" className="border-white/10 text-white hover:bg-luxury-gold hover:text-black">
+                                        Next
+                                    </Button>
+                                </Link>
+                            )}
+                        </div>
+                    )}
 
                     {(!posts || posts.length === 0) && (
                         <div className="text-center py-20 text-white/40">

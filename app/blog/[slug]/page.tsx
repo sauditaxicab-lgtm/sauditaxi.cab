@@ -16,7 +16,8 @@ interface BlogPostProps {
     }
 }
 
-export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
+export async function generateMetadata(props: BlogPostProps): Promise<Metadata> {
+    const params = await props.params;
     const { data: post } = await supabase
         .from('posts')
         .select('*')
@@ -34,7 +35,8 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
     };
 }
 
-export default async function BlogPostPage({ params }: BlogPostProps) {
+export default async function BlogPostPage(props: BlogPostProps) {
+    const params = await props.params;
     const { data: post } = await supabase
         .from('posts')
         .select('*')
