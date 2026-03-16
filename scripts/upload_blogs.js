@@ -94,18 +94,32 @@ async function upload() {
             content += linksStr;
         }
 
-        // Add FAQs to each article as requested with specific vehicle capacities
-        const faqsStr = `
-\n\n## Frequently Asked Questions (FAQ)
+        // Add FAQs to each article with distinct markers for the frontend to pick up
+        const faqs = [
+            { 
+                question: `How can I book a taxi from ${title.includes('Jeddah') ? 'Jeddah' : (title.includes('Makkah') ? 'Makkah' : 'the Airport')}?`, 
+                answer: "You can book via our website or WhatsApp. For family groups, we recommend booking at least 24 hours in advance to secure your preferred vehicle. Our dispatch team is available 24/7."
+            },
+            { 
+                question: "What are the seating and luggage capacities?", 
+                answer: "Toyota Camry: 4 Pax (3 Bags), Hyundai Staria: 7 Pax (7 Bags), GMC Yukon XL: 7 Pax (7 Bags), Toyota HiAce: 11 Pax (10 Bags), and Toyota Coaster: Up to 17-21 Pax. Always consider vehicle size for comfort during long journeys."
+            },
+            { 
+                question: "Is the service available for Umrah pilgrims?", 
+                answer: "Yes, we specialize in Umrah transfers, Ziyarat tours, and airport pick-ups for pilgrims. Our drivers are familiar with all Miqat locations and holy sites."
+            },
+            { 
+                question: "Do you provide child seats for family travel?", 
+                answer: "Yes, child seats are available upon request for a safe and comfortable journey for your little ones. Please let us know the age of your child during booking."
+            },
+            {
+                question: "Which highway is used for Makkah to Madinah?",
+                answer: "The primary route is Highway 15, also known as the Al Hijrah Highway. It is a well-maintained multi-lane road with numerous rest stops like Alyutamah and Wadi Al Fora."
+            }
+        ];
 
-| Question | Answer |
-| --- | --- |
-| How can I book a taxi from ${title.includes('Jeddah') ? 'Jeddah' : (title.includes('Makkah') ? 'Makkah' : 'the Airport')}? | You can book via our website or WhatsApp. For family groups, we recommend booking at least 24 hours in advance to secure your preferred vehicle. |
-| What are the seating and luggage capacities? | **Toyota Camry**: 4 Pax (3 Bags), **Hyundai Staria**: 7 Pax (7 Bags), **GMC Yukon XL**: 7 Pax (7 Bags), **Toyota HiAce**: 11 Pax (10 Bags), and **Toyota Coaster**: Up to 17-21 Pax. |
-| Is the service available for Umrah pilgrims? | Yes, we specialize in Umrah transfers, Ziyarat tours, and airport pick-ups for pilgrims. Our drivers are familiar with all Miqat locations and holy sites. |
-| Do you provide child seats for family travel? | Yes, child seats are available upon request for a safe and comfortable journey for your little ones. |
-`;
-        content += faqsStr;
+        const faqHtml = `<div id="faq-section-data" style="display:none;">${JSON.stringify(faqs)}</div>`;
+        content += "\n\n" + faqHtml;
 
         posts.push({
             title,

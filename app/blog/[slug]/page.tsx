@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import { BUSINESS_CONFIG } from '@/lib/constants';
+import { FAQAccordion } from '@/components/ui/FAQAccordion';
 
 export const revalidate = 60;
 
@@ -119,8 +120,24 @@ export default async function BlogPostPage(props: BlogPostProps) {
                             prose-a:text-luxury-gold prose-a:no-underline hover:prose-a:underline
                             prose-img:rounded-xl prose-img:border prose-img:border-white/10
                             prose-strong:text-white prose-blockquote:border-luxury-gold prose-blockquote:bg-white/5 prose-blockquote:p-6 prose-blockquote:rounded-r-lg"
-                            dangerouslySetInnerHTML={{ __html: post.content }}
+                            dangerouslySetInnerHTML={{ 
+                                __html: post.content.replace(/<div id="faq-section-data".*?<\/div>/s, '') 
+                            }}
                         />
+
+                        {/* FAQ Accordion Section */}
+                        {(() => {
+                            const faqMatch = post.content.match(/<div id="faq-section-data".*?>(.*?)<\/div>/s);
+                            if (faqMatch && faqMatch[1]) {
+                                try {
+                                    const faqs = JSON.parse(faqMatch[1]);
+                                    return <FAQAccordion items={faqs} />;
+                                } catch (e) {
+                                    return null;
+                                }
+                            }
+                            return null;
+                        })()}
 
                         {/* Footer Share */}
                         <div className="mt-16 pt-8 border-t border-white/10 flex justify-between items-center">
@@ -238,45 +255,30 @@ export default async function BlogPostPage(props: BlogPostProps) {
                         },
                         "description": post.excerpt
                     },
-                    {
-                        "@context": "https://schema.org",
-                        "@type": "FAQPage",
-                        "mainEntity": [
-                            {
-                                "@type": "Question",
-                                "name": `How can I book a taxi from ${post.title.includes('Jeddah') ? 'Jeddah' : (post.title.includes('Makkah') ? 'Makkah' : 'the Airport')}?`,
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "You can book via our website or WhatsApp. For family groups, we recommend booking at least 24 hours in advance to secure your preferred vehicle."
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": "What are the seating and luggage capacities for Saudi Taxi?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Toyota Camry: 4 Pax (3 Bags), Hyundai Staria: 7 Pax (7 Bags), GMC Yukon XL: 7 Pax (7 Bags), Toyota HiAce: 11 Pax (10 Bags), and Toyota Coaster: Up to 17-21 Pax."
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": "Is the service available for Umrah pilgrims?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Yes, we specialize in Umrah transfers, Ziyarat tours, and airport pick-ups for pilgrims. Our drivers are familiar with all Miqat locations and holy sites."
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": "Do you provide child seats for family travel?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Yes, child seats are available upon request for a safe and comfortable journey for your little ones."
-                                }
+                    (() => {
+                        const faqMatch = post.content.match(/<div id="faq-section-data".*?>(.*?)<\/div>/s);
+                        if (faqMatch && faqMatch[1]) {
+                            try {
+                                const faqs = JSON.parse(faqMatch[1]);
+                                return {
+                                    "@context": "https://schema.org",
+                                    "@type": "FAQPage",
+                                    "mainEntity": faqs.map((f: { question: string, answer: string }) => ({
+                                        "@type": "Question",
+                                        "name": f.question,
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": f.answer
+                                        }
+                                    }))
+                                };
+                            } catch (e) {
+                                return null;
                             }
-                        ]
-                    }
-                ])
+                        }
+                        return null;
+                    })()
+                ].filter(Boolean))
             }} />
 
         </div>
