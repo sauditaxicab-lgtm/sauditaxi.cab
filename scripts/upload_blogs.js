@@ -94,15 +94,16 @@ async function upload() {
             content += linksStr;
         }
 
-        // Add FAQs to each article as requested
+        // Add FAQs to each article as requested with specific vehicle capacities
         const faqsStr = `
 \n\n## Frequently Asked Questions (FAQ)
 
 | Question | Answer |
 | --- | --- |
-| How can I book a taxi from ${title.includes('Jeddah') ? 'Jeddah' : (title.includes('Makkah') ? 'Makkah' : 'the Airport')}? | You can easily book your ride through our website or contact our 24/7 support for instant bookings. |
-| What are the available car options? | We offer Toyota Camry, Hyundai Staria (7-seater), GMC Yukon, and Toyota Coaster for larger groups. |
-| Is the service available for Umrah pilgrims? | Yes, we specialize in Umrah transfers, Ziyarat tours, and airport pick-ups for pilgrims. |
+| How can I book a taxi from ${title.includes('Jeddah') ? 'Jeddah' : (title.includes('Makkah') ? 'Makkah' : 'the Airport')}? | You can book via our website or WhatsApp. For family groups, we recommend booking at least 24 hours in advance to secure your preferred vehicle. |
+| What are the seating and luggage capacities? | **Toyota Camry**: 4 Pax (3 Bags), **Hyundai Staria**: 7 Pax (7 Bags), **GMC Yukon XL**: 7 Pax (7 Bags), **Toyota HiAce**: 11 Pax (10 Bags), and **Toyota Coaster**: Up to 17-21 Pax. |
+| Is the service available for Umrah pilgrims? | Yes, we specialize in Umrah transfers, Ziyarat tours, and airport pick-ups for pilgrims. Our drivers are familiar with all Miqat locations and holy sites. |
+| Do you provide child seats for family travel? | Yes, child seats are available upon request for a safe and comfortable journey for your little ones. |
 `;
         content += faqsStr;
 

@@ -15,13 +15,10 @@ export function FloatingContactButton() {
     const [showCard, setShowCard] = useState(false);
     const [hasInteracted, setHasInteracted] = useState(false);
 
-    // Hide component completely on blog pages as requested
-    if (isBlogPage) return null;
-
     // Show card after scrolling down
     useEffect(() => {
         const handleScroll = () => {
-            if (hasInteracted) return;
+            if (hasInteracted || isBlogPage) return;
 
             if (window.scrollY > 300) {
                 setShowCard(true);
@@ -32,11 +29,15 @@ export function FloatingContactButton() {
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [hasInteracted]);
+    }, [hasInteracted, isBlogPage]);
 
     const handleWhatsAppClick = () => {
         window.open(`https://wa.me/${BUSINESS_CONFIG.PHONE}`, '_blank');
     };
+
+    // Hide component completely on blog pages as requested
+    // Moved below hooks to satisfy React's "Rule of Hooks"
+    if (isBlogPage) return null;
 
     return (
         <div className="fixed bottom-24 left-4 md:bottom-8 md:left-8 z-[101] flex flex-col items-start gap-4">
