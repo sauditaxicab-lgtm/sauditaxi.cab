@@ -127,6 +127,18 @@ files.forEach((file, index) => {
         content += linksStr;
     }
 
+    // Add FAQs to each article as requested
+    const faqsStr = `
+\n\n## Frequently Asked Questions (FAQ)
+
+| Question | Answer |
+| --- | --- |
+| How can I book a taxi from ${title.includes('Jeddah') ? 'Jeddah' : (title.includes('Makkah') ? 'Makkah' : 'the Airport')}? | You can easily book your ride through our website or contact our 24/7 support for instant bookings. |
+| What are the available car options? | We offer Toyota Camry, Hyundai Staria (7-seater), GMC Yukon, and Toyota Coaster for larger groups. |
+| Is the service available for Umrah pilgrims? | Yes, we specialize in Umrah transfers, Ziyarat tours, and airport pick-ups for pilgrims across Saudi Arabia. |
+`;
+    content += faqsStr;
+
     const htmlContent = mdToHtml(content);
     const postDate = dates[index] || dates[dates.length - 1];
 

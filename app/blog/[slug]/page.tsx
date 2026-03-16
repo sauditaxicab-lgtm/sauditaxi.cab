@@ -76,7 +76,7 @@ export default async function BlogPostPage(props: BlogPostProps) {
                                 Article
                             </span>
                         </div>
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight">{post.title}</h1>
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight">{post.title}</h1>
                         <div className="flex items-center gap-6 text-white/70 text-sm">
                             <span className="flex items-center gap-2">
                                 <Calendar className="w-4 h-4 text-luxury-gold" />
@@ -206,28 +206,60 @@ export default async function BlogPostPage(props: BlogPostProps) {
 
             {/* Article Schema */}
             <Script id="article-schema" type="application/ld+json" dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "BlogPosting",
-                    "headline": post.title,
-                    "image": post.cover_image,
-                    "datePublished": post.created_at,
-                    "dateModified": post.updated_at || post.created_at,
-                    "author": [{
-                        "@type": "Organization",
-                        "name": "Saudi Taxi",
-                        "url": "https://sauditaxi.cab"
-                    }],
-                    "publisher": {
-                        "@type": "Organization",
-                        "name": "Saudi Taxi",
-                        "logo": {
-                            "@type": "ImageObject",
-                            "url": "https://sauditaxi.cab/logo.png"
-                        }
+                __html: JSON.stringify([
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BlogPosting",
+                        "headline": post.title,
+                        "image": post.cover_image,
+                        "datePublished": post.created_at,
+                        "dateModified": post.updated_at || post.created_at,
+                        "author": [{
+                            "@type": "Organization",
+                            "name": "Saudi Taxi",
+                            "url": "https://sauditaxi.cab"
+                        }],
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "Saudi Taxi",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://sauditaxi.cab/logo.png"
+                            }
+                        },
+                        "description": post.excerpt
                     },
-                    "description": post.excerpt
-                })
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": `How can I book a taxi from ${post.title.includes('Jeddah') ? 'Jeddah' : (post.title.includes('Makkah') ? 'Makkah' : 'the Airport')}?`,
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "You can easily book your ride through our website or contact our 24/7 support for instant bookings."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "What are the available car options?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "We offer Toyota Camry, Hyundai Staria (7-seater), GMC Yukon, and Toyota Coaster (for larger groups)."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Is the service available for Umrah pilgrims?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes, we specialize in Umrah transfers, Ziyarat tours, and airport pick-ups for pilgrims across Saudi Arabia."
+                                }
+                            }
+                        ]
+                    }
+                ])
             }} />
 
         </div>

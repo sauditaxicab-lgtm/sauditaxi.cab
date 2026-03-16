@@ -5,11 +5,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Send } from "lucide-react";
 import { BUSINESS_CONFIG } from "@/lib/constants";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export function FloatingContactButton() {
+    const pathname = usePathname();
+    const isBlogPage = pathname?.startsWith('/blog');
+    
     const [isOpen, setIsOpen] = useState(false);
     const [showCard, setShowCard] = useState(false);
     const [hasInteracted, setHasInteracted] = useState(false);
+
+    // Hide component completely on blog pages as requested
+    if (isBlogPage) return null;
 
     // Show card after scrolling down
     useEffect(() => {
@@ -32,17 +39,17 @@ export function FloatingContactButton() {
     };
 
     return (
-        <div className="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-[101] flex flex-col items-end gap-4">
+        <div className="fixed bottom-24 left-4 md:bottom-8 md:left-8 z-[101] flex flex-col items-start gap-4">
 
             {/* WhatsApp Chat Card - Appears on Scroll */}
             <AnimatePresence>
                 {(showCard || isOpen) && (
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9, y: 20, x: 20 }}
+                        initial={{ opacity: 0, scale: 0.9, y: 20, x: -20 }}
                         animate={{ opacity: 1, scale: 1, y: 0, x: 0 }}
-                        exit={{ opacity: 0, scale: 0.9, y: 20, x: 20 }}
+                        exit={{ opacity: 0, scale: 0.9, y: 20, x: -20 }}
                         transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                        className="bg-zinc-50 rounded-2xl shadow-2xl border border-white/20 w-[300px] md:w-[340px] overflow-hidden origin-bottom-right font-sans"
+                        className="bg-zinc-50 rounded-2xl shadow-2xl border border-white/20 w-[300px] md:w-[340px] overflow-hidden origin-bottom-left font-sans"
                     >
                         {/* Card Header */}
                         <div className="bg-[#0A0A0F] p-4 flex items-center gap-4 border-b border-[#C4A975]/30 relative overflow-hidden">
