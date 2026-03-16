@@ -1,7 +1,20 @@
 import { MetadataRoute } from 'next'
+import { supabase } from '@/lib/supabase'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://sauditaxi.cab'
+
+    // Fetch dynamic blog routes
+    const { data: posts } = await supabase
+        .from('posts')
+        .select('slug, updated_at')
+
+    const blogRoutes: MetadataRoute.Sitemap = (posts || []).map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: post.updated_at ? new Date(post.updated_at) : new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.7,
+    }))
 
     const routes = [
         '',
@@ -35,10 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/fleet/toyota-coaster-17-seater-taxi',
     ]
 
-    return routes.map((route) => ({
+    const staticRoutes: MetadataRoute.Sitemap = routes.map((route) => ({
         url: `${baseUrl}${route}/`,
         lastModified: new Date(),
-        changeFrequency: route === '' ? 'daily' : 'weekly' as any,
+        changeFrequency: route === '' ? 'daily' : 'weekly',
         priority: route === '' ? 1 : 0.8,
     }))
+
+    return [...staticRoutes, ...blogRoutes]
 }
