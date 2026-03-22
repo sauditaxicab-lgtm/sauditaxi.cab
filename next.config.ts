@@ -76,7 +76,7 @@ const nextConfig: NextConfig = {
               " https://www.clarity.ms" +
               " https://scripts.clarity.ms" +
               " https://widget.trustpilot.com",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://widget-cdn.trustpilot.com",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://widget-cdn.trustpilot.com https://*.googletagmanager.com https://www.googletagmanager.com",
               "font-src 'self' https://fonts.gstatic.com",
               // img-src: broad — explicit Google domains added to bypass Tag Assistant's strict regex string matching
               "img-src 'self' data: https: http: https://*.google-analytics.com https://www.google-analytics.com https://*.google.com https://www.google.com https://*.googleadservices.com https://*.doubleclick.net https://*.googletagmanager.com https://www.googletagmanager.com",
@@ -85,6 +85,7 @@ const nextConfig: NextConfig = {
               "connect-src 'self'" +
               " https://wa.me" +
               " https://*.supabase.co wss://*.supabase.co" +
+              " https://*.googletagmanager.com https://www.googletagmanager.com" +
               " https://*.google-analytics.com https://www.google-analytics.com" +
               " https://*.analytics.google.com https://analytics.google.com" +
               " https://*.doubleclick.net" +
