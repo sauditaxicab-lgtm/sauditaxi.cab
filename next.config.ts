@@ -52,24 +52,26 @@ const nextConfig: NextConfig = {
               // script-src: covers older browsers
               // script-src-elem: browsers specifically check THIS for external scripts (GTM, GA, Ads)
               "script-src 'self' 'unsafe-eval' 'unsafe-inline'" +
-              " https://www.googletagmanager.com" +
-              " https://www.google-analytics.com" +
-              " https://ssl.google-analytics.com" +
-              " https://www.googleadservices.com" +
-              " https://googleads.g.doubleclick.net" +
-              " https://www.google.com" +
+              " https://*.googletagmanager.com https://www.googletagmanager.com" +
+              " https://*.google-analytics.com https://www.google-analytics.com" +
+              " https://*.analytics.google.com https://analytics.google.com" +
+              " https://*.googleadservices.com https://www.googleadservices.com" +
+              " https://*.doubleclick.net" +
+              " https://*.google.com https://www.google.com" +
+              " https://*.googlesyndication.com" +
               " https://connect.facebook.net" +
               " https://www.clarity.ms" +
               " https://scripts.clarity.ms" +
               " https://widget.trustpilot.com",
               // script-src-elem is the key directive modern browsers use — must mirror script-src
               "script-src-elem 'self' 'unsafe-inline'" +
-              " https://www.googletagmanager.com" +
-              " https://www.google-analytics.com" +
-              " https://ssl.google-analytics.com" +
-              " https://www.googleadservices.com" +
-              " https://googleads.g.doubleclick.net" +
-              " https://www.google.com" +
+              " https://*.googletagmanager.com https://www.googletagmanager.com" +
+              " https://*.google-analytics.com https://www.google-analytics.com" +
+              " https://*.analytics.google.com https://analytics.google.com" +
+              " https://*.googleadservices.com https://www.googleadservices.com" +
+              " https://*.doubleclick.net" +
+              " https://*.google.com https://www.google.com" +
+              " https://*.googlesyndication.com" +
               " https://connect.facebook.net" +
               " https://www.clarity.ms" +
               " https://scripts.clarity.ms" +
@@ -83,20 +85,19 @@ const nextConfig: NextConfig = {
               "connect-src 'self'" +
               " https://wa.me" +
               " https://*.supabase.co wss://*.supabase.co" +
-              " https://www.google-analytics.com" +
-              " https://analytics.google.com" +
-              " https://ssl.google-analytics.com" +
-              " https://stats.g.doubleclick.net" +
-              " https://www.googleadservices.com" +
-              " https://googleads.g.doubleclick.net" +
-              " https://www.google.com" +
+              " https://*.google-analytics.com https://www.google-analytics.com" +
+              " https://*.analytics.google.com https://analytics.google.com" +
+              " https://*.doubleclick.net" +
+              " https://*.googleadservices.com https://www.googleadservices.com" +
+              " https://*.google.com https://www.google.com" +
+              " https://*.googlesyndication.com" +
               " https://www.clarity.ms https://*.clarity.ms" +
               " https://api.trustpilot.com https://widget.trustpilot.com",
               // frame-src: Google Ads remarketing / conversion iframes
               "frame-src 'self'" +
-              " https://www.google.com" +
-              " https://bid.g.doubleclick.net" +
-              " https://td.doubleclick.net" +
+              " https://*.google.com https://www.google.com" +
+              " https://*.doubleclick.net" +
+              " https://*.googleadservices.com https://www.googleadservices.com" +
               " https://widget.trustpilot.com",
               "object-src 'none'",
               "base-uri 'self'",
