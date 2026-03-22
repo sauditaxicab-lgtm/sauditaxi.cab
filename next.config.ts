@@ -49,9 +49,21 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              // Google Tag Manager, Google Analytics (GA4), Google Ads (Conversion Tracking), Clarity, TrustPilot
+              // script-src: covers older browsers
+              // script-src-elem: browsers specifically check THIS for external scripts (GTM, GA, Ads)
               "script-src 'self' 'unsafe-eval' 'unsafe-inline'" +
-              " https://wa.me" +
+              " https://www.googletagmanager.com" +
+              " https://www.google-analytics.com" +
+              " https://ssl.google-analytics.com" +
+              " https://www.googleadservices.com" +
+              " https://googleads.g.doubleclick.net" +
+              " https://www.google.com" +
+              " https://connect.facebook.net" +
+              " https://www.clarity.ms" +
+              " https://scripts.clarity.ms" +
+              " https://widget.trustpilot.com",
+              // script-src-elem is the key directive modern browsers use — must mirror script-src
+              "script-src-elem 'self' 'unsafe-inline'" +
               " https://www.googletagmanager.com" +
               " https://www.google-analytics.com" +
               " https://ssl.google-analytics.com" +
@@ -64,23 +76,24 @@ const nextConfig: NextConfig = {
               " https://widget.trustpilot.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://widget-cdn.trustpilot.com",
               "font-src 'self' https://fonts.gstatic.com",
-              // Keep broad img-src — Google Ads pixel fires as 1×1 image from many subdomains
+              // img-src: broad — Google Ads conversion pixel fires from various google subdomains
               "img-src 'self' data: https: http:",
               "media-src 'self' blob:",
-              // connect-src: GA4 data collection, Google Ads, Clarity, Supabase, TrustPilot
+              // connect-src: GA4, Google Ads /ccm/collect, doubleclick, Clarity, Supabase
               "connect-src 'self'" +
               " https://wa.me" +
               " https://*.supabase.co wss://*.supabase.co" +
               " https://www.google-analytics.com" +
               " https://analytics.google.com" +
+              " https://ssl.google-analytics.com" +
               " https://stats.g.doubleclick.net" +
               " https://www.googleadservices.com" +
               " https://googleads.g.doubleclick.net" +
+              " https://www.google.com" +
               " https://www.clarity.ms https://*.clarity.ms" +
               " https://api.trustpilot.com https://widget.trustpilot.com",
-              // frame-src: Google Ads remarketing iframes, TrustPilot widget
+              // frame-src: Google Ads remarketing / conversion iframes
               "frame-src 'self'" +
-              " https://wa.me" +
               " https://www.google.com" +
               " https://bid.g.doubleclick.net" +
               " https://td.doubleclick.net" +
