@@ -5,13 +5,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://sauditaxi.cab'
 
     // Fetch dynamic blog routes
-    const { data: posts } = await supabase
+    const { data: posts, error } = await supabase
         .from('posts')
-        .select('slug, updated_at')
+        .select('slug, created_at')
+        .eq('published', true); // Ensure only published posts appear in sitemap
 
     const blogRoutes: MetadataRoute.Sitemap = (posts || []).map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: post.updated_at ? new Date(post.updated_at) : new Date(),
+        lastModified: post.created_at ? new Date(post.created_at) : new Date(),
         changeFrequency: 'weekly',
         priority: 0.7,
     }))
